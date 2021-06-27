@@ -14,11 +14,11 @@ class PackageController extends REST_Controller {
     public function package_list_get($id = 0) {
         $response = [];
         $records = [];
-        $data = $this->package->get_packages($id);
+        $data = $this->package->get_packages();
         if (!empty($data)) {
             $temp = array('package_details'=>[]);
             for($i=0;$i<count($data);$i++){
-               $p_details= $this->package->get_package_details($data[$i]->packageId); 
+               $p_details= $this->package->get_package_details($data[$i]['packageId']); 
                if(!empty($p_details)){
                 $temp = array('package_details'=>$p_details);
                }

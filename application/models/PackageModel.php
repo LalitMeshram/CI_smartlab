@@ -8,18 +8,13 @@ class PackageModel extends CI_Model {
         return $this->db->insert_id();
     }
 
-    public function get_packages($id) {
-        $data;
-        if ($id != 0) {
-            $data =  $this->db->get_where('center_packages', array('centerId' => $id))->row_array();
-        } else {
-            $data = $this->db->get('center_packages')->result();
-        }
+    public function get_packages() {
+        $data = $this->db->get('center_packages')->result_array();
         return $data;
     }
 
     public function get_package_details($packageId) {
-        $data = $this->db->get_where('center_package_details', array('packageId' => $packageId))->result();
+        $data = $this->db->get_where('center_package_details', array('packageId' => $packageId))->result_array();
         return $data;
     }
 
