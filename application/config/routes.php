@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 //login page ui
 $route['default_controller'] = 'welcome';
+$route['pricing']='admin/Admincontroller/pricing';
+$route['dashboard']='admin/Admincontroller/dashboard';
+$route['lab_registration']='admin/Admincontroller/labRegistration';
+$route['login']='admin/Admincontroller/userLogin';
+$route['registration']='admin/Admincontroller/userRegistration';
+$route['setup']='admin/Admincontroller/setup';
 
 //Center Registration master
 $route['getcenters'] = 'UserMasterController/customers_list';
