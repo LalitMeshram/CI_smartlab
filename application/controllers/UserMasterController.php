@@ -29,6 +29,7 @@ class UserMasterController extends REST_Controller {
     public function center_reg_post() {
         $response = [];
 
+        $data['fullname'] = $this->post('fullname');
         $data['emailId'] = $this->post('emailId');
         $data['contact_number'] = $this->post('contact_number');
         $data['upassword'] = $this->post('upassword');
