@@ -19,99 +19,10 @@
 			<br><br><br>
 		
 		
-			<div class="row">
+                        <div class="row" id="planList">
 
-              <div class="col-lg-3">
-                  <div class="box text-center p-50 bg-img box-inverse" style="background-image: url(<?php echo base_url().'resource';?>/img/pricing_bg1.jpg)" data-overlay="7">
-                  <div class="box-body">
-                    <h5 class="text-uppercase text-muted">Plan Name</h5>
-                    <h3 class="font-weight-100 font-size-30">Rs.5</h3>
-                    <small>Per user/year</small>
+              
 
-                    <hr style="background-color: #fff;">
-
-                    <p><strong>500 MB</strong> Storage</p>
-                    <p><strong>24x7</strong> Support</p>
-                    <p><strong>5</strong> Projects</p>
-
-                    <br><br>
-                    <a class="btn btn-bold btn-block btn-outline btn-white" href="#">Select plan</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-3">
-                <div class="box text-center p-50 bg-img box-inverse" style="background-image: url(<?php echo base_url().'resource';?>/img/pricing_bg1.jpg)" data-overlay="7">
-                  <div class="box-body">
-                    <h5 class="text-uppercase text-muted">Plan Name</h5>
-                    <h3 class="font-weight-100 font-size-30">Rs.5</h3>
-                    <small>Per user/year</small>
-
-                    <hr style="background-color: #fff;">
-
-                    <p><strong>500 MB</strong> Storage</p>
-                    <p><strong>24x7</strong> Support</p>
-                    <p><strong>5</strong> Projects</p>
-
-                    <br><br>
-                    <a class="btn btn-bold btn-block btn-outline btn-white" href="#">Select plan</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3">
-                <div class="box text-center p-50 bg-img box-inverse" style="background-image: url(<?php echo base_url().'resource';?>/img/pricing_bg1.jpg)" data-overlay="7">
-                  <div class="box-body">
-                    <h5 class="text-uppercase text-muted">Plan Name</h5>
-                    <h3 class="font-weight-100 font-size-30">Rs.5</h3>
-                    <small>Per user/year</small>
-
-                    <hr style="background-color: #fff;">
-
-                    <p><strong>500 MB</strong> Storage</p>
-                    <p><strong>24x7</strong> Support</p>
-                    <p><strong>5</strong> Projects</p>
-
-                    <br><br>
-                    <a class="btn btn-bold btn-block btn-outline btn-white" href="#">Select plan</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3">
-                <div class="box text-center p-50 bg-img box-inverse" style="background-image: url(<?php echo base_url().'resource';?>/img/pricing_bg1.jpg)" data-overlay="7">
-                  <div class="box-body">
-                    <h5 class="text-uppercase text-muted">Plan Name</h5>
-                    <h3 class="font-weight-100 font-size-30">Rs.5</h3>
-                    <small>Per user/year</small>
-
-                    <hr style="background-color: #fff;">
-
-                    <p><strong>500 MB</strong> Storage</p>
-                    <p><strong>24x7</strong> Support</p>
-                    <p><strong>5</strong> Projects</p>
-
-                    <br><br>
-                    <a class="btn btn-bold btn-block btn-outline btn-white" href="#">Select plan</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3">
-                <div class="box text-center p-50 bg-img box-inverse" style="background-image: url(<?php echo base_url().'resource';?>/img/pricing_bg1.jpg)" data-overlay="7">
-                  <div class="box-body">
-                    <h5 class="text-uppercase text-muted">Plan Name</h5>
-                    <h3 class="font-weight-100 font-size-30">Rs.5</h3>
-                    <small>Per user/year</small>
-
-                    <hr style="background-color: #fff;">
-
-                    <p><strong>500 MB</strong> Storage</p>
-                    <p><strong>24x7</strong> Support</p>
-                    <p><strong>5</strong> Projects</p>
-
-                    <br><br>
-                    <a class="btn btn-bold btn-block btn-outline btn-white" href="#">Select plan</a>
-                  </div>
-                </div>
-              </div>
               
 
             </div>

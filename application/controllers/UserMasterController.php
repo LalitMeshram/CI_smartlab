@@ -40,7 +40,7 @@ class UserMasterController extends REST_Controller {
             $response['msg'] = 'Customer Registration is successfully Done!';
             $response['data'] = $data;
             $response['status'] = 200;
-            $this->session->set_userdata($data);
+            $this->session->set_userdata('lsesson',$data);
             $this->response($response, REST_Controller::HTTP_OK);
         } else {
             $response['msg'] = 'Bad Request!';

@@ -31,6 +31,7 @@ class AdminController extends CI_Controller {
         $this->load->view('menu_bar');
         $this->load->view('pricing/pricing');
         $this->load->view('footer');
+        $this->load->view('pricing/pricing_js');
     }
     public function dashboard() {
         $this->load->view('header');
@@ -49,6 +50,8 @@ class AdminController extends CI_Controller {
     }
     public function userRegistration() {
         $this->load->view('user_registration/registration');
+        $this->load->view('user_registration/registration_js');
+        $this->load->view('user_registration/validation');
     }
     public function setup() {
         $this->load->view('header');

@@ -200,7 +200,8 @@
 
 	<!-- jQuery 3 -->
 	<script src="<?php echo base_url().'resource/assets/vendor_components/jquery-3.3.1/jquery-3.3.1.js';?>"></script>
-	
+	<script src="<?php echo base_url() . 'resource/js/ajax-jquery.js'; ?>"></script>
+	<script src="<?php echo base_url() . 'resource/js/jquery.validate.min.js'; ?>"></script>
 	<!-- popper -->
 	<script src="<?php echo base_url().'resource/assets/vendor_components/popper/dist/popper.min.js';?>"></script>
 	
