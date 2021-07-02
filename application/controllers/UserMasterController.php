@@ -35,9 +35,12 @@ class UserMasterController extends REST_Controller {
         $data['upassword'] = $this->post('upassword');
         $id = $this->user->customer_reg($data);
         if (!empty($id)) {
+            $data = array();
+            $data = $this->user->get_customers($id);
             $response['msg'] = 'Customer Registration is successfully Done!';
-            $response['id'] = $id;
+            $response['data'] = $data;
             $response['status'] = 200;
+            $this->session->set_userdata($data);
             $this->response($response, REST_Controller::HTTP_OK);
         } else {
             $response['msg'] = 'Bad Request!';
