@@ -8,7 +8,9 @@ $route['dashboard']='admin/Admincontroller/dashboard';
 $route['lab_registration']='admin/Admincontroller/labRegistration';
 $route['login']='admin/Admincontroller/userLogin';
 $route['registration']='admin/Admincontroller/userRegistration';
-$route['setup']='admin/Admincontroller/setup';
+$route['letter_head']='admin/Admincontroller/letterHead';
+$route['add_test']='admin/Admincontroller/addTest';
+$route['test_database']='admin/Admincontroller/testDatabase';
 
 //Center Registration master
 $route['getcenters'] = 'UserMasterController/customers_list';

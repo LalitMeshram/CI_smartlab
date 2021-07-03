@@ -48,8 +48,17 @@
 				  <li class="nav-item"><a class="nav-link" href="#">Business Analysis</a></li>	
 				</ul>				  
 			  </li>
-			  <li class="nav-item">
-				<a class="nav-link" href="#"><i class="fa fa-cog mr-5"></i> <span>Setup</span></a>
+			  <li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-cog mr-5"></i> <span>Setup</span>
+                                </a>
+                                <ul class="dropdown-menu multilevel scale-up-left">
+                                    <li class="nav-item"><a class="nav-link" href="lab_registration">Lab Registration</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="letter_head">Letter Head</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="add_test">Add Test</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="test_database">Test Database</a></li>
+				  
+				</ul>
 			  </li>
 			  <li class="nav-item">
 				<a class="nav-link" href="#"><i class="fa fa-hospital-o mr-5"></i> <span>Account</span></a>

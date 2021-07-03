@@ -42,7 +42,7 @@ class AdminController extends CI_Controller {
     public function labRegistration() {
         $this->load->view('header');
         $this->load->view('menu_bar');
-        $this->load->view('lab_registration/lab_registration');
+        $this->load->view('setup/lab_registration');
         $this->load->view('footer');
     }
     public function userLogin() {
@@ -53,10 +53,22 @@ class AdminController extends CI_Controller {
         $this->load->view('user_registration/registration_js');
         $this->load->view('user_registration/validation');
     }
-    public function setup() {
+    public function letterHead() {
         $this->load->view('header');
         $this->load->view('menu_bar');
-        $this->load->view('lab_registration/lab_registration');
+        $this->load->view('setup/letter_head');
+        $this->load->view('footer');
+    }
+    public function addTest() {
+        $this->load->view('header');
+        $this->load->view('menu_bar');
+        $this->load->view('setup/add_test');
+        $this->load->view('footer');
+    }
+    public function testDatabase() {
+        $this->load->view('header');
+        $this->load->view('menu_bar');
+        $this->load->view('setup/test_database');
         $this->load->view('footer');
     }
 }
