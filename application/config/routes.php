@@ -11,6 +11,7 @@ $route['registration']       = 'admin/Admincontroller/userRegistration';
 $route['letter_head']        = 'admin/Admincontroller/letterHead';
 $route['add_test']           = 'admin/Admincontroller/addTest';
 $route['test_database']      = 'admin/Admincontroller/testDatabase';
+$route['payment'] = 'Register/index';
 
 //Center Registration master
 $route['getcenters']               = 'UserMasterController/customers_list';
