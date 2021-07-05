@@ -47,6 +47,7 @@ class AdminController extends CI_Controller {
     }
     public function userLogin() {
         $this->load->view('user_login/login');
+        $this->load->view('user_login/login_js');
     }
     public function userRegistration() {
         $this->load->view('user_registration/registration');
@@ -69,6 +70,13 @@ class AdminController extends CI_Controller {
         $this->load->view('header');
         $this->load->view('menu_bar');
         $this->load->view('setup/test_database');
+        $this->load->view('footer');
+    }
+    
+    public function patient() {
+        $this->load->view('header');
+        $this->load->view('menu_bar');
+        $this->load->view('patient/patient');
         $this->load->view('footer');
     }
 }

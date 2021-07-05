@@ -59,7 +59,7 @@ $session_data=$this->session->userdata('lsesson');
                     </div>
                     <div class="p-40 mt-10 content-bottom" style="background-color: #f0f8ffc2!important;">
                         <form id="register" method="post">
-                            <div class="form-group">
+                            <div class="form-group col-12">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text bg-info border-info"><i class="ti-user"></i></span>
@@ -67,7 +67,7 @@ $session_data=$this->session->userdata('lsesson');
                                     <input type="text" class="form-control" placeholder="Full Name" name="fullname" id="fullname">
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group col-12">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text bg-info border-info"><i class="ti-email"></i></span>
@@ -75,7 +75,7 @@ $session_data=$this->session->userdata('lsesson');
                                     <input type="text" class="form-control" placeholder="Email" name="emailId" id="emailId">
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group col-12">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text bg-info border-info"><i class="ti-lock"></i></span>
@@ -83,7 +83,7 @@ $session_data=$this->session->userdata('lsesson');
                                     <input type="password" class="form-control" placeholder="Password" name="password" id="password">
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group col-12">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text bg-info border-info"><i class="ti-lock"></i></span>
@@ -91,7 +91,7 @@ $session_data=$this->session->userdata('lsesson');
                                     <input type="password" class="form-control" placeholder="Retype Password" name="upassword" id="upassword">
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group col-12">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text bg-info border-info"><i class="ti-mobile"></i></span>
