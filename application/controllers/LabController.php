@@ -56,6 +56,30 @@ class LabController extends REST_Controller
         $this->response($response, REST_Controller::HTTP_OK);
     }
     
+
+    public function lab_reg_update_post()
+    {
+        $response = array();
+        
+        $data['labName']        = $this->post('labName');
+        $data['lab_contact']    = $this->post('lab_contact');
+        $data['lab_email']      = $this->post('lab_email');
+        $data['lab_address']    = $this->post('lab_address');
+        $data['lab_city']       = $this->post('lab_city');
+        $data['lab_postalcode'] = $this->post('lab_postalcode');
+        $data['centerId']   = $this->post('centerId');
+        if (!empty($this->post('centerId'))) {
+            $id                 = $this->lab->update_customer_center($data);
+            $response['msg']    = 'Lab data is updated successfully!';
+            $response['data']   = $id;
+            $response['status'] = 200;
+        }else{
+            $response['msg']    = 'Center Id is null!';
+            $response['status'] = 204;
+        }
+        $this->response($response, REST_Controller::HTTP_OK);
+    }
+    
     public function letter_head_details_get($centerId = 0)
     {
         $response = array();
