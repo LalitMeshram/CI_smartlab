@@ -31,6 +31,7 @@ $route['get_packages'] = 'PackageController/package_list';
 $route['login_auth']                   = 'LoginController/login_auth';
 $route['logout']                       = 'LoginController/logout';
 //center setup
+//get center detail respective centerid
 $route['lab_register_data/(:num)']     = 'LabController/lab_register_data/$1';
 
 //lab_reg use for insert and update center details

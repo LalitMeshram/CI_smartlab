@@ -1,12 +1,14 @@
 <script>
-
+<?php 
+$session_data=$this->session->userdata('lsesson');
+?>
     $('#labRegForm').on('submit', function (e) {
 
         e.preventDefault();
 
         var returnVal = $("#labRegForm").valid();
         var formdata = new FormData(this);
-
+            formdata.append('centerId',<?php echo $session_data['centerId'];?>)
         if (returnVal) {
             $.ajax({
 

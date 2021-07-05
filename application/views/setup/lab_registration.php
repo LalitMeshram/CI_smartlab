@@ -1,6 +1,3 @@
-<?php 
-$session_data=$this->session->userdata('lsesson');
-?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -33,7 +30,6 @@ $session_data=$this->session->userdata('lsesson');
                             <div class="form-group">
                                 <div class="controls">
                                     <input type="text" name="labName" id="labName" class="form-control" placeholder="Laboratory Full Name">
-                                    <input type="hidden" name="centerId" id="centerId" value="<?php echo $session_data['centerId'];?>">
                                 </div>
                             </div>
                             <div class="row">
