@@ -47,13 +47,13 @@ if(isset($session_data['loginSession'])){
 					<p class="text-white">Sign in to start your session</p>
 				</div>
 				<div class="p-40 mt-10 content-bottom" style="background-color: #f0f8ffc2!important;">
-					<form action="pricing.html" method="post">
+                                    <form action="#" id="loginForm" method="post">
 						<div class="form-group">
 							<div class="input-group mb-3">
 								<div class="input-group-prepend">
 									<span class="input-group-text bg-danger border-danger"><i class="ti-user"></i></span>
 								</div>
-								<input type="text" class="form-control" placeholder="Username (Email)">
+                                                            <input type="text" class="form-control" placeholder="Username (Email)" name="username" id="username">
 							</div>
 						</div>
 						<div class="form-group">
@@ -61,7 +61,7 @@ if(isset($session_data['loginSession'])){
 								<div class="input-group-prepend">
 									<span class="input-group-text bg-danger border-danger"><i class="ti-lock"></i></span>
 								</div>
-								<input type="password" class="form-control" placeholder="Password">
+                                                            <input type="password" class="form-control" placeholder="Password" name="pass" id="pass">
 							</div>
 						</div>
 						  <div class="row">
@@ -79,7 +79,7 @@ if(isset($session_data['loginSession'])){
 							</div>
 							<!-- /.col -->
 							<div class="col-12 text-center">
-							  <button class="btn btn-danger btn-block margin-top-10">SIGN IN</button>
+                                                            <button class="btn btn-danger btn-block margin-top-10" type="submit">SIGN IN</button>
 							</div>
 							<!-- /.col -->
 						  </div>

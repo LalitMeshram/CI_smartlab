@@ -8,7 +8,7 @@
 				<a class="nav-link" href="../../index.html"><i class="fa fa-dashboard mr-5"></i> <span>Dashboard</span></a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link" href="#"><i class="fa fa-pencil-square-o  mr-5"></i> <span>New Case</span></a>
+				<a class="nav-link" href="patient"><i class="fa fa-pencil-square-o  mr-5"></i> <span>New Case</span></a>
 			  </li>
 			  <li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
