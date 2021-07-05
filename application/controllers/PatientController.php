@@ -3,21 +3,21 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 require APPPATH . 'libraries/REST_Controller.php';
 
-class LabController extends REST_Controller
+class PatientController extends REST_Controller
 {
     
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('LabModel', 'lab');
+        $this->load->model('PatientModel', 'patient');
     }
-    public function lab_register_data_get($centerId = 0)
+    public function patient_register_data_get($patientId = 0,$centerId=0)
     {
         $response = array();
-        $data     = $this->lab->get_lab_data($centerId);
+        $data     = $this->patient->get_patient_data($patientId,$centerId);
         if (!empty($data)) {
             $response['data']   = $data;
-            $response['msg']    = 'Center Data Fetch successfully!';
+            $response['msg']    = 'Patient Data Fetch successfully!';
             $response['status'] = 200;
         } else {
             $response['msg']    = 'Data not Found!';
@@ -36,8 +36,14 @@ class LabController extends REST_Controller
         $data['lab_address']    = $this->post('lab_address');
         $data['lab_city']       = $this->post('lab_city');
         $data['lab_postalcode'] = $this->post('lab_postalcode');
-        $data['centerId']   = $this->post('centerId');
-        $id = $this->lab->lab_reg($data);
+        if (!empty($this->post('centerId'))) {
+            $data['centerId']   = $this->post('centerId');
+            $id                 = $this->lab->update_customer_center($data);
+            $response['msg']    = 'Lab data is updated successfully!';
+            $response['data']   = $id;
+            $response['status'] = 200;
+        } else {
+            $id = $this->lab->lab_reg($data);
             if (!empty($id)) {
                 $response['msg']    = 'Lab Registration is successfully Done!';
                 $response['data']   = $id;
@@ -46,6 +52,7 @@ class LabController extends REST_Controller
                 $response['msg']    = 'Bad Request!';
                 $response['status'] = 400;
             }
+        }
         $this->response($response, REST_Controller::HTTP_OK);
     }
     
@@ -73,10 +80,10 @@ class LabController extends REST_Controller
         $this->response($response, REST_Controller::HTTP_OK);
     }
     
-    public function letter_head_details_get($centerId = 0)
+    public function letter_head_details_get($patientId = 0)
     {
         $response = array();
-        $data     = $this->lab->get_header_details($centerId);
+        $data     = $this->lab->get_header_details($patientId);
         if (!empty($data)) {
             $response['data']   = $data;
             $response['msg']    = 'Header Details Data Fetch successfully!';
