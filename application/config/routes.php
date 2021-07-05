@@ -32,8 +32,9 @@ $route['login_auth']                   = 'LoginController/login_auth';
 $route['logout']                       = 'LoginController/logout';
 //center setup
 $route['lab_register_data/(:num)']     = 'LabController/lab_register_data/$1';
+
+//lab_reg use for insert and update center details
 $route['lab_reg']                      = 'LabController/lab_reg';
-$route['lab_reg_update']               = 'LabController/lab_reg_update';
 $route['letter_head_details_register'] = 'LabController/letter_head_details_register';
 $route['letter_head_details/(:num)']   = 'LabController/letter_head_details/$1';
 

@@ -44,6 +44,7 @@ class AdminController extends CI_Controller {
         $this->load->view('menu_bar');
         $this->load->view('setup/lab_registration');
         $this->load->view('footer');
+        $this->load->view('setup/lab_registration_js');
     }
     public function userLogin() {
         $this->load->view('user_login/login');
