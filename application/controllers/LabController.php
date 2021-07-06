@@ -36,7 +36,7 @@ class LabController extends REST_Controller
         $data['lab_address']    = $this->post('lab_address');
         $data['lab_city']       = $this->post('lab_city');
         $data['lab_postalcode'] = $this->post('lab_postalcode');
-        $data['centerId']   = $this->post('centerId');
+        $data['centerId']       = $this->post('centerId');
         $id = $this->lab->lab_reg($data);
             if (!empty($id)) {
                 $response['msg']    = 'Lab Registration is successfully Done!';
