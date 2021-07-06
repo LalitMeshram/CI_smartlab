@@ -39,6 +39,10 @@ $route['lab_reg']                      = 'LabController/lab_reg';
 $route['letter_head_details_register'] = 'LabController/letter_head_details_register';
 $route['letter_head_details/(:num)']   = 'LabController/letter_head_details/$1';
 
+//Patient Reg API
+$route['patient_reg']             = 'PatientController/patient_reg';
+$route['get_patients/(:num)']     = 'PatientController/patient_register_data/$1';
+
 
 
 $route['404_override']         = '';
