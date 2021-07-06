@@ -106,27 +106,28 @@ class LabController extends REST_Controller {
         }//if end
         else {
 //            delete old file
-            unlink($letterHeadData['header_logo']);
-            unlink($letterHeadData['lab_incharge_sign']);
-            unlink($letterHeadData['doctor_sign']);
-            unlink($letterHeadData['footer_logo']);
 
             if (!empty($_FILES['header']['name'])) {
+                unlink($letterHeadData['header_logo']);
                 $header_path = $this->upload_docs($_FILES['header']['name'], $_FILES['header']['tmp_name']);
+                $data['header_logo'] = $header_path;
             }
             if (!empty($_FILES['footer']['name'])) {
+                unlink($letterHeadData['lab_incharge_sign']);
                 $footer_path = $this->upload_docs($_FILES['footer']['name'], $_FILES['footer']['tmp_name']);
+                $data['footer_logo'] = $footer_path;
             }
             if (!empty($_FILES['lab_incharge_sign']['name'])) {
+                unlink($letterHeadData['doctor_sign']);
                 $lab_incharge_sign = $this->upload_docs($_FILES['lab_incharge_sign']['name'], $_FILES['lab_incharge_sign']['tmp_name']);
+                $data['lab_incharge_sign'] = $lab_incharge_sign;
             }
             if (!empty($_FILES['doctor_sign']['name'])) {
+                unlink($letterHeadData['footer_logo']);
                 $doctor_sign = $this->upload_docs($_FILES['doctor_sign']['name'], $_FILES['doctor_sign']['tmp_name']);
+                $data['doctor_sign'] = $doctor_sign;
             }
-            $data['header_logo'] = $header_path;
-            $data['footer_logo'] = $footer_path;
-            $data['lab_incharge_sign'] = $lab_incharge_sign;
-            $data['doctor_sign'] = $doctor_sign;
+            
             if($this->lab->update_header_details($data)){
                  $response['data'] = $data['centerId'];
                 $response['msg'] = 'Letter Head Details updated successfully!';
