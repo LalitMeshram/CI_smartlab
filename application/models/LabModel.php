@@ -49,6 +49,12 @@ class LabModel extends CI_Model
     public function lab_header_reg($data)
     {
         $this->db->insert('center_letter_head_details', $data);
-        return $this->db->insert_id();
+        return TRUE;
+    }
+    
+    public function  update_header_details($data){
+        $this->db->where('centerId', $data['centerId']);
+        $this->db->update('center_letter_head_details', $data);
+        return TRUE;
     }
 }

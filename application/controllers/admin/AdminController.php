@@ -61,6 +61,8 @@ class AdminController extends CI_Controller {
         $this->load->view('menu_bar');
         $this->load->view('setup/letter_head');
         $this->load->view('footer');
+        $this->load->view('setup/letter_head_js');
+        $this->load->view('setup/get_letter_head_js');
     }
     public function addTest() {
         $this->load->view('header');
