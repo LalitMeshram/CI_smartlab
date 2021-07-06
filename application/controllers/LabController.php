@@ -31,47 +31,28 @@ class LabController extends REST_Controller
         $response = array();
         
         $data['labName']        = $this->post('labName');
-        $data['lab_contact']    = $this->post('lab_contact');
-        $data['lab_email']      = $this->post('lab_email');
-        $data['lab_address']    = $this->post('lab_address');
-        $data['lab_city']       = $this->post('lab_city');
-        $data['lab_postalcode'] = $this->post('lab_postalcode');
-        $data['centerId']       = $this->post('centerId');
-        $id = $this->lab->lab_reg($data);
-            if (!empty($id)) {
-                $response['msg']    = 'Lab Registration is successfully Done!';
-                $response['data']   = $id;
-                $response['status'] = 200;
-            } else {
-                $response['msg']    = 'Bad Request!';
-                $response['status'] = 400;
-            }
-        $this->response($response, REST_Controller::HTTP_OK);
-    }
-    
-
-    public function lab_reg_update_post()
-    {
-        $response = array();
-        
-        $data['labName']        = $this->post('labName');
+        $data['brandName']        = $this->post('brandName');
         $data['lab_contact']    = $this->post('lab_contact');
         $data['lab_email']      = $this->post('lab_email');
         $data['lab_address']    = $this->post('lab_address');
         $data['lab_city']       = $this->post('lab_city');
         $data['lab_postalcode'] = $this->post('lab_postalcode');
         $data['centerId']   = $this->post('centerId');
-        if (!empty($this->post('centerId'))) {
-            $id                 = $this->lab->update_customer_center($data);
-            $response['msg']    = 'Lab data is updated successfully!';
-            $response['data']   = $id;
-            $response['status'] = 200;
+        $centerData     = $this->lab->get_lab_data($data['centerId']);
+        if(empty($centerData)){
+            //Add New Entry
+        $this->lab->lab_reg($data);
+                $response['msg']    = 'Lab Details inserted successfully!';
         }else{
-            $response['msg']    = 'Center Id is null!';
-            $response['status'] = 204;
+            //update existing entry
+            $this->lab->update_customer_center($data);
+                $response['msg']    = 'Lab Details updated successfully!';
         }
+                $response['status'] = 200;
         $this->response($response, REST_Controller::HTTP_OK);
     }
+    
+
     
     public function letter_head_details_get($centerId = 0)
     {

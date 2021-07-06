@@ -1,5 +1,5 @@
 <?php 
-$session_data=$this->session->userdata();
+$session_data=$this->session->userdata('lsesson');
 
 //print_r($session_data);
 ?>
@@ -30,6 +30,10 @@ $session_data=$this->session->userdata();
         <!-- SoftMaterial admin skins -->
         <link rel="stylesheet" href="<?php echo base_url() . 'resource/css/skins/_all-skins.css'; ?>">	
 
+        <!--alerts CSS -->
+        <link href="<?php echo base_url() . 'resource'; ?>/assets/vendor_components/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
+
+        
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>

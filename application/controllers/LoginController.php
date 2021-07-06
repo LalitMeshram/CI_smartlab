@@ -31,7 +31,7 @@ class LoginController extends REST_Controller
                 } else {
                     $user_data["payment"] = false;
                 }
-                $this->session->set_userdata($user_data);
+                $this->session->set_userdata('lsesson',$user_data);
                 $response['Message']      = "Logged in successfully";
                 $response['Data']         = $user_data;
                 $response['Responsecode'] = 200;

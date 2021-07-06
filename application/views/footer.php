@@ -222,7 +222,9 @@
 	
 	<!-- SoftMaterial admin horizontal-layout -->
         <script src="<?php echo base_url().'resource/js/horizontal-layout.js';?>"></script>
-	
+	<!-- Sweet-Alert  -->
+        <script src="<?php echo base_url() . 'resource'; ?>/assets/vendor_components/sweetalert/sweetalert.min.js"></script>
+        <script src="<?php echo base_url() . 'resource'; ?>/assets/vendor_components/sweetalert/jquery.sweet-alert.custom.js"></script>
 
 </body>
 </html>
