@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 05, 2021 at 07:23 AM
+-- Generation Time: Jul 07, 2021 at 02:28 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -72,7 +72,7 @@ CREATE TABLE `center_letter_head_details` (
 --
 
 INSERT INTO `center_letter_head_details` (`centerId`, `header_logo`, `lab_incharge_sign`, `doctor_sign`, `lab_incharge_name`, `lab_incharge_degree`, `lab_doctor_name`, `lab_doctor_degree`, `footer_logo`, `createdat`, `updatedat`) VALUES
-(1, './documents/1.png2021_07_04_010128000000.png', './documents/3.png2021_07_04_010128000000.png', './documents/2.png2021_07_04_010128000000.png', 'John Smith', 'G.N.M', 'Dr.Nick Jonas', 'MBBS', './documents/11.jpg2021_07_04_010128000000.jpg', '2021-07-04 13:01:28', '2021-07-04 13:01:28');
+(1, 'documents/1.png2021_07_06_050952000000.png', 'documents/2.png2021_07_06_050952000000.png', 'documents/3.png2021_07_06_050952000000.png', 'Mrunal Jain', 'G.N.M', 'Akshay Kumar', 'MBBS', 'documents/11.jpg2021_07_06_050952000000.jpg', '2021-07-06 17:09:52', '2021-07-06 17:10:27');
 
 -- --------------------------------------------------------
 
@@ -178,6 +178,38 @@ INSERT INTO `customer_registeration` (`centerId`, `fullname`, `emailId`, `contac
 (4, 'Sansa Stark', 'sansa@got.com', '9657856985', '12345', 1, 0, 0, '2021-07-02 08:39:40', '2021-07-02 08:39:40'),
 (5, 'Robb Stark', 'robb@got.com', '9657856985', '12345', 1, 0, 0, '2021-07-02 08:40:47', '2021-07-02 08:40:47');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `patient_master`
+--
+
+CREATE TABLE `patient_master` (
+  `patientId` int(10) UNSIGNED NOT NULL,
+  `centerId` int(10) UNSIGNED NOT NULL,
+  `patient_title` varchar(25) NOT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `gender` enum('Male','Female','Other') NOT NULL,
+  `aadhar_number` varchar(15) NOT NULL,
+  `dob` date NOT NULL,
+  `age` int(11) DEFAULT NULL,
+  `contact_number` varchar(12) NOT NULL,
+  `alternate_number` varchar(12) DEFAULT NULL,
+  `emailId` varchar(100) DEFAULT NULL,
+  `patient_address` text NOT NULL,
+  `patient_profile` varchar(255) DEFAULT NULL,
+  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
+  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `patient_master`
+--
+
+INSERT INTO `patient_master` (`patientId`, `centerId`, `patient_title`, `first_name`, `last_name`, `gender`, `aadhar_number`, `dob`, `age`, `contact_number`, `alternate_number`, `emailId`, `patient_address`, `patient_profile`, `createdat`, `updatedat`) VALUES
+(1, 1, 'Mr.', 'Aarya', 'Stark', 'Female', '589636254147', '1998-09-04', 23, '9887456514', '', 'aarya@stark.com', '12.BB Marg Lahore', './documents/2021_07_06_0417090000003.png', '2021-07-06 16:12:56', '2021-07-06 16:17:09');
+
 --
 -- Indexes for dumped tables
 --
@@ -222,6 +254,12 @@ ALTER TABLE `customer_registeration`
   ADD UNIQUE KEY `Email` (`emailId`,`contact_number`);
 
 --
+-- Indexes for table `patient_master`
+--
+ALTER TABLE `patient_master`
+  ADD PRIMARY KEY (`patientId`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -260,6 +298,12 @@ ALTER TABLE `center_payment_details`
 --
 ALTER TABLE `customer_registeration`
   MODIFY `centerId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `patient_master`
+--
+ALTER TABLE `patient_master`
+  MODIFY `patientId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
