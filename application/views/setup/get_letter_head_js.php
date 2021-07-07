@@ -26,7 +26,9 @@ function getLetterHeadDetail() {
                         $('#lab_doctor_name').val(response.data.lab_doctor_name);
                         $('#lab_doctor_degree').val(response.data.lab_doctor_degree);
                         $('#headerpre').prop('src',response.data.header_logo);
-                        $('#header').val(response.data.header_logo);
+                        $('#inchargesignpre').prop('src',response.data.lab_incharge_sign);
+                        $('#drsignpre').prop('src',response.data.doctor_sign);
+                        $('#footerpre').prop('src',response.data.footer_logo);
                         
                     } 
 

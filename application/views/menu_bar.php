@@ -5,10 +5,10 @@
 		  <div class="collapse navbar-collapse" id="navbarNavDropdown">
 			<ul class="navbar-nav">
 			  <li class="nav-item">
-				<a class="nav-link" href="../../index.html"><i class="fa fa-dashboard mr-5"></i> <span>Dashboard</span></a>
+				<a class="nav-link" href="dashbosrd"><i class="fa fa-dashboard mr-5"></i> <span>Dashboard</span></a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link" href="patient"><i class="fa fa-pencil-square-o  mr-5"></i> <span>New Case</span></a>
+				<a class="nav-link" href="create_case"><i class="fa fa-pencil-square-o  mr-5"></i> <span>New Case</span></a>
 			  </li>
 			  <li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -16,10 +16,11 @@
 				</a>				  
 				<ul class="dropdown-menu multilevel scale-up-left">
 				  <li class="nav-item"><a class="nav-link" href="#">All Cases</a></li>
-				  <li class="nav-item"><a class="nav-link" href="#">Patients</a></li>	
+                                  <li class="nav-item"><a class="nav-link" href="patient">Patients</a></li>	
 				  <li class="nav-item"><a class="nav-link" href="#">Receipts</a></li>	
 				  <li class="nav-item"><a class="nav-link" href="#">Refferal Doctors</a></li>	
 				  <li class="nav-item"><a class="nav-link" href="#">Agents</a></li>	
+				  <li class="nav-item"><a class="nav-link" href="invoice">Invoice</a></li>	
 				</ul>				  
 			  </li>
 			  <li class="nav-item dropdown">
