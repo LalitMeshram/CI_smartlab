@@ -91,4 +91,10 @@ class AdminController extends CI_Controller {
         $this->load->view('patient/create_case');
         $this->load->view('footer');
     }
+    public function invoice() {
+        $this->load->view('header');
+        $this->load->view('menu_bar');
+        $this->load->view('patient/invoice');
+        $this->load->view('footer');
+    }
 }
