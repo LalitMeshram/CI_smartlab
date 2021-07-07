@@ -82,5 +82,13 @@ class AdminController extends CI_Controller {
         $this->load->view('menu_bar');
         $this->load->view('patient/patient');
         $this->load->view('footer');
+        $this->load->view('patient/patient_registration_modal');
+        $this->load->view('patient/add_range_modal');
+    }
+    public function createCase() {
+        $this->load->view('header');
+        $this->load->view('menu_bar');
+        $this->load->view('patient/create_case');
+        $this->load->view('footer');
     }
 }

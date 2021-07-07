@@ -1,164 +1,470 @@
-<!-- Content Wrapper. Contains page content -->
+ <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Patient
+        Editable Tables
       </h1>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Examples</a></li>
-        <li class="breadcrumb-item active">Blank page</li>
+        <li class="breadcrumb-item"><a href="#">Tables</a></li>
+        <li class="breadcrumb-item active">Editable Tables</li>
       </ol>
     </section>
 
     <!-- Main content -->
     <section class="content">
+     
+      <div class="row">
+		  	<div class="box">
+		  		<div class="box-body">
+		  			<center><h3>Patient List</h3></center>
+		  		</div>
+		  	</div>	  
+		  
+		<div class="col-12">
+		  	<div class="box">
+				<div class="box-body">
+					<button class="btn btn-success" style="float: right;" data-toggle="modal" data-target="#myModal">Add New</button>
+					  <div class="table-responsive">
+						<table id="example8" class="table table-bordered table-separated">
+							<thead>
+								<tr>
+									<th>Patient Id</th>
+									<th>Name</th>
+									<th>Gender</th>
+									<th>Aadhar No</th>
+									<th>Age</th>
+									<th>Mobile No</th>
+									<th>Email</th>
+									<th>Action</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1111</td>
+									<td>Darsh</td>
+									<td>Male</td>
+									<td>9009</td>
+									<td>30</td>
+									<td><a href="tel:7058420909">7058420909</a></td>
+									<td><a href="mailto:darshanvnikumbh@gmail.com">darshanvnikumbh@gmail.com</a></td>
+									<td>
+                                                                            <button class="btn btn-success" data-toggle="modal" data-target="#add_range">Add Range</button>
+                                                                            <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#myModal"><i class="fa fa-edit"></i>
+                                                                            </button> <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></button></td>
+								</tr>
+								<tr>
+									<td>1111</td>
+									<td>Darsh</td>
+									<td>Male</td>
+									<td>9009</td>
+									<td>30</td>
+									<td><a href="tel:7058420909">7058420909</a></td>
+									<td><a href="mailto:darshanvnikumbh@gmail.com">darshanvnikumbh@gmail.com</a></td>
+									<td><button class="btn btn-success btn-xs" data-toggle="modal" data-target="#myModal"><i class="fa fa-edit"></i></button> <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></button></td>
+								</tr>
+								<tr>
+									<td>1111</td>
+									<td>Darsh</td>
+									<td>Male</td>
+									<td>9009</td>
+									<td>30</td>
+									<td><a href="tel:7058420909">7058420909</a></td>
+									<td><a href="mailto:darshanvnikumbh@gmail.com">darshanvnikumbh@gmail.com</a></td>
+									<td><button class="btn btn-success btn-xs" data-toggle="modal" data-target="#myModal"><i class="fa fa-edit"></i></button> <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></button></td>
+								</tr>
+								
+								<tr>
+									<td>Charde Marshall</td>
+									<td>Regional Director</td>
+									<td>San Francisco</td>
+									<td>36</td>
+									<td>2008/10/16</td>
+									<td>$470,600</td>
+								</tr>
+								<tr>
+									<td>Haley Kennedy</td>
+									<td>Senior Marketing Designer</td>
+									<td>London</td>
+									<td>43</td>
+									<td>2012/12/18</td>
+									<td>$313,500</td>
+								</tr>
+								<tr>
+									<td>Tatyana Fitzpatrick</td>
+									<td>Regional Director</td>
+									<td>London</td>
+									<td>19</td>
+									<td>2010/03/17</td>
+									<td>$385,750</td>
+								</tr>
+								<tr>
+									<td>Michael Silva</td>
+									<td>Marketing Designer</td>
+									<td>London</td>
+									<td>66</td>
+									<td>2012/11/27</td>
+									<td>$198,500</td>
+								</tr>
+								<tr>
+									<td>Paul Byrd</td>
+									<td>Chief Financial Officer (CFO)</td>
+									<td>New York</td>
+									<td>64</td>
+									<td>2010/06/09</td>
+									<td>$725,000</td>
+								</tr>
+								<tr>
+									<td>Gloria Little</td>
+									<td>Systems Administrator</td>
+									<td>New York</td>
+									<td>59</td>
+									<td>2009/04/10</td>
+									<td>$237,500</td>
+								</tr>
+								<tr>
+									<td>Bradley Greer</td>
+									<td>Software Engineer</td>
+									<td>London</td>
+									<td>41</td>
+									<td>2012/10/13</td>
+									<td>$132,000</td>
+								</tr>
+								<tr>
+									<td>Dai Rios</td>
+									<td>Personnel Lead</td>
+									<td>Edinburgh</td>
+									<td>35</td>
+									<td>2012/09/26</td>
+									<td>$217,500</td>
+								</tr>
+								<tr>
+									<td>Jenette Caldwell</td>
+									<td>Development Lead</td>
+									<td>New York</td>
+									<td>30</td>
+									<td>2011/09/03</td>
+									<td>$345,000</td>
+								</tr>
+								<tr>
+									<td>Yuri Berry</td>
+									<td>Chief Marketing Officer (CMO)</td>
+									<td>New York</td>
+									<td>40</td>
+									<td>2009/06/25</td>
+									<td>$675,000</td>
+								</tr>
+								<tr>
+									<td>Caesar Vance</td>
+									<td>Pre-Sales Support</td>
+									<td>New York</td>
+									<td>21</td>
+									<td>2011/12/12</td>
+									<td>$106,450</td>
+								</tr>
+								<tr>
+									<td>Doris Wilder</td>
+									<td>Sales Assistant</td>
+									<td>Sidney</td>
+									<td>23</td>
+									<td>2010/09/20</td>
+									<td>$85,600</td>
+								</tr>
+								<tr>
+									<td>Angelica Ramos</td>
+									<td>Chief Executive Officer (CEO)</td>
+									<td>London</td>
+									<td>47</td>
+									<td>2009/10/09</td>
+									<td>$1,200,000</td>
+								</tr>
+								<tr>
+									<td>Gavin Joyce</td>
+									<td>Developer</td>
+									<td>Edinburgh</td>
+									<td>42</td>
+									<td>2010/12/22</td>
+									<td>$92,575</td>
+								</tr>
+								<tr>
+									<td>Jennifer Chang</td>
+									<td>Regional Director</td>
+									<td>Singapore</td>
+									<td>28</td>
+									<td>2010/11/14</td>
+									<td>$357,650</td>
+								</tr>
+								<tr>
+									<td>Brenden Wagner</td>
+									<td>Software Engineer</td>
+									<td>San Francisco</td>
+									<td>28</td>
+									<td>2011/06/07</td>
+									<td>$206,850</td>
+								</tr>
+								<tr>
+									<td>Fiona Green</td>
+									<td>Chief Operating Officer (COO)</td>
+									<td>San Francisco</td>
+									<td>48</td>
+									<td>2010/03/11</td>
+									<td>$850,000</td>
+								</tr>
+								<tr>
+									<td>Shou Itou</td>
+									<td>Regional Marketing</td>
+									<td>Tokyo</td>
+									<td>20</td>
+									<td>2011/08/14</td>
+									<td>$163,000</td>
+								</tr>
+								<tr>
+									<td>Michelle House</td>
+									<td>Integration Specialist</td>
+									<td>Sidney</td>
+									<td>37</td>
+									<td>2011/06/02</td>
+									<td>$95,400</td>
+								</tr>
+								<tr>
+									<td>Suki Burks</td>
+									<td>Developer</td>
+									<td>London</td>
+									<td>53</td>
+									<td>2009/10/22</td>
+									<td>$114,500</td>
+								</tr>
+								<tr>
+									<td>Prescott Bartlett</td>
+									<td>Technical Author</td>
+									<td>London</td>
+									<td>27</td>
+									<td>2011/05/07</td>
+									<td>$145,000</td>
+								</tr>
+								<tr>
+									<td>Gavin Cortez</td>
+									<td>Team Leader</td>
+									<td>San Francisco</td>
+									<td>22</td>
+									<td>2008/10/26</td>
+									<td>$235,500</td>
+								</tr>
+								<tr>
+									<td>Martena Mccray</td>
+									<td>Post-Sales support</td>
+									<td>Edinburgh</td>
+									<td>46</td>
+									<td>2011/03/09</td>
+									<td>$324,050</td>
+								</tr>
+								<tr>
+									<td>Unity Butler</td>
+									<td>Marketing Designer</td>
+									<td>San Francisco</td>
+									<td>47</td>
+									<td>2009/12/09</td>
+									<td>$85,675</td>
+								</tr>
+								<tr>
+									<td>Howard Hatfield</td>
+									<td>Office Manager</td>
+									<td>San Francisco</td>
+									<td>51</td>
+									<td>2008/12/16</td>
+									<td>$164,500</td>
+								</tr>
+								<tr>
+									<td>Hope Fuentes</td>
+									<td>Secretary</td>
+									<td>San Francisco</td>
 
-      <!-- Default box -->
-      <div class="">
-        <div class="box-header with-border box">
-          <center><h3 class="box-title">Create/Edit Patient</h3></center>
+									<td>41</td>
+									<td>2010/02/12</td>
+									<td>$109,850</td>
+								</tr>
+								<tr>
+									<td>Vivian Harrell</td>
+									<td>Financial Controller</td>
+									<td>San Francisco</td>
+									<td>62</td>
+									<td>2009/02/14</td>
+									<td>$452,500</td>
+								</tr>
+								<tr>
+									<td>Timothy Mooney</td>
+									<td>Office Manager</td>
 
-          
-        </div>
-        <div class="box-body">
-        	<div class="row">
-        		<div class="col-md-2">
-        		</div>
-        		<div class="col-md-8 box">
-        			<div class="row" style="padding: 3%;">
-        				<div class="col-md-2">
-        					<div class="form-group">
-								<div class="controls">
-		        					<label>Patient id</label>
-		        					<input type="text" name="maxChar" class="form-control" placeholder="" disabled="">
-        						</div>
-        					</div>
-        				</div>
-        				<div class="col-md-6">
-        				</div>
-        				<div class="col-md-4">
-        					<div class="form-group">
-	        					<center><img src="placeholder.png" class="img-fluid" style="width: 128px;"></center>
-	        					<input type="file" class="form-control" name="" style="float: right;margin-bottom: 4%;">
-        					</div>
-        				</div>
-        				<div class="col-md-2">
-        					<div class="form-group">
-								<label>Title</label>	
-								<div class="input-group mb-3">
-									<div class="input-group-append">
-										<select class="form-control" id="">
-											<option>Mr</option>
-											<option>Mrs</option>
-											<option>Smt</option>
-										</select>
-									</div>
-									<button class="btn btn-success btn-xs">+</button>
-								</div>
-							</div>
-        				</div>
-        				<div class="col-md-3">
-        					<label>First Name</label>
-        					<input type="text" name="maxChar" class="form-control" placeholder="Enter First Name" required data-validation-required-message="This field is required">
-        				</div>
-        				<div class="col-md-3">
-        					<label>Last Name</label>
-        					<input type="text" name="maxChar" class="form-control" placeholder="Enter Last Name" required data-validation-required-message="This field is required">
-        				</div>
-        				<div class="col-md-4">
-							<div class="form-group">
-								<label>Gender</label><br>
-								<div class="form-check form-check-inline">
-								  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-								  <label class="form-check-label" for="inlineRadio1">Male</label>
-								</div>
-								<div class="form-check form-check-inline">
-								  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-								  <label class="form-check-label" for="inlineRadio2">Female</label>
-								</div>
-								<div class="form-check form-check-inline">
-								  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-								  <label class="form-check-label" for="inlineRadio2">Others</label>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<label>Aadhar No</label>
-        					<input type="text" name="maxChar" class="form-control" placeholder="Enter Patient Aadhar No." required data-validation-required-message="This field is required">
-						</div>
-						<div class="col-md-4">
-							<div class="form-group">
-								<div class="controls">
-									<label>Date Of Birth</label>
-									<input type="date" class="form-control" name="">
-								</div>
-							</div>
-						</div>
-						<div class="col-md-3">
-							<div class="form-group">
-								<label>Age</label>	
-								<div class="input-group mb-3">
-									<input type="text" class="form-control">
-									<div class="input-group-append">
-										<select class="form-control" id="">
-											<option>Days</option>
-											<option>Month</option>
-											<option>Year</option>
-									</select>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="form-group">
-								<label>Mobile No.</label>	
-								<div class="input-group mb-3">
-									<input type="text" class="form-control" style="text-align: center;" placeholder="+91" disabled="">
-									<div class="input-group-append">
-										<input type="text" name="maxChar" class="form-control" placeholder="Enter Primary Mob. No." required data-validation-required-message="This field is required">
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="form-group">
-								<label>Alternate Mobile No.</label>	
-								<div class="input-group mb-3">
-									<input type="text" style="text-align: center;" class="form-control" placeholder="+91" disabled="">
-									<div class="input-group-append">
-										<input type="text" name="maxChar" class="form-control" placeholder="Enter Alternate Mob. No." required data-validation-required-message="This field is required">
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="form-group">
-								<label>Email</label>	
-								<input type="email" class="form-control" name="">
-							</div>
-						</div>
-						<div class="col-md-6">
-							<label>Address</label>
-							<textarea class="form-control"></textarea>
-						</div>
-					</div>
-        			<center>
-        				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-center">Search</button>
-        				<button class="btn btn-success">Save</button> 
-        			</center>
-        			<br>
-        		</div>
-        	</div>  
-        </div>
-        <!-- /.box-body -->
-        
-        <!-- /.box-footer-->
+									<td>London</td>
+									<td>37</td>
+									<td>2008/12/11</td>
+									<td>$136,200</td>
+								</tr>
+								<tr>
+									<td>Jackson Bradshaw</td>
+									<td>Director</td>
+									<td>New York</td>
+									<td>65</td>
+									<td>2008/09/26</td>
+									<td>$645,750</td>
+								</tr>
+								<tr>
+									<td>Olivia Liang</td>
+									<td>Support Engineer</td>
+									<td>Singapore</td>
+									<td>64</td>
+									<td>2011/02/03</td>
+									<td>$234,500</td>
+								</tr>
+								<tr>
+									<td>Bruno Nash</td>
+									<td>Software Engineer</td>
+									<td>London</td>
+									<td>38</td>
+									<td>2011/05/03</td>
+									<td>$163,500</td>
+								</tr>
+								<tr>
+									<td>Sakura Yamamoto</td>
+									<td>Support Engineer</td>
+									<td>Tokyo</td>
+									<td>37</td>
+									<td>2009/08/19</td>
+									<td>$139,575</td>
+								</tr>
+								<tr>
+									<td>Thor Walton</td>
+									<td>Developer</td>
+									<td>New York</td>
+									<td>61</td>
+									<td>2013/08/11</td>
+									<td>$98,540</td>
+								</tr>
+								<tr>
+									<td>Finn Camacho</td>
+									<td>Support Engineer</td>
+									<td>San Francisco</td>
+									<td>47</td>
+									<td>2009/07/07</td>
+									<td>$87,500</td>
+								</tr>
+								<tr>
+									<td>Serge Baldwin</td>
+									<td>Data Coordinator</td>
+									<td>Singapore</td>
+									<td>64</td>
+									<td>2012/04/09</td>
+									<td>$138,575</td>
+								</tr>
+								<tr>
+									<td>Zenaida Frank</td>
+									<td>Software Engineer</td>
+									<td>New York</td>
+									<td>63</td>
+									<td>2010/01/04</td>
+									<td>$125,250</td>
+								</tr>
+								<tr>
+									<td>Zorita Serrano</td>
+									<td>Software Engineer</td>
+									<td>San Francisco</td>
+									<td>56</td>
+									<td>2012/06/01</td>
+									<td>$115,000</td>
+								</tr>
+								<tr>
+									<td>Jennifer Acosta</td>
+									<td>Junior Javascript Developer</td>
+									<td>Edinburgh</td>
+									<td>43</td>
+									<td>2013/02/01</td>
+									<td>$75,650</td>
+								</tr>
+								<tr>
+									<td>Cara Stevens</td>
+									<td>Sales Assistant</td>
+									<td>New York</td>
+									<td>46</td>
+									<td>2011/12/06</td>
+									<td>$145,600</td>
+								</tr>
+								<tr>
+									<td>Hermione Butler</td>
+									<td>Regional Director</td>
+									<td>London</td>
+									<td>47</td>
+									<td>2011/03/21</td>
+									<td>$356,250</td>
+								</tr>
+								<tr>
+									<td>Lael Greer</td>
+									<td>Systems Administrator</td>
+									<td>London</td>
+									<td>21</td>
+									<td>2009/02/27</td>
+									<td>$103,500</td>
+								</tr>
+								<tr>
+									<td>Jonas Alexander</td>
+									<td>Developer</td>
+									<td>San Francisco</td>
+									<td>30</td>
+									<td>2010/07/14</td>
+									<td>$86,500</td>
+								</tr>
+								<tr>
+									<td>Shad Decker</td>
+									<td>Regional Director</td>
+									<td>Edinburgh</td>
+									<td>51</td>
+									<td>2008/11/13</td>
+									<td>$183,000</td>
+								</tr>
+								<tr>
+									<td>Michael Bruce</td>
+									<td>Javascript Developer</td>
+									<td>Singapore</td>
+									<td>29</td>
+									<td>2011/06/27</td>
+									<td>$183,000</td>
+								</tr>
+								<tr>
+									<td>Donna Snider</td>
+									<td>Customer Support</td>
+									<td>New York</td>
+									<td>27</td>
+									<td>2011/01/25</td>
+									<td>$112,000</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<th>Name</th>
+									<th>Position</th>
+									<th>Office</th>
+									<th>Age</th>
+									<th>Start date</th>
+									<th>Salary</th>
+								</tr>
+							</tfoot>
+						  </table>
+					  </div>
+		          </div>
+		        </div>
+		</div>  
+		  
       </div>
-      <!-- /.box -->
-
+		
+	  <div class="row">
+	  			
+	  </div>
+      
     </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+  
+  
+  
+  
