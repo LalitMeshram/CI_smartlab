@@ -1,9 +1,9 @@
 <?php
 $session_data=$this->session->userdata('lsesson');
-    if($session_data!=NULL){
-//        redirect(base_url('/dashboard'));
-    }
-
+if(isset($session_data)){
+    redirect(base_url('dashboard'));
+}
+?>
 ?>
 <!DOCTYPE html>
 <html lang="en">

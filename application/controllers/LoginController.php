@@ -45,4 +45,10 @@ class LoginController extends REST_Controller
         }
         $this->response($response, REST_Controller::HTTP_OK);
     }
+    public function logout_get() {
+        $this->load->driver('cache');
+        $this->session->sess_destroy();
+        $this->cache->clean();
+        redirect(base_url('/'));
+    }
 }

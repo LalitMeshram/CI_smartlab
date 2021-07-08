@@ -1,7 +1,8 @@
 <?php 
 $session_data=$this->session->userdata('lsesson');
-
-//print_r($session_data);
+if(!isset($session_data)){
+    redirect(base_url('login'));
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -409,7 +410,7 @@ $session_data=$this->session->userdata('lsesson');
                                                 </div>
                                                 <div role="separator" class="divider col-12"></div>
                                                 <div class="col-12 text-left">
-                                                    <a href="#"><i class="fa fa-power-off"></i> Logout</a>
+                                                    <a href="logout"><i class="fa fa-power-off"></i> Logout</a>
                                                 </div>				
                                             </div>
                                             <!-- /.row -->

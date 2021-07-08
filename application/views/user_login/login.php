@@ -1,6 +1,6 @@
 <?php
-$session_data=$this->session->userdata();
-if(isset($session_data['loginSession'])){
+$session_data=$this->session->userdata('lsesson');
+if(isset($session_data)){
     redirect(base_url('dashboard'));
 }
 ?>
