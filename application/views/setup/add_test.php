@@ -1,4 +1,4 @@
-<!-- Content Wrapper. Contains page content -->
+ <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -25,7 +25,7 @@
 		<div class="col-12">
 		  	<div class="box">
 
-		<div class="box-body">
+                            <div class="box-body" style="background: url(<?php echo base_url();?>resource/img/add_test.jpg);">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="row">
@@ -34,113 +34,136 @@
 					</div>
 				</div>
 				<br>
+
 				<div class="row">
 					<div class="col-md-4">
-						<div class="form-group">
-							<div class="input-group mb-3">
-								<select class="form-control" id="">
-									<option>Category</option>
-									<option>option 1</option>
-									<option>option 2</option>
-									<option>option 3</option>
-								</select>
-								<div class="input-group-append">
-									<button class="btn btn-primary btn-sm">Add New</button>	
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+									<label>Category</label>
+									<div class="input-group mb-3">
+										<select class="form-control" id="">
+											<option>option 1</option>
+											<option>option 2</option>
+											<option>option 3</option>
+										</select>
+										<div class="input-group-append">
+											<button class="btn btn-primary btn-sm">Add New</button>	
+										</div>
+									</div>
+									</div>		
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label>Test Name</label>
+										<div class="controls">
+											<input type="text" class="form-control" name="" placeholder="Enter Test Name">	
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+											<label>Short Name</label>
+											<div class="controls">
+												<input type="text" class="form-control" name="" placeholder="Enter Short Name">	
+											</div>
+									</div>	
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+									<label>Test For</label>
+									<div class="controls">
+										<select class="form-control" id="">
+											<option>Male</option>
+											<option>Female</option>
+											<option>All</option>
+										</select>		
+									</div>
+									</div>	
 								</div>
 							</div>
+					</div>
+					<div class="col-md-4">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+								<label>General Fees</label>
+								<div class="controls">
+									<input type="text" class="form-control" name="" placeholder="Enter General Fees">		
+								</div>
+							    </div>
+							</div>
+							<div class="col-md-6">
+									<div class="form-group">
+										<div class="controls">
+											<div class="form-check"style="margin-top:16%;">
+											  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+											  <label class="form-check-label" for="flexCheckDefault">
+											    Outsource
+											  </label>
+											</div>		
+										</div>
+									</div>
+							</div>
+							<div class="col-md-12">
+									<div class="form-group">
+										<label>Lab Name</label>
+										<div class="input-group mb-3">
+											<select class="form-control" id="" disabled="">
+												<option>option 1</option>
+												<option>option 2</option>
+												<option>option 3</option>
+											</select>
+											<div class="input-group-append">
+												<button class="btn btn-primary btn-sm">Add New</button>	
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label>Outsource Amount</label>
+										<div class="controls">
+											<input type="text" class="form-control" name="" placeholder="Enter Outsource Amount" disabled="">		
+										</div>
+									</div>
+								</div>
 						</div>
+						
+						
+
 					</div>
 					
 					<div class="col-md-4">	
-						<div class="form-group">
-							<div class="controls">
-								<input type="text" class="form-control" name="" placeholder="Test Name">	
-							</div>
-						</div>
-					</div>
-					<div class="col-md-2">	
-						<div class="form-group">
-							<div class="controls">
-								<input type="text" class="form-control" name="" placeholder="Short Name">		
-							</div>
-						</div>	
-					</div>
-					<div class="col-md-1">	
-						<div class="form-group">
-							<div class="controls">
-								<select class="form-control" id="">
-									<option>Unit</option>
-									<option>option 1</option>
-									<option>option 2</option>
-									<option>option 3</option>
-								</select>		
-							</div>
-						</div>	
-					</div>
-					<div class="col-md-3">	
-						<div class="form-group">
-							<div class="controls">
-								<input type="text" class="form-control" name="" placeholder="General Fees">		
-							</div>
-						</div>	
-					</div>
-					<div class="col-md-2">	
-						<div class="form-group">
-							<div class="controls">
-								<div class="form-check">
-								  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-								  <label class="form-check-label" for="flexCheckDefault">
-								    Outsource
-								  </label>
-								</div>		
-							</div>
-						</div>	
-					</div>
-					<div class="col-md-4">
-						<div class="form-group">
-								<div class="input-group mb-3">
-									<select class="form-control" id="" disabled="">
-										<option>Lab Name</option>
-										<option>option 1</option>
-										<option>option 2</option>
-										<option>option 3</option>
-									</select>
-									<div class="input-group-append">
-										<button class="btn btn-primary btn-sm">Add New</button>	
+						<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+									<label>Method</label>
+									<div class="controls">
+										<input type="text" class="form-control" name="" placeholder="Enter Method">		
+									</div>
+								</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+									<label>Instrument</label>
+									<div class="controls">
+										<input type="text" class="form-control" name="" placeholder="Enter Instrument">		
+									</div>
 									</div>
 								</div>
 						</div>
 					</div>
-					<div class="col-md-2">	
-						<div class="form-group">
-							<div class="controls">
-								<input type="text" class="form-control" name="" placeholder="Outsource Amount" disabled="">		
-							</div>
-						</div>	
-					</div>
-					<div class="col-md-3">	
-						<div class="form-group">
-							<div class="controls">
-								<input type="text" class="form-control" name="" placeholder="Method">		
-							</div>
-						</div>	
-					</div>
-					<div class="col-md-3">	
-						<div class="form-group">
-							<div class="controls">
-								<input type="text" class="form-control" name="" placeholder="Instrument">		
-							</div>
-						</div>	
-					</div>
-				  </div>
 				</div>
+				</div>	
+
 			</div>
 			<hr>
 			<div class="col-md-12">
-	          <div class="box">
+	          <div class="">
 	          	<div class="row">
 					<div class="col-md-12">
-						<center><h5 class="box-title title">Normal Range (Gender &amp; Age Wise)</h5></center>
+						<center><h5 class="box-title title">Subtypes With Unit</h5></center>
 					</div>
 					
 				</div>
@@ -149,111 +172,72 @@
 	            <!-- /.box-header -->
 	            <div class="box-body">
 	            <div class="row">
-					<div class="col-md-2">
-						<div class="form-group">
-							<label>Gender</label>
+	            	<div class="col-md-2">
+	            	</div>
+	            	<div class="col-md-4">
+	            		<div class="form-group">
+							<label>Subtype</label>
 							<div class="controls">
-								<select class="form-control" id="">
-									<option>option 1</option>
-									<option>option 2</option>
-									<option>option 3</option>
-								</select>
+								<input type="text" class="form-control" name="" placeholder="Enter Subtype Name">		
 							</div>
 						</div>
-					</div>
-					<div class="col-md-2">	
-						<div class="form-group">
-							<label>Min Age</label>	
+	            	</div>
+	            	<div class="col-md-3">
+	            		<div class="form-group">
+							<label>Unit</label>
 							<div class="input-group mb-3">
-								<input type="text" class="form-control">
-								<div class="input-group-append">
 									<select class="form-control" id="">
-										<option>Days</option>
-										<option>Month</option>
-										<option>Year</option>
-								</select>
-								</div>
+										<option>option 1</option>
+										<option>option 2</option>
+										<option>option 3</option>
+									</select>
+									<div class="input-group-append">
+										<button class="btn btn-primary btn-sm">Add New</button>	
+									</div>
 							</div>
 						</div>
-					</div>
-					<div class="col-md-2">	
-						<div class="form-group">
-							<label>Max Age</label>
-							<div class="input-group mb-3">
-								<input type="text" class="form-control">
-								<div class="input-group-append">
-									<select class="form-control" id="">
-										<option>Days</option>
-										<option>Month</option>
-										<option>Year</option>
-								</select>
-								</div>
-							</div>
+	            	</div>
+	            	<div class="col-md-1">
+	            		<center><button class="btn btn-success subtype_add_button">Add</button></center>
+	            	</div>
+	            </div>
+	         	<div class="row">
+	         		<div class="col-md-2">
+	         		</div>
+	         		<div class="col-md-8">
+	         			<div class="table-responsive box">
+						  <table class="table table-bordered mb-0">
+							  <tbody>
+								<tr>
+								  <th scope="col">Subtype</th>
+								  <th scope="col">Unit</th>
+								  <th scope="col">Action</th>
+								</tr>
+							  </tbody>
+							  <tbody>
+								<tr>
+								  <td>PCO2</td>
+								  <td>xyz </td>
+								  <td><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></button> <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button></td>
+								</tr>
+								<tr>
+								  <td>Total CO2 Contents (TCO2)</td>
+								  <td>xyz</td>
+								  <td><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></button></td>
+								</tr>
+								<tr>
+								  <td>Total CO2 Contents (TCO2)</td>
+								  <td>xyz</td>
+								  <td><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></button></td>
+								</tr>
+							</tbody>
+							</table>
 						</div>
-					</div>
-					<div class="col-md-1">	
-						<div class="form-group">
-							<label>Lower</label>
-							<div class="controls">
-								<input type="text" class="form-control" name="">
-							</div>
-						</div>
-					</div>
-					<div class="col-md-1">	
-						<div class="form-group">
-							<label>Upper</label>
-							<div class="controls">
-								<input type="text" class="form-control" name="">
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">	
-						<div class="form-group">
-							<label>Words</label>
-							<div class="controls">
-								<textarea class="form-control"></textarea>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-12">	
-								<center><button class="btn btn-primary">Add</button></center>
-					</div>
-				</div>
-				<br>
-
-					<div class="table-responsive">
-					  <table class="table table-bordered mb-0">
-						  <tbody>
-							<tr>
-							  <th scope="col">Gender</th>
-							  <th scope="col">Age</th>
-							  <th scope="col">Range</th>
-							  <th scope="col">Words</th>
-							  <th scope="col">Action</th>
-							</tr>
-						  </tbody>
-						  <tbody>
-							<tr>
-							  <td>Male</td>
-							  <td>xyz yr/mon/days</td>
-							  <td>10-40 </td>
-							  <td>xyz</td>
-							  <td><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></button></td>
-							</tr>
-							<tr>
-							  <td>Female</td>
-							  <td>Thornton</td>
-							  <td>@fat</td>
-							  <td>xyz</td>
-							</tr>
-							<tr>
-							  <td>Others</td>
-							  <td>@twitter</td>
-							  <td>xyz</td>
-							</tr>
-						  </tbody>
-						</table>
-					</div>
+	         		</div>
+	         		<div class="col-md-2">
+	         		</div>
+	         	</div>
+	         	
 	            </div>
 	            <!-- /.box-body -->
 	          </div>
@@ -275,4 +259,3 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
- 

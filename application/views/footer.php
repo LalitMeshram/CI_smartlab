@@ -222,6 +222,10 @@
 
 <!-- SoftMaterial admin horizontal-layout -->
 <script src="<?php echo base_url() . 'resource/js/horizontal-layout.js'; ?>"></script>
+
+<!-- SoftMaterial admin for Data Table -->
+	<script src="<?php echo base_url() . 'resource/js/pages/data-table.js';?>"></script>
+
 <!-- Sweet-Alert  -->
 <script src="<?php echo base_url() . 'resource'; ?>/assets/vendor_components/sweetalert/sweetalert.min.js"></script>
 <script src="<?php echo base_url() . 'resource'; ?>/assets/vendor_components/sweetalert/jquery.sweet-alert.custom.js"></script>

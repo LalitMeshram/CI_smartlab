@@ -25,7 +25,7 @@
 		<div class="col-12">
 		  	<div class="box">
 		<div class="box-body">
-			<a href="add_test"><button class="btn btn-success" style="float: right;">Add Test</button></a>
+			<a href="add_test.html"><button class="btn btn-success" style="float: right;">Add Test</button></a>
 			  <div class="table-responsive">
 				<table id="example8" class="table table-bordered table-separated">
 					<thead>
@@ -33,7 +33,7 @@
 							<th>Test Name</th>
 							<th>Short Name</th>
 							<th>Category</th>
-							<th>Unit</th>
+							<th>Gender</th>
 							<th>Fee</th>
 							<th>Action</th>
 						</tr>
@@ -43,7 +43,7 @@
 							<td>Tiger Nixon</td>
 							<td>System Architect</td>
 							<td>Edinburgh</td>
-							<td>61</td>
+							<td>Male</td>
 							<td>2011/04/25</td>
 							<td><a href="add_test.html"><button class="btn btn-success btn-xs"><i class="fa fa-edit"></i></button></a> <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></button></td>
 						</tr>
@@ -51,7 +51,7 @@
 							<td>Garrett Winters</td>
 							<td>Accountant</td>
 							<td>Tokyo</td>
-							<td>63</td>
+							<td>Male</td>
 							<td>2011/07/25</td>
 							<td><button class="btn btn-success btn-xs"><i class="fa fa-edit"></i></button> <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></button></td>
 						</tr>
@@ -59,7 +59,7 @@
 							<td>Ashton Cox</td>
 							<td>Junior Technical Author</td>
 							<td>San Francisco</td>
-							<td>66</td>
+							<td>Male</td>
 							<td>2009/01/12</td>
 							<td><button class="btn btn-success btn-xs"><i class="fa fa-edit"></i></button> <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></button></td>
 						</tr>
@@ -524,4 +524,3 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
- 
