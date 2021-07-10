@@ -44,6 +44,7 @@ $route['letter_head_details/(:num)']   = 'LabController/letter_head_details/$1';
 //Patient Reg API
 $route['patient_reg']             = 'PatientController/patient_reg';
 $route['get_patients/(:num)']     = 'PatientController/patient_register_data/$1';
+$route['get_patients']     = 'PatientController/patient_register_data';
 
 
 
