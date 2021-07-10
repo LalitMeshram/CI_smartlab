@@ -45,6 +45,9 @@ $route['letter_head_details/(:num)']   = 'LabController/letter_head_details/$1';
 $route['patient_reg']             = 'PatientController/patient_reg';
 $route['get_patients/(:num)']     = 'PatientController/patient_register_data/$1';
 
+//Center Test Master Controller
+$route['get_center_tests/(:num)']     = 'TestController/test_list/$1';
+
 
 
 $route['404_override']         = '';

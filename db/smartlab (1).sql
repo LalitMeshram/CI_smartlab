@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 07, 2021 at 02:28 PM
+-- Generation Time: Jul 10, 2021 at 05:27 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -73,6 +73,22 @@ CREATE TABLE `center_letter_head_details` (
 
 INSERT INTO `center_letter_head_details` (`centerId`, `header_logo`, `lab_incharge_sign`, `doctor_sign`, `lab_incharge_name`, `lab_incharge_degree`, `lab_doctor_name`, `lab_doctor_degree`, `footer_logo`, `createdat`, `updatedat`) VALUES
 (1, 'documents/1.png2021_07_06_050952000000.png', 'documents/2.png2021_07_06_050952000000.png', 'documents/3.png2021_07_06_050952000000.png', 'Mrunal Jain', 'G.N.M', 'Akshay Kumar', 'MBBS', 'documents/11.jpg2021_07_06_050952000000.jpg', '2021-07-06 17:09:52', '2021-07-06 17:10:27');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `center_outsource_test`
+--
+
+CREATE TABLE `center_outsource_test` (
+  `outsourceId` int(10) UNSIGNED NOT NULL,
+  `outsource_lab` varchar(255) NOT NULL,
+  `outsource_amt` double(10,2) NOT NULL,
+  `centerId` int(10) UNSIGNED NOT NULL,
+  `testId` int(10) UNSIGNED NOT NULL,
+  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
+  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -152,6 +168,83 @@ INSERT INTO `center_payment_details` (`paymentId`, `centerId`, `packageId`, `sta
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `center_test_master`
+--
+
+CREATE TABLE `center_test_master` (
+  `testId` int(10) UNSIGNED NOT NULL,
+  `categoryId` int(10) UNSIGNED NOT NULL,
+  `test_name` varchar(255) NOT NULL,
+  `short_name` varchar(150) DEFAULT NULL,
+  `method` varchar(255) NOT NULL,
+  `instrument` varchar(255) NOT NULL,
+  `gender` varchar(15) NOT NULL,
+  `fees` double(10,2) NOT NULL,
+  `centerId` int(10) UNSIGNED NOT NULL,
+  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
+  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `center_test_master`
+--
+
+INSERT INTO `center_test_master` (`testId`, `categoryId`, `test_name`, `short_name`, `method`, `instrument`, `gender`, `fees`, `centerId`, `createdat`, `updatedat`) VALUES
+(1, 1, 'WBC', 'WBC', 'TEST', 'TEST', 'Male', 500.00, 1, '2021-07-10 18:29:07', '2021-07-10 18:29:07');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `center_test_subtypes`
+--
+
+CREATE TABLE `center_test_subtypes` (
+  `subtypeId` int(10) UNSIGNED NOT NULL,
+  `test_name` varchar(255) NOT NULL,
+  `unitId` int(10) UNSIGNED NOT NULL,
+  `testId` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `center_test_subtypes`
+--
+
+INSERT INTO `center_test_subtypes` (`subtypeId`, `test_name`, `unitId`, `testId`) VALUES
+(1, 'WBC', 1, 1),
+(2, 'KFC', 2, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `center_test_subtypes_ranges`
+--
+
+CREATE TABLE `center_test_subtypes_ranges` (
+  `rangeId` int(10) UNSIGNED NOT NULL,
+  `subtypeId` int(11) NOT NULL,
+  `gender` enum('Male','Female','Other') NOT NULL,
+  `lower_age` int(11) DEFAULT NULL,
+  `upper_age` int(11) DEFAULT NULL,
+  `lower_limit` varchar(50) DEFAULT NULL,
+  `upper_limit` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `center_unit_master`
+--
+
+CREATE TABLE `center_unit_master` (
+  `unitId` int(10) UNSIGNED NOT NULL,
+  `unit` varchar(100) NOT NULL,
+  `centerId` int(10) UNSIGNED NOT NULL,
+  `createdat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `customer_registeration`
 --
 
@@ -177,6 +270,33 @@ INSERT INTO `customer_registeration` (`centerId`, `fullname`, `emailId`, `contac
 (2, 'Tony Stark', 'tonystark@avengers.com', '8208504868', '12345', 1, 0, 0, '2021-06-27 08:13:19', '2021-06-28 17:27:45'),
 (4, 'Sansa Stark', 'sansa@got.com', '9657856985', '12345', 1, 0, 0, '2021-07-02 08:39:40', '2021-07-02 08:39:40'),
 (5, 'Robb Stark', 'robb@got.com', '9657856985', '12345', 1, 0, 0, '2021-07-02 08:40:47', '2021-07-02 08:40:47');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lab_category`
+--
+
+CREATE TABLE `lab_category` (
+  `categoryId` int(10) UNSIGNED NOT NULL,
+  `category` varchar(255) NOT NULL,
+  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
+  `updateat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lab_center_categories`
+--
+
+CREATE TABLE `lab_center_categories` (
+  `categoryid` int(10) UNSIGNED NOT NULL,
+  `category` varchar(255) NOT NULL,
+  `centerId` int(11) NOT NULL,
+  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
+  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -247,11 +367,47 @@ ALTER TABLE `center_payment_details`
   ADD KEY `centerId` (`centerId`);
 
 --
+-- Indexes for table `center_test_master`
+--
+ALTER TABLE `center_test_master`
+  ADD PRIMARY KEY (`testId`);
+
+--
+-- Indexes for table `center_test_subtypes`
+--
+ALTER TABLE `center_test_subtypes`
+  ADD PRIMARY KEY (`subtypeId`);
+
+--
+-- Indexes for table `center_test_subtypes_ranges`
+--
+ALTER TABLE `center_test_subtypes_ranges`
+  ADD PRIMARY KEY (`rangeId`);
+
+--
+-- Indexes for table `center_unit_master`
+--
+ALTER TABLE `center_unit_master`
+  ADD PRIMARY KEY (`unitId`);
+
+--
 -- Indexes for table `customer_registeration`
 --
 ALTER TABLE `customer_registeration`
   ADD PRIMARY KEY (`centerId`),
   ADD UNIQUE KEY `Email` (`emailId`,`contact_number`);
+
+--
+-- Indexes for table `lab_category`
+--
+ALTER TABLE `lab_category`
+  ADD PRIMARY KEY (`categoryId`);
+
+--
+-- Indexes for table `lab_center_categories`
+--
+ALTER TABLE `lab_center_categories`
+  ADD PRIMARY KEY (`categoryid`);
 
 --
 -- Indexes for table `patient_master`
@@ -294,10 +450,46 @@ ALTER TABLE `center_payment_details`
   MODIFY `paymentId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `center_test_master`
+--
+ALTER TABLE `center_test_master`
+  MODIFY `testId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `center_test_subtypes`
+--
+ALTER TABLE `center_test_subtypes`
+  MODIFY `subtypeId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `center_test_subtypes_ranges`
+--
+ALTER TABLE `center_test_subtypes_ranges`
+  MODIFY `rangeId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `center_unit_master`
+--
+ALTER TABLE `center_unit_master`
+  MODIFY `unitId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `customer_registeration`
 --
 ALTER TABLE `customer_registeration`
   MODIFY `centerId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `lab_category`
+--
+ALTER TABLE `lab_category`
+  MODIFY `categoryId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `lab_center_categories`
+--
+ALTER TABLE `lab_center_categories`
+  MODIFY `categoryid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `patient_master`
