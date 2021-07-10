@@ -72,7 +72,7 @@ class PatientController extends REST_Controller
         $ext        = pathinfo($filename, PATHINFO_EXTENSION);
         $time       = date('Y_m_d_hisu');
         $sourcePath = $file; // Storing source path of the file in a variable
-        $targetPath = "./documents/" . $time . $filename; // Target path where file is to be stored
+        $targetPath = "documents/" . $time . $filename; // Target path where file is to be stored
         if (move_uploaded_file($sourcePath, $targetPath)) {
             return $targetPath;
         } else {
