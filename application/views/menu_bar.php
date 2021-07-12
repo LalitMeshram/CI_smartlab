@@ -15,7 +15,7 @@
 				  <i class="fa fa-users mr-5"></i> <span>Cases</span>
 				</a>				  
 				<ul class="dropdown-menu multilevel scale-up-left">
-				  <li class="nav-item"><a class="nav-link" href="#">All Cases</a></li>
+				  <li class="nav-item"><a class="nav-link" href="all_cases">All Cases</a></li>
                                   <li class="nav-item"><a class="nav-link" href="patient">Patients</a></li>	
 				  <li class="nav-item"><a class="nav-link" href="#">Receipts</a></li>	
 				  <li class="nav-item"><a class="nav-link" href="#">Refferal Doctors</a></li>	

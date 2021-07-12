@@ -14,6 +14,7 @@ $route['test_database']      = 'admin/Admincontroller/testDatabase';
 $route['patient']      = 'admin/Admincontroller/patient';
 $route['create_case']      = 'admin/Admincontroller/createCase';
 $route['invoice']      = 'admin/Admincontroller/invoice';
+$route['all_cases']      = 'admin/Admincontroller/allCases';
 $route['payment'] = 'Register/index';
 
 //Center Registration master

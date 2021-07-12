@@ -1,4 +1,4 @@
- <!-- Content Wrapper. Contains page content -->
+<!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -25,12 +25,15 @@
 		<div class="col-12">
 		  	<div class="box">
 
-                            <div class="box-body" style="background: url(<?php echo base_url();?>resource/img/add_test.jpg);">
+                            <div class="box-body" style="background: url(<?php echo base_url()?>resource/img/add_test.jpg);">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="row">
 					<div class="col-md-12">
 						<center><h5 class="box-title title">New Test Details</h5></center>
+						<marquee direction="left">
+							<blink><h6>At least one parameter is required to create a test successfully. If parameter is not available, test name will be used as parameter.</h6></blink>
+						</marquee>
 					</div>
 				</div>
 				<br>
@@ -40,7 +43,7 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="form-group">
-									<label>Category</label>
+									<label>Select Category</label>
 									<div class="input-group mb-3">
 										<select class="form-control" id="">
 											<option>option 1</option>
@@ -48,7 +51,7 @@
 											<option>option 3</option>
 										</select>
 										<div class="input-group-append">
-											<button class="btn btn-primary btn-sm">Add New</button>	
+											<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add_category">Add New</button>	
 										</div>
 									</div>
 									</div>		
@@ -107,7 +110,7 @@
 							</div>
 							<div class="col-md-12">
 									<div class="form-group">
-										<label>Lab Name</label>
+										<label>Select Lab Name</label>
 										<div class="input-group mb-3">
 											<select class="form-control" id="" disabled="">
 												<option>option 1</option>
@@ -115,7 +118,7 @@
 												<option>option 3</option>
 											</select>
 											<div class="input-group-append">
-												<button class="btn btn-primary btn-sm">Add New</button>	
+												<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add_lab">Add New</button>	
 											</div>
 										</div>
 									</div>
@@ -163,7 +166,7 @@
 	          <div class="">
 	          	<div class="row">
 					<div class="col-md-12">
-						<center><h5 class="box-title title">Subtypes With Unit</h5></center>
+						<center><h5 class="box-title title">Parameter Details</h5></center>
 					</div>
 					
 				</div>
@@ -176,7 +179,7 @@
 	            	</div>
 	            	<div class="col-md-4">
 	            		<div class="form-group">
-							<label>Subtype</label>
+							<label>Parameter</label>
 							<div class="controls">
 								<input type="text" class="form-control" name="" placeholder="Enter Subtype Name">		
 							</div>
@@ -184,7 +187,7 @@
 	            	</div>
 	            	<div class="col-md-3">
 	            		<div class="form-group">
-							<label>Unit</label>
+							<label>Select Unit</label>
 							<div class="input-group mb-3">
 									<select class="form-control" id="">
 										<option>option 1</option>
@@ -192,7 +195,7 @@
 										<option>option 3</option>
 									</select>
 									<div class="input-group-append">
-										<button class="btn btn-primary btn-sm">Add New</button>	
+										<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add_unit">Add New</button>	
 									</div>
 							</div>
 						</div>
@@ -218,7 +221,11 @@
 								<tr>
 								  <td>PCO2</td>
 								  <td>xyz </td>
-								  <td><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></button> <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button></td>
+								  <td>
+								  	<button class="btn btn-success btn-xs" data-toggle="modal" data-target="#add_range"><i class="fa fa-plus"></i> Add Range</button>
+								  	<button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete</button> 
+								  </td>
+									
 								</tr>
 								<tr>
 								  <td>Total CO2 Contents (TCO2)</td>
