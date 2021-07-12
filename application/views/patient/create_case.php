@@ -3,7 +3,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Editable Tables
+        Create/Edit Case
       </h1>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -16,23 +16,18 @@
     <section class="content">
      
       <div class="row">
-		  	<div class="box">
-		  		<div class="box-body">
-		  			<center><h3>Create/Edit Case</h3></center>
-		  		</div>
-		  	</div>	  
 		  
 		<div class="col-12">
 		  	<div class="box">
 
-                            <div class="box-body" style="background: url(<?php echo base_url();?>resource/img/create_case.jpg);">
+		<div class="box-body" style="background: url(create_case.jpg);">
 		<div class="row">
 			<div class="col-md-12">
 				
 				<div class="row">
 					<div class="col-md-3">
 						<div class="form-group">
-							<label>Referring Doctor</label>
+							<label>Referrer</label>
 								
 							<div class="input-group mb-3">
 								<select class="form-control" id="">
@@ -41,7 +36,7 @@
 									<option>option 3</option>
 								</select>
 								<div class="input-group-append">
-									<button class="btn btn-primary btn-sm">Add New</button>	
+									<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add_refferer">Add New</button>	
 								</div>
 							</div>
 						</div>
@@ -67,23 +62,25 @@
 							</div>
 						</div>	
 					</div>
-					<div class="col-md-3">	
+					<div class="col-md-4">	
 						<div class="form-group">
 							<label>Select Test</label>
-							<div class="controls">
+							<div class="input-group mb-3">
 								<select class="form-control" id="">
 									<option>option 1</option>
 									<option>option 2</option>
 									<option>option 3</option>
-								</select>		
+								</select>
+								<div class="input-group-append">
+									<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add_test">Add New</button>	
+								</div>
 							</div>
 						</div>	
 					</div>
-					<div class="col-md-1">	
+					<div class="col-md-12">	
 						<div class="form-group">
-							<label></label>
 							<div class="controls">
-								<button class="btn btn-success">Add</button>		
+								<center><button class="btn btn-success">Add</button></center>
 							</div>
 						</div>	
 					</div>

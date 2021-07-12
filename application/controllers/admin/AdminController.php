@@ -69,6 +69,7 @@ class AdminController extends CI_Controller {
         $this->load->view('menu_bar');
         $this->load->view('setup/add_test');
         $this->load->view('footer');
+        $this->load->view('setup/add_test_modals');
     }
     public function testDatabase() {
         $this->load->view('header');
@@ -83,7 +84,6 @@ class AdminController extends CI_Controller {
         $this->load->view('patient/patient');
         $this->load->view('footer');
         $this->load->view('patient/patient_registration_modal');
-        $this->load->view('patient/add_range_modal');
         $this->load->view('patient/patient_show_js');
         $this->load->view('patient/patient_registration_js');
     }
@@ -92,11 +92,18 @@ class AdminController extends CI_Controller {
         $this->load->view('menu_bar');
         $this->load->view('patient/create_case');
         $this->load->view('footer');
+        $this->load->view('patient/create_case_modal');
     }
     public function invoice() {
         $this->load->view('header');
         $this->load->view('menu_bar');
         $this->load->view('patient/invoice');
+        $this->load->view('footer');
+    }
+    public function allCases() {
+        $this->load->view('header');
+        $this->load->view('menu_bar');
+        $this->load->view('all_cases/all_cases');
         $this->load->view('footer');
     }
 }
