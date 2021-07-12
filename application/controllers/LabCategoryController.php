@@ -47,11 +47,19 @@ class LabCategoryController extends REST_Controller
             );
         }else{
             $result = $this->category->center_category_update($category_data);
-            $response = array(
-                'Message' => 'Category Data updated successfully',
-                'Data' => $result,
-                'Responsecode' => 200
-            ); 
+            if($result){
+                $response = array(
+                    'Message' => 'Category Data updated successfully',
+                    'Data' => $result,
+                    'Responsecode' => 200
+                ); 
+            }else{
+                $response = array(
+                    'Message' => 'Try Again',
+                    'Responsecode' => 404
+                );   
+            }
+           
         }
         $this->response($response, REST_Controller::HTTP_OK);
     }

@@ -18,6 +18,7 @@ class LabCategoryModel extends CI_Model {
     public function center_category_update($data) {
         $this->db->where('categoryId', $data['categoryId']);
         $this->db->update('lab_center_categories', $data);
+        return true;
     }
 
     public function center_category($categoryId)

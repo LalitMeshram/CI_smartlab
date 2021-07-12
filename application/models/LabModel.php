@@ -8,10 +8,7 @@ class LabModel extends CI_Model
         
         $this->db->insert('center_details', $data);
     }
-    
-    
-    
-    
+     
     public function get_lab_data($centerId)
     {
         $data;
