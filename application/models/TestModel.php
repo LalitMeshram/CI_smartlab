@@ -3,12 +3,6 @@
 class TestModel extends CI_Model
 {
     
-    public function patient_reg($data)
-    {
-        $this->db->insert('patient_master', $data);
-        return $this->db->insert_id();
-    }
-    
     public function get_center_tests($centerId)
     {
         $data = $query = $this->db->get_where('center_test_master', array(
@@ -32,10 +26,5 @@ class TestModel extends CI_Model
             ))->result_array();
         return $data;
     }
-    
-    public function update_patient_data($data)
-    {
-        $this->db->where('patientId', $data['patientId']);
-        $this->db->update('patient_master', $data);
-    }
+
 }

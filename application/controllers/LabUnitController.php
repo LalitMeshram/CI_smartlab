@@ -3,20 +3,19 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 require APPPATH . 'libraries/REST_Controller.php';
 
-class LabCategoryController extends REST_Controller
+class LabUnitController extends REST_Controller
 {
     
     public function __construct()
     {
-        
         parent::__construct();
-        $this->load->model('LabCategoryModel', 'category');
+        $this->load->model('LabUnitModel', 'unit');
     }
     
-    public function category_list_get($centerId = 0)
+    public function unit_list_get($centerId = 0)
     {
         $response = array();
-        $data     = $this->category->get_center_categories($centerId);
+        $data     = $this->unit->get_center_units($centerId);
         if (!empty($data)) {
             $response['data']   = $data;
             $response['msg']    = 'All Data Fetch successfully!';
@@ -28,34 +27,32 @@ class LabCategoryController extends REST_Controller
         $this->response($response, REST_Controller::HTTP_OK);
     }
 
-    public function add_lab_catgeory_post()
+    public function add_lab_units_post()
     {
         $response = array();
-          $category_data = array(
-            "category"=>$this->post('category'),
+          $unit_data = array(
+            "unit"=>$this->post('unit'),
             "centerId"=> $this->post('centerId'),
-            "categoryId"=>$this->post('categoryId')
+            "unitId"=>$this->post('unitId')
         );
-        $result = $this->category->center_category($category_data['categoryId']);
+        $result = $this->unit->center_unit($unit_data['unitId']);
       
         if(empty($result)){
-            $result = $this->category->center_category_reg($category_data);
+            $result = $this->unit->center_unit_reg($unit_data);
             $response = array(
-                'Message' => 'Category added successfully',
+                'Message' => 'Unit added successfully',
                 'Data' => $result,
                 'Responsecode' => 200
             );
         }else{
-            $result = $this->category->center_category_update($category_data);
+            $result = $this->unit->center_unit_update($unit_data);
             $response = array(
-                'Message' => 'Category Data updated successfully',
+                'Message' => 'Unit Data updated successfully',
                 'Data' => $result,
                 'Responsecode' => 200
             ); 
         }
         $this->response($response, REST_Controller::HTTP_OK);
-    }
-    
-    
+    } 
     
 }
