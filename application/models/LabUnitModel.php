@@ -14,7 +14,7 @@ class LabUnitModel extends CI_Model {
         return $data;
     }
 
-    public function center_units_update($data) {
+    public function center_unit_update($data) {
         $this->db->where('unitId', $data['unitId']);
         $this->db->update('center_unit_master', $data);
     }
