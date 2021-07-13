@@ -58,6 +58,10 @@ $route['add_center_category'] = 'LabCategoryController/add_lab_catgeory';
 $route['get_center_unit/(:num)'] = 'LabUnitController/unit_list/$1';
 $route['add_center_unit'] = 'LabUnitController/add_lab_units';
 
+//Outsource Lab Controller
+$route['outsource_lab_list/(:num)'] = 'OutsourceLabController/outsource_lab_list/$1';
+$route['add_outsource_lab'] = 'OutsourceLabController/add_outsource_lab';
+
 
 
 $route['404_override']         = '';
