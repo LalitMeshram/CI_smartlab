@@ -74,7 +74,9 @@
 
                 if (response.status == 200) {
                     $('#patientId').val(id);
-                    $('#profilepre').prop('src',response.data.patient_profile);
+                    if (response.data.patient_profile != null) {
+                        $('#profilepre').prop('src', response.data.patient_profile);
+                    }
                     $('#patient_title').val(response.data.patient_title);
                     $('#first_name').val(response.data.first_name);
                     $('#last_name').val(response.data.last_name);
@@ -125,7 +127,7 @@
 
 
 
-  
+
 
 
 

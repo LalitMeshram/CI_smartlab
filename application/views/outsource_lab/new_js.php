@@ -1,19 +1,18 @@
+
 <?php 
 $session_data=$this->session->userdata('lsesson');
 ?>
 <script>
 
-    $('#patientRegForm').on('submit', function (e) {
-
+    $('#unitForm').on('submit', function (e) {
         e.preventDefault();
-
-        var returnVal = $("#patientRegForm").valid();
+         var returnVal = $("#unitForm").valid();
         var formdata = new FormData(this);
         formdata.append('centerId',<?php echo $session_data['centerId'];?>)
         if (returnVal) {
             $.ajax({
 
-                url: 'patient_reg',
+                url: 'add_center_unit',
 
                 type: 'POST',
 

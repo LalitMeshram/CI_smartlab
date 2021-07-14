@@ -42,14 +42,14 @@ class LabUnitController extends REST_Controller
             $response = array(
                 'Message' => 'Unit added successfully',
                 'Data' => $result,
-                'Responsecode' => 200
+                'status' => 200
             );
         }else{
             $result = $this->unit->center_unit_update($unit_data);
             $response = array(
                 'Message' => 'Unit Data updated successfully',
                 'Data' => $result,
-                'Responsecode' => 200
+                'status' => 200
             ); 
         }
         $this->response($response, REST_Controller::HTTP_OK);

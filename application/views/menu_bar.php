@@ -61,6 +61,17 @@
 				  
 				</ul>
 			  </li>
+			  <li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-cog mr-5"></i> <span>Masters</span>
+                                </a>
+                                <ul class="dropdown-menu multilevel scale-up-left">
+                                    <li class="nav-item"><a class="nav-link" href="lab_category">Lab Category</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="lab_unit">Lab Unit</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="lab_unit">Outsource Lab</a></li>
+				  
+				</ul>
+			  </li>
 			  <li class="nav-item">
 				<a class="nav-link" href="#"><i class="fa fa-hospital-o mr-5"></i> <span>Account</span></a>
 			  </li>	

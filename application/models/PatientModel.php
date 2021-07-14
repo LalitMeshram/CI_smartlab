@@ -26,5 +26,6 @@ class PatientModel extends CI_Model
     {
         $this->db->where('patientId', $data['patientId']);
         $this->db->update('patient_master', $data);
+        return $data['patientId'];
     }
 }
