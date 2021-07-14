@@ -1,5 +1,5 @@
-<?php 
-$session_data=$this->session->userdata('lsesson');
+<?php
+$session_data = $this->session->userdata('lsesson');
 ?>
 
 <script>
@@ -9,7 +9,7 @@ $session_data=$this->session->userdata('lsesson');
     function getPatients() {
         $.ajax({
 
-            url: 'get_center_unit/'+<?php echo $session_data['centerId'];?>,
+            url: 'get_center_unit/' +<?php echo $session_data['centerId']; ?>,
 
             type: 'GET',
 
@@ -59,33 +59,20 @@ $session_data=$this->session->userdata('lsesson');
 
 
     function getUsers(id) {
-        $.ajax({
+        var cat = categoryList.get(id.toString());
+        $('#unitId').val(id);
+        $('#unit').val(cat.unit);
+        $('#add_unit').modal('toggle');
 
-            url: 'get_patients/' + id,
-
-            type: 'GET',
-
-            dataType: 'json',
-
-            success: function (response) {
-//                console.log(response);
-
-                if (response.status == 200) {
-                    
-                    $('#add_unit').modal('toggle');
-                }
-
-            }
-
-        });
     }
 
 
 
 
-$('#addNew').click(function() {
+    $('#addNew').click(function () {
+        $("#unitForm").trigger("reset");
         $('#add_unit').modal('toggle');
-        
+
     });
 
 

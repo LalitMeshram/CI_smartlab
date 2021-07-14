@@ -9,6 +9,7 @@
 											<center>
 													<div class="controls">
                                                                                                             <input type="text" placeholder="Enter Category Name" class="form-control" name="category" id="category">
+                                                                                                            <input type="hidden" name="categoryId" id="categoryId">
 													</div>
 											</center>
 										</div>
