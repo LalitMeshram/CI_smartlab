@@ -62,6 +62,10 @@ $route['add_center_unit'] = 'LabUnitController/add_lab_units';
 $route['outsource_lab_list/(:num)'] = 'OutsourceLabController/outsource_lab_list/$1';
 $route['add_outsource_lab'] = 'OutsourceLabController/add_outsource_lab';
 
+//Reference Controller
+$route['ref_list/(:num)'] = 'LabRefController/ref_list/$1';
+$route['add_ref'] = 'LabRefController/add_lab_ref';
+
 
 
 $route['404_override']         = '';

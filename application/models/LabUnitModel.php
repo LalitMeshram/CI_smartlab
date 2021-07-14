@@ -21,7 +21,7 @@ class LabUnitModel extends CI_Model {
 
     public function center_unit($unitId)
     {
-            $data = $query = $this->db->get_where('center_unit_master', array(
+            $data = $this->db->get_where('center_unit_master', array(
                 'unitId' => $unitId
             ))->row_array();
         return $data;

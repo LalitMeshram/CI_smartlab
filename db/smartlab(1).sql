@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 10, 2021 at 05:27 PM
+-- Generation Time: Jul 14, 2021 at 05:28 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -168,6 +168,32 @@ INSERT INTO `center_payment_details` (`paymentId`, `centerId`, `packageId`, `sta
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `center_reference_master`
+--
+
+CREATE TABLE `center_reference_master` (
+  `ref_id` int(10) UNSIGNED NOT NULL,
+  `ref_title` varchar(10) NOT NULL,
+  `ref_name` varchar(70) NOT NULL,
+  `ref_degree` varchar(150) DEFAULT NULL,
+  `ref_contact` varchar(12) NOT NULL,
+  `ref_email` varchar(255) DEFAULT NULL,
+  `ref_address` text DEFAULT NULL,
+  `centerId` int(10) UNSIGNED NOT NULL,
+  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
+  `updatedat` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `center_reference_master`
+--
+
+INSERT INTO `center_reference_master` (`ref_id`, `ref_title`, `ref_name`, `ref_degree`, `ref_contact`, `ref_email`, `ref_address`, `centerId`, `createdat`, `updatedat`) VALUES
+(1, 'Mr.', 'Kunal Pandya', 'MBBS', '9881356896', 'kunal.pandya@mbbs.com', 'Kunal Builders Matoshree banglow', 1, '2021-07-14 08:27:40', '2021-07-14 08:28:15');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `center_test_master`
 --
 
@@ -242,6 +268,13 @@ CREATE TABLE `center_unit_master` (
   `createdat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `center_unit_master`
+--
+
+INSERT INTO `center_unit_master` (`unitId`, `unit`, `centerId`, `createdat`) VALUES
+(1, 'KGF', 1, '2021-07-12 17:52:24');
+
 -- --------------------------------------------------------
 
 --
@@ -297,6 +330,35 @@ CREATE TABLE `lab_center_categories` (
   `createdat` datetime NOT NULL DEFAULT current_timestamp(),
   `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `lab_center_categories`
+--
+
+INSERT INTO `lab_center_categories` (`categoryid`, `category`, `centerId`, `createdat`, `updatedat`) VALUES
+(1, 'Microbiology', 1, '2021-07-12 15:10:58', '2021-07-12 15:12:50'),
+(2, 'Hametology', 1, '2021-07-12 15:11:26', '2021-07-12 15:11:26');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `outsource_lab`
+--
+
+CREATE TABLE `outsource_lab` (
+  `outsource_lab_id` int(10) UNSIGNED NOT NULL,
+  `lab_name` varchar(150) NOT NULL,
+  `centerId` int(11) NOT NULL,
+  `createdat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `outsource_lab`
+--
+
+INSERT INTO `outsource_lab` (`outsource_lab_id`, `lab_name`, `centerId`, `createdat`) VALUES
+(1, 'Emergency 24*7', 1, '2021-07-13 08:45:14'),
+(2, 'Emergency', 1, '2021-07-13 08:45:27');
 
 -- --------------------------------------------------------
 
@@ -367,6 +429,12 @@ ALTER TABLE `center_payment_details`
   ADD KEY `centerId` (`centerId`);
 
 --
+-- Indexes for table `center_reference_master`
+--
+ALTER TABLE `center_reference_master`
+  ADD PRIMARY KEY (`ref_id`);
+
+--
 -- Indexes for table `center_test_master`
 --
 ALTER TABLE `center_test_master`
@@ -410,6 +478,12 @@ ALTER TABLE `lab_center_categories`
   ADD PRIMARY KEY (`categoryid`);
 
 --
+-- Indexes for table `outsource_lab`
+--
+ALTER TABLE `outsource_lab`
+  ADD PRIMARY KEY (`outsource_lab_id`);
+
+--
 -- Indexes for table `patient_master`
 --
 ALTER TABLE `patient_master`
@@ -450,6 +524,12 @@ ALTER TABLE `center_payment_details`
   MODIFY `paymentId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `center_reference_master`
+--
+ALTER TABLE `center_reference_master`
+  MODIFY `ref_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `center_test_master`
 --
 ALTER TABLE `center_test_master`
@@ -471,7 +551,7 @@ ALTER TABLE `center_test_subtypes_ranges`
 -- AUTO_INCREMENT for table `center_unit_master`
 --
 ALTER TABLE `center_unit_master`
-  MODIFY `unitId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `unitId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `customer_registeration`
@@ -489,7 +569,13 @@ ALTER TABLE `lab_category`
 -- AUTO_INCREMENT for table `lab_center_categories`
 --
 ALTER TABLE `lab_center_categories`
-  MODIFY `categoryid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `categoryid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `outsource_lab`
+--
+ALTER TABLE `outsource_lab`
+  MODIFY `outsource_lab_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `patient_master`
