@@ -106,4 +106,28 @@ class AdminController extends CI_Controller {
         $this->load->view('all_cases/all_cases');
         $this->load->view('footer');
     }
+    public function labCategory() {
+        $this->load->view('header');
+        $this->load->view('menu_bar');
+        $this->load->view('lab_category/lab_category');
+        $this->load->view('lab_category/add_category_modal');
+        $this->load->view('footer');
+        $this->load->view('lab_category/show_js');
+        $this->load->view('lab_category/new_js');
+    }
+    public function labUnit() {
+        $this->load->view('header');
+        $this->load->view('menu_bar');
+        $this->load->view('lab_unit/lab_unit');
+        $this->load->view('lab_unit/add_unit_modal');
+        $this->load->view('footer');
+        $this->load->view('lab_unit/show_js');
+        $this->load->view('lab_unit/new_js');
+    }
+    public function outsourceLab() {
+        $this->load->view('header');
+        $this->load->view('menu_bar');
+        $this->load->view('outsource_lab/outsource_lab');
+        $this->load->view('footer');
+    }
 }
