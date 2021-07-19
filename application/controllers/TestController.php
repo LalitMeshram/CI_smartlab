@@ -76,12 +76,12 @@ class TestController extends REST_Controller
             'subtypes_test' => $subtypes_test
         );
         $testId = $this->post('testId');
-        if(!empty($testId)){
+        if(!empty($testId) && $testId !=0){
             $result        = $this->test->update_test_data($data,$testId);
-            $msg = 'Test Data added successfully';
+            $msg = 'Test Data updated successfully';
         }else{
             $result        = $this->test->add_test_data($data); 
-            $msg = 'Test Data updated successfully';
+            $msg = 'Test Data added successfully';
         }
         if ($result['status']) {
             $response = array(

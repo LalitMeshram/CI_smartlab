@@ -11,6 +11,19 @@
         "upper_limit": "190"
       },
       {
+        "gender": "Female",
+        "lower_age": 10,
+        "upper_age": 20,
+        "lower_limit": "1",
+        "upper_limit": "2"
+      }
+    ]
+  },
+  {
+    "test_name": "Test_2",
+    "unitId": "2",
+    "subtypes_test_ranges": [
+      {
         "gender": "Male",
         "lower_age": 10,
         "upper_age": 20,
@@ -18,10 +31,5 @@
         "upper_limit": "190"
       }
     ]
-  },
-  {
-    "test_name": "Test_2",
-    "unitId": "2",
-    "subtypes_test_ranges": []
   }
 ]

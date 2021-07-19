@@ -80,9 +80,12 @@ class TestModel extends CI_Model
                 'unitId' => $contact->unitId,
                 'testId' => $testId
             );
-            $subtypeId            = $this->db->insert('center_test_subtypes', $partners);
+            $this->db->insert('center_test_subtypes', $partners);
+            $subtypeId            = $this->db->insert_id();
             $subtypes_test_ranges = json_encode($contact->subtypes_test_ranges);
             $subtypes_test_ranges = json_decode($subtypes_test_ranges);
+            print_r($subtypes_test_ranges);
+            echo $subtypeId;
             $this->add_subtypes_test_ranges($subtypes_test_ranges, $subtypeId);
         }
     }
