@@ -40,9 +40,8 @@ class TestController extends REST_Controller
                         $subtypes_test = array(
                             'subtypes_test' => $p_details[$j]
                         );
-                        $temp[]        = array_merge($subtypes_test, $subtypes_test_ranges);
-                    }
-                    
+                    } 
+                    $temp[]        = array_merge($subtypes_test, $subtypes_test_ranges);
                     
                 }
                 $records[] = array_merge($data[$i], $temp);
@@ -76,10 +75,17 @@ class TestController extends REST_Controller
             'test_data' => $test_data,
             'subtypes_test' => $subtypes_test
         );
-        $result        = $this->test->add_test_data($data);
+        $testId = $this->post('testId');
+        if(!empty($testId)){
+            $result        = $this->test->update_test_data($data,$testId);
+            $msg = 'Test Data added successfully';
+        }else{
+            $result        = $this->test->add_test_data($data); 
+            $msg = 'Test Data updated successfully';
+        }
         if ($result['status']) {
             $response = array(
-                'Message' => 'Test added successfully',
+                'Message' => $msg,
                 'Data' => $result,
                 'Responsecode' => 200
             );
@@ -89,6 +95,41 @@ class TestController extends REST_Controller
                 'Data' => $result,
                 'Responsecode' => 404
             );
+        }
+        $this->response($response, REST_Controller::HTTP_OK);
+    }
+
+    public function test_for_cases_get($centerId = 0){
+        $response = array();
+        $records = array();
+        $data     = $this->test->get_center_tests($centerId);
+        if(!empty($data)){
+            $count = count($data);
+           // $records = $data;
+            for($i = 0; $i < $count; $i++){
+                $outsource = array(
+                    'outsource' => array()
+                );
+                $outsource_data = $this->test->get_outsource_amounts($data[$i]['testId']);
+                if(!empty($outsource_data)){
+                    $outsource = array(
+                        'outsource' => $outsource_data
+                    ); 
+                }
+                $records[] = array_merge($data[$i],$outsource);
+            }
+            $response = array(
+                'Message' => 'Test loaded successfully',
+                'Data' => $records,
+                'count' =>$count,
+                'Responsecode' => 200
+            ); 
+        }else{
+            $response = array(
+                'Message' => 'Data not found',
+                'Data' => $data,
+                'Responsecode' => 204
+            );  
         }
         $this->response($response, REST_Controller::HTTP_OK);
     }

@@ -3,6 +3,12 @@
 class TestModel extends CI_Model
 {
     
+    public function get_outsource_amounts($testId){
+        $data = $this->db->get_where('center_outsource_test', array(
+            'testId' => $testId
+        ))->result_array();
+        return $data;  
+    }
     public function get_center_tests($centerId)
     {
         $data = $this->db->get_where('center_test_master', array(
@@ -37,12 +43,34 @@ class TestModel extends CI_Model
         $this->add_subtype_test($data['subtypes_test'], $result['testId']);
         if ($this->db->trans_status() === FALSE) {
             $this->db->trans_rollback();
+            $result['status'] = false;
         } else {
             $this->db->trans_commit();
-            
             $result['status'] = true;
             return $result;
         }
+    }
+    public function update_test_data($data,$testId){
+        $testdata = $data['test_data'];
+        $this->db->trans_begin();
+        $this->db->where('testId', $testId);
+        $this->db->update('center_test_master', $testdata);
+
+        $this->db->where('testId', $testId);
+        $this->db->delete('center_test_subtypes');
+
+        $this->add_subtype_test($data['subtypes_test'], $testId);
+
+        if ($this->db->trans_status() === FALSE) {
+            $this->db->trans_rollback();
+            $result['status'] = false;
+            return $result;
+        } else {
+            $this->db->trans_commit();
+            $result['status'] = true;
+            return $result;
+        }
+
     }
     public function add_subtype_test($partner_data, $testId)
     {

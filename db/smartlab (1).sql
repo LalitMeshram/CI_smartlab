@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 14, 2021 at 05:28 AM
+-- Generation Time: Jul 19, 2021 at 08:50 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -21,6 +21,71 @@ SET time_zone = "+00:00";
 --
 -- Database: `smartlab`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `case_master`
+--
+
+CREATE TABLE `case_master` (
+  `caseId` int(10) UNSIGNED NOT NULL,
+  `centerId` int(10) UNSIGNED NOT NULL,
+  `patientId` int(10) UNSIGNED NOT NULL,
+  `referenceId` int(10) UNSIGNED DEFAULT NULL,
+  `collection_center` varchar(55) DEFAULT NULL,
+  `collection_source` varchar(55) DEFAULT NULL,
+  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
+  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `case_payments`
+--
+
+CREATE TABLE `case_payments` (
+  `paymentId` int(10) UNSIGNED NOT NULL,
+  `caseId` int(10) UNSIGNED NOT NULL,
+  `centerId` int(10) UNSIGNED NOT NULL,
+  `patientId` int(10) UNSIGNED NOT NULL,
+  `total_amt` double(10,2) NOT NULL,
+  `amt_recieved` double(10,2) NOT NULL,
+  `discount` double(2,2) NOT NULL,
+  `paymentmode` varchar(25) NOT NULL,
+  `paymentdetails` varchar(55) DEFAULT NULL,
+  `pending_amt` double(10,2) DEFAULT NULL,
+  `paymentdate` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `case_payment_transactions`
+--
+
+CREATE TABLE `case_payment_transactions` (
+  `transactionId` int(10) UNSIGNED NOT NULL,
+  `paymentId` int(10) UNSIGNED NOT NULL,
+  `amount` double(10,2) NOT NULL,
+  `paymentdate` date NOT NULL,
+  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
+  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `case_tests`
+--
+
+CREATE TABLE `case_tests` (
+  `case_test_id` int(10) UNSIGNED NOT NULL,
+  `caseId` int(10) UNSIGNED NOT NULL,
+  `testId` int(10) UNSIGNED NOT NULL,
+  `centerId` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -82,13 +147,20 @@ INSERT INTO `center_letter_head_details` (`centerId`, `header_logo`, `lab_inchar
 
 CREATE TABLE `center_outsource_test` (
   `outsourceId` int(10) UNSIGNED NOT NULL,
-  `outsource_lab` varchar(255) NOT NULL,
+  `outsource_lab_id` int(11) NOT NULL,
   `outsource_amt` double(10,2) NOT NULL,
   `centerId` int(10) UNSIGNED NOT NULL,
   `testId` int(10) UNSIGNED NOT NULL,
   `createdat` datetime NOT NULL DEFAULT current_timestamp(),
   `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `center_outsource_test`
+--
+
+INSERT INTO `center_outsource_test` (`outsourceId`, `outsource_lab_id`, `outsource_amt`, `centerId`, `testId`, `createdat`, `updatedat`) VALUES
+(1, 1, 200.00, 1, 1, '2021-07-19 08:59:13', '2021-07-19 08:59:13');
 
 -- --------------------------------------------------------
 
@@ -216,7 +288,8 @@ CREATE TABLE `center_test_master` (
 --
 
 INSERT INTO `center_test_master` (`testId`, `categoryId`, `test_name`, `short_name`, `method`, `instrument`, `gender`, `fees`, `centerId`, `createdat`, `updatedat`) VALUES
-(1, 1, 'WBC', 'WBC', 'TEST', 'TEST', 'Male', 500.00, 1, '2021-07-10 18:29:07', '2021-07-10 18:29:07');
+(1, 1, 'Testing', 'Test', 'M', 'I', 'Male', 250.00, 1, '2021-07-15 09:14:47', '2021-07-15 09:14:47'),
+(2, 1, 'Testing', 'Test', 'M', 'I', 'Male', 250.00, 1, '2021-07-15 09:16:19', '2021-07-15 09:16:19');
 
 -- --------------------------------------------------------
 
@@ -236,8 +309,9 @@ CREATE TABLE `center_test_subtypes` (
 --
 
 INSERT INTO `center_test_subtypes` (`subtypeId`, `test_name`, `unitId`, `testId`) VALUES
-(1, 'WBC', 1, 1),
-(2, 'KFC', 2, 1);
+(1, 'Test1', 2, 1),
+(2, 'Test1', 2, 2),
+(3, 'Test_2', 2, 2);
 
 -- --------------------------------------------------------
 
@@ -254,6 +328,14 @@ CREATE TABLE `center_test_subtypes_ranges` (
   `lower_limit` varchar(50) DEFAULT NULL,
   `upper_limit` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `center_test_subtypes_ranges`
+--
+
+INSERT INTO `center_test_subtypes_ranges` (`rangeId`, `subtypeId`, `gender`, `lower_age`, `upper_age`, `lower_limit`, `upper_limit`) VALUES
+(1, 1, 'Male', 10, 20, '140', '190'),
+(2, 1, 'Male', 10, 20, '140', '190');
 
 -- --------------------------------------------------------
 
@@ -273,7 +355,7 @@ CREATE TABLE `center_unit_master` (
 --
 
 INSERT INTO `center_unit_master` (`unitId`, `unit`, `centerId`, `createdat`) VALUES
-(1, 'KGF', 1, '2021-07-12 17:52:24');
+(1, 'KETCHUP', 1, '2021-07-19 08:16:26');
 
 -- --------------------------------------------------------
 
@@ -397,6 +479,30 @@ INSERT INTO `patient_master` (`patientId`, `centerId`, `patient_title`, `first_n
 --
 
 --
+-- Indexes for table `case_master`
+--
+ALTER TABLE `case_master`
+  ADD PRIMARY KEY (`caseId`);
+
+--
+-- Indexes for table `case_payments`
+--
+ALTER TABLE `case_payments`
+  ADD PRIMARY KEY (`paymentId`);
+
+--
+-- Indexes for table `case_payment_transactions`
+--
+ALTER TABLE `case_payment_transactions`
+  ADD PRIMARY KEY (`transactionId`);
+
+--
+-- Indexes for table `case_tests`
+--
+ALTER TABLE `case_tests`
+  ADD PRIMARY KEY (`case_test_id`);
+
+--
 -- Indexes for table `center_details`
 --
 ALTER TABLE `center_details`
@@ -407,6 +513,12 @@ ALTER TABLE `center_details`
 --
 ALTER TABLE `center_letter_head_details`
   ADD PRIMARY KEY (`centerId`);
+
+--
+-- Indexes for table `center_outsource_test`
+--
+ALTER TABLE `center_outsource_test`
+  ADD PRIMARY KEY (`outsourceId`);
 
 --
 -- Indexes for table `center_packages`
@@ -494,6 +606,30 @@ ALTER TABLE `patient_master`
 --
 
 --
+-- AUTO_INCREMENT for table `case_master`
+--
+ALTER TABLE `case_master`
+  MODIFY `caseId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `case_payments`
+--
+ALTER TABLE `case_payments`
+  MODIFY `paymentId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `case_payment_transactions`
+--
+ALTER TABLE `case_payment_transactions`
+  MODIFY `transactionId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `case_tests`
+--
+ALTER TABLE `case_tests`
+  MODIFY `case_test_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `center_details`
 --
 ALTER TABLE `center_details`
@@ -504,6 +640,12 @@ ALTER TABLE `center_details`
 --
 ALTER TABLE `center_letter_head_details`
   MODIFY `centerId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `center_outsource_test`
+--
+ALTER TABLE `center_outsource_test`
+  MODIFY `outsourceId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `center_packages`
@@ -533,19 +675,19 @@ ALTER TABLE `center_reference_master`
 -- AUTO_INCREMENT for table `center_test_master`
 --
 ALTER TABLE `center_test_master`
-  MODIFY `testId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `testId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `center_test_subtypes`
 --
 ALTER TABLE `center_test_subtypes`
-  MODIFY `subtypeId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `subtypeId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `center_test_subtypes_ranges`
 --
 ALTER TABLE `center_test_subtypes_ranges`
-  MODIFY `rangeId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `rangeId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `center_unit_master`
