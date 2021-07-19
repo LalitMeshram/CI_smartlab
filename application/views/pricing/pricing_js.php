@@ -1,6 +1,6 @@
 <script>
 
-
+var pricing = new Map();
     function getPricing() {
         $.ajax({
 
@@ -22,6 +22,7 @@
                         var data=``;
                         var package_details;
                         for(var i=0;i<response.data.length;i++){
+                            pricing.set(response.data[i].packageId,response.data[i]);
                             data +=`<div class="col-lg-3">
                   <div class="box text-center p-50 bg-img box-inverse" style="background-image: url(<?php echo base_url().'resource';?>/img/pricing_bg1.jpg)" data-overlay="7">
                   <div class="box-body">
@@ -63,7 +64,15 @@
    getPricing();
 
 function selectPlan(planId){
-alert(planId);
+planId = planId.toString();
+if(pricing.has(planId)){
+    var package = pricing.get(planId);
+    console.log(package);
+    $('#amount').val(package.amount);
+    $('form[name=paymentform]').submit();
+}else{
+    alert('No plan');
+}
 }
 
 </script>

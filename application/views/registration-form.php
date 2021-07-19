@@ -17,7 +17,7 @@
             <div class="card card-signin my-5">
                 <div class="card-body">
                     <h5 class="card-title text-center">Razor Pay Integration in CodeIgniter</h5>
-                    <form action="<?php echo base_url().'register/pay'; ?>" method="post" class="form-signin">
+                    <form action="<?php echo base_url().'register/pay'; ?>" method="post" class="form-signin" name="paymentform">
                         <div class="form-label-group">
                             <label for="name">Name <span style="color: #FF0000">*</span></label>
                             <input type="text" name="name" id="name" class="form-control" placeholder="Name"  required >

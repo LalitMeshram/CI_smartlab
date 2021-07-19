@@ -29,6 +29,17 @@
 
 
     </section>
+    <div style="display:none;">
+    <form action="<?php echo base_url().'register/pay'; ?>" method="post" class="form-signin" name="paymentform">
+                      
+					<label for="subject">Amount <span style="color: #FF0000">*</span></label>
+                        <div class="form-label-group">
+                            <input type="text" id="amount" name="amount" value="10" readonly class="form-control" placeholder="Amount" required>
+                        </div><br/>
+                       <br/>
+                        <button type="submit" name="sendMailBtn" class="btn btn-lg btn-primary btn-block text-uppercase" >Pay Now</button>
+                    </form>
+                    </div>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->

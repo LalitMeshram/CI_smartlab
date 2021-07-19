@@ -95,9 +95,9 @@ class Register extends CI_Controller {
 			"description" => "Lab Description",
 			"image" => "https://demo.codingbirdsonline.com/website/img/coding-birds-online/coding-birds-online-favicon.png",
 			"prefill" => array(
-				"name"  => $this->input->post('name'),
-				"email"  => $this->input->post('email'),
-				"contact" => $this->input->post('contact'),
+				"name"  => "vikas Pawar",//$this->input->post('name'),
+				"email"  => "vikaspawar3110@gmail.com",//$this->input->post('email'),
+				"contact" => "9999999999"//$this->input->post('contact'),
 			),
 			"notes"  => array(
 				"address"  => "Pune Maharashtra",
