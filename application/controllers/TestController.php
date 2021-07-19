@@ -69,7 +69,7 @@ class TestController extends REST_Controller
             "fees" => $this->post('fees'),
             "centerId" => $this->post('centerId')
         );
-        $subtypes_test = $this->input->post('subtypes_test');
+        $subtypes_test = $this->input->post('subtypes_test');//refer testdata.json
         $subtypes_test = json_decode($subtypes_test);
         $data          = array(
             'test_data' => $test_data,
