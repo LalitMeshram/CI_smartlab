@@ -5,21 +5,7 @@ header("Access-Control-Allow-Methods: GET, OPTIONS");
 
 class AdminController extends CI_Controller {
 
-    /**
-     * Index Page for this controller.
-     *
-     * Maps to the following URL
-     * 		http://example.com/index.php/welcome
-     * 	- or -
-     * 		http://example.com/index.php/welcome/index
-     * 	- or -
-     * Since this controller is set as the default controller in
-     * config/routes.php, it's displayed at http://example.com/
-     *
-     * So any other public methods not prefixed with an underscore will
-     * map to /index.php/welcome/<method_name>
-     * @see https://codeigniter.com/user_guide/general/urls.html
-     */
+    
     public function index() {
 //		$this->load->view('welcome_message');
         
@@ -128,6 +114,13 @@ class AdminController extends CI_Controller {
         $this->load->view('header');
         $this->load->view('menu_bar');
         $this->load->view('outsource_lab/outsource_lab');
+        $this->load->view('footer');
+    }
+    
+    public function allReceipt() {
+        $this->load->view('header');
+        $this->load->view('menu_bar');
+        $this->load->view('all_receipt/show');
         $this->load->view('footer');
     }
 }

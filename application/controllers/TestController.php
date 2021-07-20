@@ -13,6 +13,10 @@ class TestController extends REST_Controller
         $this->load->model('TestModel', 'test');
     }
     
+    public function index_get() {
+        
+    }
+    
     public function test_list_get($centerId = 0)
     {
         $response = array();

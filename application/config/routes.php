@@ -18,6 +18,7 @@ $route['all_cases']      = 'admin/Admincontroller/allCases';
 $route['lab_category']      = 'admin/Admincontroller/labCategory';
 $route['lab_unit']      = 'admin/Admincontroller/labUnit';
 $route['outsource_lab']      = 'admin/Admincontroller/outsourceLab';
+$route['all_receipt']      = 'admin/Admincontroller/allReceipt';
 $route['payment'] = 'Register/index';
 
 //Center Registration master
