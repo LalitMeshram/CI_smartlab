@@ -86,6 +86,23 @@ class CaseController extends REST_Controller
         $this->response($response, REST_Controller::HTTP_OK);
     }
     
-    
+    public function get_all_cases_get($centerId=0){
+        $response = array();
+        $data     = $this->case->get_all_cases($centerId);
+        if(!empty($data)){
+            $response = array(
+                'Message' => 'All cases loaded successfully',
+                'Data' => $data,
+                'Responsecode' => 200
+            );
+        }else{
+            $response = array(
+                'Message' => 'Data not found',
+                'Data' => $data,
+                'Responsecode' => 204
+            );  
+        }
+        $this->response($response, REST_Controller::HTTP_OK);
+    }
     
 }
