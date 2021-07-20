@@ -40,7 +40,7 @@ class CaseModel extends CI_Model
         );
         $this->db->insert('case_payment_transactions', $payment_tran);
         $result['paymentId'] = $this->db->insert_id();
-        $this->add_case_tests($test_data,$result['caseId'], $case_data['centerId']);
+        $this->add_case_tests($testdata,$result['caseId'], $case_data['centerId']);
         if ($this->db->trans_status() === FALSE) {
             $this->db->trans_rollback();
             $result['status'] = false;

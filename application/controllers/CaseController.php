@@ -10,9 +10,10 @@ class CaseController extends REST_Controller
     {
         parent::__construct();
         $this->load->model('CaseModel', 'case');
+        $this->load->model('TestModel', 'test');
     }
     
- public function test_add_post()
+ public function case_add_post()
     {
         $response      = array();
         $case_data     = array(
@@ -33,7 +34,7 @@ class CaseController extends REST_Controller
             'test_data' => $test_data,
             'case_data' => $case_data
         );
-        $result        = $this->test->add_case_data($data);
+        $result        = $this->case->add_case_data($data);
         if ($result['status']) {
             $response = array(
                 'Message' => 'New case added successfully',

@@ -53,7 +53,7 @@ $route['get_patients']     = 'PatientController/patient_register_data';
 //Center Test Master Controller
 $route['get_center_tests/(:num)']     = 'TestController/test_list/$1';
 $route['add_test_user'] = 'TestController/test_add';
-$route['get_test_for_cases/(:num)'] = 'TestController/test_for_cases/$1';
+$route['get_test_for_cases/(:num)'] = 'CaseController/test_for_cases/$1';
 
 //Center category Controller
 $route['get_center_category/(:num)'] = 'LabCategoryController/category_list/$1';
@@ -70,6 +70,9 @@ $route['add_outsource_lab'] = 'OutsourceLabController/add_outsource_lab';
 //Reference Controller
 $route['ref_list/(:num)'] = 'LabRefController/ref_list/$1';
 $route['add_ref'] = 'LabRefController/add_lab_ref';
+
+//Cases Controller
+$route['add_new_case'] = 'CaseController/case_add';
 
 
 
