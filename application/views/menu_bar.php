@@ -21,6 +21,7 @@
 				  <li class="nav-item"><a class="nav-link" href="#">Refferal Doctors</a></li>	
 				  <li class="nav-item"><a class="nav-link" href="#">Agents</a></li>	
 				  <li class="nav-item"><a class="nav-link" href="invoice">Invoice</a></li>	
+				  <li class="nav-item"><a class="nav-link" href="all_receipt">All Receipt</a></li>	
 				</ul>				  
 			  </li>
 			  <li class="nav-item dropdown">
