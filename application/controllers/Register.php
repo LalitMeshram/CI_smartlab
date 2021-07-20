@@ -8,7 +8,12 @@ use Razorpay\Api\Errors\SignatureVerificationError;
 class Register extends CI_Controller {
 	/**
 	 * This function loads the registration form
-	 */
+	 */public function __construct()
+	 {
+        parent::__construct();
+        $this->load->model('PaymentModel', 'payment');
+    }
+
 	public function index()
 	{
 		$this->load->view('registration-form');
@@ -25,6 +30,9 @@ class Register extends CI_Controller {
 		 * Always set the amount from backend for security reasons
 		 */
 		$_SESSION['payable_amount'] = $this->input->post('amount');
+		$_SESSION['packageId'] = $this->input->post('package_id');
+		$_SESSION['duration'] = $this->input->post('duration');
+
 
 		$razorpayOrder = $api->order->create(array(
 			'receipt'         => rand(),
@@ -71,7 +79,16 @@ class Register extends CI_Controller {
 			 * Call this function from where ever you want
 			 * to save save data before of after the payment
 			 */
+			$userdata = $_SESSION['lsesson'];
 			$this->setRegistrationData();
+		$data['centerId']       = $userdata['centerId'];
+        $data['packageId']          = $_SESSION['packageId'];
+        $duration                   = $_SESSION['duration'];
+        $data['startdate']          = date('Y-m-d');
+        $data['enddate']            = date('Y-m-d', strtotime(date('Y-m-d') . ' +' . $duration . ' day'));
+        $data['paymentmode']        = "UPI";
+        $data['payment_ref_number'] =  $_SESSION['razorpay_order_id'];
+        $id                         = $this->payment->payment_reg($data);
 
 			redirect(base_url().'register/success');
 		}
@@ -88,6 +105,7 @@ class Register extends CI_Controller {
 	 */
 	public function prepareData($amount,$razorpayOrderId)
 	{
+		$userdata = $_SESSION['lsesson'];
 		$data = array(
 			"key" => RAZOR_KEY,
 			"amount" => $amount,
@@ -95,9 +113,9 @@ class Register extends CI_Controller {
 			"description" => "Lab Description",
 			"image" => "https://demo.codingbirdsonline.com/website/img/coding-birds-online/coding-birds-online-favicon.png",
 			"prefill" => array(
-				"name"  => "vikas Pawar",//$this->input->post('name'),
-				"email"  => "vikaspawar3110@gmail.com",//$this->input->post('email'),
-				"contact" => "9999999999"//$this->input->post('contact'),
+				"name"  => $userdata['username'],//$this->input->post('name'),
+				"email"  => $userdata['emailid'],//$this->input->post('email'),
+				"contact" =>$userdata['contact_number']//$this->input->post('contact'),
 			),
 			"notes"  => array(
 				"address"  => "Pune Maharashtra",
@@ -117,9 +135,10 @@ class Register extends CI_Controller {
 	 */
 	public function setRegistrationData()
 	{
-		$name = $this->input->post('name');
-		$email = $this->input->post('email');
-		$contact = $this->input->post('contact');
+		$userdata = $_SESSION['lsesson'];
+		$name = $userdata['username'];
+		$email = $userdata['emailid'];
+		$contact = $userdata['contact_number'];
 		$amount = $_SESSION['payable_amount'];
 
 		$registrationData = array(
@@ -139,7 +158,9 @@ class Register extends CI_Controller {
 	 */
 	public function success()
 	{
-		$this->load->view('success');
+
+			$this->load->view('success');
+		
 	}
 	/**
 	 * This is a function called when payment failed,

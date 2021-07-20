@@ -69,9 +69,11 @@ if(pricing.has(planId)){
     var package = pricing.get(planId);
     console.log(package);
     $('#amount').val(package.amount);
+    $('#package_id').val(planId);
+    $('#duration').val(package.duration);
     $('form[name=paymentform]').submit();
 }else{
-    alert('No plan');
+    alert('No plan selected');
 }
 }
 
