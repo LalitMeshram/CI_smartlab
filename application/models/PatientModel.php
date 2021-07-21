@@ -13,7 +13,7 @@ class PatientModel extends CI_Model
     {
         $data;
         if ($patientId != 0) {
-            $data = $query = $this->db->get_where('patient_master', array(
+            $data = $this->db->get_where('patient_master', array(
                 'patientId' => $patientId
             ))->row_array();
         } else {
@@ -26,6 +26,8 @@ class PatientModel extends CI_Model
     {
         $this->db->where('patientId', $data['patientId']);
         $this->db->update('patient_master', $data);
-        return $data['patientId'];
+        return $this->db->get_where('patient_master', array(
+            'patientId' => $data['patientId']
+        ))->row_array();;
     }
 }

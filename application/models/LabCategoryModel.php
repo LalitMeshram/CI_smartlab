@@ -9,7 +9,7 @@ class LabCategoryModel extends CI_Model {
 
     public function get_center_categories($centerId) {
        // $data = $this->db->get('lab_center_categories')->result_array();
-        $data = $query = $this->db->get_where('lab_center_categories', array(
+        $data =  $this->db->get_where('lab_center_categories', array(
             'centerId' => $centerId
         ))->result_array();
         return $data;
@@ -18,12 +18,14 @@ class LabCategoryModel extends CI_Model {
     public function center_category_update($data) {
         $this->db->where('categoryId', $data['categoryId']);
         $this->db->update('lab_center_categories', $data);
-        return true;
+        return $this->db->get_where('lab_center_categories', array(
+            'categoryId' => $data['categoryId']
+        ))->row_array();
     }
 
     public function center_category($categoryId)
     {
-            $data = $query = $this->db->get_where('lab_center_categories', array(
+            $data =  $this->db->get_where('lab_center_categories', array(
                 'categoryId' => $categoryId
             ))->row_array();
         return $data;

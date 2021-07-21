@@ -8,7 +8,7 @@ class LabRefModel extends CI_Model {
     }
 
     public function get_center_reference($centerId) {
-        $data = $query = $this->db->get_where('center_reference_master', array(
+        $data = $this->db->get_where('center_reference_master', array(
             'centerId' => $centerId
         ))->result_array();
         return $data;
@@ -17,7 +17,9 @@ class LabRefModel extends CI_Model {
     public function center_ref_update($data) {
         $this->db->where('ref_id', $data['ref_id']);
         $this->db->update('center_reference_master', $data);
-        return true;
+        return $this->db->get_where('center_reference_master', array(
+            'ref_id' => $data['ref_id']
+        ))->row_array();;
     }
 
     public function center_reference($ref_id)

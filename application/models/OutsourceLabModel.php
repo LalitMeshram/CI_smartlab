@@ -8,7 +8,7 @@ class OutsourceLabModel extends CI_Model {
     }
 
     public function get_center_outsource_labs($centerId) {
-        $data = $query = $this->db->get_where('outsource_lab', array(
+        $data = $this->db->get_where('outsource_lab', array(
             'centerId' => $centerId
         ))->result_array();
         return $data;
@@ -17,12 +17,14 @@ class OutsourceLabModel extends CI_Model {
     public function center_outsource_lab_update($data) {
         $this->db->where('outsource_lab_id', $data['outsource_lab_id']);
         $this->db->update('outsource_lab', $data);
-        return true;
+        return $this->db->get_where('outsource_lab', array(
+            'outsource_lab_id' => $data['outsource_lab_id']
+        ))->row_array();
     }
 
     public function center_outsource_lab($outsource_lab_id)
     {
-            $data = $query = $this->db->get_where('outsource_lab', array(
+            $data =  $this->db->get_where('outsource_lab', array(
                 'outsource_lab_id' => $outsource_lab_id
             ))->row_array();
         return $data;

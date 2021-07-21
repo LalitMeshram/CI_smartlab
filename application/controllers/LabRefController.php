@@ -51,20 +51,12 @@ class LabRefController extends REST_Controller
             );
         }else{
             $result = $this->ref->center_ref_update($ref_data);
-            if($result){
             $response = array(
                 'Message' => 'Reference Data updated successfully',
                 'Data' => $result,
                 'Responsecode' => 200
             ); 
-        }else
-        {
-            $response = array(
-                'Message' => 'Try again',
-                'Data' => $result,
-                'Responsecode' => 204
-            );    
-        }
+        
         }
         $this->response($response, REST_Controller::HTTP_OK);
     } 
