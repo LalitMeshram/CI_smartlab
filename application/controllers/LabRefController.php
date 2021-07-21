@@ -47,14 +47,14 @@ class LabRefController extends REST_Controller
             $response = array(
                 'Message' => 'Reference added successfully',
                 'Data' => $result,
-                'Responsecode' => 200
+                'status' => 200
             );
         }else{
             $result = $this->ref->center_ref_update($ref_data);
             $response = array(
                 'Message' => 'Reference Data updated successfully',
                 'Data' => $result,
-                'Responsecode' => 200
+                'status' => 200
             ); 
         
         }

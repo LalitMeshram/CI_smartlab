@@ -42,7 +42,7 @@ class OutsourceLabController extends REST_Controller
             $response = array(
                 'Message' => 'Outsource Lab added successfully',
                 'Data' => $result,
-                'Responsecode' => 200
+                'status' => 200
             );
         }else{
             $result = $this->outsource->center_outsource_lab_update($outsource_data);

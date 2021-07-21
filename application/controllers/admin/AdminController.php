@@ -53,9 +53,12 @@ class AdminController extends CI_Controller {
     public function addTest() {
         $this->load->view('header');
         $this->load->view('menu_bar');
-        $this->load->view('setup/add_test');
+        $this->load->view('add_test/add_test');
         $this->load->view('footer');
-        $this->load->view('setup/add_test_modals');
+        $this->load->view('add_test/add_test_modals');
+        $this->load->view('add_test/category_js');
+        $this->load->view('add_test/unit_js');
+        $this->load->view('add_test/outsource_lab_js');
     }
     public function testDatabase() {
         $this->load->view('header');
@@ -114,7 +117,20 @@ class AdminController extends CI_Controller {
         $this->load->view('header');
         $this->load->view('menu_bar');
         $this->load->view('outsource_lab/outsource_lab');
+        $this->load->view('outsource_lab/add_outsource_lab_modal');
         $this->load->view('footer');
+        $this->load->view('outsource_lab/show_js');
+        $this->load->view('outsource_lab/new_js');
+    }
+    
+    public function referalDoctor() {
+        $this->load->view('header');
+        $this->load->view('menu_bar');
+        $this->load->view('referal_doctor/referal_doctor');
+        $this->load->view('referal_doctor/add_referal_doctor_modal');
+        $this->load->view('footer');
+        $this->load->view('referal_doctor/show_js');
+        $this->load->view('referal_doctor/new_js');
     }
     
     public function allReceipt() {

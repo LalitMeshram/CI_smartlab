@@ -5,7 +5,7 @@ $session_data=$this->session->userdata('lsesson');
 <script>
 
 
-    var categoryList = new Map();
+    var outsourceList = new Map();
     function getPatients() {
         $.ajax({
 
@@ -22,10 +22,10 @@ $session_data=$this->session->userdata('lsesson');
 
                     if (response.data.lenght != 0) {
                         for (var i = 0; i < response.data.length; i++) {
-                            categoryList.set(response.data[i].unitId, response.data[i]);
+                            outsourceList.set(response.data[i].outsource_lab_id, response.data[i]);
 
                         }
-                        showList(categoryList);
+                        showList(outsourceList);
 
                     }
 
@@ -39,45 +39,30 @@ $session_data=$this->session->userdata('lsesson');
 
 
     function showList(list) {
-        $('#unitTable').dataTable().fnDestroy();
-        $('#unitList').empty();
+        $('#outsourceTable').dataTable().fnDestroy();
+        $('#outsourceList').empty();
         var tblData = '', badge, status;
         for (let k of list.keys()) {
             let category = list.get(k);
             tblData += `
                     <tr>
-                            <td>` + category.unitId + `</td>
-                            <td>` + category.unit + `</td>
-                            <td> <a href="#" onclick="getUsers(` + category.unitId + `)" title="update Patient" class="btn btn-success btn-xs" ><i class="fa fa-edit"></i></a> </td>
+                            <td>` + category.outsource_lab_id + `</td>
+                            <td>` + category.lab_name + `</td>
+                            <td> <a href="#" onclick="getLab(` + category.outsource_lab_id + `)" title="update Outsource LAb" class="btn btn-success btn-xs" ><i class="fa fa-edit"></i></a> </td>
                     </tr>
                     `;
         }
 
-        $('#unitList').html(tblData);
-        $('#unitTable').DataTable();
+        $('#outsourceList').html(tblData);
+        $('#outsourceTable').DataTable();
     }
 
 
-    function getUsers(id) {
-        $.ajax({
-
-            url: 'get_patients/' + id,
-
-            type: 'GET',
-
-            dataType: 'json',
-
-            success: function (response) {
-//                console.log(response);
-
-                if (response.status == 200) {
-                    
-                    $('#add_unit').modal('toggle');
-                }
-
-            }
-
-        });
+    function getLab(id) {
+        out=outsourceList.get(id.toString());
+       $('#outsource_lab_id').val(id);
+        $('#lab_name').val(out.lab_name);
+        $('#add_lab').modal('toggle');
     }
 
 

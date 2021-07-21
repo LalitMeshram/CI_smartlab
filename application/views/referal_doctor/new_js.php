@@ -4,15 +4,15 @@ $session_data=$this->session->userdata('lsesson');
 ?>
 <script>
 
-    $('#outsourceLabFrom').on('submit', function (e) {
+    $('#refForm').on('submit', function (e) {
         e.preventDefault();
-         var returnVal = $("#outsourceLabFrom").valid();
+         var returnVal = $("#refForm").valid();
         var formdata = new FormData(this);
         formdata.append('centerId',<?php echo $session_data['centerId'];?>)
         if (returnVal) {
             $.ajax({
 
-                url: 'add_outsource_lab',
+                url: 'add_ref',
 
                 type: 'POST',
 
