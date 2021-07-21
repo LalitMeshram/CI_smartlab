@@ -47,7 +47,7 @@ class LabRefController extends REST_Controller
             $response = array(
                 'Message' => 'Reference added successfully',
                 'Data' => $result,
-                'Responsecode' => 200
+                'status' => 200
             );
         }else{
             $result = $this->ref->center_ref_update($ref_data);
@@ -55,14 +55,14 @@ class LabRefController extends REST_Controller
             $response = array(
                 'Message' => 'Reference Data updated successfully',
                 'Data' => $result,
-                'Responsecode' => 200
+                'status' => 200
             ); 
         }else
         {
             $response = array(
                 'Message' => 'Try again',
                 'Data' => $result,
-                'Responsecode' => 204
+                'status' => 204
             );    
         }
         }

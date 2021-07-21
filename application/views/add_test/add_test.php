@@ -45,10 +45,8 @@
 									<div class="form-group">
 									<label>Select Category</label>
 									<div class="input-group mb-3">
-										<select class="form-control" id="">
-											<option>option 1</option>
-											<option>option 2</option>
-											<option>option 3</option>
+                                                                            <select class="form-control" id="categoryId" name="categoryId">
+											
 										</select>
 										<div class="input-group-append">
 											<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add_category">Add New</button>	
@@ -60,7 +58,7 @@
 									<div class="form-group">
 										<label>Test Name</label>
 										<div class="controls">
-											<input type="text" class="form-control" name="" placeholder="Enter Test Name">	
+                                                                                    <input type="text" class="form-control" name="test_name" id="test_name" placeholder="Enter Test Name">	
 										</div>
 									</div>
 								</div>
@@ -68,7 +66,7 @@
 									<div class="form-group">
 											<label>Short Name</label>
 											<div class="controls">
-												<input type="text" class="form-control" name="" placeholder="Enter Short Name">	
+                                                                                            <input type="text" class="form-control" name="short_name" id="short_name" placeholder="Enter Short Name">	
 											</div>
 									</div>	
 								</div>
@@ -76,7 +74,7 @@
 									<div class="form-group">
 									<label>Test For</label>
 									<div class="controls">
-										<select class="form-control" id="">
+                                                                            <select class="form-control" id="gender" name="gender">
 											<option>Male</option>
 											<option>Female</option>
 											<option>All</option>
@@ -92,7 +90,7 @@
 								<div class="form-group">
 								<label>General Fees</label>
 								<div class="controls">
-									<input type="text" class="form-control" name="" placeholder="Enter General Fees">		
+                                                                    <input type="text" class="form-control" name="fees" id="fees" placeholder="Enter General Fees">		
 								</div>
 							    </div>
 							</div>
@@ -143,7 +141,7 @@
 									<div class="form-group">
 									<label>Method</label>
 									<div class="controls">
-										<input type="text" class="form-control" name="" placeholder="Enter Method">		
+                                                                            <input type="text" class="form-control" name="method" id="method" placeholder="Enter Method">		
 									</div>
 								</div>
 								</div>
@@ -151,7 +149,7 @@
 									<div class="form-group">
 									<label>Instrument</label>
 									<div class="controls">
-										<input type="text" class="form-control" name="" placeholder="Enter Instrument">		
+                                                                            <input type="text" class="form-control" name="instrument" id="instrument" placeholder="Enter Instrument">		
 									</div>
 									</div>
 								</div>

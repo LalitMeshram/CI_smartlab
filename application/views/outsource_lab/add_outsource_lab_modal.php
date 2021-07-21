@@ -9,7 +9,8 @@
 										<div class="col-md-12">
 											<center>
 													<div class="controls">
-														<input type="text" placeholder="Enter Lab Name" class="form-control" name="">
+                                                                                                            <input type="text" placeholder="Enter Outsource Lab Name" class="form-control" name="lab_name" id="lab_name">
+                                                                                                            <input type="hidden"  name="outsource_lab_id" id="outsource_lab_id">
 													</div>
 											</center>
 										</div>

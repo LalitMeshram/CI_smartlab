@@ -8,7 +8,7 @@
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="breadcrumb-item"><a href="#">Tables</a></li>
-        <li class="breadcrumb-item active">Unit List</li>
+        <li class="breadcrumb-item active">Outsource Lab List</li>
       </ol>
     </section>
 
@@ -23,23 +23,23 @@
 					<!--<button class="btn btn-success" style="float: right;" data-toggle="modal" data-target="#myModal">Add New</button>-->
                                         <button class="btn btn-success" style="float: right;" id="addNew">Add New</button>
 					  <div class="table-responsive">
-						<table id="unitTable" class="table table-bordered table-striped">
+						<table id="outsourceTable" class="table table-bordered table-striped">
 							<thead>
 								<tr>
-									<th>Unit Id</th>
-									<th>Unit</th>
+									<th>Lab Id</th>
+									<th>Outsource Lab</th>
 									<th>Action</th>
 								</tr>
 							</thead>
-                                                        <tbody id="unitList">
+                                                        <tbody id="outsourceList">
 
                                                             
                                                             
 							</tbody>
 							<tfoot>
 								<tr>
-									<th>Unit Id</th>
-									<th>Unit</th>
+									<th>Lab Id</th>
+									<th>Outsource Lab</th>
 									<th>Action</th>
 								</tr>
 							</tfoot>
