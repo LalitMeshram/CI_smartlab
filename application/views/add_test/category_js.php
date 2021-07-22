@@ -4,8 +4,7 @@ $session_data = $this->session->userdata('lsesson');
 
 <script>
 
-var categoryList = new Map();
-
+    var categoryList = new Map();
 //get All Categories
 
     function getCategory() {
@@ -45,7 +44,7 @@ var categoryList = new Map();
         for (let k of list.keys()) {
             let category = list.get(k);
             option += `
-            <option value="`+category.categoryid+`">`+category.category+`</option>
+            <option value="` + category.categoryid + `">` + category.category + `</option>
                     `;
         }
 
@@ -54,11 +53,12 @@ var categoryList = new Map();
 
 //add new category
 
-$('#categoryForm').on('submit', function (e) {
+    $('#categoryForm').on('submit', function (e) {
         e.preventDefault();
-         var returnVal = $("#categoryForm").valid();
+        var returnVal = $("#categoryForm").valid();
+        var cat= $('#category').val();
         var formdata = new FormData(this);
-        formdata.append('centerId',<?php echo $session_data['centerId'];?>)
+        formdata.append('centerId',<?php echo $session_data['centerId']; ?>)
         if (returnVal) {
             $.ajax({
 
@@ -82,7 +82,9 @@ $('#categoryForm').on('submit', function (e) {
                         $('#categoryForm').trigger("reset");
                         swal("Good job!", response.msg, "success");
 //                        window.location.reload();
-
+                        
+                        categoryList.set(response.Data, {categoryid: response.Data, category: cat})
+                        showCatList(categoryList);
                         
                     } else {
 

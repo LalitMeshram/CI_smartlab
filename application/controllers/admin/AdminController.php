@@ -56,6 +56,7 @@ class AdminController extends CI_Controller {
         $this->load->view('add_test/add_test');
         $this->load->view('footer');
         $this->load->view('add_test/add_test_modals');
+        $this->load->view('add_test/add_test_js');
         $this->load->view('add_test/category_js');
         $this->load->view('add_test/unit_js');
         $this->load->view('add_test/outsource_lab_js');

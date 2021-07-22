@@ -28,21 +28,21 @@
 		<div id="add_lab" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-dialog modal-sm">
 						<div class="modal-content">
-							<form>
+                                                    <form id="outsourceLabFrom" method="post">
 							<div class="modal-body">
 									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 									<div class="row">
 										<div class="col-md-12">
 											<center>
 													<div class="controls">
-														<input type="text" placeholder="Enter Lab Name" class="form-control" name="">
+														<input type="text" placeholder="Enter Outsource Lab Name" class="form-control" name="lab_name" id="lab_name">
 													</div>
 											</center>
 										</div>
 									</div>
 							</div>
 							<div class="modal-footer">
-								<center><button type="button" class="btn btn-info waves-effect" data-dismiss="modal">Save</button></center>
+                                                            <center><button type="submit" class="btn btn-info waves-effect">Save</button></center>
 							</div>
 							</form>
 						</div>
@@ -56,21 +56,21 @@
 			<div id="add_unit" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-dialog modal-sm">
 						<div class="modal-content">
-							<form>
+                                                    <form id="unitForm" method="post">
 							<div class="modal-body">
 									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 									<div class="row">
 										<div class="col-md-12">
 											<center>
 													<div class="controls">
-														<input type="text" placeholder="Enter Unit" class="form-control" name="">
+                                                                                                            <input type="text" placeholder="Enter Unit" class="form-control" name="unit" id="unit">
 													</div>
 											</center>
 										</div>
 									</div>
 							</div>
 							<div class="modal-footer">
-								<center><button type="button" class="btn btn-info waves-effect" data-dismiss="modal">Save</button></center>
+                                                            <center><button type="submit" class="btn btn-info waves-effect">Save</button></center>
 							</div>
 							</form>
 						</div>

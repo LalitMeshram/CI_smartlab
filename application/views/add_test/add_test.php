@@ -98,8 +98,8 @@
 									<div class="form-group">
 										<div class="controls">
 											<div class="form-check"style="margin-top:16%;">
-											  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-											  <label class="form-check-label" for="flexCheckDefault">
+											  <input class="form-check-input" type="checkbox" value="1" id="outsourceCheck">
+											  <label class="form-check-label" for="outsourceCheck">
 											    Outsource
 											  </label>
 											</div>		
@@ -110,10 +110,8 @@
 									<div class="form-group">
 										<label>Select Lab Name</label>
 										<div class="input-group mb-3">
-											<select class="form-control" id="" disabled="">
-												<option>option 1</option>
-												<option>option 2</option>
-												<option>option 3</option>
+                                                                                    <select class="form-control" id="outsourcelabId" name="outsourcelabId" disabled="">
+												
 											</select>
 											<div class="input-group-append">
 												<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add_lab">Add New</button>	
@@ -125,7 +123,7 @@
 									<div class="form-group">
 										<label>Outsource Amount</label>
 										<div class="controls">
-											<input type="text" class="form-control" name="" placeholder="Enter Outsource Amount" disabled="">		
+                                                                                    <input type="text" class="form-control" name="outsourcelabAmount" id="outsourcelabAmount" placeholder="Enter Outsource Amount" disabled="">		
 										</div>
 									</div>
 								</div>
@@ -187,10 +185,8 @@
 	            		<div class="form-group">
 							<label>Select Unit</label>
 							<div class="input-group mb-3">
-									<select class="form-control" id="">
-										<option>option 1</option>
-										<option>option 2</option>
-										<option>option 3</option>
+                                                            <select class="form-control" id="unitId" name="unitId">
+										
 									</select>
 									<div class="input-group-append">
 										<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add_unit">Add New</button>	
