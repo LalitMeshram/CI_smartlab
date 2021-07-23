@@ -14,7 +14,7 @@
 
     <!-- Main content -->
     <section class="content">
-     
+        <form id="addTestForm" method="post">
       <div class="row">
 		  	<div class="box">
 		  		<div class="box-body">
@@ -177,7 +177,7 @@
 	            		<div class="form-group">
 							<label>Parameter</label>
 							<div class="controls">
-								<input type="text" class="form-control" name="" placeholder="Enter Subtype Name">		
+                                                            <input type="text" class="form-control" name="parameter" id="parameter" placeholder="Enter Subtype Name">		
 							</div>
 						</div>
 	            	</div>
@@ -195,7 +195,7 @@
 						</div>
 	            	</div>
 	            	<div class="col-md-1">
-	            		<center><button class="btn btn-success subtype_add_button">Add</button></center>
+                            <center><button class="btn btn-success subtype_add_button" id="addSubtypebtn">Add</button></center>
 	            	</div>
 	            </div>
 	         	<div class="row">
@@ -203,34 +203,16 @@
 	         		</div>
 	         		<div class="col-md-8">
 	         			<div class="table-responsive box">
-						  <table class="table table-bordered mb-0">
-							  <tbody>
+                                            <table class="table table-bordered mb-0" id="subtypeTable">
+                                                <thead>
 								<tr>
 								  <th scope="col">Subtype</th>
 								  <th scope="col">Unit</th>
 								  <th scope="col">Action</th>
 								</tr>
-							  </tbody>
-							  <tbody>
-								<tr>
-								  <td>PCO2</td>
-								  <td>xyz </td>
-								  <td>
-								  	<button class="btn btn-success btn-xs" data-toggle="modal" data-target="#add_range"><i class="fa fa-plus"></i> Add Range</button>
-								  	<button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete</button> 
-								  </td>
-									
-								</tr>
-								<tr>
-								  <td>Total CO2 Contents (TCO2)</td>
-								  <td>xyz</td>
-								  <td><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></button></td>
-								</tr>
-								<tr>
-								  <td>Total CO2 Contents (TCO2)</td>
-								  <td>xyz</td>
-								  <td><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></button></td>
-								</tr>
+                                                </thead>
+                                                          <tbody id="subtypeList">
+<!--								
 							</tbody>
 							</table>
 						</div>
@@ -244,17 +226,15 @@
 	          </div>
 	          <!-- /.box -->
 	        </div>			  
-          <center><button class="btn btn-success">Save</button></center>
+                        <center><button class="btn btn-success" type="submit">Save</button></center>
           </div>
           
         </div>
 		</div>  
 		  
       </div>
-		
-	  <div class="row">
-	  			
-	  </div>
+    </form>	
+	  
       
     </section>
     <!-- /.content -->

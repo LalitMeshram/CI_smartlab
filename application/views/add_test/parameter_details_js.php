@@ -1,0 +1,47 @@
+<script>
+
+    $('#addSubtypebtn').click(function () {
+        var parameter = $('#parameter').val();
+        var unitId = $('#unitId').val();
+        var unit = $("#unitId option:selected").html();
+        var tableData = '';
+        if (parameter != '') {
+            if (!($('#r' + parameter.replace(/ /g, "_")).length)) {
+                tableData += $('#subtypeTable tbody').html();
+                tableData += `<tr id="r` + parameter.replace(/ /g, "_") + `">
+                        <td>` + parameter + `</td>
+                        <td>` + unit + `
+                                <input type="hidden" id="hd` + parameter.replace(/ /g, "_") + `" value="` + unitId + `"/>
+                        </td>
+                        <td>
+                        <button class="btn btn-success btn-xs" onclick="addRange('` + parameter.replace(/ /g, "_") + `')"><i class="fa fa-plus"></i> Add Range</button>
+                        <button class="btn btn-danger btn-xs" onclick="deleteSubType('` + parameter.replace(/ /g, "_") + `')"><i class="fa fa-trash-o"></i> Delete</button> 
+                        </td>
+                        </tr>`;
+
+                $('#subtypeList').html(tableData);
+
+
+
+
+
+
+            }
+        }
+
+
+
+    });
+
+    function deleteSubType(id) {
+        $('#r' + id).remove();
+        if (stypeRange.has(id)) {
+            stypeRange.delete(id);
+        }
+    }
+    function addRange(key) {
+        $('#add_range').modal('toggle');
+        $('#param_subtype_id').val(key);
+    }
+
+</script>
