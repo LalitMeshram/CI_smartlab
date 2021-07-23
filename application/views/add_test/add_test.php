@@ -49,7 +49,7 @@
 											
 										</select>
 										<div class="input-group-append">
-											<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add_category">Add New</button>	
+											<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add_category" type="button">Add New</button>	
 										</div>
 									</div>
 									</div>		
@@ -114,7 +114,7 @@
 												
 											</select>
 											<div class="input-group-append">
-												<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add_lab">Add New</button>	
+												<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add_lab" type="button">Add New</button>	
 											</div>
 										</div>
 									</div>
@@ -189,13 +189,13 @@
 										
 									</select>
 									<div class="input-group-append">
-										<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add_unit">Add New</button>	
+										<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add_unit" type="button">Add New</button>	
 									</div>
 							</div>
 						</div>
 	            	</div>
 	            	<div class="col-md-1">
-                            <center><button class="btn btn-success subtype_add_button" id="addSubtypebtn">Add</button></center>
+                            <center><button class="btn btn-success subtype_add_button" id="addSubtypebtn" type="button">Add</button></center>
 	            	</div>
 	            </div>
 	         	<div class="row">
@@ -212,7 +212,7 @@
 								</tr>
                                                 </thead>
                                                           <tbody id="subtypeList">
-<!--								
+								
 							</tbody>
 							</table>
 						</div>
@@ -222,7 +222,7 @@
 	         	</div>
 	         	
 	            </div>
-	            <!-- /.box-body -->
+	            <!-- /.box-body 
 	          </div>
 	          <!-- /.box -->
 	        </div>			  

@@ -91,13 +91,13 @@ class TestController extends REST_Controller
             $response = array(
                 'Message' => $msg,
                 'Data' => $result,
-                'Responsecode' => 200
+                'status' => 200
             );
         } else {
             $response = array(
                 'Message' => 'Error try again',
                 'Data' => $result,
-                'Responsecode' => 404
+                'status' => 404
             );
         }
         $this->response($response, REST_Controller::HTTP_OK);
@@ -126,13 +126,13 @@ class TestController extends REST_Controller
                 'Message' => 'Test loaded successfully',
                 'Data' => $records,
                 'count' =>$count,
-                'Responsecode' => 200
+                'status' => 200
             ); 
         }else{
             $response = array(
                 'Message' => 'Data not found',
                 'Data' => $data,
-                'Responsecode' => 204
+                'status' => 204
             );  
         }
         $this->response($response, REST_Controller::HTTP_OK);

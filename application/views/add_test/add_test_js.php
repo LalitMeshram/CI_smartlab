@@ -22,6 +22,7 @@ $session_data = $this->session->userdata('lsesson');
         var data = [];
         var parameter;
         var unitId;
+        var i = 0;
         $('#subtypeTable tbody>tr').each(function (index, tr) {
             var tds = $(tr).find('td');
             parameter = tds[0].textContent;
@@ -64,12 +65,12 @@ $session_data = $this->session->userdata('lsesson');
 
                 success: function (response) {
                     if (response.status == 200) {
-                        swal("Good job!", response.msg, "success");
-                        window.location.reload();
+                        swal("Good job!", response.Message, "success");
+//                        window.location.reload();
 
                     } else {
 
-                        swal("Error!", response.msg, "error");
+                        swal("Error!", response.Message, "error");
 
                     }
 
