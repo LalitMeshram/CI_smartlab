@@ -24,13 +24,14 @@ class TestController extends REST_Controller
         $data     = $this->test->get_center_tests($centerId);
         if (!empty($data)) {
             $temp = array();
+            $temp1 = array();
             for ($i = 0; $i < count($data); $i++) {
                 $subtypes_test = array(
                     'subtypes_test' => array()
                 );
                 $p_details     = $this->test->get_subtypes_test($data[$i]['testId']);
                 if (!empty($p_details)) {
-                    
+                    $temp = [];
                     for ($j = 0; $j < count($p_details); $j++) {
                         $subtypes_test_ranges = array(
                             'subtypes_test_ranges' => array()
@@ -41,14 +42,13 @@ class TestController extends REST_Controller
                                 'subtypes_test_ranges' => $s_details
                             );
                         }
-                        $subtypes_test = array(
-                            'subtypes_test' => $p_details[$j]
-                        );
+                         $temp[]    = array_merge($p_details[$j],$subtypes_test_ranges);
+
                     } 
-                    $temp[]        = array_merge($subtypes_test, $subtypes_test_ranges);
+                    $temp1= array("subtype_test"=>$temp);
                     
                 }
-                $records[] = array_merge($data[$i], $temp);
+                $records[] = array_merge($data[$i], $temp1);
             }
             $response['data']   = $records;
             $response['msg']    = 'All Data Fetch successfully!';
@@ -75,10 +75,28 @@ class TestController extends REST_Controller
         );
         $subtypes_test = $this->input->post('subtypes_test');//refer testdata.json
         $subtypes_test = json_decode($subtypes_test);
+        $outsource_data = array();
+        $check =0;
+        if(isset($_POST['outsourceCheck'])){
+            $outsource_data = array(
+                "outsource_lab_id"=> $this->post('outsourcelabId'),
+                "outsource_amt"=> $this->post('outsourcelabAmount'),
+                "centerId" =>$this->post('centerId'),
+            );
+            $check = $_POST['outsourceCheck']==1 ? 1:0;
+        }
+      if($check){
+        $data          = array(
+            'test_data' => $test_data,
+            'subtypes_test' => $subtypes_test,
+            'outsource'=>$outsource_data
+        );
+      }else{
         $data          = array(
             'test_data' => $test_data,
             'subtypes_test' => $subtypes_test
         );
+      }
         $testId = $this->post('testId');
         if(!empty($testId) && $testId !=0){
             $result        = $this->test->update_test_data($data,$testId);

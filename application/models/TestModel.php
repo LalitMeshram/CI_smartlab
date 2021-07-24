@@ -37,9 +37,14 @@ class TestModel extends CI_Model
     {
         $result   = array();
         $testdata = $data['test_data'];
+        $outsource = $data['outsource'];
         $this->db->trans_begin();
         $this->db->insert('center_test_master', $testdata);
         $result['testId'] = $this->db->insert_id();
+        if(!empty($outsource)) {
+            $outsource['testId'] = $result['testId'];
+            $this->db->insert('center_outsource_test',$outsource);
+        }
         $this->add_subtype_test($data['subtypes_test'], $result['testId']);
         if ($this->db->trans_status() === FALSE) {
             $this->db->trans_rollback();

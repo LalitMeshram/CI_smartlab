@@ -98,7 +98,7 @@
 									<div class="form-group">
 										<div class="controls">
 											<div class="form-check"style="margin-top:16%;">
-											  <input class="form-check-input" type="checkbox" value="1" id="outsourceCheck">
+											  <input class="form-check-input" type="checkbox" value="1" id="outsourceCheck" name="outsourceCheck">
 											  <label class="form-check-label" for="outsourceCheck">
 											    Outsource
 											  </label>
