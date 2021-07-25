@@ -45,8 +45,8 @@
             var range = stypeRange.get(key);
             var tableData = '';
             var d = new Date();
-        var n = d.getTime();
-            
+            var n = d.getTime();
+
             for (var i = 0; i < range.length; i++) {
                 tableData += `<tr id="l` + n + `">
                         <td>` + range[i].gender + `</td>

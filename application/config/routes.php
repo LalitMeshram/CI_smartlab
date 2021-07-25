@@ -10,6 +10,7 @@ $route['login']              = 'admin/Admincontroller/userLogin';
 $route['registration']       = 'admin/Admincontroller/userRegistration';
 $route['letter_head']        = 'admin/Admincontroller/letterHead';
 $route['add_test']           = 'admin/Admincontroller/addTest';
+$route['update_test/(:num)']           = 'admin/Admincontroller/updateTest/$1';
 $route['test_database']      = 'admin/Admincontroller/testDatabase';
 $route['patient']      = 'admin/Admincontroller/patient';
 $route['create_case']      = 'admin/Admincontroller/createCase';

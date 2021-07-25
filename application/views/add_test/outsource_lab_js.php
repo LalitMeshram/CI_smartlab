@@ -9,7 +9,7 @@ $session_data = $this->session->userdata('lsesson');
     function getOutsourceLab() {
         $.ajax({
 
-            url: 'outsource_lab_list/' +<?php echo $session_data['centerId']; ?>,
+            url: '<?php echo base_url();?>outsource_lab_list/' +<?php echo $session_data['centerId']; ?>,
 
             type: 'GET',
 
