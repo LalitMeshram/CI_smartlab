@@ -11,6 +11,7 @@ class TestController extends REST_Controller
         
         parent::__construct();
         $this->load->model('TestModel', 'test');
+        $this->load->model('OutsourceLabModel', 'outsource');
     }
     
     public function index_get() {
@@ -43,10 +44,13 @@ class TestController extends REST_Controller
                             );
                         }
                          $temp[]    = array_merge($p_details[$j],$subtypes_test_ranges);
-
-                    } 
-                    $temp1= array("subtype_test"=>$temp);
-                    
+                    }
+                    $temp1= array("subtype_test"=>$temp);  
+                }
+                $temp3 = array("outsourcetest"=>[]);
+                $outsource = $this->outsource->center_outsource_lab_tests($data[$i]['testId']);
+                if(!empty($outsource)){
+                    $temp3 = array("outsourcetest"=>$outsource);
                 }
                 $records[] = array_merge($data[$i], $temp1);
             }

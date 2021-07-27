@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 19, 2021 at 08:50 AM
+-- Generation Time: Jul 27, 2021 at 06:39 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -39,6 +39,13 @@ CREATE TABLE `case_master` (
   `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `case_master`
+--
+
+INSERT INTO `case_master` (`caseId`, `centerId`, `patientId`, `referenceId`, `collection_center`, `collection_source`, `createdat`, `updatedat`) VALUES
+(1, 1, 1, 1, 'Hospital', 'City Hospital', '2021-07-20 15:03:05', '2021-07-20 15:03:05');
+
 -- --------------------------------------------------------
 
 --
@@ -59,6 +66,13 @@ CREATE TABLE `case_payments` (
   `paymentdate` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `case_payments`
+--
+
+INSERT INTO `case_payments` (`paymentId`, `caseId`, `centerId`, `patientId`, `total_amt`, `amt_recieved`, `discount`, `paymentmode`, `paymentdetails`, `pending_amt`, `paymentdate`) VALUES
+(1, 1, 1, 1, 500.00, 200.00, 0.00, 'Cash', NULL, 300.00, '2021-07-20 00:00:00');
+
 -- --------------------------------------------------------
 
 --
@@ -74,6 +88,13 @@ CREATE TABLE `case_payment_transactions` (
   `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `case_payment_transactions`
+--
+
+INSERT INTO `case_payment_transactions` (`transactionId`, `paymentId`, `amount`, `paymentdate`, `createdat`, `updatedat`) VALUES
+(1, 1, 200.00, '2021-07-20', '2021-07-20 15:03:05', '2021-07-20 15:03:05');
+
 -- --------------------------------------------------------
 
 --
@@ -86,6 +107,14 @@ CREATE TABLE `case_tests` (
   `testId` int(10) UNSIGNED NOT NULL,
   `centerId` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `case_tests`
+--
+
+INSERT INTO `case_tests` (`case_test_id`, `caseId`, `testId`, `centerId`) VALUES
+(1, 1, 1, 1),
+(2, 1, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -160,7 +189,8 @@ CREATE TABLE `center_outsource_test` (
 --
 
 INSERT INTO `center_outsource_test` (`outsourceId`, `outsource_lab_id`, `outsource_amt`, `centerId`, `testId`, `createdat`, `updatedat`) VALUES
-(1, 1, 200.00, 1, 1, '2021-07-19 08:59:13', '2021-07-19 08:59:13');
+(1, 2, 200.00, 1, 1, '2021-07-27 08:52:46', '2021-07-27 08:52:46'),
+(2, 1, 200.00, 1, 2, '2021-07-27 10:08:04', '2021-07-27 10:08:04');
 
 -- --------------------------------------------------------
 
@@ -234,8 +264,7 @@ CREATE TABLE `center_payment_details` (
 --
 
 INSERT INTO `center_payment_details` (`paymentId`, `centerId`, `packageId`, `startdate`, `enddate`, `paymentmode`, `payment_ref_number`, `createdat`, `updatedat`) VALUES
-(1, 1, 1, '2021-06-27', '2021-06-28', 'PhonePay', '123FRT', '2021-06-27 09:02:45', '2021-06-29 21:08:33'),
-(2, 2, 1, '2021-06-27', '2021-06-29', 'PhonePay', '123FRT', '2021-06-27 09:05:05', '2021-06-29 21:14:37');
+(1, 1, 3, '2021-07-20', '2021-09-18', 'UPI', 'order_Hb2tWU9YXqLEMv', '2021-07-20 09:31:10', '2021-07-20 09:31:10');
 
 -- --------------------------------------------------------
 
@@ -288,8 +317,8 @@ CREATE TABLE `center_test_master` (
 --
 
 INSERT INTO `center_test_master` (`testId`, `categoryId`, `test_name`, `short_name`, `method`, `instrument`, `gender`, `fees`, `centerId`, `createdat`, `updatedat`) VALUES
-(1, 1, 'Testing', 'Test', 'M', 'I', 'Male', 250.00, 1, '2021-07-15 09:14:47', '2021-07-15 09:14:47'),
-(2, 1, 'Testing', 'Test', 'M', 'I', 'Male', 250.00, 1, '2021-07-15 09:16:19', '2021-07-15 09:16:19');
+(1, 1, 'TEST123', 'T1M1', 'KET', 'KH', 'Male', 500.00, 1, '2021-07-27 08:52:46', '2021-07-27 08:52:46'),
+(2, 2, 'TEST123', '', 'KET', 'KH', 'Male', 500.00, 1, '2021-07-27 10:08:04', '2021-07-27 10:08:04');
 
 -- --------------------------------------------------------
 
@@ -309,9 +338,8 @@ CREATE TABLE `center_test_subtypes` (
 --
 
 INSERT INTO `center_test_subtypes` (`subtypeId`, `test_name`, `unitId`, `testId`) VALUES
-(1, 'Test1', 2, 1),
-(2, 'Test1', 2, 2),
-(3, 'Test_2', 2, 2);
+(2, 'TECH M', 1, 1),
+(3, 'TECH M', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -321,21 +349,25 @@ INSERT INTO `center_test_subtypes` (`subtypeId`, `test_name`, `unitId`, `testId`
 
 CREATE TABLE `center_test_subtypes_ranges` (
   `rangeId` int(10) UNSIGNED NOT NULL,
-  `subtypeId` int(11) NOT NULL,
+  `subtypeId` int(11) UNSIGNED NOT NULL,
   `gender` enum('Male','Female','Other') NOT NULL,
   `lower_age` int(11) DEFAULT NULL,
+  `lower_age_period` varchar(20) NOT NULL,
   `upper_age` int(11) DEFAULT NULL,
+  `upper_age_period` varchar(14) NOT NULL,
   `lower_limit` varchar(50) DEFAULT NULL,
-  `upper_limit` varchar(50) DEFAULT NULL
+  `upper_limit` varchar(50) DEFAULT NULL,
+  `words` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `center_test_subtypes_ranges`
 --
 
-INSERT INTO `center_test_subtypes_ranges` (`rangeId`, `subtypeId`, `gender`, `lower_age`, `upper_age`, `lower_limit`, `upper_limit`) VALUES
-(1, 1, 'Male', 10, 20, '140', '190'),
-(2, 1, 'Male', 10, 20, '140', '190');
+INSERT INTO `center_test_subtypes_ranges` (`rangeId`, `subtypeId`, `gender`, `lower_age`, `lower_age_period`, `upper_age`, `upper_age_period`, `lower_limit`, `upper_limit`, `words`) VALUES
+(2, 2, 'Male', 10, '', 25, '', '10', '25', NULL),
+(3, 2, 'Male', 12, '', 12, '', '12', '12', NULL),
+(4, 3, 'Male', 12, 'Days', 12, 'Days', '12', '12', 'Test');
 
 -- --------------------------------------------------------
 
@@ -355,7 +387,8 @@ CREATE TABLE `center_unit_master` (
 --
 
 INSERT INTO `center_unit_master` (`unitId`, `unit`, `centerId`, `createdat`) VALUES
-(1, 'KETCHUP', 1, '2021-07-19 08:16:26');
+(1, 'KETCHUP', 1, '2021-07-19 08:16:26'),
+(2, 'KGF', 1, '2021-07-24 10:39:52');
 
 -- --------------------------------------------------------
 
@@ -419,7 +452,8 @@ CREATE TABLE `lab_center_categories` (
 
 INSERT INTO `lab_center_categories` (`categoryid`, `category`, `centerId`, `createdat`, `updatedat`) VALUES
 (1, 'Microbiology', 1, '2021-07-12 15:10:58', '2021-07-12 15:12:50'),
-(2, 'Hametology', 1, '2021-07-12 15:11:26', '2021-07-12 15:11:26');
+(2, 'Hametology', 1, '2021-07-12 15:11:26', '2021-07-12 15:11:26'),
+(3, 'Dermitology', 1, '2021-07-24 10:38:41', '2021-07-24 10:38:41');
 
 -- --------------------------------------------------------
 
@@ -472,7 +506,13 @@ CREATE TABLE `patient_master` (
 --
 
 INSERT INTO `patient_master` (`patientId`, `centerId`, `patient_title`, `first_name`, `last_name`, `gender`, `aadhar_number`, `dob`, `age`, `contact_number`, `alternate_number`, `emailId`, `patient_address`, `patient_profile`, `createdat`, `updatedat`) VALUES
-(1, 1, 'Mr.', 'Aarya', 'Stark', 'Female', '589636254147', '1998-09-04', 23, '9887456514', '', 'aarya@stark.com', '12.BB Marg Lahore', './documents/2021_07_06_0417090000003.png', '2021-07-06 16:12:56', '2021-07-06 16:17:09');
+(1, 1, 'Mr.', 'Aarya', 'Stark', 'Female', '589636254147', '1998-09-04', 23, '9887456514', '', 'aarya@stark.com', '12.BB Marg Lahore', './documents/2021_07_06_0417090000003.png', '2021-07-06 16:12:56', '2021-07-06 16:17:09'),
+(2, 1, 'Mr', 'Nick', 'Jonas', 'Male', '636458395855', '2000-12-12', 10, '09763602243', '', 'hulkt@avengers.com', 'San Diego,California', '0', '2021-07-20 15:15:34', '2021-07-20 15:15:34'),
+(3, 1, 'Mr', 'Nick', 'Jonas', 'Male', '636458395855', '2000-12-12', 10, '09763602243', '', 'hulkt@avengers.com', 'San Diego,California', '0', '2021-07-20 15:15:44', '2021-07-20 15:15:44'),
+(4, 1, 'Mrs', 'Mandira', 'Mathur', 'Female', '9685741425', '1998-01-10', 25, '09763602243', '', 'hulkt@avengers.com', 'San Diego,California', '0', '2021-07-20 15:19:19', '2021-07-20 15:19:19'),
+(5, 1, 'Mrs', 'Mandira', 'Mathur', 'Female', '9685741425', '1998-01-10', 25, '09763602243', '', 'hulkt@avengers.com', 'San Diego,California', '0', '2021-07-20 15:19:27', '2021-07-20 15:19:27'),
+(6, 1, 'Mrs', 'Mandira', 'Mathur', 'Female', '9685741425', '1998-01-10', 25, '09763602243', '', 'hulkt@avengers.com', 'San Diego,California', '0', '2021-07-20 15:20:12', '2021-07-20 15:20:12'),
+(7, 1, 'Mrs', 'Mandira', 'Mathur', 'Female', '9685741425', '1998-01-10', 25, '09763602243', '', 'hulkt@avengers.com', 'San Diego,California', 'documents/2021_07_20_03203500000011.jpg', '2021-07-20 15:20:35', '2021-07-20 15:20:35');
 
 --
 -- Indexes for dumped tables
@@ -562,7 +602,8 @@ ALTER TABLE `center_test_subtypes`
 -- Indexes for table `center_test_subtypes_ranges`
 --
 ALTER TABLE `center_test_subtypes_ranges`
-  ADD PRIMARY KEY (`rangeId`);
+  ADD PRIMARY KEY (`rangeId`),
+  ADD KEY `center_test_subtypes_ranges_ibfk_1` (`subtypeId`);
 
 --
 -- Indexes for table `center_unit_master`
@@ -609,25 +650,25 @@ ALTER TABLE `patient_master`
 -- AUTO_INCREMENT for table `case_master`
 --
 ALTER TABLE `case_master`
-  MODIFY `caseId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `caseId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `case_payments`
 --
 ALTER TABLE `case_payments`
-  MODIFY `paymentId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `paymentId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `case_payment_transactions`
 --
 ALTER TABLE `case_payment_transactions`
-  MODIFY `transactionId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `transactionId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `case_tests`
 --
 ALTER TABLE `case_tests`
-  MODIFY `case_test_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `case_test_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `center_details`
@@ -645,7 +686,7 @@ ALTER TABLE `center_letter_head_details`
 -- AUTO_INCREMENT for table `center_outsource_test`
 --
 ALTER TABLE `center_outsource_test`
-  MODIFY `outsourceId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `outsourceId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `center_packages`
@@ -663,7 +704,7 @@ ALTER TABLE `center_package_details`
 -- AUTO_INCREMENT for table `center_payment_details`
 --
 ALTER TABLE `center_payment_details`
-  MODIFY `paymentId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `paymentId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `center_reference_master`
@@ -687,13 +728,13 @@ ALTER TABLE `center_test_subtypes`
 -- AUTO_INCREMENT for table `center_test_subtypes_ranges`
 --
 ALTER TABLE `center_test_subtypes_ranges`
-  MODIFY `rangeId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `rangeId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `center_unit_master`
 --
 ALTER TABLE `center_unit_master`
-  MODIFY `unitId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `unitId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `customer_registeration`
@@ -711,7 +752,7 @@ ALTER TABLE `lab_category`
 -- AUTO_INCREMENT for table `lab_center_categories`
 --
 ALTER TABLE `lab_center_categories`
-  MODIFY `categoryid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `categoryid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `outsource_lab`
@@ -723,7 +764,7 @@ ALTER TABLE `outsource_lab`
 -- AUTO_INCREMENT for table `patient_master`
 --
 ALTER TABLE `patient_master`
-  MODIFY `patientId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `patientId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
@@ -740,6 +781,12 @@ ALTER TABLE `center_package_details`
 --
 ALTER TABLE `center_payment_details`
   ADD CONSTRAINT `center_payment_details_ibfk_1` FOREIGN KEY (`centerId`) REFERENCES `customer_registeration` (`centerId`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `center_test_subtypes_ranges`
+--
+ALTER TABLE `center_test_subtypes_ranges`
+  ADD CONSTRAINT `center_test_subtypes_ranges_ibfk_1` FOREIGN KEY (`subtypeId`) REFERENCES `center_test_subtypes` (`subtypeId`) ON DELETE CASCADE ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

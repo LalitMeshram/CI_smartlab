@@ -30,4 +30,12 @@ class OutsourceLabModel extends CI_Model {
         return $data;
     }
 
+    public function center_outsource_lab_tests($testId)
+    {
+            $data =  $this->db->get_where('center_outsource_test', array(
+                'testId' => $testId
+            ))->row_array();
+        return $data;
+    }
+
 }

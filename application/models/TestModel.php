@@ -11,18 +11,20 @@ class TestModel extends CI_Model
     }
     public function get_center_tests($centerId)
     {
-        $data = $this->db->get_where('center_test_master', array(
-            'centerId' => $centerId
-        ))->result_array();
-        return $data;
+        $sql = "SELECT ct.testId,ct.categoryId,ct.test_name,ct.short_name,ct.method,ct.instrument,ct.gender,ct.fees,ct.fees,ct.centerId,lc.category
+        FROM center_test_master ct INNER JOIN lab_center_categories lc ON lc.categoryid = ct.categoryId
+        WHERE ct.centerId = $centerId";
+         $query = $this->db->query($sql);
+         return $query->result_array();
     }
     
     public function get_subtypes_test($testId)
     {
-        $data = $this->db->get_where('center_test_subtypes', array(
-            'testId' => $testId
-        ))->result_array();
-        return $data;
+        $sql = "SELECT ct.subtypeId,ct.test_name,ct.unitId,ct.testId,cu.unit FROM center_test_subtypes ct 
+        INNER JOIN center_unit_master cu ON cu.unitId=ct.unitId
+        WHERE ct.testId=$testId";
+         $query = $this->db->query($sql);
+         return $query->result_array();
     }
     
     public function get_subtypes_ranges($subtypeId)
@@ -37,11 +39,12 @@ class TestModel extends CI_Model
     {
         $result   = array();
         $testdata = $data['test_data'];
-        $outsource = $data['outsource'];
+       
         $this->db->trans_begin();
         $this->db->insert('center_test_master', $testdata);
         $result['testId'] = $this->db->insert_id();
-        if(!empty($outsource)) {
+        if(!empty($data['outsource'])) {
+            $outsource = $data['outsource'];
             $outsource['testId'] = $result['testId'];
             $this->db->insert('center_outsource_test',$outsource);
         }
@@ -99,10 +102,13 @@ class TestModel extends CI_Model
             $partners = array(
                 'gender' => $contact->gender,
                 'lower_age' => $contact->lower_age,
+                'lower_age_period'=>$contact->lower_age_period,
                 'upper_age' => $contact->upper_age,
+                'upper_age_period'=>$contact->upper_age_period,
                 'lower_limit' => $contact->lower_limit,
                 'upper_limit' => $contact->upper_limit,
-                'subtypeId' => $subtypeId
+                'subtypeId' => $subtypeId,
+                'words'=>$contact->words
             );
             $this->db->insert('center_test_subtypes_ranges', $partners);
         }
