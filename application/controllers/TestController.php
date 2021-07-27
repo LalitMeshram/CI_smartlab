@@ -47,12 +47,12 @@ class TestController extends REST_Controller
                     }
                     $temp1= array("subtype_test"=>$temp);  
                 }
-                $temp3 = array("outsourcetest"=>[]);
+                $temp3 = array("outsourcetest"=>[],"outsource"=>false);
                 $outsource = $this->outsource->center_outsource_lab_tests($data[$i]['testId']);
                 if(!empty($outsource)){
-                    $temp3 = array("outsourcetest"=>$outsource);
+                    $temp3 = array("outsourcetest"=>$outsource,"outsource"=>true);
                 }
-                $records[] = array_merge($data[$i], $temp1);
+                $records[] = array_merge($data[$i], $temp1,$temp3);
             }
             $response['data']   = $records;
             $response['msg']    = 'All Data Fetch successfully!';
