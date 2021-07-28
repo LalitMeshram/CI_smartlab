@@ -48,7 +48,7 @@ $session_data = $this->session->userdata('lsesson');
                     <tr>
 							<td>`+test.test_name+`</td>
 							<td>`+test.short_name+`</td>
-							<td>`+test.categoryId+`</td>
+							<td>`+test.category+`</td>
 							<td>`+test.gender+`</td>
 							<td>`+test.fees+`</td>
 							<td>
