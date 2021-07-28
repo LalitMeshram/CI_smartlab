@@ -64,6 +64,13 @@ class TestModel extends CI_Model
         $this->db->where('testId', $testId);
         $this->db->update('center_test_master', $testdata);
 
+        if(!empty($data['outsource'])) {
+            $outsource = $data['outsource'];
+            $outsource['testId'] = $result['testId'];
+            $this->db->where('testId', $testId);
+            $this->db->update('center_outsource_test', $testdata);
+        }
+
         $this->db->where('testId', $testId);
         $this->db->delete('center_test_subtypes');
 
