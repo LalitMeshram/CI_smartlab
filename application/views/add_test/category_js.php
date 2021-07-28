@@ -15,6 +15,7 @@ $session_data = $this->session->userdata('lsesson');
             type: 'GET',
 
             dataType: 'json',
+            async:false,
 
             success: function (response) {
 

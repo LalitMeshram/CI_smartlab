@@ -66,9 +66,9 @@ class TestModel extends CI_Model
 
         if(!empty($data['outsource'])) {
             $outsource = $data['outsource'];
-            $outsource['testId'] = $result['testId'];
+            $outsource['testId'] = $testId;
             $this->db->where('testId', $testId);
-            $this->db->update('center_outsource_test', $testdata);
+            $this->db->update('center_outsource_test', $outsource);
         }
 
         $this->db->where('testId', $testId);

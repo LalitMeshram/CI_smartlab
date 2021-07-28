@@ -20,9 +20,15 @@
         $('#fees').val(test.fees);
 
 //        outsource lab
-        $('#outsourcelabId').val(test.outsourcelabId);
-        $('#outsourcelabAmount').val(test.outsourcelabAmount);
-
+        //        outsource lab
+        if (test.outsource) {
+            $('#outsourceCheck').prop('checked', true);
+            getOutsourceLab();
+            $("#outsourcelabAmount").removeAttr("disabled");
+            $("#outsourcelabId").removeAttr("disabled");
+            $('#outsourcelabId').val(test.outsourcetest.outsource_lab_id);
+            $('#outsourcelabAmount').val(test.outsourcetest.outsource_amt);
+        }
         $('#method').val(test.method);
         $('#instrument').val(test.instrument);
 

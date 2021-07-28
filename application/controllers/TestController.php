@@ -89,6 +89,7 @@ class TestController extends REST_Controller
             );
             $check = $_POST['outsourceCheck']==1 ? 1:0;
         }
+       
       if($check){
         $data          = array(
             'test_data' => $test_data,
@@ -101,6 +102,8 @@ class TestController extends REST_Controller
             'subtypes_test' => $subtypes_test
         );
       }
+//      echo 'check='.$check;
+//      print_r($data);exit;
         $testId = $this->post('testId');
         if(!empty($testId) && $testId !=0){
             $result        = $this->test->update_test_data($data,$testId);
