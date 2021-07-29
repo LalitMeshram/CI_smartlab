@@ -9,13 +9,13 @@ class PatientModel extends CI_Model
         return $this->db->insert_id();
     }
     
-    public function get_patient_data($patientId)
+    public function get_patient_data($centerId)
     {
         $data;
         if ($patientId != 0) {
             $data = $this->db->get_where('patient_master', array(
-                'patientId' => $patientId
-            ))->row_array();
+                'centerId' => $centerId
+            ))->result();
         } else {
             $data = $this->db->get('patient_master')->result();
         }

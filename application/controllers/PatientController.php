@@ -10,9 +10,9 @@ class PatientController extends REST_Controller {
         $this->load->model('PatientModel', 'patient');
     }
 
-    public function patient_register_data_get($patientId = 0) {
+    public function patient_register_data_get($centerId = 0) {
         $response = array();
-        $data = $this->patient->get_patient_data($patientId);
+        $data = $this->patient->get_patient_data($centerId);
         if (!empty($data)) {
             $response['data'] = $data;
             $response['msg'] = 'Patient Data Fetch successfully!';
