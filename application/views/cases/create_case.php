@@ -27,13 +27,25 @@
 				<div class="row">
 					<div class="col-md-3">
 						<div class="form-group">
+							<label>Select Patient</label>
+								
+							<div class="input-group mb-4" >
+                                                            <select class="form-control" id="patientId" name="patientId">
+									
+								</select>
+								<div class="input-group-append">
+									<!--<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add_refferer">Add New</button>-->	
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="form-group">
 							<label>Referrer</label>
 								
-							<div class="input-group mb-3">
-								<select class="form-control" id="">
-									<option>option 1</option>
-									<option>option 2</option>
-									<option>option 3</option>
+							<div class="input-group mb-4">
+                                                            <select class="form-control" id="referenceId" name="referenceId">
+									
 								</select>
 								<div class="input-group-append">
 									<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add_refferer">Add New</button>	
@@ -42,11 +54,11 @@
 						</div>
 					</div>
 					
-					<div class="col-md-2">	
+					<div class="col-md-3">	
 						<div class="form-group">
 							<label>Collection Center</label>
 							<div class="controls">
-								<select class="form-control" id="">
+                                                            <select class="form-control" id="collection_center" name="collection_center">
 									<option>Home</option>
 									<option>Lab</option>
 									<option>Hospital</option>
@@ -56,9 +68,9 @@
 					</div>
 					<div class="col-md-3">	
 						<div class="form-group">
-							<label>Hospital Name</label>
+							<label>Collection Source</label>
 							<div class="controls">
-								<input type="text" class="form-control" name="" placeholder="Enter Hospital Name" disabled="">		
+                                                            <input type="text" class="form-control" name="collection_source" id="collection_source" placeholder="Enter Colection Source">		
 							</div>
 						</div>	
 					</div>
@@ -66,13 +78,11 @@
 						<div class="form-group">
 							<label>Select Test</label>
 							<div class="input-group mb-3">
-								<select class="form-control" id="">
-									<option>option 1</option>
-									<option>option 2</option>
-									<option>option 3</option>
-								</select>
+                                                            <select class="form-control" id="test" name="test">
+
+                                                            </select>
 								<div class="input-group-append">
-									<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add_test">Add New</button>	
+									<!--<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add_test">Add New</button>-->	
 								</div>
 							</div>
 						</div>	
@@ -80,7 +90,7 @@
 					<div class="col-md-12">	
 						<div class="form-group">
 							<div class="controls">
-								<center><button class="btn btn-success">Add</button></center>
+                                                            <center><button class="btn btn-success" id="addTestbtn">Add</button></center>
 							</div>
 						</div>	
 					</div>
@@ -91,8 +101,8 @@
 						</div>
 						<div class="col-md-10">
 							<div class="table-responsive box">
-							  <table class="table table-bordered mb-0">
-								  <tbody>
+                                                            <table class="table table-bordered mb-0" id="testTable">
+								  <thead>
 									<tr>
 									  <th scope="col">Test Name</th>
 									  <th scope="col">Category</th>
@@ -100,26 +110,11 @@
 									  <th scope="col">Fee</th>
 									  <th scope="col" style="width: 10%;">Action</th>
 									</tr>
-								  </tbody>
-								  <tbody>
-									<tr>
-									  <td>XYZ</td>
-									  <td>XYZ</td>
-									  <td>XYZ</td>
-									  <td><center><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></button></center></td>
-									</tr>
-									<tr>
-									  <td>XYZ</td>
-									  <td>XYZ</td>
-									  <td>XYZ</td>
-									  <td><center><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></button></center></td>
-									</tr>
-									<tr>
-									  <td>XYZ</td>
-									  <td>XYZ</td>
-									  <td>XYZ</td>
-									  <td><center><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></button></center></td>
-									</tr>
+								  </thead>
+                                                                  <tbody id="testList">
+                                                                      <tr id="trNaN">
+                                                                          <td colspan="4" align="center">Data not present</td>
+                                                                      </tr>
 									</tbody>
 								</table>
 							</div>

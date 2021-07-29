@@ -100,9 +100,13 @@ class AdminController extends CI_Controller {
     public function createCase() {
         $this->load->view('header');
         $this->load->view('menu_bar');
-        $this->load->view('patient/create_case');
+        $this->load->view('cases/create_case');
+        $this->load->view('cases/create_case_modal');
         $this->load->view('footer');
-        $this->load->view('patient/create_case_modal');
+        $this->load->view('cases/get_patient_js');
+        $this->load->view('cases/get_refferal_doctor_js');
+        $this->load->view('cases/get_test_js');
+        $this->load->view('cases/test_details_js');
     }
     public function invoice() {
         $this->load->view('header');
@@ -113,9 +117,10 @@ class AdminController extends CI_Controller {
     public function allCases() {
         $this->load->view('header');
         $this->load->view('menu_bar');
-        $this->load->view('all_cases/all_cases');
+        $this->load->view('cases/all_cases');
         $this->load->view('footer');
     }
+    
     public function labCategory() {
         $this->load->view('header');
         $this->load->view('menu_bar');
