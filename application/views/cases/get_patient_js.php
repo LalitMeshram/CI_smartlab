@@ -1,3 +1,7 @@
+<?php 
+$session_data=$this->session->userdata('lsesson');
+?>
+
 <script>
 
 
@@ -6,7 +10,7 @@
     function getPatients() {
         $.ajax({
 
-            url: 'get_patients',
+            url: '<?php echo base_url();?>get_patients/'+<?php echo $session_data['centerId'];?>,
 
             type: 'GET',
 

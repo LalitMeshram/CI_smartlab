@@ -12,7 +12,7 @@ class PatientModel extends CI_Model
     public function get_patient_data($centerId)
     {
         $data;
-        if ($patientId != 0) {
+        if ($centerId != 0) {
             $data = $this->db->get_where('patient_master', array(
                 'centerId' => $centerId
             ))->result();
