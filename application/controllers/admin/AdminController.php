@@ -107,6 +107,7 @@ class AdminController extends CI_Controller {
         $this->load->view('cases/get_refferal_doctor_js');
         $this->load->view('cases/get_test_js');
         $this->load->view('cases/test_details_js');
+        $this->load->view('cases/create_case_js');
     }
     public function invoice() {
         $this->load->view('header');

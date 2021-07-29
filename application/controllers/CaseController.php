@@ -23,7 +23,7 @@ class CaseController extends REST_Controller
             "collection_center" => $this->post('collection_center'),
             "collection_source" => $this->post('collection_source'),
             "total_amt" => $this->post('total_amt'),
-            "amt_recieved" => $this->post('amt_recieved'),
+            "amt_recieved" => $this->post('receivedAmt'),
             "discount" => $this->post('discount'),
             "paymentmode"=>$this->post('paymentmode'),
             "paymentdetails"=>$this->post('paymentdetails')
@@ -39,13 +39,13 @@ class CaseController extends REST_Controller
             $response = array(
                 'Message' => 'New case added successfully',
                 'Data' => $result,
-                'Responsecode' => 200
+                'status' => 200
             );
         } else {
             $response = array(
                 'Message' => 'Error try again',
                 'Data' => $result,
-                'Responsecode' => 404
+                'status' => 404
             );
         }
         $this->response($response, REST_Controller::HTTP_OK);

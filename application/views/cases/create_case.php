@@ -14,7 +14,7 @@
 
     <!-- Main content -->
     <section class="content">
-     
+        <form id="createCaseForm" method="post">
       <div class="row">
 		  
 		<div class="col-12">
@@ -48,7 +48,7 @@
 									
 								</select>
 								<div class="input-group-append">
-									<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add_refferer">Add New</button>	
+                                                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add_refferer">Add New</button>	
 								</div>
 							</div>
 						</div>
@@ -58,7 +58,7 @@
 						<div class="form-group">
 							<label>Collection Center</label>
 							<div class="controls">
-                                                            <select class="form-control" id="collection_center" name="collection_center">
+                                                            <select class="form-control" id="collection_center" name="collection_center" id="collection_center">
 									<option>Home</option>
 									<option>Lab</option>
 									<option>Hospital</option>
@@ -90,7 +90,7 @@
 					<div class="col-md-12">	
 						<div class="form-group">
 							<div class="controls">
-                                                            <center><button class="btn btn-success" id="addTestbtn">Add</button></center>
+                                                            <center><button type="button" class="btn btn-success" id="addTestbtn">Add</button></center>
 							</div>
 						</div>	
 					</div>
@@ -104,6 +104,7 @@
                                                             <table class="table table-bordered mb-0" id="testTable">
 								  <thead>
 									<tr>
+                                                                            <th scope="col" style="width: 10%">Test Id</th>
 									  <th scope="col">Test Name</th>
 									  <th scope="col">Category</th>
 									  
@@ -113,7 +114,7 @@
 								  </thead>
                                                                   <tbody id="testList">
                                                                       <tr id="trNaN">
-                                                                          <td colspan="4" align="center">Data not present</td>
+                                                                          <td colspan="5" align="center">Data not present</td>
                                                                       </tr>
 									</tbody>
 								</table>
@@ -132,35 +133,41 @@
 								  <tbody>
 									<tr>
 									  <th>Total Billed Amount</th>
-									  <td>Rs. 5000</td>
+                                                                          <td>Rs.<span id="tbillAmt">0</span>
+                                                                              <input type="hidden" name="total_amt" id="total_amt">
+                                                                          </td>
+									</tr>
+									<tr>
+									  <th>After Discount Amount</th>
+                                                                          <td>Rs.<span id="aftDiscAmt">0</span></td>
 									</tr>
 									<tr>
 									  <th>Discount</th>
-									  <td><input type="text" class="form-control" name=""></td>
+                                                                          <td><input type="number" class="form-control" name="discount" id="discount" min="0" value="0" readonly=""></td>
 									</tr>
 									<tr>
 									  <th>Amount Received</th>
-									  <td><input type="text" class="form-control" name=""></td>
+                                                                          <td><input type="number" class="form-control" name="receivedAmt" id="receivedAmt" value="0"></td>
 									</tr>
 									<tr>
 									  <th>Payment Mode</th>
 									  <td>
-									  	<select class="form-control" id="">
+                                                                              <select class="form-control" id="paymentmode" name="paymentmode">
 											<option>Cash</option>
 											<option>Card</option>
 											<option>Cheque</option>
 											<option>UPI</option>
 										</select>
-										<input type="text" class="form-control" name="" style="margin-top: 3px;">
+                                                                              <input type="text" class="form-control" name="paymentdetails" id="paymentdetails" style="margin-top: 3px;">
 									  </td>
 									</tr>
 									<tr>
 									  <th>Total Amount Received</th>
-									  <td>Rs</td>
+                                                                          <td>Rs.<span id="amtReceived">0</span></td>
 									</tr>
 									<tr>
 									  <th>Pending Amount</th>
-									  <td>Rs</td>
+                                                                          <td>Rs.<span id="pendingAmt"></span></td>
 									</tr>
 									</tbody>
 								</table>
@@ -172,11 +179,11 @@
 								  <tbody>
 									<tr>
 									  <th>Outsourced Amount</th>
-									  <td>Rs. 5000</td>
+                                                                          <td>Rs.<span id="outsourceAmt">0</span></td>
 									</tr>
 									<tr>
 									  <th>My Profit</th>
-									  <td>Rs. 5000</td>
+                                                                          <td>Rs.<span id="myprofit">0</span></td>
 									</tr>
 									</tbody>
 								</table>
@@ -188,14 +195,14 @@
 	            <!-- /.box-body -->
 	          </div>
 	          <!-- /.box -->
-	        <center><button class="btn btn-success">Save</button></center>
+                  <center><button class="btn btn-success" type="submit">Save</button></center>
 	        </div>			  
           
           </div>
           
         </div>
 		</div>  
-		  
+	</form>	  
       </div>
 		
 	  <div class="row">
