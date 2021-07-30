@@ -104,5 +104,44 @@ class CaseController extends REST_Controller
         }
         $this->response($response, REST_Controller::HTTP_OK);
     }
+
+    public function get_case_data_get($caseId=0){
+        $response = array();
+        $data     = $this->case->get_case_details($caseId);
+        if(!empty($data)){
+                $test_data = array(
+                    'tests' => array()
+                );
+                $transaction_data = array(
+                    'transactions' => array()
+                );
+              
+                $outsource_data = $this->case->get_case_tests($data[0]['caseId']);
+                if(!empty($outsource_data)){
+                    $test_data = array(
+                        'tests' => $outsource_data
+                    ); 
+                }
+                $transaction = $this->case->get_case_transaction($data[0]['paymentId']);
+                if(!empty($transaction)){
+                    $transaction_data = array(
+                        'transactions' => $transaction
+                    );  
+                }
+                $records = array_merge($data[0],$test_data,$transaction_data);
+            $response = array(
+                'Message' => 'All cases loaded successfully',
+                'data' => $records,
+                'status' => 200
+            );
+        }else{
+            $response = array(
+                'Message' => 'Data not found',
+                'data' => $data,
+                'status' => 204
+            );  
+        }
+        $this->response($response, REST_Controller::HTTP_OK);
+    }
     
 }

@@ -77,6 +77,7 @@ $route['add_ref'] = 'LabRefController/add_lab_ref';
 //Cases Controller
 $route['add_new_case'] = 'CaseController/case_add';
 $route['get_all_cases_center/(:num)'] = 'CaseController/get_all_cases/$1';
+$route['get_case_data/(:num)'] = 'CaseController/get_case_data/$1';
 
 
 

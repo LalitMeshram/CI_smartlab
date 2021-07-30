@@ -74,5 +74,28 @@ class CaseModel extends CI_Model
         $query = $this->db->query($sql);
         return $query->result();
     }
+
+    public function get_case_details($caseId){
+        $sql = "SELECT cm.caseId,cm.centerId,cm.patientId,cm.referenceId,cm.collection_center,cm.collection_source,cm.createdat,cm.updatedat,
+         cp.paymentId,cp.total_amt,cp.amt_recieved,cp.discount,cp.paymentmode,cp.paymentdetails,
+         cp.pending_amt,cp.paymentdate 
+         FROM case_master cm 
+         INNER JOIN case_payments cp ON cm.caseId = cp.caseId
+          WHERE cm.caseId = $caseId";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function get_case_tests($caseId){
+        $sql = "SELECT * FROM `case_tests` WHERE caseId = $caseId";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function get_case_transaction($paymentId){
+        $sql = "SELECT * FROM `case_payment_transactions` WHERE paymentId = $paymentId";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
     
 }
