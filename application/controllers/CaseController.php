@@ -74,13 +74,13 @@ class CaseController extends REST_Controller
                 'Message' => 'Test loaded successfully',
                 'Data' => $records,
                 'count' =>$count,
-                'Responsecode' => 200
+                'status' => 200
             ); 
         }else{
             $response = array(
                 'Message' => 'Data not found',
                 'Data' => $data,
-                'Responsecode' => 204
+                'status' => 204
             );  
         }
         $this->response($response, REST_Controller::HTTP_OK);
@@ -92,14 +92,14 @@ class CaseController extends REST_Controller
         if(!empty($data)){
             $response = array(
                 'Message' => 'All cases loaded successfully',
-                'Data' => $data,
-                'Responsecode' => 200
+                'data' => $data,
+                'status' => 200
             );
         }else{
             $response = array(
                 'Message' => 'Data not found',
-                'Data' => $data,
-                'Responsecode' => 204
+                'data' => $data,
+                'status' => 204
             );  
         }
         $this->response($response, REST_Controller::HTTP_OK);

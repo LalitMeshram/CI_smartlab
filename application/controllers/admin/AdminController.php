@@ -120,6 +120,7 @@ class AdminController extends CI_Controller {
         $this->load->view('menu_bar');
         $this->load->view('cases/all_cases');
         $this->load->view('footer');
+        $this->load->view('cases/all_cases_js');
     }
     
     public function labCategory() {
