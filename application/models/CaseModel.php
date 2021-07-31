@@ -108,10 +108,17 @@ class CaseModel extends CI_Model
         return $query->result_array();
     }
 
+    public function get_sum_transaction($caseId){
+        $sql = "SELECT SUM(amount) amount FROM case_payment_transactions cp 
+        INNER JOIN case_payments cm ON cm.paymentId = cp.paymentId   WHERE cm.caseId=$caseId";
+       return $this->db->query($sql)->row();
+    }
+
     public function update_case($data,$caseId)
     {
         $result   = array();
-        $testdata = $data['test_data'];
+      
+       $testdata = $data['test_data'];
         $case_data = $data['case_data'];
         $case_details = array(
             "centerId"=>$case_data['centerId'],
@@ -124,9 +131,12 @@ class CaseModel extends CI_Model
         $this->db->trans_begin();
 
         $this->db->where('caseId', $caseId);
-        $this->db->update('center_test_master', $case_details);
+        $this->db->update('case_master', $case_details);
         $result['caseId'] = $caseId;
-
+        $r_amount =  $this->get_sum_transaction($caseId);
+        if(empty($r_amount)){
+            $r_amount = 0;
+        }
         $case_payments = array(
             "caseId"=>$result['caseId'],
             "centerId"=>$case_data['centerId'],
@@ -136,7 +146,7 @@ class CaseModel extends CI_Model
             "discount"=>$case_data['discount'],
             "paymentmode"=>$case_data['paymentmode'],
             "paymentdetails"=>$case_data['paymentdetails'],
-            "pending_amt"=>$case_data['total_amt'] - $case_data['amt_recieved'],
+            "pending_amt"=>$case_data['total_amt'] -$r_amount,
             "paymentdate"=>date('Y-m-d')
         );
     

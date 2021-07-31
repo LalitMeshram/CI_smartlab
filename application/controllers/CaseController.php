@@ -11,6 +11,7 @@ class CaseController extends REST_Controller
         parent::__construct();
         $this->load->model('CaseModel', 'case');
         $this->load->model('TestModel', 'test');
+        $this->load->model('OutsourceLabModel', 'outsource');
     }
     
  public function case_add_post()
@@ -35,8 +36,10 @@ class CaseController extends REST_Controller
             'case_data' => $case_data
         );
         $caseId = $this->post('caseId');
+        print_r($data);
+       
         if(!empty($caseId) && $caseId!=0){
-            $result = $this->case->update_case($caseId,$caseId);
+            $result = $this->case->update_case($data,$caseId);
         }else{
             $result        = $this->case->add_case_data($data);
         }
@@ -120,12 +123,19 @@ class CaseController extends REST_Controller
                 $transaction_data = array(
                     'transactions' => array()
                 );
-              
+                $test_data = [];
                 $outsource_data = $this->case->get_case_tests($data[0]['caseId']);
                 if(!empty($outsource_data)){
-                    $test_data = array(
-                        'tests' => $outsource_data
-                    ); 
+              for($i=0;$i<count($outsource_data);$i++){
+                $temp3 = array("outsourcetest"=>[],"outsource"=>false);
+                $outsource = $this->outsource->center_outsource_lab_tests($outsource_data[$i]['testId']);
+                if(!empty($outsource)){
+                    $temp3 = array("outsourcetest"=>$outsource,"outsource"=>true);
+                }
+               $test_data[] = array_merge($outsource_data[$i],$temp3);
+              }
+              $test = array("test"=>$test_data);
+               
                 }
                 $transaction = $this->case->get_case_transaction($data[0]['paymentId']);
                 if(!empty($transaction)){
@@ -133,7 +143,7 @@ class CaseController extends REST_Controller
                         'transactions' => $transaction
                     );  
                 }
-                $records = array_merge($data[0],$test_data,$transaction_data);
+                $records = array_merge($data[0],$test,$transaction_data);
             $response = array(
                 'Message' => 'All cases loaded successfully',
                 'data' => $records,
@@ -147,6 +157,13 @@ class CaseController extends REST_Controller
             );  
         }
         $this->response($response, REST_Controller::HTTP_OK);
+    }
+
+    public function check_sum_get($caseId){
+        $records = array();
+        $records = $this->case->get_sum_transaction($caseId);
+        $this->response($records, REST_Controller::HTTP_OK);
+       
     }
     
 }
