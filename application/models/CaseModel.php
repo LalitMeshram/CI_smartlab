@@ -77,17 +77,22 @@ class CaseModel extends CI_Model
 
     public function get_case_details($caseId){
         $sql = "SELECT cm.caseId,cm.centerId,cm.patientId,cm.referenceId,cm.collection_center,cm.collection_source,cm.createdat,cm.updatedat,
-         cp.paymentId,cp.total_amt,cp.amt_recieved,cp.discount,cp.paymentmode,cp.paymentdetails,
-         cp.pending_amt,cp.paymentdate 
-         FROM case_master cm 
-         INNER JOIN case_payments cp ON cm.caseId = cp.caseId
-          WHERE cm.caseId = $caseId";
+        cp.paymentId,cp.total_amt,cp.amt_recieved,cp.discount,cp.paymentmode,cp.paymentdetails,
+        cp.pending_amt,cp.paymentdate ,
+        pm.first_name,pm.last_name,pm.gender,pm.contact_number,pm.emailId,crm.ref_name
+        FROM case_master cm 
+        INNER JOIN case_payments cp ON cm.caseId = cp.caseId
+        INNER JOIN patient_master pm ON cm.patientId = pm.patientId
+        LEFT JOIN center_reference_master crm ON crm.ref_id = cm.referenceId
+         WHERE cm.caseId = $caseId";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
 
     public function get_case_tests($caseId){
-        $sql = "SELECT * FROM `case_tests` WHERE caseId = $caseId";
+        $sql = "SELECT ct.case_test_id,ct.testId,cm.test_name,cm.short_name,cm.fees
+        FROM case_tests ct INNER JOIN center_test_master cm ON ct.testId = cm.testId
+        WHERE caseId = $caseId";
         $query = $this->db->query($sql);
         return $query->result_array();
       
