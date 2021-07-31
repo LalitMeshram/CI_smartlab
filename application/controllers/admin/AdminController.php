@@ -109,11 +109,13 @@ class AdminController extends CI_Controller {
         $this->load->view('cases/test_details_js');
         $this->load->view('cases/create_case_js');
     }
-    public function invoice() {
+    public function invoice($id) {
+        $data['caseId']=$id;
         $this->load->view('header');
         $this->load->view('menu_bar');
-        $this->load->view('patient/invoice');
+        $this->load->view('invoice/invoice');
         $this->load->view('footer');
+        $this->load->view('invoice/invoice_js',$data);
     }
     public function allCases() {
         $this->load->view('header');
