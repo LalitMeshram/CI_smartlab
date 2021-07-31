@@ -115,7 +115,7 @@ if(isset($session_data)){
                         </form>			
 
                         <div class="text-center">
-                            <p class="mb-0">Already have an account?<a href="login.html" class="text-danger m-l-5"> Sign In</a></p>
+                            <p class="mb-0">Already have an account?<a href="<?php echo base_url();?>login" class="text-danger m-l-5"> Sign In</a></p>
                         </div>
                     </div>
                 </div>
