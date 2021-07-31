@@ -25,6 +25,7 @@
 			<div class="col-md-12">
 				
 				<div class="row">
+                                    <input type="hidden" name="caseId" id="caseId">
 					<div class="col-md-3">
 						<div class="form-group">
 							<label>Select Patient</label>

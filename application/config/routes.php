@@ -14,6 +14,7 @@ $route['update_test/(:num)']           = 'admin/Admincontroller/updateTest/$1';
 $route['test_database']      = 'admin/Admincontroller/testDatabase';
 $route['patient']      = 'admin/Admincontroller/patient';
 $route['create_case']      = 'admin/Admincontroller/createCase';
+$route['update_case/(:num)']      = 'admin/Admincontroller/updateCase/$1';
 $route['invoice/(:num)']      = 'admin/Admincontroller/invoice/$1';
 $route['all_cases']      = 'admin/Admincontroller/allCases';
 $route['lab_category']      = 'admin/Admincontroller/labCategory';
