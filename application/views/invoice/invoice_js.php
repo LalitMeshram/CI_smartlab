@@ -13,7 +13,6 @@
 
             success: function (response) {
 
-                console.log(response);
 
                 if (response.status == 200) {
 
@@ -33,19 +32,19 @@
         $('#invoiceNo').html(invoice.caseId);
         $('#invoiceDate').html(invoice.createdat);
         $('#patientId').html(invoice.patientId);
-        $('#pName').html(invoice.patientId);
-        $('#pGender').html(invoice.patientId);
-        $('#refBy').html(invoice.referenceId);
-        $('#mobiNo').html(invoice.patientId);
-        $('#emailId').html(invoice.patientId);
+        $('#pName').html(invoice.first_name+' '+invoice.last_name);
+        $('#pGender').html(invoice.gender);
+        $('#refBy').html(invoice.ref_name);
+        $('#mobiNo').html(invoice.contact_number);
+        $('#emailId').html(invoice.emailId);
 
         var test = invoice.tests;
         var tableDate = '';
         for (var i = 0; i < test.length; i++) {
             tableDate += `
                         <tr>
-              <td>`+test[i].testId+`</td>
-              <td>`+test[i].testId+`</td>
+              <td>`+test[i].test_name+`</td>
+              <td>`+test[i].fees+`</td>
             </tr>
                     `;
                   

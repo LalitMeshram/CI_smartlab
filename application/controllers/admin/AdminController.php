@@ -109,6 +109,23 @@ class AdminController extends CI_Controller {
         $this->load->view('cases/test_details_js');
         $this->load->view('cases/create_case_js');
     }
+    public function updateCase($id) {
+        $data['caseId']=$id;
+        $this->load->view('header');
+        $this->load->view('menu_bar');
+        $this->load->view('cases/create_case');
+        $this->load->view('cases/create_case_modal');
+        $this->load->view('footer');
+        $this->load->view('cases/get_patient_js');
+        $this->load->view('cases/get_refferal_doctor_js');
+        $this->load->view('cases/get_test_js');
+        $this->load->view('cases/test_details_js');
+        $this->load->view('cases/create_case_js');
+        $this->load->view('cases/update_case_js',$data);
+    }
+    
+    
+    
     public function invoice($id) {
         $data['caseId']=$id;
         $this->load->view('header');

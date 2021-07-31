@@ -11,7 +11,7 @@ $session_data=$this->session->userdata('lsesson');
     function getTests() {
         $.ajax({
 
-            url: 'get_center_tests/'+<?php echo $session_data['centerId'];?>,
+            url: '<?php echo base_url();?>get_center_tests/'+<?php echo $session_data['centerId'];?>,
 
             type: 'GET',
             
