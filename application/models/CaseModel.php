@@ -92,9 +92,10 @@ class CaseModel extends CI_Model
     }
 
     public function get_case_tests($caseId){
-        $sql = "SELECT ct.case_test_id,ct.testId,cm.test_name,cm.short_name,cm.fees,lc.category
+        $sql = "SELECT ct.case_test_id,ct.testId,cm.test_name,cm.short_name,cm.fees,lc.category,ot.outsourceId,ot.outsource_amt
         FROM case_tests ct INNER JOIN center_test_master cm ON ct.testId = cm.testId
         INNER JOIN lab_center_categories lc ON lc.categoryid = cm.categoryId
+        LEFT JOIN center_outsource_test ot ON ot.testId = ct.testId
         WHERE caseId = $caseId";
         $query = $this->db->query($sql);
         return $query->result_array();
