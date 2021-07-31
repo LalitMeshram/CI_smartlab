@@ -53,7 +53,7 @@ $session_data = $this->session->userdata('lsesson');
                       <td>`+cases.tests+`</td>
                       <td>
                       <button type="button" class="btn btn-success btn-xs case_action_buttons" onclick="modifyCase('`+cases.caseId+`');"><i class="fa fa-edit"></i> Modify Case</button>
-                      <button type="button" class="btn btn-danger btn-xs case_action_buttons"><i class="fa fa-trash-o"></i> View Bill</button>
+                      <button type="button" class="btn btn-danger btn-xs case_action_buttons" onclick="getInvoice('`+cases.caseId+`')"><i class="fa fa-trash-o"></i> View Bill</button>
                       <button type="button" class="btn btn-primary btn-xs case_action_buttons"><i class="fa fa-trash-o"></i> View Report</button>
                       </td>
                       </tr>
@@ -122,7 +122,9 @@ $session_data = $this->session->userdata('lsesson');
     }
 
 
-
+function getInvoice(caseId) {
+    window.location.replace("<?php echo base_url();?>invoice/"+caseId);
+}
 
     $('#addNew').click(function () {
         $("#patientRegForm").trigger("reset");

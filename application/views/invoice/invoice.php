@@ -4,7 +4,7 @@
     <section class="content-header">
       <h1>
         Invoice
-        <small>Bill NO: 0154879</small>
+        <small>Bill NO:<span id="billNo"></span></small>
       </h1>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -30,19 +30,19 @@
         <div class="col-sm-12 invoice-col">
 			<div class="invoice-details row mx-0 my-15">
 			  <div class="col-md-4 col-lg-4">
-			  	<h6>Invoice No: 35125</h6>
-			  	<h6>Invoice Date: </h6>
-			  	<h6>PAN No.: </h6>
+                              <h6>Invoice No:<span id="invoiceNo"></span></h6>
+                              <h6>Invoice Date: <span id="invoiceDate"></span></h6>
+                              <!--<h6>PAN No.:<span id="panNo"></span> </h6>-->
 			  </div>
 			  <div class="col-md-4 col-lg-4">
-			  	<h6>Patient Id: </h6>
-			  	<h6>Patient Name: </h6>
-			  	<h6>Patient Gender: </h6>
+                              <h6>Patient Id:<span id="patientId"></span> </h6>
+                              <h6>Patient Name: <span id="pName"></span></h6>
+                              <h6>Patient Gender:<span id="pGender"></span> </h6>
 			  </div>
 			  <div class="col-md-4 col-lg-4">
-			  	<h6>Reffered By: </h6>
-			  	<h6>Mob No.: </h6>
-			  	<h6>Email: </h6>
+                              <h6>Reffered By:<span id="refBy"></span> </h6>
+                              <h6>Mob No.: <span id="mobiNo"></span></h6>
+                              <h6>Email:<span id="emailId"></span> </h6>
 			  </div>
 			</div>
 		</div>
@@ -54,35 +54,28 @@
       <div class="row" style="background: url(generate_invoice_bg.jpg);">
       	<div class="col-6 table-responsive">
         	<center><h4 style="background-color: #fff;margin-top: 2%;"><b>Bill Details</b></h4></center>
-          <table class="table table-bordered" style="background-color: #ffffffd4;">
-            <tbody>
+                <table class="table table-bordered" style="background-color: #ffffffd4;" id="testTable">
+            <thead>
             <tr>
               
               <th>Lab Investigations</th>
               <th>Fee</th>
             </tr>
-            </tbody>
-            <tbody>
-            <tr>
+            </thead>
+            <tbody id="testList">
+<!--            <tr>
               <td>Milk Powder</td>
               <td>$52.00</td>
-            </tr>
-            <tr>
-              <td>Milk Powder</td>
-              <td>$52.00</td>
-            </tr>
-            <tr>
-              <td>Milk Powder</td>
-              <td>$52.00</td>
-            </tr>
+            </tr>-->
+            
             </tbody>
           </table>
         </div>
         <div class="col-md-6" >
         	<center><h4 style="background-color: #fff;margin-top: 2%;"><b>Payment History</b></h4></center>
         	 <div class="table-responsive" style="background-color: #ffffffd4;">
-	          <table class="table table-bordered">
-	            <tbody>
+                     <table class="table table-bordered" id="transactionTable">
+	            <thead>
 	            <tr>
 	              <th>Date</th>
 	              <th>Type</th>
@@ -90,29 +83,16 @@
 	              <th>Received By</th>
 	              <th>Mode</th>
 	            </tr>
-	            </tbody>
-	            <tbody>
-	            <tr>
+	            </thead>
+	            <tbody id="transactionList">
+<!--	            <tr>
 	              <td>XYZ</td>
 	              <td><button class="btn btn-danger btn-xs">Refund</button></td>
 	              <td>XYZ</td>
 	              <td>XYZ</td>
 	              <td>XYZ</td>
 	            </tr>
-	            <tr>
-	              <td>XYZ</td>
-	              <td>XYZ</td>
-	              <td>XYZ</td>
-	              <td>XYZ</td>
-	              <td>XYZ</td>
-	            </tr>
-	            <tr>
-	              <td>XYZ</td>
-	              <td>XYZ</td>
-	              <td>XYZ</td>
-	              <td>XYZ</td>
-	              <td>XYZ</td>
-	            </tr>
+	            -->
 	            </tbody>
 	          </table>
 	        </div>
@@ -172,7 +152,7 @@
 	          </table>
 	        </div>		
         </div>
-        <div class="col-md-6" style="margin-bottom: 1%;">
+<!--        <div class="col-md-6" style="margin-bottom: 1%;">
         	<center><h4 style="background-color: #fff;margin-top: 2%;"><b>Recent Activity</b></h4></center>
         	<div class="table-responsive" style="background-color: #ffffffd4;">
 	          <table class="table table-bordered">
@@ -206,7 +186,7 @@
 	            </tbody>
 	          </table>
 	        </div>
-        </div>
+        </div>-->
         <!-- /.col -->
       </div>
       <!-- /.row -->
