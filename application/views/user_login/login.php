@@ -88,7 +88,7 @@ if(isset($session_data)){
 		
 
 					<div class="text-center">
-						<p class="mb-0">Don't have an account? <a href="register.html" class="text-info ml-5">Sign Up</a></p>
+                                            <p class="mb-0">Don't have an account? <a href="<?php echo base_url('registration');?>" class="text-info ml-5">Sign Up</a></p>
 					</div>
 				</div>
 			</div>
