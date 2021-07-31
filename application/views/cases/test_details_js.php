@@ -79,6 +79,7 @@
         var outSourceAmt = 0;
         var testId;
         var flag;
+        var receivedAmt;
         var rowCount = $("#testTable tbody tr").length;
 
         if (rowCount > 0) {
@@ -90,8 +91,7 @@
         $('#aftDiscAmt').html(0);
         $('#outsourceAmt').html(0);
         $('#myprofit').html(0);
-
-
+        
 
 
         $('#testTable tbody>tr').each(function (index, tr) {
@@ -108,7 +108,17 @@
         });
         $('#total_amt').val(fees);
         $('#tbillAmt').html(fees);
+        
+        //payable amount
+        receivedAmt=parseFloat($('#paidAmt').html());
+        
+        if(receivedAmt>0){
+            
+        $('#aftDiscAmt').html(fees-receivedAmt);
+        }else{
+            
         $('#aftDiscAmt').html(fees);
+        }
         $('#outsourceAmt').html(outSourceAmt);
         $('#myprofit').html(fees - outSourceAmt);
 

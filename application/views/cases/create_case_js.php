@@ -33,7 +33,7 @@ $session_data = $this->session->userdata('lsesson');
         if (returnVal) {
             $.ajax({
 
-                url: '<?php base_url()?>add_new_case',
+                url: '<?php echo base_url()?>add_new_case',
 
                 type: 'POST',
 

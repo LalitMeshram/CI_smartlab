@@ -54,7 +54,7 @@ if(!isset($session_data)){
             <header class="main-header">
                 <div class="inside-header">
                     <!-- Logo -->
-                    <a href="../../index.html" class="logo">
+                    <a href="#" class="logo">
                         <!-- mini logo for sidebar mini 50x50 pixels -->
                         <b class="logo-mini">
                             <span class="light-logo"><img src="<?php echo base_url() . 'resource'; ?>/images/logo-light.png" alt="logo"></span>
@@ -410,7 +410,7 @@ if(!isset($session_data)){
                                                 </div>
                                                 <div role="separator" class="divider col-12"></div>
                                                 <div class="col-12 text-left">
-                                                    <a href="logout"><i class="fa fa-power-off"></i> Logout</a>
+                                                    <a href="<?php echo base_url();?>logout"><i class="fa fa-power-off"></i> Logout</a>
                                                 </div>				
                                             </div>
                                             <!-- /.row -->

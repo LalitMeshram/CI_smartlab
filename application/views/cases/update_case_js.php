@@ -33,9 +33,12 @@
         $('#referenceId').val(cases.referenceId);
         $('#collection_center').val(cases.collection_center);
         $('#collection_source').val(cases.collection_source);
+        $('#tbillAmt').html(cases.total_amt);
+        $('#paidAmt').html(cases.amt_recieved);
+        $('#aftDiscAmt').html(cases.total_amt - cases.amt_recieved);
+        
         
         var test = cases.tests;
-        console.log(test);
         var tableDate = '';
         for (var i = 0; i < test.length; i++) {
             tableDate += `<tr id="r` + test[i].testId + `">
@@ -56,7 +59,7 @@
               }
           $('#testList').html(tableDate);        
        
-        $('#tbillAmt').html(test.total_amt);
+        
         
         //field
     }

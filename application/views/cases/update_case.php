@@ -138,19 +138,22 @@
                                                                               <input type="hidden" name="total_amt" id="total_amt">
                                                                           </td>
 									</tr>
-<!--                                                                        <tr>
+									<tr>
 									  <th>Paid Amount</th>
                                                                           <td>Rs.<span id="paidAmt">0</span>
                                                                           </td>
-									</tr>-->
-									<tr>
-									  <th>After Discount Amount</th>
-                                                                          <td>Rs.<span id="aftDiscAmt">0</span></td>
 									</tr>
 									<tr>
+									  <th>Payable Amount</th>
+                                                                          <td>Rs.<span id="aftDiscAmt">0</span>
+                                                                              <input type="hidden" class="form-control" name="discount" id="discount" min="0" value="0" readonly="">
+                                                                          </td>
+									</tr>
+<!--									<tr>
 									  <th>Discount</th>
-                                                                          <td><input type="number" class="form-control" name="discount" id="discount" min="0" value="0" readonly=""></td>
-									</tr>
+                                                                          <td>
+                                                                          </td>
+									</tr>-->
 									<tr>
 									  <th>Amount Received</th>
                                                                           <td><input type="number" class="form-control" name="receivedAmt" id="receivedAmt" value="0"></td>
