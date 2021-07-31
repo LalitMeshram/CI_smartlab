@@ -36,7 +36,9 @@ class CaseModel extends CI_Model
         $payment_tran = array(
             "paymentId"=>$result['paymentId'],
             "amount"=>$case_data['amt_recieved'],
-            "paymentdate"=>date('Y-m-d')
+            "paymentdate"=>date('Y-m-d'),
+            "paymentmode"=>$case_data['paymentmode'],
+            "createdby"=>1
         );
         $this->db->insert('case_payment_transactions', $payment_tran);
         $result['paymentId'] = $this->db->insert_id();
@@ -90,8 +92,9 @@ class CaseModel extends CI_Model
     }
 
     public function get_case_tests($caseId){
-        $sql = "SELECT ct.case_test_id,ct.testId,cm.test_name,cm.short_name,cm.fees
+        $sql = "SELECT ct.case_test_id,ct.testId,cm.test_name,cm.short_name,cm.fees,lc.category
         FROM case_tests ct INNER JOIN center_test_master cm ON ct.testId = cm.testId
+        INNER JOIN lab_center_categories lc ON lc.categoryid = cm.categoryId
         WHERE caseId = $caseId";
         $query = $this->db->query($sql);
         return $query->result_array();
@@ -145,7 +148,9 @@ class CaseModel extends CI_Model
         $payment_tran = array(
             "paymentId"=>$result['paymentId'],
             "amount"=>$case_data['amt_recieved'],
-            "paymentdate"=>date('Y-m-d')
+            "paymentdate"=>date('Y-m-d'),
+            "paymentmode"=>$case_data['paymentmode'],
+            "createdby"=>1
         );
         $this->db->insert('case_payment_transactions', $payment_tran);
         $result['transactionId'] = $this->db->insert_id();
