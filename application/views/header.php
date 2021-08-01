@@ -339,9 +339,10 @@ if(!isset($session_data)){
                                             <img src="<?php echo base_url();?>resource/img/profile.png" class="float-left rounded-circle" alt="User Image">
 
                                             <p>
-                                                Juliya Brus
-                                                <small class="mb-5">jb@gmail.com</small>
-                                                <a href="#" class="btn btn-danger btn-sm btn-rounded">View Profile</a>
+                                                <?php echo $session_data['username'];?>
+                                                
+                                                <small class="mb-5"><?php echo $session_data['emailid'];?></small>
+                                                <!--<a href="#" class="btn btn-danger btn-sm btn-rounded">View Profile</a>-->
                                             </p>
                                         </li>
                                         <!-- Menu Body -->
@@ -349,16 +350,6 @@ if(!isset($session_data)){
                                             <div class="row no-gutters">
                                                 <div class="col-12 text-left">
                                                     <a href="#"><i class="ion ion-person"></i> My Profile</a>
-                                                </div>
-                                                <div class="col-12 text-left">
-                                                    <a href="#"><i class="ion ion-email-unread"></i> Inbox</a>
-                                                </div>
-                                                <div class="col-12 text-left">
-                                                    <a href="#"><i class="ion ion-settings"></i> Setting</a>
-                                                </div>
-                                                <div role="separator" class="divider col-12"></div>
-                                                <div class="col-12 text-left">
-                                                    <a href="#"><i class="ti-settings"></i> Account Setting</a>
                                                 </div>
                                                 <div role="separator" class="divider col-12"></div>
                                                 <div class="col-12 text-left">
