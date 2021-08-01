@@ -138,6 +138,8 @@
         var aftAmt = parseFloat($('#aftDiscAmt').html());
         $('#amtReceived').html(receivedAmt);
         $('#pendingAmt').html(aftAmt - receivedAmt);
+        $('#pending_amount').val(aftAmt - receivedAmt);
+        
     });
 
 

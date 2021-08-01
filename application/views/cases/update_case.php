@@ -141,6 +141,7 @@
 									<tr>
 									  <th>Paid Amount</th>
                                                                           <td>Rs.<span id="paidAmt">0</span>
+                                                                              <input type="hidden" name="last_recieved_amt" id="last_recieved_amt">
                                                                           </td>
 									</tr>
 									<tr>
@@ -176,7 +177,9 @@
 									</tr>
 									<tr>
 									  <th>Pending Amount</th>
-                                                                          <td>Rs.<span id="pendingAmt"></span></td>
+                                                                          <td>Rs.<span id="pendingAmt"></span>
+                                                                              <input type="hidden" name="pending_amount" id="pending_amount">
+                                                                          </td>
 									</tr>
 									</tbody>
 								</table>
