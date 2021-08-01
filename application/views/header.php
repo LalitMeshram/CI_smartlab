@@ -57,75 +57,27 @@ if(!isset($session_data)){
                     <a href="#" class="logo">
                         <!-- mini logo for sidebar mini 50x50 pixels -->
                         <b class="logo-mini">
-                            <span class="light-logo"><img src="<?php echo base_url() . 'resource'; ?>/images/logo-light.png" alt="logo"></span>
-                            <span class="dark-logo"><img src="<?php echo base_url() . 'resource'; ?>/images/logo-dark.png" alt="logo"></span>
+                            <!--<span class="light-logo"><img src="<?php // echo base_url() . 'resource'; ?>/images/logo-light.png" alt="logo"></span>-->
+                            <!--<span class="dark-logo"><img src="<?php // echo base_url() . 'resource'; ?>/images/logo-dark.png" alt="logo"></span>-->
                         </b>
                         <!-- logo for regular state and mobile devices -->
-                        <span class="logo-lg">
-                            <img src="<?php echo base_url() . 'resource'; ?>/images/logo-light-text.png" alt="logo" class="light-logo">
-                            <img src="<?php echo base_url() . 'resource'; ?>/images/logo-dark-text.png" alt="logo" class="dark-logo">
+                        <span class="logo-lg text-white">
+                            <!--<img src="<?php // echo base_url() . 'resource'; ?>/images/logo-light-text.png" alt="logo" class="light-logo">-->
+                            <!--<img src="<?php // echo base_url() . 'resource'; ?>/images/logo-dark-text.png" alt="logo" class="dark-logo">-->
+                            Smart Lab
                         </span>
                     </a>
                     <!-- Header Navbar -->
                     <nav class="navbar navbar-static-top">
                         <!-- Sidebar toggle button-->
-                        <a href="#" class="sidebar-toggle d-block d-lg-none" data-toggle="push-menu" role="button">
-                            <span class="sr-only">Toggle navigation</span>
-                        </a>
+
                         <ul class="navbar-nav mr-auto mt-md-0">		
-                            <!-- .Megamenu -->
-                            <li class="nav-item dropdown mega-dropdown"> <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-th-large"></i></a>
-                                <div class="dropdown-menu scale-up-down">
-                                    <ul class="mega-dropdown-menu row">
-                                        <li class="col-lg-3 col-md-3 col-12 m-b-30">
-                                            <h5 class="m-b-20">Apps</h5>
-                                            <!-- List style -->
-                                            <ul class="list-style-none">
-                                                <li><a href="../app/app-ticket.html">Support Ticket</a></li>
-                                                <li><a href="../app/app-chat.html">Chats App</a></li>
-                                                <li><a href="../app/profile.html">Profile App</a></li>
-                                                <li><a href="../app/calendar.html">Calendar App</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="col-lg-3 col-md-3 col-12 m-b-30">
-                                            <h5 class="m-b-20">Widgets</h5>
-                                            <!-- List style -->
-                                            <ul class="list-style-none">
-                                                <li><a href="../widgets/weather.html">Weather Widgets</a></li>
-                                                <li><a href="../widgets/blog.html">Blog Widgets</a></li>
-                                                <li><a href="../widgets/chart.html">Chart Widgets</a></li>
-                                                <li><a href="../widgets/social.html">Social Widgets</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="col-lg-3 col-md-3 col-12 m-b-30">
-                                            <h5 class="m-b-20">Charts</h5>
-                                            <!-- List style -->
-                                            <ul class="list-style-none">
-                                                <li><a href="../charts/chartjs.html">ChartJs</a></li>
-                                                <li><a href="../charts/flot.html">Flot Charts</a></li>
-                                                <li><a href="../charts/morris.html">Morris Charts</a></li>
-                                                <li><a href="../charts/inline.html">Inline charts</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="col-lg-3 col-md-3 col-12 m-b-30">
-                                            <h5 class="m-b-20">Extra Pages</h5>
-                                            <!-- List style -->
-                                            <ul class="list-style-none">
-                                                <li><a href="../samplepage/invoice.html">Invoice</a></li>
-                                                <li><a href="../samplepage/login.html">Login</a></li>
-                                                <li><a href="../samplepage/404.html">404</a></li>
-                                                <li><a href="../samplepage/maintenance.html">Maintenance</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <!-- /.Megamenu -->
+                           
                         </ul>	
 
                         <div class="navbar-custom-menu">
                             <ul class="nav navbar-nav">
-
+<!--
                                 <li class="search-box">
                                     <a class="nav-link hidden-sm-down" href="javascript:void(0)"><i class="mdi mdi-magnify"></i></a>
                                     <form class="app-search" style="display: none;">
@@ -133,7 +85,7 @@ if(!isset($session_data)){
                                     </form>
                                 </li>			
 
-                                <!-- Messages -->
+                                 Messages 
                                 <li class="dropdown messages-menu">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                         <i class="mdi mdi-email faa-horizontal animated"></i>
@@ -141,9 +93,9 @@ if(!isset($session_data)){
                                     <ul class="dropdown-menu scale-up">
                                         <li class="header">You have 5 messages</li>
                                         <li>
-                                            <!-- inner menu: contains the actual data -->
+                                             inner menu: contains the actual data 
                                             <ul class="menu inner-content-div">
-                                                <li><!-- start message -->
+                                                <li> start message 
                                                     <a href="#">
                                                         <div class="pull-left">
                                                             <img src="../images/user2-160x160.jpg" class="rounded-circle" alt="User Image">
@@ -157,7 +109,7 @@ if(!isset($session_data)){
                                                         </div>
                                                     </a>
                                                 </li>
-                                                <!-- end message -->
+                                                 end message 
                                                 <li>
                                                     <a href="#">
                                                         <div class="pull-left">
@@ -219,7 +171,7 @@ if(!isset($session_data)){
                                         <li class="footer"><a href="#">See all e-Mails</a></li>
                                     </ul>
                                 </li>
-                                <!-- Notifications -->
+                                 Notifications 
                                 <li class="dropdown notifications-menu">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                         <i class="mdi mdi-bell faa-ring animated"></i>
@@ -227,7 +179,7 @@ if(!isset($session_data)){
                                     <ul class="dropdown-menu scale-up">
                                         <li class="header">You have 7 notifications</li>
                                         <li>
-                                            <!-- inner menu: contains the actual data -->
+                                             inner menu: contains the actual data 
                                             <ul class="menu inner-content-div">
                                                 <li>
                                                     <a href="#">
@@ -269,7 +221,7 @@ if(!isset($session_data)){
                                         <li class="footer"><a href="#">View all</a></li>
                                     </ul>
                                 </li>
-                                <!-- Tasks -->
+                                 Tasks 
                                 <li class="dropdown tasks-menu">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                         <i class="mdi mdi-message faa-vertical animated"></i>
@@ -277,9 +229,9 @@ if(!isset($session_data)){
                                     <ul class="dropdown-menu scale-up">
                                         <li class="header">You have 6 tasks</li>
                                         <li>
-                                            <!-- inner menu: contains the actual data -->
+                                             inner menu: contains the actual data 
                                             <ul class="menu inner-content-div">
-                                                <li><!-- Task item -->
+                                                <li> Task item 
                                                     <a href="#">
                                                         <h3>
                                                             Lorem ipsum dolor sit amet
@@ -293,8 +245,8 @@ if(!isset($session_data)){
                                                         </div>
                                                     </a>
                                                 </li>
-                                                <!-- end task item -->
-                                                <li><!-- Task item -->
+                                                 end task item 
+                                                <li> Task item 
                                                     <a href="#">
                                                         <h3>
                                                             Vestibulum nec ligula
@@ -308,8 +260,8 @@ if(!isset($session_data)){
                                                         </div>
                                                     </a>
                                                 </li>
-                                                <!-- end task item -->
-                                                <li><!-- Task item -->
+                                                 end task item 
+                                                <li> Task item 
                                                     <a href="#">
                                                         <h3>
                                                             Donec id leo ut ipsum
@@ -323,8 +275,8 @@ if(!isset($session_data)){
                                                         </div>
                                                     </a>
                                                 </li>
-                                                <!-- end task item -->
-                                                <li><!-- Task item -->
+                                                 end task item 
+                                                <li> Task item 
                                                     <a href="#">
                                                         <h3>
                                                             Praesent vitae tellus
@@ -338,8 +290,8 @@ if(!isset($session_data)){
                                                         </div>
                                                     </a>
                                                 </li>
-                                                <!-- end task item -->
-                                                <li><!-- Task item -->
+                                                 end task item 
+                                                <li> Task item 
                                                     <a href="#">
                                                         <h3>
                                                             Nam varius sapien
@@ -353,8 +305,8 @@ if(!isset($session_data)){
                                                         </div>
                                                     </a>
                                                 </li>
-                                                <!-- end task item -->
-                                                <li><!-- Task item -->
+                                                 end task item 
+                                                <li> Task item 
                                                     <a href="#">
                                                         <h3>
                                                             Nunc fringilla
@@ -368,23 +320,23 @@ if(!isset($session_data)){
                                                         </div>
                                                     </a>
                                                 </li>
-                                                <!-- end task item -->
+                                                 end task item 
                                             </ul>
                                         </li>
                                         <li class="footer">
                                             <a href="#">View all tasks</a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li>-->
                                 <!-- User Account -->
                                 <li class="dropdown user user-menu">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                        <img src="../../../images/user5-128x128.jpg" class="user-image rounded-circle" alt="User Image">
+                                        <img src="<?php echo base_url();?>resource/img/profile.png" class="user-image rounded-circle" alt="User Image">
                                     </a>
                                     <ul class="dropdown-menu scale-up">
                                         <!-- User image -->
                                         <li class="user-header">
-                                            <img src="../../../images/user5-128x128.jpg" class="float-left rounded-circle" alt="User Image">
+                                            <img src="<?php echo base_url();?>resource/img/profile.png" class="float-left rounded-circle" alt="User Image">
 
                                             <p>
                                                 Juliya Brus

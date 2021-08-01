@@ -5,7 +5,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url();?>dashbosrd"><i class="fa fa-dashboard mr-5"></i> <span>Dashboard</span></a>
+                    <a class="nav-link" href="<?php echo base_url();?>dashboard"><i class="fa fa-dashboard mr-5"></i> <span>Dashboard</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url();?>create_case"><i class="fa fa-pencil-square-o  mr-5"></i> <span>New Case</span></a>
