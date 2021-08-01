@@ -3,6 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 //login page ui
 $route['default_controller'] = 'welcome';
+$route['reciept']            = 'admin/Admincontroller/load_reciept';
 $route['pricing']            = 'admin/Admincontroller/pricing';
 $route['dashboard']          = 'admin/Admincontroller/dashboard';
 $route['lab_registration']   = 'admin/Admincontroller/labRegistration';
