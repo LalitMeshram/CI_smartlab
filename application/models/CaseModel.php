@@ -114,7 +114,7 @@ class CaseModel extends CI_Model
        return $this->db->query($sql)->row();
     }
 
-    public function update_case($data,$caseId)
+    public function update_case($data,$caseId,$last_amt_rec)
     {
         $result   = array();
       
@@ -133,26 +133,23 @@ class CaseModel extends CI_Model
         $this->db->where('caseId', $caseId);
         $this->db->update('case_master', $case_details);
         $result['caseId'] = $caseId;
-        $r_amount =  $this->get_sum_transaction($caseId);
-        if(empty($r_amount)){
-            $r_amount = 0;
-        }
+       
         $case_payments = array(
             "caseId"=>$result['caseId'],
             "centerId"=>$case_data['centerId'],
             "patientId"=>$case_data['patientId'],
             "total_amt"=>$case_data['total_amt'],
-            "amt_recieved"=>$case_data['amt_recieved'],
+            "amt_recieved"=>$case_data['amt_recieved']+$last_amt_rec,
             "discount"=>$case_data['discount'],
             "paymentmode"=>$case_data['paymentmode'],
             "paymentdetails"=>$case_data['paymentdetails'],
-            "pending_amt"=>$case_data['total_amt'] -$r_amount,
+            "pending_amt"=>$case_data['total_amt'] -($last_amt_rec+$case_data['amt_recieved']),
             "paymentdate"=>date('Y-m-d')
         );
-    
         $sql = "SELECT paymentId FROM `case_payments` WHERE caseId = $caseId";
         $query = $this->db->query($sql);
         $paymentId = $query->row();
+        $paymentId = $paymentId->paymentId;
         $this->db->where('paymentId', $paymentId);
         $this->db->update('case_payments', $case_payments); 
         $result['paymentId'] = $paymentId;

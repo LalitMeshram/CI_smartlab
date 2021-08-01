@@ -36,16 +36,22 @@ class CaseController extends REST_Controller
             'case_data' => $case_data
         );
         $caseId = $this->post('caseId');
-//        print_r($data);
-       
+if(isset($_POST['last_recieved_amt'])){
+    $last_amt_rec = $_POST['last_recieved_amt'];
+}else{
+    $last_amt_rec = 0;
+}
         if(!empty($caseId) && $caseId!=0){
-            $result = $this->case->update_case($data,$caseId);
+           
+            $result = $this->case->update_case($data,$caseId,$last_amt_rec);
+            $msg = "Case Data updated successfully";
         }else{
             $result        = $this->case->add_case_data($data);
+            $msg ='New case added successfully';
         }
         if ($result['status']) {
             $response = array(
-                'Message' => 'New case added successfully',
+                'Message' => $msg,
                 'Data' => $result,
                 'status' => 200
             );
