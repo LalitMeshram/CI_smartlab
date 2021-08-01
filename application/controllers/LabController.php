@@ -28,7 +28,7 @@ class LabController extends REST_Controller {
         $response = array();
 
         $data['labName'] = $this->post('labName');
-        $data['brandName'] = $this->post('brandName');
+       // $data['brandName'] = $this->post('brandName');
         $data['lab_contact'] = $this->post('lab_contact');
         $data['lab_email'] = $this->post('lab_email');
         $data['lab_address'] = $this->post('lab_address');
