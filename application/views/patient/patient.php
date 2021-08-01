@@ -3,12 +3,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Editable Tables
+        Patient List
       </h1>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="breadcrumb-item"><a href="#">Tables</a></li>
-        <li class="breadcrumb-item active">Editable Tables</li>
+        <li class="breadcrumb-item active">Patient List</li>
       </ol>
     </section>
 
@@ -16,11 +16,7 @@
     <section class="content">
      
       <div class="row">
-		  	<div class="box">
-		  		<div class="box-body">
-		  			<center><h3>Patient List</h3></center>
-		  		</div>
-		  	</div>	  
+		  		  
 		  
 		<div class="col-12">
 		  	<div class="box">
