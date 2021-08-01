@@ -36,7 +36,7 @@ class CaseController extends REST_Controller
             'case_data' => $case_data
         );
         $caseId = $this->post('caseId');
-        print_r($data);
+//        print_r($data);
        
         if(!empty($caseId) && $caseId!=0){
             $result = $this->case->update_case($data,$caseId);
