@@ -108,5 +108,6 @@
     </section>
     <!-- /.content -->
 </div>
+<div id="loader"></div>
 <!-- /.content-wrapper -->
 

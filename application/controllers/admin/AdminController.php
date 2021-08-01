@@ -30,6 +30,7 @@ class AdminController extends CI_Controller {
         $this->load->view('menu_bar');
         $this->load->view('setup/lab_registration');
         $this->load->view('footer');
+        $this->load->view('setup/common_js.php');
         $this->load->view('setup/get_lab_registration_js');
         $this->load->view('setup/lab_registration_js');
     }
