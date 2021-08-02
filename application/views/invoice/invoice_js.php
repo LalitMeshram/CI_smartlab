@@ -38,7 +38,7 @@
         $('#mobiNo').html(invoice.contact_number);
         $('#emailId').html(invoice.emailId);
 
-        var test = invoice.tests;
+        var test = invoice.test;
         var tableDate = '';
         for (var i = 0; i < test.length; i++) {
             tableDate += `

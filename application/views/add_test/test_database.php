@@ -3,12 +3,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Editable Tables
+        Test Database
       </h1>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="breadcrumb-item"><a href="#">Tables</a></li>
-        <li class="breadcrumb-item active">Editable Tables</li>
+        <li class="breadcrumb-item active">Test Database</li>
       </ol>
     </section>
 
@@ -16,11 +16,7 @@
     <section class="content">
      
       <div class="row">
-		  	<div class="box">
-		  		<div class="box-body">
-		  			<center><h3>Test Database</h3></center>
-		  		</div>
-		  	</div>	  
+		  		  
 		  
 		<div class="col-12">
 		  	<div class="box">
@@ -51,12 +47,12 @@
 					</tbody>
 					<tfoot>
 						<tr>
-							<th>Name</th>
-							<th>Position</th>
-							<th>Office</th>
-							<th>Age</th>
-							<th>Start date</th>
-							<th>Salary</th>
+							<th>Test Name</th>
+							<th>Short Name</th>
+							<th>Category</th>
+							<th>Gender</th>
+							<th>Fee</th>
+							<th>Action</th>
 						</tr>
 					</tfoot>
 				  </table>

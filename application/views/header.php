@@ -48,6 +48,7 @@ if(!isset($session_data)){
         </style>
     </head>
     <body class="hold-transition skin-blue layout-top-nav">
+        <div id="loader"></div>
         <!-- Site wrapper -->
         <div class="wrapper">
 

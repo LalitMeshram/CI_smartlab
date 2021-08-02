@@ -20,7 +20,6 @@
                         <li class="nav-item"><a class="nav-link" href="#">Receipts</a></li>	
 
                         <li class="nav-item"><a class="nav-link" href="#">Agents</a></li>	
-                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>invoice">Invoice</a></li>	
                         <li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>all_receipt">All Receipt</a></li>	
                     </ul>				  
                 </li>

@@ -3,7 +3,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Editable Tables
+        Add New Test
       </h1>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -16,11 +16,7 @@
     <section class="content">
         <form id="addTestForm" method="post">
       <div class="row">
-		  	<div class="box">
-		  		<div class="box-body">
-		  			<center><h3>Add New Test</h3></center>
-		  		</div>
-		  	</div>	  
+		  		  
 		  
 		<div class="col-12">
 		  	<div class="box">
