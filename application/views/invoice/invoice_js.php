@@ -37,6 +37,9 @@
         $('#refBy').html(invoice.ref_name);
         $('#mobiNo').html(invoice.contact_number);
         $('#emailId').html(invoice.emailId);
+        $('#pamt').html(invoice.pending_amt);
+        $('#paidamt').html(invoice.amt_recieved);
+        $('#tamt').html(invoice.total_amt);
 
         var test = invoice.test;
         var tableDate = '';
@@ -58,8 +61,8 @@
 	              <td>`+transaction[i].paymentdate+`</td>
 	              <td><button class="btn btn-danger btn-xs">Refund</button></td>
 	              <td>`+transaction[i].amount+`</td>
-	              <td>XYZ</td>
-	              <td>XYZ</td>
+	              <td>admin</td>
+	              <td>`+transaction[i].paymentmode+`</td>
 	            </tr>
 	            
                     `;
@@ -67,6 +70,7 @@
                   
                   
         }
+
         $('#testList').html(tableDate);
         $('#transactionList').html(tableDate1);
     }

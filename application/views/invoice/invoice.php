@@ -135,17 +135,17 @@
 	            <tbody>
 	            <tr style="background: #1e9a9a; color: #fff;">
 	              <th>Total Amount</th>
-	              <th>Rs.xyz</th>
+	              <th id="tamt">Rs.xyz</th>
 	            </tr>
 	            </tbody>
 	            <tbody>
 	            <tr style="background: #7faf1d; color: #fff;">
 	              <th>Paid Amount</th>
-	              <th>Rs.52.00</th>
+	              <th id="paidamt">Rs.52.00</th>
 	            </tr>
 	            <tr style="background: #ec1414; color: #fff;">
 	              <th>Pending Amount</th>
-	              <th>Rs.52.00</th>
+	              <th id="pamt">Rs.52.00</th>
 	            </tr>
 	           
 	            </tbody>
