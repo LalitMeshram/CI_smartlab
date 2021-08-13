@@ -72,7 +72,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 //localdb
-$active_group = 'local';
+ $active_group = 'local';
 //$active_group = 'test';
 $query_builder = TRUE;
 
@@ -99,10 +99,10 @@ $db['local'] = array(
 );
 $db['test'] = array(
 	'dsn'	=> '',
-	'hostname' => '208.109.12.251',
-	'username' => 'soulsoft_projectsit',
-	'password' => 'Soulsoft@1987',
-	'database' => 'soulsoft_project_sit',
+	'hostname' => 'localhost',
+	'username' => 'mazadoc_spine',
+	'password' => 'Spine@2266$',
+	'database' => 'mazadoc_labsma',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
