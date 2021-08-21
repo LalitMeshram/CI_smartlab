@@ -12,5 +12,35 @@ class ReportModel extends CI_Model
         $query = $this->db->query($sql);
         return $query->result();
     }
+
+    public function add_report($data){
+        $case_data  = $data['data'];
+        $report_data = $data['report_data'];
+
+        $this->db->trans_begin();
+        $this->db->insert('case_report_master', $case_data);
+        $reportId = $this->db->insert_id();
+        $this->add_report_data($report_data,$reportId);
+        if ($this->db->trans_status() === FALSE) {
+            $this->db->trans_rollback();
+            return false;
+        } else {
+            $this->db->trans_commit();
+            return true;
+        }
+    }
+
+    public function add_report_data($test_data, $reportId)
+    {
+        foreach ($test_data as $contact) {
+            $tests             = array(
+                'category' => $contact->category,
+                'unit' => $contact->unit,
+                'findings' => $contact->findings,
+                'reportId' => $reportId
+            );
+            $subtypeId            = $this->db->insert('case_report_data', $tests);
+        }
+    }
     
 }

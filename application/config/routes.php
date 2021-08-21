@@ -83,6 +83,6 @@ $route['get_case_data/(:num)'] = 'CaseController/get_case_data/$1';
 
 //Report Controller
 $route['view_finding/(:num)'] = 'ReportController/enter_findings/$1';
-
+$route['enter_finding'] = 'ReportController/add_report';
 $route['404_override']         = '';
 $route['translate_uri_dashes'] = FALSE;

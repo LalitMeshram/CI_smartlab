@@ -33,8 +33,40 @@ class ReportController extends REST_Controller
         }
         $response = array(
             "ResponseCode"=>200,
-            "Data"=>$mainResult
+            "Data"=>$result
         );
+        $this->response($response, REST_Controller::HTTP_OK);
+    }
+
+    public function add_report_post(){
+        $response      = array();
+        $case     = array(
+            "centerId" => $this->post('centerId'),
+            "caseId" => $this->post('caseId'),
+            "patientId" => $this->post('patientId'),
+            "casedate" => $this->post('casedate')
+        );
+        $report_data = $this->post('report_data');
+        $report_data = json_decode($report_data);//[{"category":"Microbilogy","test_name":"ECR","unit":"gl","findings":"10"}]
+        $data =array(
+            'data'=>$case,
+            'report_data'=>$report_data
+        );
+        $result = $this->report->add_report($data);
+        if($result){
+            $response = array(
+                "ResponseCode"=>200,
+                "Message"=>"Report Generated Successfully",
+                "Data"=>$result
+            );
+        }else{
+            $response = array(
+                "ResponseCode"=>404,
+                "Message"=>"Report Not Generated",
+                "Data"=>$result
+            );
+        }
+        
         $this->response($response, REST_Controller::HTTP_OK);
     }
 
