@@ -15,11 +15,14 @@
 
                 if (response.ResponseCode == 200) {
                     var keyArr = Object.keys(response.Data);
+                    console.log(response.Data.Hametology);
                     for (var i = 0; i < keyArr.length; i++) {
-//                        var val=keyArr[i];
-//                        console.log(val);
-//                        var temp=response.Data.val;
-//                    console.log(temp);
+
+                       var val=keyArr[i];
+                      // console.log(val);
+                       console.log(response.Data.val);
+                       var temp =response.Data.val;
+                   console.log(temp);
 //                        enterMap.set(keyArr[i],temp);
 
                         
