@@ -108,9 +108,9 @@
         		</div>
         		<div class="col-md-6">
         			<div class="form-group">
-        				<button type="button" class="btn btn-warning" style="margin-right: 5px;">
+                                    <a href="#" id="enterFinding" class="btn btn-warning" style="margin-right: 5px;">
 			            	<i class="fa fa-sticky-note-o"></i> Enter Findings
-			          	</button>
+			          	</a>
 			      	</div>
         		</div>
         		<div class="col-md-6">
