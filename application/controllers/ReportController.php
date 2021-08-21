@@ -33,7 +33,7 @@ class ReportController extends REST_Controller
         }
         $response = array(
             "ResponseCode"=>200,
-            "Data"=>$result
+            "Data"=>$mainResult
         );
         $this->response($response, REST_Controller::HTTP_OK);
     }
