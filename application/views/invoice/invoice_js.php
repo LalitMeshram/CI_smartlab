@@ -76,4 +76,9 @@
     }
 
 
+$('#enterFinding').click(function() {
+//    alert(<?php echo $caseId; ?>);
+window.location.href = '<?php echo base_url('enter_finding/'.$caseId);?>';
+});
+
 </script>

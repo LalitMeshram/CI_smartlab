@@ -189,4 +189,12 @@ class AdminController extends CI_Controller {
         $this->load->view('all_receipt/show');
         $this->load->view('footer');
     }
+    public function enterFinding($id) {
+        $data['caseId']=$id;
+        $this->load->view('header');
+        $this->load->view('menu_bar');
+        $this->load->view('enter_finding/enter_finding');
+        $this->load->view('footer');
+        $this->load->view('enter_finding/enter_finding_js',$data);
+    }
 }
