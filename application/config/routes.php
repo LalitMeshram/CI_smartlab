@@ -23,7 +23,7 @@ $route['lab_unit']      = 'admin/Admincontroller/labUnit';
 $route['outsource_lab']      = 'admin/Admincontroller/outsourceLab';
 $route['all_receipt']      = 'admin/Admincontroller/allReceipt';
 $route['referal_doctor']      = 'admin/Admincontroller/referalDoctor';
-$route['enter_finding/(:num)']      = 'admin/Admincontroller/enterFinding/$1';
+$route['enter_finding1/(:num)']      = 'admin/Admincontroller/enterFinding/$1';
 $route['payment'] = 'Register/index';
 
 //Center Registration master
