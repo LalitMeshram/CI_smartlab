@@ -40,6 +40,45 @@ class PackageController extends REST_Controller
         }
         $this->response($response, REST_Controller::HTTP_OK);
     }
+
+    public function package_add_post()
+    {
+        $response      = array();
+        $package_data     = array(
+            "plan_name" => $this->post('plan_name'),
+            "amount" => $this->post('amount'),
+            "duration" => $this->post('duration'),
+            "isactive" => $this->post('isactive')
+        );
+        $package_details = $this->input->post('package_details');//send body [{"details":"Test 1"},{"details":"Test 2"}]
+        $package_details = json_decode($package_details);
+        $data          = array(
+            'package_data' => $package_data,
+            'package_details' => $package_details
+        );
+        $packageId = $this->post('packageId');
+        if(!empty($packageId) && $packageId!=0){
+            $result = $this->package->update_package($data,$packageId);
+            $msg = "Package Data updated successfully";
+        }else{
+            $result        = $this->package->add_package_data($data);
+            $msg ='New Package added successfully';
+        }
+        if ($result['status']) {
+            $response = array(
+                'Message' => $msg,
+                'Data' => $result,
+                'status' => 200
+            );
+        } else {
+            $response = array(
+                'Message' => 'Error try again',
+                'Data' => $result,
+                'status' => 404
+            );
+        }
+        $this->response($response, REST_Controller::HTTP_OK);
+    }
     
     
 }

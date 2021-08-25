@@ -20,7 +20,7 @@ $html = '
       <div class="col-md-2">
       </div>
       <div class="col-sm-8 invoice-col invoice printableArea">
-          <center><img src="letter_head.png" class="img-fluid"></center>
+          <center><img src="resource/img/letter_head.png" class="img-fluid"></center>
           <div class="invoice-details row mx-0 my-15">
             <div class="col-md-4 col-lg-4">
                 <h6>Invoice No: 35125</h6>
@@ -90,7 +90,7 @@ $html = '
                   </div>
               </div>
           </div>
-          <center><img src="footer.png" class="img-fluid"></center>
+          <center><img src="resource/img/footer.png" class="img-fluid"></center>
       </div>
       <div class="col-md-2">
       </div>

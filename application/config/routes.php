@@ -38,6 +38,7 @@ $route['get_payments_by_center'] = 'PaymentController/payment_list';
 
 //Packages of center
 $route['get_packages'] = 'PackageController/package_list';
+$route['add_package'] = 'PackageController/package_add';
 
 //login api
 $route['login_auth']                   = 'LoginController/login_auth';
@@ -85,5 +86,8 @@ $route['get_case_data/(:num)'] = 'CaseController/get_case_data/$1';
 //Report Controller
 $route['view_finding/(:num)'] = 'ReportController/enter_findings/$1';
 $route['enter_finding'] = 'ReportController/add_report';
+
+//Admin Controller
+$route['admin_login'] = 'AdminController/admin_login';
 $route['404_override']         = '';
 $route['translate_uri_dashes'] = FALSE;
