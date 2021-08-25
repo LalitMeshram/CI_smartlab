@@ -25,15 +25,17 @@ class ReportController extends REST_Controller
                 $temp = $server;
 
                 if (array_key_exists($Category, $mainResult)) {
-                    $mainResult["$Category"][] = $temp;
+                    $mainResult["$Category"] = $Category;
                 } else {
-                    $mainResult["$Category"][] = $temp;
+                    $mainResult["$Category"] = $Category;
                 }
             }
         }
+     $fdata =   array_merge($result,$mainResult);
         $response = array(
             "ResponseCode"=>200,
-            "Data"=>$mainResult
+            "Data"=>$result,
+            "category"=>$mainResult
         );
         $this->response($response, REST_Controller::HTTP_OK);
     }
