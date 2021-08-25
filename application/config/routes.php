@@ -89,5 +89,14 @@ $route['enter_finding'] = 'ReportController/add_report';
 
 //Admin Controller
 $route['admin_login'] = 'AdminController/admin_login';
+
+//Admin Test Master Controller
+$route['get_lab_tests']     = 'LabTestController/test_list';
+$route['add_lab_test'] = 'LabTestController/test_add';
+$route['get_lab_unit'] = 'UnitController/unit_list';
+$route['add_lab_unit'] = 'UnitController/add_lab_units';
+$route['get_lab_category'] = 'CategoryController/category_list';
+$route['add_lab_category'] = 'CategoryController/add_lab_catgeory';
+
 $route['404_override']         = '';
 $route['translate_uri_dashes'] = FALSE;

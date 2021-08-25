@@ -8,14 +8,20 @@
         "lower_age": 10,
         "upper_age": 20,
         "lower_limit": "140",
-        "upper_limit": "190"
+        "upper_limit": "190",
+        "lower_age_period":"Days",
+        "upper_age_period":"Year",
+        "words":"test"
       },
       {
         "gender": "Female",
         "lower_age": 10,
         "upper_age": 20,
         "lower_limit": "1",
-        "upper_limit": "2"
+        "upper_limit": "2",
+        "lower_age_period":"Days",
+        "upper_age_period":"Year",
+        "words":"test"
       }
     ]
   },
@@ -28,7 +34,10 @@
         "lower_age": 10,
         "upper_age": 20,
         "lower_limit": "140",
-        "upper_limit": "190"
+        "upper_limit": "190",
+        "lower_age_period":"Days",
+        "upper_age_period":"Year",
+        "words":"test"
       }
     ]
   }

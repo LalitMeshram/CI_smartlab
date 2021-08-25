@@ -61,7 +61,7 @@ class PackageModel extends CI_Model {
         $this->db->trans_begin();
 
         $this->db->where('packageId', $packageId);
-        $this->db->update('center_packages', $case_details);
+        $this->db->update('center_packages', $package_data);
        
        
         $this->db->where('packageId', $packageId);
