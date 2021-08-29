@@ -18,18 +18,18 @@ class ReportController extends REST_Controller
         $result = array();
         $result = $this->report->get_finding_data($caseId);
         $temp = array();
-        $mainResult = array();
+        $mainResult = $this->report->get_category_findings($caseId);
         if ($result != NULL && count($result) > 0) {
-            foreach ($result as $key => $server) {
-                $Category = $server->category;
-                $temp = $server;
+            // foreach ($result as $key => $server) {
+            //     $Category = $server->category;
+            //     $temp = $server;
 
-                if (array_key_exists($Category, $mainResult)) {
-                    $mainResult["$Category"] = $Category;
-                } else {
-                    $mainResult["$Category"] = $Category;
-                }
-            }
+            //     if (array_key_exists($Category, $mainResult)) {
+            //         $mainResult["$Category"] = $Category;
+            //     } else {
+            //         $mainResult["$Category"] = $Category;
+            //     }
+            // }
         }
      $fdata =   array_merge($result,$mainResult);
         $response = array(

@@ -13,6 +13,16 @@ class ReportModel extends CI_Model
         return $query->result();
     }
 
+    public function get_category_findings($caseId){
+        $sql = " SELECT  lc.category FROM case_tests ct 
+        INNER JOIN center_test_master cm ON cm.testId = ct.testId 
+        INNER JOIN lab_center_categories lc ON lc.categoryid = cm.categoryId 
+        WHERE ct.caseId = $caseId
+        GROUP BY lc.category";
+        $query = $this->db->query($sql);
+        return $query->result();
+    }
+
     public function add_report($data){
         $case_data  = $data['data'];
         $report_data = $data['report_data'];
