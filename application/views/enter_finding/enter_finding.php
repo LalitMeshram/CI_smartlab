@@ -51,8 +51,8 @@
         <!-- /.row -->
 
         <!-- Table row -->
-        <div class="row" style="background: url(generate_invoice_bg.jpg);">
-            <div class="col-12 table-responsive">
+        <div class="row" id="testList" style="background: url(generate_invoice_bg.jpg);">
+            <!-- <div class="col-12 table-responsive">
                 <center><h4 style="background-color: #fff;margin-top: 2%;"><b>Dermitology</b></h4></center>
                 <table class="table with-border" style="background-color: #ffffffd4;" id="testTable">
                     <thead>
@@ -124,7 +124,7 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>
+            </div> -->
 
 
 
