@@ -3,13 +3,13 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Invoice
-            <small>Bill NO:<span id="billNo"></span></small>
+
+            Case ID:<span id="caseId"><?php echo $caseId;?></span>
         </h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Examples</a></li>
-            <li class="breadcrumb-item active">Invoice</li>
+            <li class="breadcrumb-item"><a href="#">Case</a></li>
+            <li class="breadcrumb-item active">Invoice Details</li>
         </ol>
     </section>
 
@@ -19,36 +19,13 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-header">
-                    <center><h2 class="d-inline">INVOICE</h2></center>
+                    <center>
+                        <h2 class="d-inline">INVOICE Details</h2>
+                    </center>
                 </div>
             </div>
             <!-- /.col -->
         </div>
-        <!-- info row -->
-        <div class="row invoice-info">
-            <!-- /.col -->
-            <div class="col-sm-12 invoice-col">
-                <div class="invoice-details row mx-0 my-15">
-                    <div class="col-md-4 col-lg-4">
-                        <h6>Invoice No:<span id="invoiceNo"></span></h6>
-                        <h6>Invoice Date: <span id="invoiceDate"></span></h6>
-                        <!--<h6>PAN No.:<span id="panNo"></span> </h6>-->
-                    </div>
-                    <div class="col-md-4 col-lg-4">
-                        <h6>Patient Id:<span id="patientId"></span> </h6>
-                        <h6>Patient Name: <span id="pName"></span></h6>
-                        <h6>Patient Gender:<span id="pGender"></span> </h6>
-                    </div>
-                    <div class="col-md-4 col-lg-4">
-                        <h6>Reffered By:<span id="refBy"></span> </h6>
-                        <h6>Mob No.: <span id="mobiNo"></span></h6>
-                        <h6>Email:<span id="emailId"></span> </h6>
-                    </div>
-                </div>
-            </div>
-            <!-- /.col -->
-        </div>
-        <!-- /.row -->
 
         <!-- Table row -->
         <div class="row" id="testList" style="background: url(generate_invoice_bg.jpg);">
@@ -131,8 +108,13 @@
             <!-- /.col -->
         </div>
         <!-- /.row -->
+        <div class="row">
 
+            <div class="col-12 text-center">
+                <button class="btn btn-success" type="button" id="saveFinding">Save</button>
+            </div>
 
+        </div>
     </section>
     <!-- /.content -->
     <div class="clearfix"></div>

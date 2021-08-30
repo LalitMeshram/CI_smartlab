@@ -1,4 +1,6 @@
 <script>
+    var categoryArr;
+    var testArr=[];
 function getFindingDetail() {
     $.ajax({
 
@@ -14,9 +16,9 @@ function getFindingDetail() {
 
             if (response.ResponseCode == 200) {
                 var testList = ``;
-
+                categoryArr=(response.category.length>0)?response.category:[];
                 for (var i = 0; i < response.category.length; i++) {
-
+                    
                     testList += `<div class="col-12 table-responsive">
                 <center><h4 style="background-color: #fff;margin-top: 2%;"><b>` + response.category[i].category + `</b></h4></center>
                 <table class="table with-border" style="background-color: #ffffffd4;" id="testTable">
@@ -31,13 +33,22 @@ function getFindingDetail() {
                     </thead>
                     <tbody>`;
                     //console.log(response.category[i].category);
+
+                    
+
                     for (var j = 0; j < response.Data.length; j++) {
                         if (response.category[i].category == response.Data[j].category) {
+                            testArr[j]=response.Data[j];
+
                             testList += `<tr>
+                                <input type="hidden" id="cat_`+response.Data[j].test_name.replace(/ /g,"_")+`" value="`+response.Data[j].category+`">
+                                <input type="hidden" id="test_`+response.Data[j].test_name.replace(/ /g,"_")+`" value="`+response.Data[j].test_name+`">
+                                <input type="hidden" id="unit_`+response.Data[j].test_name.replace(/ /g,"_")+`" value="`+response.Data[j].unit+`">
+                               
                             <td>` + response.Data[j].test_name + `</td>
                             <td>
                                 <div class="controls">
-                                    <input type="text" placeholder="Enter value" class="form-control"  id="">
+                                    <input type="text" placeholder="Enter value" class="form-control"  id="finding_`+response.Data[j].test_name.replace(/ /g,"_")+`">
                                 </div>
                             </td>
                             <td>` + response.Data[j].unit + `</td>
@@ -49,8 +60,12 @@ function getFindingDetail() {
                                 </table>
                                <hr/>
                             </div>`;
+                            
+                            
+                            
                 }
-
+                console.log(categoryArr);
+                console.log(testArr);
                 $('#testList').html(testList);
             }
 
