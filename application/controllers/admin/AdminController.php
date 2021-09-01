@@ -194,8 +194,9 @@ class AdminController extends CI_Controller {
         $data['caseId']=$id;
         $this->load->view('header');
         $this->load->view('menu_bar');
-        $this->load->view('enter_finding/enter_finding');
+        $this->load->view('enter_finding/enter_finding',$data);
         $this->load->view('footer');
         $this->load->view('enter_finding/enter_finding_js',$data);
+        $this->load->view('enter_finding/save_finding_js');
     }
 }

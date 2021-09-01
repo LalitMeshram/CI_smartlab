@@ -85,7 +85,7 @@ $route['get_case_data/(:num)'] = 'CaseController/get_case_data/$1';
 
 //Report Controller
 $route['view_finding/(:num)'] = 'ReportController/enter_findings/$1';
-$route['enter_finding'] = 'ReportController/add_report';
+$route['save_finding'] = 'ReportController/add_report';
 
 //Admin Controller
 $route['admin_login'] = 'AdminController/admin_login';
