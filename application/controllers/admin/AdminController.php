@@ -13,6 +13,7 @@ class AdminController extends CI_Controller {
 
     public function load_reciept(){
         $this->load->view('case_reciept');
+        // $this->load->view('report_reciept');
     }
      
     public function pricing() {
