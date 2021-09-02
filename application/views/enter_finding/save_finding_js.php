@@ -32,7 +32,7 @@ $('#saveFinding').click(function() {
     formdata.append('report_data', reportData);
     formdata.append('centerId', <?php echo $session_data['centerId'];?>)
     formdata.append('patientId', 2);
-    formdata.append('caseId',<?php $_GET['caseId'];?>);
+    formdata.append('caseId',<?php echo $caseId; ?>);
     formdata.append('casedate', '2015-03-25');
 
     $.ajax({
