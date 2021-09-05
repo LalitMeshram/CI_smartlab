@@ -197,6 +197,6 @@ class AdminController extends CI_Controller {
         $this->load->view('enter_finding/enter_finding',$data);
         $this->load->view('footer');
         $this->load->view('enter_finding/enter_finding_js',$data);
-        $this->load->view('enter_finding/save_finding_js');
+        $this->load->view('enter_finding/save_finding_js',$data);
     }
 }
