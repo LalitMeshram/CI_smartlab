@@ -52,10 +52,11 @@ $('#saveFinding').click(function() {
         dataType: 'json',
 
         success: function(response) {
+            console.log(response);
             if (response.ResponseCode == 200) {
                 swal("Good job!", response.Message, "success");
                 //window.location.reload();
-                window.history.back();
+                //window.history.back();
 
             } else {
 

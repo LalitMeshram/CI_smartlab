@@ -91,6 +91,44 @@ class AdminController extends CI_Controller {
         $this->load->view('footer');
         $this->load->view('add_test/test_database_js');
     }
+
+    public function addPredefinedTest() {
+        $this->load->view('header');
+        $this->load->view('menu_bar');
+        $this->load->view('predefined_test/add_test');
+        $this->load->view('footer');
+        $this->load->view('predefined_test/add_test_modals');
+        $this->load->view('predefined_test/add_test_js');
+        $this->load->view('predefined_test/parameter_details_js');
+        $this->load->view('predefined_test/add_range_js');
+        $this->load->view('predefined_test/category_js');
+        $this->load->view('predefined_test/unit_js');
+        $this->load->view('predefined_test/outsource_lab_js');
+    }
+    
+    public function updatePredefinedTest($id) {
+        $data['id']=$id;
+        $this->load->view('header');
+        $this->load->view('menu_bar');
+        $this->load->view('predefined_test/update_test');
+        $this->load->view('footer');
+        $this->load->view('predefined_test/add_test_modals');
+        $this->load->view('predefined_test/update_test_js',$data);
+        $this->load->view('predefined_test/parameter_details_js');
+        $this->load->view('predefined_test/add_range_js');
+        $this->load->view('predefined_test/category_js');
+        $this->load->view('predefined_test/unit_js');
+        $this->load->view('predefined_test/outsource_lab_js');
+        $this->load->view('predefined_test/set_update_test_js',$data);
+    }
+    
+    public function testPredefinedDatabase() {
+        $this->load->view('header');
+        $this->load->view('menu_bar');
+        $this->load->view('predefined_test/test_database');
+        $this->load->view('footer');
+        $this->load->view('predefined_test/test_database_js');
+    }
     
     public function patient() {
         $this->load->view('header');
@@ -155,6 +193,15 @@ class AdminController extends CI_Controller {
         $this->load->view('lab_category/show_js');
         $this->load->view('lab_category/new_js');
     }
+    public function predefinedCategory() {
+        $this->load->view('header');
+        $this->load->view('menu_bar');
+        $this->load->view('predefined_category/lab_category');
+        $this->load->view('predefined_category/add_category_modal');
+        $this->load->view('footer');
+        $this->load->view('predefined_category/show_js');
+        $this->load->view('predefined_category/new_js');
+    }
     public function labUnit() {
         $this->load->view('header');
         $this->load->view('menu_bar');
@@ -163,6 +210,15 @@ class AdminController extends CI_Controller {
         $this->load->view('footer');
         $this->load->view('lab_unit/show_js');
         $this->load->view('lab_unit/new_js');
+    }
+    public function predefinedUnit() {
+        $this->load->view('header');
+        $this->load->view('menu_bar');
+        $this->load->view('predefined_unit/lab_unit');
+        $this->load->view('predefined_unit/add_unit_modal');
+        $this->load->view('footer');
+        $this->load->view('predefined_unit/show_js');
+        $this->load->view('predefined_unit/new_js');
     }
     public function outsourceLab() {
         $this->load->view('header');
@@ -197,6 +253,7 @@ class AdminController extends CI_Controller {
         $this->load->view('enter_finding/enter_finding',$data);
         $this->load->view('footer');
         $this->load->view('enter_finding/enter_finding_js',$data);
-        $this->load->view('enter_finding/save_finding_js',$data);
+        $this->load->view('enter_finding/save_finding_js');
     }
+    // public function addComapnyTest
 }
