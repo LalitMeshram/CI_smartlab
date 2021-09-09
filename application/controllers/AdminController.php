@@ -22,7 +22,7 @@ class AdminController extends REST_Controller
                 $user_data['emailid']        = $result["data"]["email"];
                 $user_data['logged_in']      = true;
             
-                $this->session->set_userdata('lsesson',$user_data);
+                $this->session->set_userdata('Asession',$user_data);
                 $response['Message']      = "Logged in successfully";
                 $response['Data']         = $user_data;
                 $response['Responsecode'] = 200;
@@ -40,6 +40,6 @@ class AdminController extends REST_Controller
         $this->load->driver('cache');
         $this->session->sess_destroy();
         $this->cache->clean();
-        redirect(base_url('/'));
+        redirect(base_url('/adminLogin'));
     }
 }
