@@ -107,6 +107,42 @@
 
             <!-- /.col -->
         </div>
+        <!--/. row -->
+
+        <!-- ck editor -->
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                            </div>
+                                            <div class="col-md-8">
+
+                                                <div class="box">
+                                                    <div class="box-header">
+                                                        <h4 class="box-title">Other Details<br>
+                                                            <!-- <small>Advanced and full of features</small> -->
+                                                        </h4>
+                                                        <!-- <ul class="box-controls pull-right">
+                                                            <li><a class="box-btn-close" href="#"></a></li>
+                                                            <li><a class="box-btn-slide" href="#"></a></li>
+                                                            <li><a class="box-btn-fullscreen" href="#"></a></li>
+                                                        </ul> -->
+                                                    </div>
+                                                    <!-- /.box-header -->
+                                                    <div class="box-body">
+                                                        <form>
+                                                            <textarea id="editor1" name="editor1" rows="10" cols="58">
+                                            
+                    </textarea>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <!-- /.box -->
+
+                                            </div>
+                                        </div>
+                                        <!-- ck Editor -->
+
+
+
         <!-- /.row -->
         <div class="row">
 
