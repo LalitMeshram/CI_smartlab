@@ -4,16 +4,22 @@ header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Methods: GET, OPTIONS");
 
 class AdminController extends CI_Controller {
-
     
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('CaseModel', 'case');
+        $this->load->model('TestModel', 'test');
+        $this->load->model('OutsourceLabModel', 'outsource');
+    }
     public function index() {
 //		$this->load->view('welcome_message');
         
     }
 
     public function load_reciept(){
-        $this->load->view('case_reciept');
-        // $this->load->view('report_reciept');
+     $this->load->view('case_reciept');
+    //    $this->load->view('report_reciept');
     }
      
     public function pricing() {

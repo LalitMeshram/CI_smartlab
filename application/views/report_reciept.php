@@ -54,20 +54,30 @@ $html = '<!DOCTYPE html>
         </div>
         <div class="col-sm-8 invoice-col invoice printableArea">
         	<center><img src="resource/img/letter_head.png" class="img-fluid"></center>
-			<div class="invoice-details row mx-0 my-15">
-			  <div class="col-md-6 col-lg-6">
-			  	<h6>Patient Id: </h6>
-			  	<h6>Patient Name: hghghgh</h6>
-			  	<h6>Patient Age/Gender: 55/Male</h6>
-			  	<h6>Reffered By: jhvhhhvh</h6>
-			  </div>
-			  <div class="col-md-6 col-lg-6">
-			  	<h6>Registered On: xyz date xyz time </h6>
-			  	<h6>Collected On: xyz date</h6>
-			  	<h6>Received On: xyz date</h6>
-			  	<h6>Reported On: xyz date xyz time</h6>
-			  </div>
-			</div>
+			<div class="invoice-details row mx-0 my-15" style="padding-left: 1%;">
+            <div class="table-responsive">
+              <table class="table">
+                <tr>
+                  <td>
+                    <h6>Invoice No: 35125</h6>
+                      <h6>Invoice Date: </h6>
+                      <h6>PAN No.: </h6>
+                    </td>
+                  <td>
+                    <h6>Patient Id: </h6>
+                      <h6>Patient Name: </h6>
+                      <h6>Patient Gender: </h6>
+                  </td>
+                  <td>
+                    <h6>Reffered By: </h6>
+                      <h6>Mob No.: </h6>
+                      <h6>Email: </h6>
+                  </td>
+                </tr>
+              </table>
+            </div>
+    			
+    	</div>
 			<div class="test_section">
 				<div class="report_title">
 					<center><h4 style="background-color: #fff;margin-top: 2%; font-weight: 800;">HAEMATOLOGY</h4></center>
