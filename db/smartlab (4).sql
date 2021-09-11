@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 05, 2021 at 06:55 AM
+-- Generation Time: Sep 11, 2021 at 04:13 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -71,7 +71,8 @@ INSERT INTO `case_master` (`caseId`, `centerId`, `patientId`, `referenceId`, `co
 (3, 1, 3, 1, 'Lab', 'KEM', '2021-08-01 10:30:57', '2021-08-01 10:30:57'),
 (4, 6, 8, 2, 'Lab', 'KEM', '2021-08-02 20:44:06', '2021-08-02 20:44:06'),
 (5, 7, 9, 3, 'Hospital', 'KEM', '2021-08-02 21:45:43', '2021-08-02 21:45:43'),
-(6, 1, 1, 1, 'Hospital', 'KEM', '2021-08-13 15:34:43', '2021-08-13 15:34:43');
+(6, 1, 1, 1, 'Hospital', 'KEM', '2021-08-13 15:34:43', '2021-08-13 15:34:43'),
+(7, 1, 1, 1, 'Home', 'KEM', '2021-09-05 10:47:56', '2021-09-05 10:47:56');
 
 -- --------------------------------------------------------
 
@@ -103,7 +104,8 @@ INSERT INTO `case_payments` (`paymentId`, `caseId`, `centerId`, `patientId`, `to
 (3, 3, 1, 3, 200.00, 100.00, 0.00, 'Cash', '', 100.00, '2021-08-01 00:00:00'),
 (4, 4, 6, 8, 100.00, 50.00, 0.00, 'UPI', 'PayTm', 50.00, '2021-08-02 00:00:00'),
 (5, 5, 7, 9, 700.00, 600.00, 0.00, 'Cash', '', 100.00, '2021-08-02 00:00:00'),
-(6, 6, 1, 1, 300.00, 200.00, 0.00, 'Cash', '', 100.00, '2021-08-13 00:00:00');
+(6, 6, 1, 1, 300.00, 200.00, 0.00, 'Cash', '', 100.00, '2021-08-13 00:00:00'),
+(7, 7, 1, 1, 200.00, 100.00, 0.00, 'Cash', 'Test', 100.00, '2021-09-05 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -137,7 +139,8 @@ INSERT INTO `case_payment_transactions` (`transactionId`, `paymentId`, `amount`,
 (8, 5, 500.00, '2021-08-02', 'UPI', 1, '2021-08-02 21:45:43', '2021-08-02 21:45:43'),
 (9, 5, 100.00, '2021-08-02', 'Cash', 1, '2021-08-02 21:46:56', '2021-08-02 21:46:56'),
 (10, 6, 200.00, '2021-08-13', 'Cash', 1, '2021-08-13 15:34:43', '2021-08-13 15:34:43'),
-(11, 6, 0.00, '2021-08-13', 'Cash', 1, '2021-08-13 15:57:20', '2021-08-13 15:57:20');
+(11, 6, 0.00, '2021-08-13', 'Cash', 1, '2021-08-13 15:57:20', '2021-08-13 15:57:20'),
+(12, 7, 100.00, '2021-09-05', 'Cash', 1, '2021-09-05 10:47:56', '2021-09-05 10:47:56');
 
 -- --------------------------------------------------------
 
@@ -172,6 +175,7 @@ CREATE TABLE `case_report_master` (
   `patientId` int(10) UNSIGNED NOT NULL,
   `casedate` datetime NOT NULL,
   `centerId` int(10) UNSIGNED NOT NULL,
+  `finding_details` text DEFAULT NULL,
   `createdat` datetime NOT NULL DEFAULT current_timestamp(),
   `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -180,8 +184,9 @@ CREATE TABLE `case_report_master` (
 -- Dumping data for table `case_report_master`
 --
 
-INSERT INTO `case_report_master` (`reportId`, `caseId`, `patientId`, `casedate`, `centerId`, `createdat`, `updatedat`) VALUES
-(1, 1, 1, '2021-01-11 00:00:00', 1, '2021-08-21 17:57:10', '2021-08-21 17:57:10');
+INSERT INTO `case_report_master` (`reportId`, `caseId`, `patientId`, `casedate`, `centerId`, `finding_details`, `createdat`, `updatedat`) VALUES
+(1, 1, 1, '2021-01-11 00:00:00', 1, NULL, '2021-08-21 17:57:10', '2021-08-21 17:57:10'),
+(2, 7, 2, '2015-03-25 00:00:00', 1, NULL, '2021-09-11 19:43:13', '2021-09-11 19:43:13');
 
 -- --------------------------------------------------------
 
@@ -209,7 +214,8 @@ INSERT INTO `case_tests` (`case_test_id`, `caseId`, `testId`, `centerId`) VALUES
 (12, 5, 4, 7),
 (13, 5, 5, 7),
 (15, 6, 6, 1),
-(16, 6, 7, 1);
+(16, 6, 7, 1),
+(17, 7, 6, 1);
 
 -- --------------------------------------------------------
 
@@ -423,6 +429,7 @@ CREATE TABLE `center_test_master` (
   `gender` varchar(15) NOT NULL,
   `fees` double(10,2) NOT NULL,
   `centerId` int(10) UNSIGNED NOT NULL,
+  `desc_text` text DEFAULT NULL,
   `createdat` datetime NOT NULL DEFAULT current_timestamp(),
   `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -431,14 +438,15 @@ CREATE TABLE `center_test_master` (
 -- Dumping data for table `center_test_master`
 --
 
-INSERT INTO `center_test_master` (`testId`, `categoryId`, `test_name`, `short_name`, `method`, `instrument`, `gender`, `fees`, `centerId`, `createdat`, `updatedat`) VALUES
-(1, 1, 'TEST123', 'T1M1', 'KET', 'KH', 'Male', 500.00, 1, '2021-07-28 13:08:33', '2021-07-28 13:09:39'),
-(2, 2, 'Biscuit', 'B1C1', 'JEM', 'KURLA', 'Male', 200.00, 1, '2021-07-29 09:51:51', '2021-08-01 08:47:05'),
-(3, 4, 'Tablet 1', 'Tab1', 'KET', 'KH', 'Male', 100.00, 6, '2021-08-02 20:40:50', '2021-08-02 20:40:50'),
-(4, 5, 'TEST 01', 'T01', 'ME', 'INST', 'Female', 500.00, 7, '2021-08-02 21:37:35', '2021-08-02 21:37:35'),
-(5, 6, 'Test02', 'T02', 'K1', 'KH', 'Male', 200.00, 7, '2021-08-02 21:40:39', '2021-08-02 21:40:39'),
-(6, 2, 'CBC WITH ESR', 'CBC', 'TEST', 'TEST', 'Male', 200.00, 1, '2021-08-13 14:42:25', '2021-08-13 14:42:25'),
-(7, 1, 'Calcitonin', 'Calcitonin', 'TEST', 'KH', 'Male', 100.00, 1, '2021-08-13 15:56:59', '2021-08-13 15:56:59');
+INSERT INTO `center_test_master` (`testId`, `categoryId`, `test_name`, `short_name`, `method`, `instrument`, `gender`, `fees`, `centerId`, `desc_text`, `createdat`, `updatedat`) VALUES
+(1, 1, 'TEST123', 'T1M1', 'KET', 'KH', 'Male', 500.00, 1, NULL, '2021-07-28 13:08:33', '2021-07-28 13:09:39'),
+(2, 2, 'Biscuit', 'B1C1', 'JEM', 'KURLA', 'Male', 200.00, 1, NULL, '2021-07-29 09:51:51', '2021-08-01 08:47:05'),
+(3, 4, 'Tablet 1', 'Tab1', 'KET', 'KH', 'Male', 100.00, 6, NULL, '2021-08-02 20:40:50', '2021-08-02 20:40:50'),
+(4, 5, 'TEST 01', 'T01', 'ME', 'INST', 'Female', 500.00, 7, NULL, '2021-08-02 21:37:35', '2021-08-02 21:37:35'),
+(5, 6, 'Test02', 'T02', 'K1', 'KH', 'Male', 200.00, 7, NULL, '2021-08-02 21:40:39', '2021-08-02 21:40:39'),
+(6, 2, 'CBC WITH ESR', 'CBC', 'TEST', 'TEST', 'Male', 200.00, 1, NULL, '2021-08-13 14:42:25', '2021-08-13 14:42:25'),
+(7, 1, 'Calcitonin', 'Calcitonin', 'TEST', 'KH', 'Male', 100.00, 1, NULL, '2021-08-13 15:56:59', '2021-08-13 15:56:59'),
+(8, 2, 'CBC WITH ESR', 'Platelet Count ', 'TEST', 'KH', 'Male', 500.00, 1, '                                            \r\n                    ', '2021-09-11 19:33:03', '2021-09-11 19:33:03');
 
 -- --------------------------------------------------------
 
@@ -468,7 +476,8 @@ INSERT INTO `center_test_subtypes` (`subtypeId`, `test_name`, `unitId`, `testId`
 (13, 'Neutrophils', 8, 6),
 (14, 'Lymphocyte', 8, 6),
 (15, 'Platelet Count', 9, 6),
-(16, 'Calcitonin', 10, 7);
+(16, 'Calcitonin', 10, 7),
+(17, 'Calcitonin', 6, 8);
 
 -- --------------------------------------------------------
 
@@ -508,7 +517,8 @@ INSERT INTO `center_test_subtypes_ranges` (`rangeId`, `subtypeId`, `gender`, `lo
 (18, 13, 'Male', 10, 'Year', 40, 'Year', '10', '40', 'Test'),
 (19, 14, 'Male', 10, 'Year', 40, 'Year', '20', '40', 'Test'),
 (20, 15, 'Male', 10, 'Year', 30, 'Year', '1.5', '4.5', 'Test'),
-(21, 16, 'Male', 10, 'Year', 30, 'Year', '0', '18', 'Test');
+(21, 16, 'Male', 10, 'Year', 30, 'Year', '0', '18', 'Test'),
+(22, 17, 'Male', 12, 'Year', 50, 'Year', '10', '25', 'Test');
 
 -- --------------------------------------------------------
 
@@ -548,7 +558,7 @@ INSERT INTO `center_unit_master` (`unitId`, `unit`, `centerId`, `createdat`) VAL
 CREATE TABLE `customer_registeration` (
   `centerId` int(11) NOT NULL,
   `fullname` varchar(150) NOT NULL,
-  `emailId` varchar(150) NOT NULL,
+  `emailId` varchar(255) NOT NULL,
   `contact_number` varchar(15) NOT NULL,
   `upassword` varchar(25) NOT NULL,
   `isactive` int(11) DEFAULT 1,
@@ -1007,19 +1017,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `case_master`
 --
 ALTER TABLE `case_master`
-  MODIFY `caseId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `caseId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `case_payments`
 --
 ALTER TABLE `case_payments`
-  MODIFY `paymentId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `paymentId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `case_payment_transactions`
 --
 ALTER TABLE `case_payment_transactions`
-  MODIFY `transactionId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `transactionId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `case_report_data`
@@ -1031,13 +1041,13 @@ ALTER TABLE `case_report_data`
 -- AUTO_INCREMENT for table `case_report_master`
 --
 ALTER TABLE `case_report_master`
-  MODIFY `reportId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `reportId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `case_tests`
 --
 ALTER TABLE `case_tests`
-  MODIFY `case_test_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `case_test_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `center_details`
@@ -1085,19 +1095,19 @@ ALTER TABLE `center_reference_master`
 -- AUTO_INCREMENT for table `center_test_master`
 --
 ALTER TABLE `center_test_master`
-  MODIFY `testId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `testId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `center_test_subtypes`
 --
 ALTER TABLE `center_test_subtypes`
-  MODIFY `subtypeId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `subtypeId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `center_test_subtypes_ranges`
 --
 ALTER TABLE `center_test_subtypes_ranges`
-  MODIFY `rangeId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `rangeId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `center_unit_master`
