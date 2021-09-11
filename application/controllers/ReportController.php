@@ -46,7 +46,8 @@ class ReportController extends REST_Controller
             "centerId" => $this->post('centerId'),
             "caseId" => $this->post('caseId'),
             "patientId" => $this->post('patientId'),
-            "casedate" => $this->post('casedate')
+            "casedate" => $this->post('casedate'),
+            "finding_details"=>$this->post('findingDetails'),
         );
         $report_data = $this->post('report_data');
         $report_data = json_decode($report_data);//[{"category":"Microbilogy","test_name":"ECR","unit":"gl","findings":"10"}]

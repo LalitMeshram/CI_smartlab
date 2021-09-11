@@ -129,7 +129,7 @@
                                                     <!-- /.box-header -->
                                                     <div class="box-body">
                                                         <form>
-                                                            <textarea id="editor1" name="editor1" rows="10" cols="58">
+                                                            <textarea id="editor1" name="findingDetails" rows="10" cols="58">
                                             
                     </textarea>
                                                         </form>
