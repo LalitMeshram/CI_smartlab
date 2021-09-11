@@ -230,6 +230,14 @@
 <!-- Sweet-Alert  -->
 <script src="<?php echo base_url() . 'resource'; ?>/assets/vendor_components/sweetalert/sweetalert.min.js"></script>
 <script src="<?php echo base_url() . 'resource'; ?>/assets/vendor_components/sweetalert/jquery.sweet-alert.custom.js"></script>
+
+<!-- CK Editor -->
+	<script src="<?php echo base_url() . 'resource'; ?>/assets/vendor_components/ckeditor/ckeditor.js"></script>
+
+    	
+	<!-- SoftMaterial admin for editor -->
+	<script src="<?php echo base_url() . 'resource'; ?>/js/pages/editor.js"></script>
+
 <script>
 
     var loadFile = function (event, out) {

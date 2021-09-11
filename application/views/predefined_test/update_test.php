@@ -42,9 +42,9 @@
                                     <br>
 
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-12">
                                             <div class="row">
-                                                <div class="col-md-12">
+                                                <div class="col-md-4">
                                                     <div class="form-group">
                                                         <label>Select Category</label>
                                                         <div class="input-group mb-3">
@@ -60,7 +60,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-12">
+                                                <div class="col-md-4">
                                                     <div class="form-group">
                                                         <label>Test Name</label>
                                                         <div class="controls">
@@ -69,7 +69,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6">
+                                                <div class="col-md-4">
                                                     <div class="form-group">
                                                         <label>Short Name</label>
                                                         <div class="controls">
@@ -78,7 +78,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6">
+                                                <div class="col-md-4">
                                                     <div class="form-group">
                                                         <label>Test For</label>
                                                         <div class="controls">
@@ -90,11 +90,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="row">
-                                                <div class="col-md-6">
+                                                <div class="col-md-4">
                                                     <div class="form-group">
                                                         <label>General Fees</label>
                                                         <div class="controls">
@@ -103,54 +99,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <div class="controls">
-                                                            <div class="form-check" style="margin-top:16%;">
-                                                                <input class="form-check-input" type="checkbox"
-                                                                    value="1" id="outsourceCheck" name="outsourceCheck">
-                                                                <label class="form-check-label" for="outsourceCheck">
-                                                                    Outsource
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <label>Select Lab Name</label>
-                                                        <div class="input-group mb-3">
-                                                            <select class="form-control" id="outsourcelabId"
-                                                                name="outsourcelabId" disabled="">
-
-                                                            </select>
-                                                            <div class="input-group-append">
-                                                                <button class="btn btn-primary btn-sm"
-                                                                    data-toggle="modal" data-target="#add_lab"
-                                                                    type="button">Add New</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <label>Outsource Amount</label>
-                                                        <div class="controls">
-                                                            <input type="text" class="form-control"
-                                                                name="outsourcelabAmount" id="outsourcelabAmount"
-                                                                placeholder="Enter Outsource Amount" disabled="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-
-                                        </div>
-
-                                        <div class="col-md-4">
-                                            <div class="row">
-                                                <div class="col-md-12">
+                                                <div class="col-md-4">
                                                     <div class="form-group">
                                                         <label>Method</label>
                                                         <div class="controls">
@@ -159,7 +108,8 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-12">
+
+                                                <div class="col-md-4">
                                                     <div class="form-group">
                                                         <label>Instrument</label>
                                                         <div class="controls">
@@ -170,6 +120,9 @@
                                                 </div>
                                             </div>
                                         </div>
+
+
+
                                     </div>
                                 </div>
 
@@ -242,49 +195,62 @@
                                             <div class="col-md-2">
                                             </div>
                                         </div>
-                                        <!-- ck editor -->
-                                        <div class="row">
-                                            <div class="col-md-2">
-                                            </div>
-                                            <div class="col-md-8">
 
-                                                <div class="box">
-                                                    <div class="box-header">
-                                                        <h4 class="box-title">Other Details<br>
-                                                            <!-- <small>Advanced and full of features</small> -->
-                                                        </h4>
-                                                        <!-- <ul class="box-controls pull-right">
-                                                            <li><a class="box-btn-close" href="#"></a></li>
-                                                            <li><a class="box-btn-slide" href="#"></a></li>
-                                                            <li><a class="box-btn-fullscreen" href="#"></a></li>
-                                                        </ul> -->
-                                                    </div>
-                                                    <!-- /.box-header -->
-                                                    <div class="box-body">
-                                                        <form>
-                                                            <textarea id="editor1" name="editor1" rows="10" cols="58">
-                                            
-                    </textarea>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                                <!-- /.box -->
-
-                                            </div>
-                                        </div>
-                                        <!-- ck Editor -->
                                     </div>
                                     <!-- /.box-body 
 	          </div>
 	          <!-- /.box -->
                                 </div>
-                                <center><button class="btn btn-success" type="submit">Save</button></center>
+
+                                <!--hide element-->
+                                <div class="col-md-6" style="display:none;">
+                                    <div class="form-group">
+                                        <div class="controls">
+                                            <div class="form-check" style="margin-top:16%;">
+                                                <input class="form-check-input" type="checkbox" value="1"
+                                                    id="outsourceCheck" name="outsourceCheck">
+                                                <label class="form-check-label" for="outsourceCheck">
+                                                    Outsource
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12" style="display:none;">
+                                    <div class="form-group">
+                                        <label>Select Lab Name</label>
+                                        <div class="input-group mb-3">
+                                            <select class="form-control" id="outsourcelabId" name="outsourcelabId"
+                                                disabled="">
+
+                                            </select>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary btn-sm" data-toggle="modal"
+                                                    data-target="#add_lab" type="button">Add New</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12" style="display:none;">
+                                    <div class="form-group">
+                                        <label>Outsource Amount</label>
+                                        <div class="controls">
+                                            <input type="text" class="form-control" name="outsourcelabAmount"
+                                                id="outsourcelabAmount" placeholder="Enter Outsource Amount"
+                                                disabled="">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                            <!--hide element-->
 
+                            <center><button class="btn btn-success" type="submit">Save</button></center>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
+
+            </div>
         </form>
 
 

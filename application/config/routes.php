@@ -24,6 +24,16 @@ $route['outsource_lab']      = 'admin/Admincontroller/outsourceLab';
 $route['all_receipt']      = 'admin/Admincontroller/allReceipt';
 $route['referal_doctor']      = 'admin/Admincontroller/referalDoctor';
 $route['enter_finding/(:num)']      = 'admin/Admincontroller/enterFinding/$1';
+
+//Admin login
+$route['adminLogin']='admin/AdminLoginController/adminLogin';
+$route['adminDashboard']='admin/AdminLoginController/adminDashboard';
+$route['add_predefined_test']           = 'admin/AdminLogincontroller/addPredefinedTest';
+$route['update_predefined_test/(:num)']           = 'admin/AdminLogincontroller/updatePredefinedTest/$1';
+$route['test_predefined_database']      = 'admin/AdminLogincontroller/testPredefinedDatabase';
+$route['predefined_category']      = 'admin/AdminLogincontroller/predefinedCategory';
+$route['predefined_unit']      = 'admin/AdminLogincontroller/predefinedUnit';
+
 $route['payment'] = 'Register/index';
 
 //Center Registration master
@@ -89,7 +99,7 @@ $route['save_finding'] = 'ReportController/add_report';
 
 //Admin Controller
 $route['admin_login'] = 'AdminController/admin_login';
-
+$route['admin_logout'] = 'AdminController/logout';
 //Admin Test Master Controller
 $route['get_lab_tests']     = 'LabTestController/test_list';
 $route['add_lab_test'] = 'LabTestController/test_add';

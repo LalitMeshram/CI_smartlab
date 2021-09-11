@@ -1,7 +1,7 @@
 <?php 
-$session_data=$this->session->userdata('lsesson');
+$session_data=$this->session->userdata('Asession');
 if(!isset($session_data)){
-    redirect(base_url('login'));
+    redirect(base_url('adminLogin'));
 }
 ?>
 <!DOCTYPE html>
@@ -34,7 +34,6 @@ if(!isset($session_data)){
         <!--alerts CSS -->
         <link href="<?php echo base_url() . 'resource'; ?>/assets/vendor_components/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
 
-        
         
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -355,7 +354,7 @@ if(!isset($session_data)){
                                                 </div>
                                                 <div role="separator" class="divider col-12"></div>
                                                 <div class="col-12 text-left">
-                                                    <a href="<?php echo base_url();?>logout"><i class="fa fa-power-off"></i> Logout</a>
+                                                    <a href="<?php echo base_url();?>admin_logout"><i class="fa fa-power-off"></i> Logout</a>
                                                 </div>				
                                             </div>
                                             <!-- /.row -->

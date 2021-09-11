@@ -69,7 +69,19 @@
                         <li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>lab_category">Lab Category</a></li>
                         <li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>lab_unit">Lab Unit</a></li>
                         <li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>outsource_lab">Outsource Lab</a></li>
-                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>referal_doctor">Refferal Doctors</a></li>	
+                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>referal_doctor">Refferal Doctors</a></li>
+                        
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-cog mr-5"></i> <span>Company Master</span>
+                    </a>
+                    <ul class="dropdown-menu multilevel scale-up-left">
+                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>predefined_category">Category</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>predefined_unit">Unit</a></li>
+                        
+                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>test_predefined_database">Test Database</a></li>	
                     </ul>
                 </li>
                 <li class="nav-item">

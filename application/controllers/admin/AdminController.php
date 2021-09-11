@@ -97,6 +97,8 @@ class AdminController extends CI_Controller {
         $this->load->view('footer');
         $this->load->view('add_test/test_database_js');
     }
+
+    
     
     public function patient() {
         $this->load->view('header');
@@ -161,6 +163,7 @@ class AdminController extends CI_Controller {
         $this->load->view('lab_category/show_js');
         $this->load->view('lab_category/new_js');
     }
+    
     public function labUnit() {
         $this->load->view('header');
         $this->load->view('menu_bar');
@@ -170,6 +173,7 @@ class AdminController extends CI_Controller {
         $this->load->view('lab_unit/show_js');
         $this->load->view('lab_unit/new_js');
     }
+    
     public function outsourceLab() {
         $this->load->view('header');
         $this->load->view('menu_bar');
@@ -203,6 +207,7 @@ class AdminController extends CI_Controller {
         $this->load->view('enter_finding/enter_finding',$data);
         $this->load->view('footer');
         $this->load->view('enter_finding/enter_finding_js',$data);
-        $this->load->view('enter_finding/save_finding_js',$data);
+        $this->load->view('enter_finding/save_finding_js');
     }
+    // public function addComapnyTest
 }
