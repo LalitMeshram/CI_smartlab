@@ -33,7 +33,6 @@ class CategoryController extends REST_Controller
         $response = array();
           $category_data = array(
             "category"=>$this->post('category'),
-            "centerId"=> $this->post('centerId'),
             "categoryId"=>$this->post('categoryId')
         );
         $result = $this->category->center_category($category_data['categoryId']);
