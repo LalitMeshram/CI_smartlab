@@ -108,5 +108,8 @@ $route['add_lab_unit'] = 'UnitController/add_lab_units';
 $route['get_lab_category'] = 'CategoryController/category_list';
 $route['add_lab_category'] = 'CategoryController/add_lab_catgeory';
 
+//RecieptController
+$route['bill_reciept/(:num)'] = 'RecieptController/pdfdetails/$1';
+
 $route['404_override']         = '';
 $route['translate_uri_dashes'] = FALSE;
