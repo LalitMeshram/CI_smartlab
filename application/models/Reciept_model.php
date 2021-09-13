@@ -228,14 +228,14 @@ class Reciept_model extends CI_Model {
                 if($row->discount > 0){
                     $discount = ' <tr>
                     <th>Discount</th>
-                    <th>'.number_format($row->discount,2).'</th>
+                    <th>'.number_format($row->discount,2).'%</th>
                   </tr>';
             }
         $output .= '<div class="row">
         <div class="col-md-8">
         </div>
-        <div class="col-md-4 text-right">	
-            <div class="table-responsive" style="width:40%;margin-left:60%!important;">
+        <div class="col-md-4">	
+            <div class="table-responsive" style="width:40%;margin-left:55%!important;">
               <table class="table table-bordered">
                 <tbody>
                 <tr>
