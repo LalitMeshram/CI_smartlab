@@ -33,6 +33,10 @@ $route['update_predefined_test/(:num)']           = 'admin/AdminLogincontroller/
 $route['test_predefined_database']      = 'admin/AdminLogincontroller/testPredefinedDatabase';
 $route['predefined_category']      = 'admin/AdminLogincontroller/predefinedCategory';
 $route['predefined_unit']      = 'admin/AdminLogincontroller/predefinedUnit';
+$route['create_package']='admin/AdminLogincontroller/createPackage';
+$route['create_package/(:num)']='admin/AdminLogincontroller/createPackage/$1';
+$route['getPackage']='admin/AdminLogincontroller/package';
+
 
 $route['payment'] = 'Register/index';
 

@@ -20,6 +20,10 @@
                         <li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>test_predefined_database">Test Database</a></li>	
                     </ul>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo base_url();?>getPackage"><i class="fa fa-hospital-o mr-5"></i> <span>Package</span></a>
+                </li>
                 	
             </ul>
         </div>

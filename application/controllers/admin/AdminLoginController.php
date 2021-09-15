@@ -82,4 +82,29 @@ class AdminLoginController extends CI_Controller {
         $this->load->view('footer');
         $this->load->view('predefined_test/test_database_js');
     }
+
+
+    public function createPackage($id=0)
+    {
+        $data['pkgId']=$id;
+        $this->load->view('admin_header/header');
+        $this->load->view('admin_menubar/menu_bar');
+        $this->load->view('admin_package/create_package');
+        $this->load->view('footer');
+        $this->load->view('admin_package/create_package_js');
+        $this->load->view('admin_package/setpkgDetails',$data);
+    }
+
+
+    public function package()
+    {
+        $this->load->view('admin_header/header');
+        $this->load->view('admin_menubar/menu_bar');
+        $this->load->view('admin_package/package');
+        $this->load->view('footer');
+        $this->load->view('admin_package/package_js');
+    }
+
+
+
 }
