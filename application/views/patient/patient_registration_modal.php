@@ -37,7 +37,7 @@
                                                 <option>Smt</option>
                                             </select>
                                         </div>
-                                        <button class="btn btn-success btn-xs">+</button>
+                                        <!-- <button class="btn btn-success btn-xs">+</button> -->
                                     </div>
                                 </div>
                             </div>
@@ -74,7 +74,7 @@
                                 <div class="form-group">
                                     <div class="controls">
                                         <label>Date Of Birth</label>
-                                        <input type="date" class="form-control" name="dob" id="dob">
+                                        <input type="date" class="form-control" name="dob" id="dob" oninput="calculateAge()" max="<?php echo date("Y-m-d"); ?>">
                                     </div>
                                 </div>
                             </div>
@@ -84,7 +84,7 @@
                                     <div class="input-group mb-3">
                                         <input type="text" class="form-control" id="age" name="age">
                                         <div class="input-group-append">
-                                            <select class="form-control" id="">
+                                            <select class="form-control" id="agestr">
                                                 <option>Days</option>
                                                 <option>Month</option>
                                                 <option>Year</option>

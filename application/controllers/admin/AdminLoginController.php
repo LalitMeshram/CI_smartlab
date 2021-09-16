@@ -18,7 +18,8 @@ class AdminLoginController extends CI_Controller {
     // }
 
     public function adminDashboard() {
-        $this->load->view('admin_header/header');
+        $data['title']='Dashboard';
+        $this->load->view('admin_header/header',$data);
         $this->load->view('admin_menubar/menu_bar');
         $this->load->view('admin_dashboard/dashboard');
         $this->load->view('footer');
@@ -26,7 +27,8 @@ class AdminLoginController extends CI_Controller {
 
 
     public function predefinedCategory() {
-        $this->load->view('admin_header/header');
+        $data['title']='Category';
+        $this->load->view('admin_header/header',$data);
         $this->load->view('admin_menubar/menu_bar');
         $this->load->view('predefined_category/lab_category');
         $this->load->view('predefined_category/add_category_modal');
@@ -36,7 +38,8 @@ class AdminLoginController extends CI_Controller {
     }
 
     public function predefinedUnit() {
-        $this->load->view('admin_header/header');
+        $data['title']='Unit';
+        $this->load->view('admin_header/header',$data);
         $this->load->view('admin_menubar/menu_bar');
         $this->load->view('predefined_unit/lab_unit');
         $this->load->view('predefined_unit/add_unit_modal');
@@ -46,7 +49,8 @@ class AdminLoginController extends CI_Controller {
     }
 
     public function addPredefinedTest() {
-        $this->load->view('admin_header/header');
+        $data['title']='Add Test';
+        $this->load->view('admin_header/header',$data);
         $this->load->view('admin_menubar/menu_bar');
         $this->load->view('predefined_test/add_test');
         $this->load->view('footer');
@@ -61,7 +65,8 @@ class AdminLoginController extends CI_Controller {
     
     public function updatePredefinedTest($id) {
         $data['id']=$id;
-        $this->load->view('admin_header/header');
+        $data['title']='Update Test';
+        $this->load->view('admin_header/header',$data);
         $this->load->view('admin_menubar/menu_bar');
         $this->load->view('predefined_test/update_test');
         $this->load->view('footer');
@@ -76,7 +81,8 @@ class AdminLoginController extends CI_Controller {
     }
     
     public function testPredefinedDatabase() {
-        $this->load->view('admin_header/header');
+        $data['title']='Test Database';
+        $this->load->view('admin_header/header',$data);
         $this->load->view('admin_menubar/menu_bar');
         $this->load->view('predefined_test/test_database');
         $this->load->view('footer');
@@ -87,7 +93,8 @@ class AdminLoginController extends CI_Controller {
     public function createPackage($id=0)
     {
         $data['pkgId']=$id;
-        $this->load->view('admin_header/header');
+        $data['title']='Create Package';
+        $this->load->view('admin_header/header',$data);
         $this->load->view('admin_menubar/menu_bar');
         $this->load->view('admin_package/create_package');
         $this->load->view('footer');
@@ -98,7 +105,8 @@ class AdminLoginController extends CI_Controller {
 
     public function package()
     {
-        $this->load->view('admin_header/header');
+        $data['title']='Package';
+        $this->load->view('admin_header/header',$data);
         $this->load->view('admin_menubar/menu_bar');
         $this->load->view('admin_package/package');
         $this->load->view('footer');

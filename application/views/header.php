@@ -14,7 +14,7 @@ if(!isset($session_data)){
         <meta name="author" content="">
         <link rel="icon" href="../images/favicon.ico">
 
-        <title>SoftMaterial admin - Dashboard  Pricing tables </title>
+        <title>Smartlab-<?php echo $title;?></title>
 
         <!-- Bootstrap 4.1-->
         <link rel="stylesheet" href="<?php echo base_url() . 'resource/assets/vendor_components/bootstrap/dist/css/bootstrap.min.css'; ?>">

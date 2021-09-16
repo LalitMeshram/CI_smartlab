@@ -7,8 +7,8 @@
       </h1>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Tables</a></li>
-        <li class="breadcrumb-item active">Editable Tables</li>
+        <li class="breadcrumb-item"><a href="#">Cases</a></li>
+        <li class="breadcrumb-item active">All Cases</li>
       </ol>
     </section>
 

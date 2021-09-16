@@ -73,7 +73,7 @@ $session_data=$this->session->userdata('lsesson');
             dataType: 'json',
 
             success: function (response) {
-//                console.log(response);
+               console.log(response);
 
                 if (response.status == 200) {
                     $('#patientId').val(id);

@@ -18,25 +18,29 @@ class AdminController extends CI_Controller {
     }
 
     public function load_reciept(){
-     $this->load->view('case_reciept');
+        $data['title']='Receipt';
+     $this->load->view('case_reciept',$data);
     //    $this->load->view('report_reciept');
     }
      
     public function pricing() {
-        $this->load->view('header');
+        $data['title']='Pricing';
+        $this->load->view('header',$data);
         $this->load->view('menu_bar');
         $this->load->view('pricing/pricing');
         $this->load->view('footer');
         $this->load->view('pricing/pricing_js');
     }
     public function dashboard() {
-        $this->load->view('header');
+        $data['title']='Dashboard';
+        $this->load->view('header',$data);
         $this->load->view('menu_bar');
         $this->load->view('dashboard/dashboard');
         $this->load->view('footer');
     }
     public function labRegistration() {
-        $this->load->view('header');
+        $data['title']='Lab Registration';
+        $this->load->view('header',$data);
         $this->load->view('menu_bar');
         $this->load->view('setup/lab_registration');
         $this->load->view('footer');
@@ -44,6 +48,7 @@ class AdminController extends CI_Controller {
         $this->load->view('setup/lab_registration_js');
     }
     public function userLogin() {
+        
         $this->load->view('user_login/login');
         $this->load->view('user_login/login_js');
     }
@@ -53,7 +58,8 @@ class AdminController extends CI_Controller {
         $this->load->view('user_registration/validation');
     }
     public function letterHead() {
-        $this->load->view('header');
+        $data['title']='Letter Head';
+        $this->load->view('header',$data);
         $this->load->view('menu_bar');
         $this->load->view('setup/letter_head');
         $this->load->view('footer');
@@ -61,7 +67,8 @@ class AdminController extends CI_Controller {
         $this->load->view('setup/get_letter_head_js');
     }
     public function addTest() {
-        $this->load->view('header');
+        $data['title']='Add Test';
+        $this->load->view('header',$data);
         $this->load->view('menu_bar');
         $this->load->view('add_test/add_test');
         $this->load->view('footer');
@@ -76,7 +83,8 @@ class AdminController extends CI_Controller {
     
     public function updateTest($id) {
         $data['id']=$id;
-        $this->load->view('header');
+        $data['title']='Update Test';
+        $this->load->view('header',$data);
         $this->load->view('menu_bar');
         $this->load->view('add_test/update_test');
         $this->load->view('footer');
@@ -91,7 +99,8 @@ class AdminController extends CI_Controller {
     }
     
     public function testDatabase() {
-        $this->load->view('header');
+        $data['title']='Test Database';
+        $this->load->view('header',$data);
         $this->load->view('menu_bar');
         $this->load->view('add_test/test_database');
         $this->load->view('footer');
@@ -101,16 +110,19 @@ class AdminController extends CI_Controller {
     
     
     public function patient() {
-        $this->load->view('header');
+        $data['title']='Patient';
+        $this->load->view('header',$data);
         $this->load->view('menu_bar');
         $this->load->view('patient/patient');
         $this->load->view('footer');
         $this->load->view('patient/patient_registration_modal');
         $this->load->view('patient/patient_show_js');
         $this->load->view('patient/patient_registration_js');
+        $this->load->view('patient/calculate_age_js');
     }
     public function createCase() {
-        $this->load->view('header');
+        $data['title']='Create Case';
+        $this->load->view('header',$data);
         $this->load->view('menu_bar');
         $this->load->view('cases/create_case');
         $this->load->view('cases/create_case_modal');
@@ -123,7 +135,8 @@ class AdminController extends CI_Controller {
     }
     public function updateCase($id) {
         $data['caseId']=$id;
-        $this->load->view('header');
+        $data['title']='Update Case';
+        $this->load->view('header',$data);
         $this->load->view('menu_bar');
         $this->load->view('cases/update_case');
         $this->load->view('cases/create_case_modal');
@@ -140,14 +153,16 @@ class AdminController extends CI_Controller {
     
     public function invoice($id) {
         $data['caseId']=$id;
-        $this->load->view('header');
+        $data['title']='Invoice';
+        $this->load->view('header',$data);
         $this->load->view('menu_bar');
         $this->load->view('invoice/invoice');
         $this->load->view('footer');
         $this->load->view('invoice/invoice_js',$data);
     }
     public function allCases() {
-        $this->load->view('header');
+        $data['title']='All Cases';
+        $this->load->view('header',$data);
         $this->load->view('menu_bar');
         $this->load->view('cases/all_cases');
         $this->load->view('footer');
@@ -155,7 +170,8 @@ class AdminController extends CI_Controller {
     }
     
     public function labCategory() {
-        $this->load->view('header');
+        $data['title']='Lab Category';
+        $this->load->view('header',$data);
         $this->load->view('menu_bar');
         $this->load->view('lab_category/lab_category');
         $this->load->view('lab_category/add_category_modal');
@@ -165,7 +181,8 @@ class AdminController extends CI_Controller {
     }
     
     public function labUnit() {
-        $this->load->view('header');
+        $data['title']='Lab Unit';
+        $this->load->view('header',$data);
         $this->load->view('menu_bar');
         $this->load->view('lab_unit/lab_unit');
         $this->load->view('lab_unit/add_unit_modal');
@@ -175,7 +192,8 @@ class AdminController extends CI_Controller {
     }
     
     public function outsourceLab() {
-        $this->load->view('header');
+        $data['title']='Outsource Lab';
+        $this->load->view('header',$data);
         $this->load->view('menu_bar');
         $this->load->view('outsource_lab/outsource_lab');
         $this->load->view('outsource_lab/add_outsource_lab_modal');
@@ -185,7 +203,8 @@ class AdminController extends CI_Controller {
     }
     
     public function referalDoctor() {
-        $this->load->view('header');
+        $data['title']='Referal Doctor';
+        $this->load->view('header',$data);
         $this->load->view('menu_bar');
         $this->load->view('referal_doctor/referal_doctor');
         $this->load->view('referal_doctor/add_referal_doctor_modal');
@@ -195,19 +214,21 @@ class AdminController extends CI_Controller {
     }
     
     public function allReceipt() {
-        $this->load->view('header');
+        $data['title']='All Receipt';
+        $this->load->view('header',$data);
         $this->load->view('menu_bar');
         $this->load->view('all_receipt/show');
         $this->load->view('footer');
     }
     public function enterFinding($id) {
         $data['caseId']=$id;
-        $this->load->view('header');
+        $data['title']='Enter finding';
+        $this->load->view('header',$data);
         $this->load->view('menu_bar');
         $this->load->view('enter_finding/enter_finding',$data);
         $this->load->view('footer');
         $this->load->view('enter_finding/enter_finding_js',$data);
         $this->load->view('enter_finding/save_finding_js');
     }
-    // public function addComapnyTest
+    
 }

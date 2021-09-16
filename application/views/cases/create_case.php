@@ -7,8 +7,8 @@
       </h1>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Tables</a></li>
-        <li class="breadcrumb-item active">Editable Tables</li>
+        <li class="breadcrumb-item"><a href="#">Create Case</a></li>
+        
       </ol>
     </section>
 
@@ -69,9 +69,9 @@
 					</div>
 					<div class="col-md-3">	
 						<div class="form-group">
-							<label>Collection Source</label>
+							<label><span class="text-danger">*</span>Collection Source</label>
 							<div class="controls">
-                                                            <input type="text" class="form-control" name="collection_source" id="collection_source" placeholder="Enter Colection Source">		
+                                                            <input type="text" class="form-control" name="collection_source" id="collection_source" placeholder="Enter Colection Source" required>		
 							</div>
 						</div>	
 					</div>
@@ -153,7 +153,7 @@
 									</tr>
 									<tr>
 									  <th>Amount Received</th>
-                                                                          <td><input type="number" class="form-control" name="receivedAmt" id="receivedAmt" value="0"></td>
+                                                                          <td><input type="number" class="form-control" name="receivedAmt" id="receivedAmt" value="0" required="true"></td>
 									</tr>
 									<tr>
 									  <th>Payment Mode</th>

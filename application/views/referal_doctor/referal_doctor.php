@@ -7,8 +7,8 @@
       </h1>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Tables</a></li>
-        <li class="breadcrumb-item active">Referal Doctor List</li>
+        <li class="breadcrumb-item"><a href="#">Masters</a></li>
+        <li class="breadcrumb-item active">Referal Doctors</li>
       </ol>
     </section>
 
