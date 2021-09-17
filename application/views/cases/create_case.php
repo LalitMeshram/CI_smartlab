@@ -31,7 +31,7 @@
 							<label>Select Patient</label>
 								
 							<div class="input-group mb-4" >
-                                                            <select class="form-control" id="patientId" name="patientId">
+                                                            <select class="form-control select2" id="patientId" name="patientId">
 									
 								</select>
 								<div class="input-group-append">
@@ -45,7 +45,7 @@
 							<label>Referrer</label>
 								
 							<div class="input-group mb-4">
-                                                            <select class="form-control" id="referenceId" name="referenceId">
+                                                            <select class="form-control select2" id="referenceId" name="referenceId">
 									
 								</select>
 								<div class="input-group-append">
@@ -59,7 +59,7 @@
 						<div class="form-group">
 							<label>Collection Center</label>
 							<div class="controls">
-                                                            <select class="form-control" id="collection_center" name="collection_center" id="collection_center">
+                                                            <select class="form-control select2" id="collection_center" name="collection_center" id="collection_center">
 									<option>Home</option>
 									<option>Lab</option>
 									<option>Hospital</option>
@@ -79,7 +79,7 @@
 						<div class="form-group">
 							<label>Select Test</label>
 							<div class="input-group mb-3">
-                                                            <select class="form-control" id="test" name="test">
+                                                            <select class="form-control select2" id="test" name="test">
 
                                                             </select>
 								<div class="input-group-append">
@@ -149,11 +149,11 @@
 									</tr>
 									<tr>
 									  <th>Discount</th>
-                                                                          <td><input type="number" class="form-control" name="discount" id="discount" min="0" value="0" readonly=""></td>
+                                                                          <td><input type="number" class="form-control" name="discount" id="discount" min="0" value="0" readonly="" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)||event.charCode==46"></td>
 									</tr>
 									<tr>
 									  <th>Amount Received</th>
-                                                                          <td><input type="number" class="form-control" name="receivedAmt" id="receivedAmt" value="0" required="true"></td>
+                                                                          <td><input type="number" class="form-control" name="receivedAmt" id="receivedAmt" value="0" required="true" oninput="checkReceivedAmt();" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)||event.charCode==46" ></td>
 									</tr>
 									<tr>
 									  <th>Payment Mode</th>

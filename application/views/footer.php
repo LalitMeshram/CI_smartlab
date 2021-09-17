@@ -238,6 +238,11 @@
 	<!-- SoftMaterial admin for editor -->
 	<script src="<?php echo base_url() . 'resource'; ?>/js/pages/editor.js"></script>
 
+    <!-- Select2 -->
+	<script src="<?php echo base_url() .'resource/assets/vendor_components/select2/dist/js/select2.full.js';?>"></script>
+    <!-- SoftMaterial admin for advanced form element -->
+	<script src="<?php echo base_url() .'resource/js/pages/advanced-form-element.js';?>"></script>
+
 <script>
 
     var loadFile = function (event, out) {

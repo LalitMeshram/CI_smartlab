@@ -48,7 +48,7 @@
                                                     <div class="form-group">
                                                         <label>Select Category</label>
                                                         <div class="input-group mb-3">
-                                                            <select class="form-control" id="categoryId"
+                                                            <select class="form-control select2" id="categoryId"
                                                                 name="categoryId">
 
                                                             </select>
@@ -82,7 +82,7 @@
                                                     <div class="form-group">
                                                         <label>Test For</label>
                                                         <div class="controls">
-                                                            <select class="form-control" id="gender" name="gender">
+                                                            <select class="form-control select2" id="gender" name="gender">
                                                                 <option>Male</option>
                                                                 <option>Female</option>
                                                                 <option>All</option>
@@ -120,7 +120,7 @@
                                                     <div class="form-group">
                                                         <label>Select Lab Name</label>
                                                         <div class="input-group mb-3">
-                                                            <select class="form-control" id="outsourcelabId"
+                                                            <select class="form-control select2" id="outsourcelabId"
                                                                 name="outsourcelabId" disabled="">
 
                                                             </select>
@@ -205,7 +205,7 @@
                                                 <div class="form-group">
                                                     <label>Select Unit</label>
                                                     <div class="input-group mb-3">
-                                                        <select class="form-control" id="unitId" name="unitId">
+                                                        <select class="form-control select2" id="unitId" name="unitId">
 
                                                         </select>
                                                         <div class="input-group-append">

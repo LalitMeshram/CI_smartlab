@@ -132,6 +132,8 @@ class AdminController extends CI_Controller {
         $this->load->view('cases/get_test_js');
         $this->load->view('cases/test_details_js');
         $this->load->view('cases/create_case_js');
+        $this->load->view('cases/add_referrer_dr_js');
+        $this->load->view('cases/paymentmode_js');
     }
     public function updateCase($id) {
         $data['caseId']=$id;
