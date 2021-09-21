@@ -115,5 +115,9 @@ $route['add_lab_category'] = 'CategoryController/add_lab_catgeory';
 //RecieptController
 $route['bill_reciept/(:num)'] = 'RecieptController/pdfdetails/$1';
 
+//Test panel_list_get
+$route['get_panel_test/(:num)'] = 'TestPanel/panel_list/$1';
+$route['add_panel_test'] = "TestPanel/panel_test_add";
+
 $route['404_override']         = '';
 $route['translate_uri_dashes'] = FALSE;

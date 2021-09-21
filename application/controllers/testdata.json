@@ -1,8 +1,4 @@
 [
-  {
-    "test_name": "Test1",
-    "unitId": "2",
-    "subtypes_test_ranges": [
       {
         "gender": "Male",
         "lower_age": 10,
@@ -23,22 +19,4 @@
         "upper_age_period":"Year",
         "words":"test"
       }
-    ]
-  },
-  {
-    "test_name": "Test_2",
-    "unitId": "2",
-    "subtypes_test_ranges": [
-      {
-        "gender": "Male",
-        "lower_age": 10,
-        "upper_age": 20,
-        "lower_limit": "140",
-        "upper_limit": "190",
-        "lower_age_period":"Days",
-        "upper_age_period":"Year",
-        "words":"test"
-      }
-    ]
-  }
 ]

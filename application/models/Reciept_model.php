@@ -2,112 +2,7 @@
 
 class Reciept_model extends CI_Model {
 
-    public function fetch_single_details($customerid) {
-        $html = '<link rel="stylesheet" href="dompdf/style.css">
-        <body class="hold-transition skin-blue layout-top-nav">
-        <div class="wrapper">
-          <div class="">
-            <section class="">
-              <div class="row invoice-info">
-                <div class="col-md-2">
-                </div>
-                <div class="col-sm-8 invoice-col invoice printableArea">
-                    <center><img src="resource/img/letter_head.png" style="width: 815px;margin-top:-5%;"></center>
-                    <br>
-                    <div class="invoice-details row mx-0 my-15" style="width: 92%;margin-left: 4%;">
-                      <div class="table-responsive" style="background-color: #f8f4f4;">
-                            <table class="table" style="border: none !important; font-weight: 700!important;">
-                                <tr>
-                                    <td>
-                                        <h6>Invoice No: 35125</h6>
-                                          <h6>Invoice Date: </h6>
-                                          <h6>PAN No.: </h6>
-                                      </td>
-                                    <td>
-                                        <h6>Patient Id: </h6>
-                                          <h6>Patient Name: </h6>
-                                          <h6>Patient Gender: </h6>
-                                    </td>
-                                    <td>
-                                        <h6>Reffered By: </h6>
-                                          <h6>Mob No.: </h6>
-                                          <h6>Email: </h6>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="table-responsive" style="width: 90%;margin-left: 5%;">
-                            <center><h4 style="background-color: #fff;margin-top: 2%;"><b>Bill Details</b></h4></center>
-                          <table class="table table-bordered" style="background-color: #ffffffd4;">
-                            <tbody>
-                            <tr>
-                              <th>Lab Investigations</th>
-                              <th>Fee</th>
-                            </tr>
-                            </tbody>
-                            <tbody>
-                            <tr>
-                              <td>Milk Powder</td>
-                              <td>$52.00</td>
-                            </tr>
-                            <tr>
-                              <td>Milk Powder</td>
-                              <td>$52.00</td>
-                            </tr>
-                            <tr>
-                              <td>Milk Powder</td>
-                              <td>$52.00</td>
-                            </tr>
-                            </tbody>
-                          </table>
-                        <div class="row">
-                            <div class="col-md-8">
-                            </div>
-                            <div class="col-md-4 text-right">	
-                                <div class="table-responsive" style="width:40%;margin-left:60%!important;">
-                                  <table class="table table-bordered">
-                                    <tbody>
-                                    <tr>
-                                      <th>Total Amount</th>
-                                      <th style="width: 40%;">Rs.xyz</th>
-                                    </tr>
-                                    </tbody>
-                                    <tbody>
-                                    <tr>
-                                      <th>Paid Amount</th>
-                                      <th>Rs.52.00</th>
-                                    </tr>
-                                    <tr>
-                                      <th>Pending Amount</th>
-                                      <th>Rs.52.00</th>
-                                    </tr>
-                                   
-                                    </tbody>
-                                  </table>
-                                </div>		
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <center><img src="resource/img/footer.png" width="800px"></center>
-                    <br>
-                </div>
-                <div class="col-md-2">
-                </div>
-                <div class="col-md-3">
-                </div>
-              </div>
-            </section>
-          </div>
-        
-          
-          <div class="control-sidebar-bg"></div>
-        </div>
-        ';
-        return $html;
-    }
-
+ 
     public function getCustomerdetails($caseId){
 
         $sql = "SELECT cm.caseId,cm.patientId,cm.collection_center,DATE_FORMAT(cm.createdat,'%d-%m-%Y') AS createddate,cm.updatedat,pm.first_name,pm.last_name,pm.gender,pm.contact_number,pm.emailId,crm.ref_name
@@ -118,6 +13,15 @@ class Reciept_model extends CI_Model {
          $query = $this->db->query($sql);
          //$data = $query->result_array();
 
+         $sql_logo = "SELECT COALESCE(cd.header_logo,'resource/img/letter_head.png') as header_logo,COALESCE(cd.footer_logo,'resource/img/footer.png') as footer_logo FROM center_letter_head_details cd 
+         LEFT JOIN case_master cm ON cm.centerId = cd.centerId WHERE cm.caseId = $caseId";
+         $query_1 = $this->db->query($sql_logo);
+         $row_1 = $query_1->result();
+         $header_logo = 'resource/img/letter_head.png'; 
+         if($row_1['header_logo']!=null){
+          $header_logo = $row_1['header_logo'];
+         }
+
          $output = '<link rel="stylesheet" href="dompdf/style.css">
          <body class="hold-transition skin-blue layout-top-nav">
          <div class="wrapper">
@@ -127,7 +31,7 @@ class Reciept_model extends CI_Model {
                  <div class="col-md-2">
                  </div>
                  <div class="col-sm-8 invoice-col invoice printableArea">
-                     <center><img src="resource/img/letter_head.png" style="width: 815px;margin-top:-5%;"></center>
+                     <center><img src="'.$header_logo.'" style="width: 815px;margin-top:-5%;"></center>
                      <br><div class="invoice-details row mx-0 my-15" style="width: 92%;margin-left: 4%;">
          <div class="table-responsive" style="background-color: #f8f4f4;">
                <table class="table" style="border: none !important; font-weight: 700!important;">';
@@ -263,6 +167,14 @@ class Reciept_model extends CI_Model {
     }
 
     public function getFooterDetails($caseId){
+      // $sql_logo = "SELECT COALESCE(cd.footer_logo,'resource/img/footer.png') as footer_logo FROM center_letter_head_details cd 
+      // LEFT JOIN case_master cm ON cm.centerId = cd.centerId WHERE cm.caseId = $caseId";
+      // $query_1 = $this->db->query($sql_logo);
+      // $row = $query_1->result();
+      // $footer_logo = 'resource/img/footer.png'; 
+      // if($row[0]!=null){
+      //  $footer_logo = $row[0];
+      // }
         $output = '</div>
         <br>
         <center><img src="resource/img/footer.png" width="800px"></center>

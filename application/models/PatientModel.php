@@ -15,7 +15,6 @@ class PatientModel extends CI_Model
             $sql = "SELECT * FROM patient_master WHERE centerId = $centerId ORDER BY patientId DESC";
             $query = $this->db->query($sql);
             $data= $query->result();
-            
         } else {
             $data = $this->db->get('patient_master')->result();
         }
