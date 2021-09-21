@@ -7,8 +7,9 @@
       </h1>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Tables</a></li>
-        <li class="breadcrumb-item active">Editable Tables</li>
+        <li class="breadcrumb-item"><a href="#">Setup</a></li>
+        <li class="breadcrumb-item active">Test Database</li>
+		<li class="breadcrumb-item active">Update Database</li>
       </ol>
     </section>
 
@@ -46,7 +47,7 @@
 									<div class="form-group">
 									<label>Select Category</label>
 									<div class="input-group mb-3">
-                                                                            <select class="form-control" id="categoryId" name="categoryId">
+                                                                            <select class="form-control select2" id="categoryId" name="categoryId">
 											
 										</select>
 										<div class="input-group-append">
@@ -75,7 +76,7 @@
 									<div class="form-group">
 									<label>Test For</label>
 									<div class="controls">
-                                                                            <select class="form-control" id="gender" name="gender">
+                                                                            <select class="form-control select2" id="gender" name="gender">
 											<option>Male</option>
 											<option>Female</option>
 											<option>All</option>
@@ -111,7 +112,7 @@
 									<div class="form-group">
 										<label>Select Lab Name</label>
 										<div class="input-group mb-3">
-                                                                                    <select class="form-control" id="outsourcelabId" name="outsourcelabId" disabled="">
+                                                                                    <select class="form-control select2" id="outsourcelabId" name="outsourcelabId" disabled="">
 												
 											</select>
 											<div class="input-group-append">
@@ -186,7 +187,7 @@
 	            		<div class="form-group">
 							<label>Select Unit</label>
 							<div class="input-group mb-3">
-                                                            <select class="form-control" id="unitId" name="unitId">
+                                                            <select class="form-control select2" id="unitId" name="unitId">
 										
 									</select>
 									<div class="input-group-append">

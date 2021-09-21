@@ -29,8 +29,9 @@ $session_data=$this->session->userdata('lsesson');
                 success: function (response) {
                     if (response.status == 200) {
                         swal("Good job!", response.Message, "success");
-                        window.location.reload();
-                        
+                        //window.location.reload();
+                        $('#add_refferer').modal('toggle');
+                        getDoctors();
                     } else {
 
                         swal("Error!", response.msg, "error");

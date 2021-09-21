@@ -5,25 +5,25 @@
 					<h4 class="modal-title" id="myModalLabel">Add Referrer</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 				</div>
-				<form>
+				<form id="refForm" method="post">
 					<div class="modal-body" style="background: url(add_referrer_bg.jpg);">
 						<div class="row">
 							<div class="col-md-12">
 								<div class="row">
 									<div class="col-md-3">
 										<label>Title</label>
-										<select class="form-control" id="">
-											<option>Dr.</option>
-											<option>Mr.</option>
-											<option>Mrs.</option>
-											<option>Miss</option>
+										<select class="form-control" id="ref_title" name="ref_title">
+										<option>Mr.</option>
+                                                <option>Miss.</option>
+                                                <option>Mrs.</option>
+                                                <option>Smt.</option>
 										</select>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
-											<label>Name</label>
+											<label>Dr. Name</label>
 											<div class="controls">
-												<input type="text" class="form-control" placeholder="Enter First & Last Name" name="">
+												<input type="text" class="form-control" placeholder="Enter First & Last Name" name="ref_name" id="ref_name">
 											</div>
 										</div>
 									</div>
@@ -31,7 +31,7 @@
 										<div class="form-group">
 											<label>Degree</label>
 											<div class="controls">
-												<input type="text" class="form-control" placeholder=" Degree" name="">
+												<input type="text" class="form-control" placeholder=" Degree" name="ref_degree" id="ref_degree">
 											</div>
 										</div>
 									</div>
@@ -41,7 +41,7 @@
 										<div class="form-group">
 											<label>Mob No.</label>
 											<div class="controls">
-												<input type="number" placeholder="Enter Mobile" class="form-control" name="">
+												<input type="number" placeholder="Enter Mobile" class="form-control" name="ref_contact" id="ref_contact">
 											</div>
 										</div>
 									</div>
@@ -49,7 +49,7 @@
 										<div class="form-group">
 											<label>Email</label>
 											<div class="controls">
-												<input type="email" class="form-control" placeholder="Enter Mail Id" name="">
+												<input type="email" class="form-control" placeholder="Enter Mail Id" name="ref_email" id="ref_email">
 											</div>
 										</div>
 									</div>
@@ -60,14 +60,14 @@
 								<div class="form-group">
 									<label>Address</label>
 									<div class="controls">
-									<textarea class="form-control" placeholder="Enter Full Address" rows="3"></textarea>
+									<textarea class="form-control" placeholder="Enter Full Address" name="ref_address" id="ref_address" rows="3"></textarea>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="modal-footer">
-						<center><button type="button" class="btn btn-info waves-effect" data-dismiss="modal">Save</button></center>
+						<center><button type="submit" class="btn btn-info waves-effect">Save</button></center>
 					</div>
 				</form>
 			</div>
@@ -169,7 +169,7 @@
 					</div>
 				</div>
 				<div class="modal-footer">
-					<center><button type="button" class="btn btn-info waves-effect" data-dismiss="modal">Save</button></center>
+					<center><button type="button" class="btn btn-info waves-effect">Save</button></center>
 				</div>
 			</form>
 			</div>

@@ -34,7 +34,8 @@ if(!isset($session_data)){
         <!--alerts CSS -->
         <link href="<?php echo base_url() . 'resource'; ?>/assets/vendor_components/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
 
-        
+        <!-- Select2 -->
+	<link rel="stylesheet" href="<?php echo base_url() .'resource/assets/vendor_components/select2/dist/css/select2.min.css';?>">	
         
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

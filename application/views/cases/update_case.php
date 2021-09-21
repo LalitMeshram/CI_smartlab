@@ -3,12 +3,13 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Edit Case
+        Modify Case
       </h1>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Tables</a></li>
-        <li class="breadcrumb-item active">Editable Tables</li>
+        <li class="breadcrumb-item"><a href="#">All Cases</a></li>
+        <li class="breadcrumb-item active">Modify Case</li>
+		
       </ol>
     </section>
 
@@ -31,7 +32,7 @@
 							<label>Select Patient</label>
 								
 							<div class="input-group mb-4" >
-                                                            <select class="form-control" id="patientId" name="patientId">
+                                                            <select class="form-control select2" id="patientId" name="patientId">
 									
 								</select>
 								<div class="input-group-append">
@@ -45,7 +46,7 @@
 							<label>Referrer</label>
 								
 							<div class="input-group mb-4">
-                                                            <select class="form-control" id="referenceId" name="referenceId">
+                                                            <select class="form-control select2" id="referenceId" name="referenceId">
 									
 								</select>
 								<div class="input-group-append">
@@ -59,7 +60,7 @@
 						<div class="form-group">
 							<label>Collection Center</label>
 							<div class="controls">
-                                                            <select class="form-control" id="collection_center" name="collection_center" id="collection_center">
+                                                            <select class="form-control select2" id="collection_center" name="collection_center" id="collection_center">
 									<option>Home</option>
 									<option>Lab</option>
 									<option>Hospital</option>
@@ -79,7 +80,7 @@
 						<div class="form-group">
 							<label>Select Test</label>
 							<div class="input-group mb-3">
-                                                            <select class="form-control" id="test" name="test">
+                                                            <select class="form-control select2" id="test" name="test">
 
                                                             </select>
 								<div class="input-group-append">
