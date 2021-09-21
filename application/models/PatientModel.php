@@ -11,11 +11,11 @@ class PatientModel extends CI_Model
     
     public function get_patient_data($centerId)
     {
-        $data;
         if ($centerId != 0) {
-            $data = $this->db->get_where('patient_master', array(
-                'centerId' => $centerId
-            ))->result();
+            $sql = "SELECT * FROM patient_master WHERE centerId = $centerId ORDER BY patientId DESC";
+            $query = $this->db->query($sql);
+            $data= $query->result();
+            
         } else {
             $data = $this->db->get('patient_master')->result();
         }
