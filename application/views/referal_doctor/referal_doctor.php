@@ -38,15 +38,7 @@
                                                             
                                                             
 							</tbody>
-							<tfoot>
-								<tr>
-									<th>Dr. Id</th>
-									<th>Dr. Name</th>
-									<th>Degree</th>
-									<th>Contact No.</th>
-									<th>Action</th>
-								</tr>
-							</tfoot>
+							
 						  </table>
 					  </div>
 		          </div>

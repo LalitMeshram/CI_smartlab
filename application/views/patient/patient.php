@@ -53,18 +53,7 @@
 								
 								
 							</tbody>
-							<tfoot>
-								<tr>
-									<th>Patient Id</th>
-									<th>Name</th>
-									<th>Gender</th>
-									<th>Aadhar No</th>
-									<th>Age</th>
-									<th>Mobile No</th>
-									<th>Email</th>
-									<th>Action</th>
-								</tr>
-							</tfoot>
+							
 						  </table>
 					  </div>
 		          </div>
