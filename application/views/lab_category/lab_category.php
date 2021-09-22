@@ -36,13 +36,7 @@
                                                             
                                                             
 							</tbody>
-							<tfoot>
-								<tr>
-									<th>Category Id</th>
-									<th>Category</th>
-									<th>Action</th>
-								</tr>
-							</tfoot>
+							
 						  </table>
 					  </div>
 		          </div>

@@ -36,13 +36,7 @@
                                                             
                                                             
 							</tbody>
-							<tfoot>
-								<tr>
-									<th>Lab Id</th>
-									<th>Outsource Lab</th>
-									<th>Action</th>
-								</tr>
-							</tfoot>
+							
 						  </table>
 					  </div>
 		          </div>

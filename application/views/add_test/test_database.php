@@ -45,16 +45,7 @@
 						</tr>-->
 					
 					</tbody>
-					<tfoot>
-						<tr>
-							<th>Test Name</th>
-							<th>Short Name</th>
-							<th>Category</th>
-							<th>Gender</th>
-							<th>Fee</th>
-							<th>Action</th>
-						</tr>
-					</tfoot>
+					
 				  </table>
 			  </div>
           </div>

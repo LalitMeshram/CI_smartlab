@@ -64,27 +64,18 @@ $session_data=$this->session->userdata('lsesson');
 
 
     function getUsers(id) {
-        $.ajax({
-
-            url: 'get_patients/' + id,
-
-            type: 'GET',
-
-            dataType: 'json',
-
-            success: function (response) {
-               console.log(response);
-
-                if (response.status == 200) {
+        let patient=patientList.get(id.toString());
+        console.log(patient);
+        
                     $('#patientId').val(id);
-                    if (response.data.patient_profile != null) {
-                        $('#profilepre').prop('src', response.data.patient_profile);
+                    if (patient.patient_profile != null) {
+                        $('#profilepre').prop('src', patient.patient_profile);
                     }
-                    $('#patient_title').val(response.data.patient_title);
-                    $('#first_name').val(response.data.first_name);
-                    $('#last_name').val(response.data.last_name);
+                    $('#patient_title').val(patient.patient_title);
+                    $('#first_name').val(patient.first_name);
+                    $('#last_name').val(patient.last_name);
 
-                    switch (response.data.gender) {
+                    switch (patient.gender) {
                         case "Male":
                             $("#male").attr('checked', 'checked')
                             break;
@@ -101,22 +92,18 @@ $session_data=$this->session->userdata('lsesson');
                     }
 
 
-                    $('#aadhar_number').val(response.data.aadhar_number);
-                    $('#dob').val(response.data.dob);
-                    $('#age').val(response.data.age);
-                    $('#contact_number').val(response.data.contact_number);
-                    $('#alternate_number').val(response.data.alternate_number);
-                    $('#emailId').val(response.data.emailId);
-                    $('#patient_address').val(response.data.patient_address);
+                    $('#aadhar_number').val(patient.aadhar_number);
+                    $('#dob').val(patient.dob);
+                    $('#age').val(patient.age);
+                    $('#contact_number').val(patient.contact_number);
+                    $('#alternate_number').val(patient.alternate_number);
+                    $('#emailId').val(patient.emailId);
+                    $('#patient_address').val(patient.patient_address);
 
 
                     $('#patientIdStatus').show();
                     $('#myModal').modal('toggle');
-                }
-
-            }
-
-        });
+                
     }
 
 

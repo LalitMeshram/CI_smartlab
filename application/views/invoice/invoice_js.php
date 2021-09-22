@@ -81,4 +81,7 @@ $('#enterFinding').click(function() {
 window.location.href = '<?php echo base_url('enter_finding/'.$caseId);?>';
 });
 
+
+
+
 </script>
