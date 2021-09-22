@@ -32,20 +32,7 @@ class TestController_new extends REST_Controller
                 );
                 $p_details     = $this->test->get_subtypes_test($data[$i]['testId']);
                 if (!empty($p_details)) {
-                    $temp = [];
-                    for ($j = 0; $j < count($p_details); $j++) {
-                        $subtypes_test_ranges = array(
-                            'subtypes_test_ranges' => array()
-                        );
-                        $s_details            = $this->test->get_subtypes_ranges($p_details[$j]['subtypeId']);
-                        if (!empty($s_details)) {
-                            $subtypes_test_ranges = array(
-                                'subtypes_test_ranges' => $s_details
-                            );
-                        }
-                         $temp[]    = array_merge($p_details[$j],$subtypes_test_ranges);
-                    }
-                    $temp1= array("subtype_test"=>$temp);  
+                    $temp1= array("subtype_test"=>$p_details );  
                 }
                 $temp3 = array("outsourcetest"=>[],"outsource"=>false);
                 $outsource = $this->outsource->center_outsource_lab_tests($data[$i]['testId']);
@@ -78,7 +65,8 @@ class TestController_new extends REST_Controller
             "centerId" => $this->post('centerId'),
             "desc_text" => $this->post('desc_text')
         );
-        $subtypes_test = $this->input->post('subtypes_test');//refer testdata.json
+        $subtypes_test = $this->input->post('subtypes_test');
+        //[{"panelId":2,"isgroup":1,"label":"Generic","flag_sequence":1},{"panelId":3,"isgroup":1,"label":"Generic","flag_sequence":1},{"panelId":4,"isgroup":0,"label":"","flag_sequence":0}]
         $subtypes_test = json_decode($subtypes_test);
         $outsource_data = array();
         $check =0;
@@ -103,8 +91,6 @@ class TestController_new extends REST_Controller
             'subtypes_test' => $subtypes_test
         );
       }
-//      echo 'check='.$check;
-//      print_r($data);exit;
         $testId = $this->post('testId');
         if(!empty($testId) && $testId !=0){
             $result        = $this->test->update_test_data($data,$testId);

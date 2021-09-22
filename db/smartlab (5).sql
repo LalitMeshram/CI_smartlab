@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 21, 2021 at 07:21 PM
+-- Generation Time: Sep 22, 2021 at 07:25 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -426,6 +426,30 @@ INSERT INTO `center_reference_master` (`ref_id`, `ref_title`, `ref_name`, `ref_d
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `center_test_group_panel`
+--
+
+CREATE TABLE `center_test_group_panel` (
+  `groupId` int(10) UNSIGNED NOT NULL,
+  `testId` int(10) UNSIGNED NOT NULL,
+  `panelId` int(10) UNSIGNED NOT NULL,
+  `isgroup` tinyint(1) NOT NULL,
+  `label` varchar(155) DEFAULT NULL,
+  `flag_sequence` int(10) UNSIGNED NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `center_test_group_panel`
+--
+
+INSERT INTO `center_test_group_panel` (`groupId`, `testId`, `panelId`, `isgroup`, `label`, `flag_sequence`) VALUES
+(1, 1, 2, 1, 'Generic', 1),
+(2, 1, 3, 1, 'Generic', 1),
+(3, 1, 4, 0, '', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `center_test_master`
 --
 
@@ -443,6 +467,13 @@ CREATE TABLE `center_test_master` (
   `createdat` datetime NOT NULL DEFAULT current_timestamp(),
   `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `center_test_master`
+--
+
+INSERT INTO `center_test_master` (`testId`, `categoryId`, `test_name`, `short_name`, `method`, `instrument`, `gender`, `fees`, `centerId`, `desc_text`, `createdat`, `updatedat`) VALUES
+(1, 1, 'CBC Witg CRE', 'CBC', 'MEt', 'IST', 'Male', 250.00, 1, 'Test', '2021-09-22 22:54:20', '2021-09-22 22:54:20');
 
 -- --------------------------------------------------------
 
@@ -551,7 +582,7 @@ INSERT INTO `center_unit_master` (`unitId`, `unit`, `centerId`, `createdat`) VAL
 CREATE TABLE `customer_registeration` (
   `centerId` int(11) NOT NULL,
   `fullname` varchar(150) NOT NULL,
-  `emailId` varchar(150) NOT NULL,
+  `emailId` varchar(255) NOT NULL,
   `contact_number` varchar(15) NOT NULL,
   `upassword` varchar(25) NOT NULL,
   `isactive` int(11) DEFAULT 1,
@@ -920,6 +951,12 @@ ALTER TABLE `center_reference_master`
   ADD PRIMARY KEY (`ref_id`);
 
 --
+-- Indexes for table `center_test_group_panel`
+--
+ALTER TABLE `center_test_group_panel`
+  ADD PRIMARY KEY (`groupId`);
+
+--
 -- Indexes for table `center_test_master`
 --
 ALTER TABLE `center_test_master`
@@ -1095,10 +1132,16 @@ ALTER TABLE `center_reference_master`
   MODIFY `ref_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `center_test_group_panel`
+--
+ALTER TABLE `center_test_group_panel`
+  MODIFY `groupId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `center_test_master`
 --
 ALTER TABLE `center_test_master`
-  MODIFY `testId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `testId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `center_test_panel`

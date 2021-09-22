@@ -119,5 +119,9 @@ $route['bill_reciept/(:num)'] = 'RecieptController/pdfdetails/$1';
 $route['get_panel_test/(:num)'] = 'TestPanel/panel_list/$1';
 $route['add_panel_test'] = "TestPanel/panel_test_add";
 
+//after modified test controller database
+$route['get_test_data_new/(:num)'] = "TestController_new/test_list/$1";
+$route['add_test_data_new'] = "TestController_new/test_add";
+
 $route['404_override']         = '';
 $route['translate_uri_dashes'] = FALSE;
