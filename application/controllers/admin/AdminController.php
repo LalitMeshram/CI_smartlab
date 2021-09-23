@@ -232,5 +232,14 @@ class AdminController extends CI_Controller {
         $this->load->view('enter_finding/enter_finding_js',$data);
         $this->load->view('enter_finding/save_finding_js');
     }
+
+    public function testPanel()
+  {
+    $data['title']='Test Panel';
+    $this->load->view('header',$data);
+    $this->load->view('menu_bar');
+    $this->load->view('test_panel/test_panel',$data);
+    $this->load->view('footer');
+  }
     
 }

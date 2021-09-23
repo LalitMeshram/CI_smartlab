@@ -112,7 +112,7 @@ class AdminLoginController extends CI_Controller {
         $this->load->view('footer');
         $this->load->view('admin_package/package_js');
     }
-
+  
 
 
 }
