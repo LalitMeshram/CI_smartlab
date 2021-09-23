@@ -2,14 +2,6 @@
 
 class TestPanelModel extends CI_Model
 {
-    public function get_center_tests($centerId)
-    {
-        $sql = "SELECT ct.testId,ct.categoryId,ct.test_name,ct.short_name,ct.method,ct.instrument,ct.gender,ct.fees,ct.fees,ct.centerId,lc.category
-        FROM center_test_master ct INNER JOIN lab_center_categories lc ON lc.categoryid = ct.categoryId
-        WHERE ct.centerId = $centerId";
-         $query = $this->db->query($sql);
-         return $query->result_array();
-    }
     //first
     public function get_panel_test($centerId)
     {
@@ -71,22 +63,6 @@ class TestPanelModel extends CI_Model
         }
 
     }
-    public function add_subtype_test($partner_data, $testId)
-    {
-        foreach ($partner_data as $contact) {
-            $partners             = array(
-                'test_name' => $contact->test_name,
-                'unitId' => $contact->unitId,
-                'testId' => $testId
-            );
-            $this->db->insert('center_test_subtypes', $partners);
-            $subtypeId            = $this->db->insert_id();
-            $subtypes_test_ranges = json_encode($contact->subtypes_test_ranges);
-            $subtypes_test_ranges = json_decode($subtypes_test_ranges);
-            $this->add_subtypes_test_ranges($subtypes_test_ranges, $subtypeId);
-        }
-    }
-    
     //third
     public function add_subtypes_test_ranges($partner_data, $panelId)
     {
