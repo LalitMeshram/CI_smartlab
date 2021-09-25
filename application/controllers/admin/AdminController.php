@@ -240,6 +240,40 @@ class AdminController extends CI_Controller {
     $this->load->view('menu_bar');
     $this->load->view('test_panel/test_panel',$data);
     $this->load->view('footer');
+    $this->load->view('test_panel/test_panel_js');
   }
+
+  public function addTestPanel() {
+    $data['title']='Add Test';
+    $this->load->view('header',$data);
+    $this->load->view('menu_bar');
+    $this->load->view('test_panel/add_test');
+    $this->load->view('footer');
+    $this->load->view('test_panel/add_test_modals');
+    $this->load->view('test_panel/add_test_js');
+    $this->load->view('test_panel/parameter_details_js');
+    $this->load->view('test_panel/add_range_js');
     
+    $this->load->view('test_panel/unit_js');
+    
+}
+
+
+public function updateTestPanel($id) {
+    $data['id']=$id;
+    $data['title']='Update Test';
+    $this->load->view('header',$data);
+    $this->load->view('menu_bar');
+    $this->load->view('test_panel/update_test');
+    $this->load->view('footer');
+    
+    $this->load->view('test_panel/update_test_js',$data);
+    $this->load->view('test_panel/parameter_details_js');
+    $this->load->view('test_panel/add_range_js');
+    
+    $this->load->view('test_panel/unit_js');
+    
+    $this->load->view('add_test/set_update_test_js',$data);
+}
+
 }

@@ -25,7 +25,8 @@ $route['all_receipt']      = 'admin/AdminController/allReceipt';
 $route['referal_doctor']      = 'admin/AdminController/referalDoctor';
 $route['enter_finding/(:num)']      = 'admin/AdminController/enterFinding/$1';
 $route['test_panel']      = 'admin/AdminController/testPanel';
-
+$route['add_test_panel']           = 'admin/AdminController/addTestPanel';
+$route['update_test_panel/(:num)']           = 'admin/AdminController/updateTestPanel/$1';
 //Admin login
 $route['adminLogin']='admin/AdminLoginController/adminLogin';
 $route['adminDashboard']='admin/AdminLoginController/adminDashboard';

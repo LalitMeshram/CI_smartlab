@@ -58,6 +58,7 @@
                         <li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>letter_head">Letter Head</a></li>
                         <li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>add_test">Add Test</a></li>
                         <li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>test_database">Test Database</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>test_panel">Test Panel</a></li>
                         
                     </ul>
                 </li>
