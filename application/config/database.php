@@ -73,7 +73,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 //localdb
  $active_group = 'local';
-//$active_group = 'test';
+//$active_group = 'uat';
 $query_builder = TRUE;
 
 $db['local'] = array(
@@ -97,12 +97,12 @@ $db['local'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
-$db['test'] = array(
+$db['uat'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => 'mazadoc_spine',
-	'password' => 'Spine@2266$',
-	'database' => 'mazadoc_labsma',
+	'username' => 'smartlab_uat',
+	'password' => 'smartlab@2019',
+	'database' => 'smartlab_uat',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

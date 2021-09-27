@@ -32,7 +32,8 @@ $session_data = $this->session->userdata('lsesson');
     $('#addTestForm').on('submit', function (e) {
         e.preventDefault();
         var returnVal = $("#addTestForm ").valid();
-        var subtypes_test = getSubtypesTest();
+        var test=$('#testName').val();
+        var subtypes_test = stypeRange.get(test.replace(/ /g, "_"));
         var subtypesTestString = JSON.stringify(subtypes_test);
         var formdata = new FormData(this);
         formdata.append('subtypes_test', subtypesTestString);
@@ -40,7 +41,7 @@ $session_data = $this->session->userdata('lsesson');
         if (returnVal) {
             $.ajax({
 
-                url: '<?php echo base_url();?>add_test_user',
+                url: '<?php echo base_url();?>add_panel_test',
 
                 type: 'POST',
 
