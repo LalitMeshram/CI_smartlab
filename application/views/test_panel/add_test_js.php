@@ -42,7 +42,7 @@ $session_data = $this->session->userdata('lsesson');
         if (returnVal) {
             $.ajax({
 
-                url: 'add_panel_test',
+                url: '<?php echo base_url();?>add_panel_test',
 
                 type: 'POST',
 
