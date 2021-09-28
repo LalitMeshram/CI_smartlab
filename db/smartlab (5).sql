@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 22, 2021 at 07:25 PM
+-- Generation Time: Sep 28, 2021 at 07:27 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -393,7 +393,8 @@ INSERT INTO `center_payment_details` (`paymentId`, `centerId`, `packageId`, `sta
 (1, 1, 3, '2021-07-20', '2021-09-18', 'UPI', 'order_Hb2tWU9YXqLEMv', '2021-07-20 09:31:10', '2021-07-20 09:31:10'),
 (2, 6, 1, '2021-08-02', '2021-08-07', 'UPI', 'order_HgN9xz4SO6sp9f', '2021-08-02 20:35:58', '2021-08-02 20:35:58'),
 (3, 7, 2, '2021-08-02', '2021-09-01', 'UPI', 'order_HgO7hKDrhKTPSV', '2021-08-02 21:32:25', '2021-08-02 21:32:25'),
-(4, 1, 1, '2021-09-21', '2021-09-26', 'UPI', 'order_I05OoWVgMwWIK1', '2021-09-21 16:13:22', '2021-09-21 16:13:22');
+(4, 1, 1, '2021-09-21', '2021-09-26', 'UPI', 'order_I05OoWVgMwWIK1', '2021-09-21 16:13:22', '2021-09-21 16:13:22'),
+(5, 1, 1, '2021-09-27', '2021-10-02', 'UPI', 'order_I2QNzemTHeEXaA', '2021-09-27 14:03:27', '2021-09-27 14:03:27');
 
 -- --------------------------------------------------------
 
@@ -445,7 +446,9 @@ CREATE TABLE `center_test_group_panel` (
 INSERT INTO `center_test_group_panel` (`groupId`, `testId`, `panelId`, `isgroup`, `label`, `flag_sequence`) VALUES
 (1, 1, 2, 1, 'Generic', 1),
 (2, 1, 3, 1, 'Generic', 1),
-(3, 1, 4, 0, '', 0);
+(3, 1, 1, 0, '-', 0),
+(4, 1, 2, 1, 'Test', 3),
+(5, 1, 4, 1, 'Test', 3);
 
 -- --------------------------------------------------------
 
@@ -473,7 +476,7 @@ CREATE TABLE `center_test_master` (
 --
 
 INSERT INTO `center_test_master` (`testId`, `categoryId`, `test_name`, `short_name`, `method`, `instrument`, `gender`, `fees`, `centerId`, `desc_text`, `createdat`, `updatedat`) VALUES
-(1, 1, 'CBC Witg CRE', 'CBC', 'MEt', 'IST', 'Male', 250.00, 1, 'Test', '2021-09-22 22:54:20', '2021-09-22 22:54:20');
+(1, 1, 'Platelet Count ', 'CBC', 'ME', 'INST', 'Male', 250.00, 1, '\r\n                    ', '2021-09-28 22:55:12', '2021-09-28 22:55:12');
 
 -- --------------------------------------------------------
 
@@ -495,10 +498,10 @@ CREATE TABLE `center_test_panel` (
 --
 
 INSERT INTO `center_test_panel` (`panelId`, `centerId`, `testName`, `unitId`, `createdat`, `updatedat`) VALUES
-(1, 1, 'Test', 1, '2021-09-21 22:22:46', '2021-09-21 22:22:46'),
-(2, 1, 'Second', 2, '2021-09-21 22:22:46', '2021-09-21 22:22:46'),
-(3, 1, 'Thrid Test update check', 3, '2021-09-21 22:49:30', '2021-09-21 22:50:45'),
-(4, 1, 'Thrid Test update', 3, '2021-09-21 22:50:22', '2021-09-21 22:50:22');
+(1, 1, 'CBC', 1, '2021-09-21 22:22:46', '2021-09-28 22:52:10'),
+(2, 1, 'Neutrophils', 2, '2021-09-21 22:22:46', '2021-09-28 22:52:18'),
+(3, 1, 'Basophils', 3, '2021-09-21 22:49:30', '2021-09-28 22:52:28'),
+(4, 1, 'Cytrophils', 3, '2021-09-21 22:50:22', '2021-09-28 22:53:08');
 
 -- --------------------------------------------------------
 
@@ -1123,7 +1126,7 @@ ALTER TABLE `center_package_details`
 -- AUTO_INCREMENT for table `center_payment_details`
 --
 ALTER TABLE `center_payment_details`
-  MODIFY `paymentId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `paymentId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `center_reference_master`
@@ -1135,7 +1138,7 @@ ALTER TABLE `center_reference_master`
 -- AUTO_INCREMENT for table `center_test_group_panel`
 --
 ALTER TABLE `center_test_group_panel`
-  MODIFY `groupId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `groupId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `center_test_master`
