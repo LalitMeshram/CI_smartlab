@@ -10,7 +10,11 @@ $route['lab_registration']   = 'admin/AdminController/labRegistration';
 $route['login']              = 'admin/AdminController/userLogin';
 $route['registration']       = 'admin/AdminController/userRegistration';
 $route['letter_head']        = 'admin/AdminController/letterHead';
-$route['add_test']           = 'admin/AdminController/addTest';
+//deprecated use add_test
+$route['add_test_deprecated']           = 'admin/AdminController/addTest';
+//modified add test
+$route['add_test']           = 'admin/AdminController/modifyAddTest';
+
 $route['update_test/(:num)']           = 'admin/AdminController/updateTest/$1';
 $route['test_database']      = 'admin/AdminController/testDatabase';
 $route['patient']      = 'admin/AdminController/patient';

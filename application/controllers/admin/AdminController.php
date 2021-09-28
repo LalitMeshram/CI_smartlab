@@ -66,6 +66,9 @@ class AdminController extends CI_Controller {
         $this->load->view('setup/letter_head_js');
         $this->load->view('setup/get_letter_head_js');
     }
+
+
+    //add test deprecated use modifyAddTest() mtd
     public function addTest() {
         $data['title']='Add Test';
         $this->load->view('header',$data);
@@ -81,6 +84,24 @@ class AdminController extends CI_Controller {
         $this->load->view('add_test/outsource_lab_js');
     }
     
+    public function modifyAddTest() {
+        $data['title']='Add Test';
+        $this->load->view('header',$data);
+        $this->load->view('menu_bar');
+        $this->load->view('modify_test_database/add_test');
+        $this->load->view('footer');
+        $this->load->view('modify_test_database/add_test_modals');
+        $this->load->view('modify_test_database/get_testpanellist_js');
+        $this->load->view('modify_test_database/is_group_js');
+        $this->load->view('modify_test_database/add_test_js');
+        $this->load->view('modify_test_database/parameter_details_js');
+        $this->load->view('modify_test_database/add_range_js');
+        $this->load->view('modify_test_database/category_js');
+        $this->load->view('modify_test_database/unit_js');
+        $this->load->view('modify_test_database/outsource_lab_js');
+    }
+
+
     public function updateTest($id) {
         $data['id']=$id;
         $data['title']='Update Test';
