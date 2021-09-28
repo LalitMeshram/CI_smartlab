@@ -9,12 +9,20 @@ class ReportModel extends CI_Model
         // INNER JOIN lab_center_categories lc ON lc.categoryid = cm.categoryId 
         // INNER JOIN center_test_subtypes cs ON cs.testId = ct.testId 
         // INNER JOIN center_unit_master cu ON cu.unitId = cs.unitId WHERE ct.caseId = $caseId";
-        $sql = "SELECT cm.categoryId,lc.category,cm.test_name,cp.testName,cu.unit,10 lower,40 upper,cs.isgroup,cs.label,cs.label,cs.flag_sequence FROM case_tests ct 
+        $sql = "SELECT cm.categoryId,lc.category,cm.test_name,cp.testName,
+        cu.unit,10 lower,40 upper,cs.isgroup,cs.label,cs.label,cs.flag_sequence,cp.panelId
+         FROM case_tests ct 
         INNER JOIN center_test_master cm ON cm.testId = ct.testId 
         INNER JOIN lab_center_categories lc ON lc.categoryid = cm.categoryId 
         INNER JOIN center_test_group_panel cs ON cs.testId = ct.testId
         INNER JOIN center_test_panel cp ON cs.panelId = cp.panelId
         INNER JOIN center_unit_master cu ON cu.unitId = cp.unitId WHERE ct.caseId = $caseId";
+        $query = $this->db->query($sql);
+        return $query->result();
+    }
+    public function get_ranges($gender,$age,$panelId){
+       $sql = "SELECT sr.rangeId,sr.lower_limit,sr.upper_limit,sr.words FROM center_test_subtypes_ranges sr INNER JOIN center_test_group_panel cp ON cp.panelId = sr.subtypeId
+       WHERE cp.panelId = $panelId AND gender = $gender AND $age BETWEEN sr.lower_age AND sr.upper_age";
         $query = $this->db->query($sql);
         return $query->result();
     }

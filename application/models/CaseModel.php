@@ -81,7 +81,7 @@ class CaseModel extends CI_Model
         $sql = "SELECT cm.caseId,cm.centerId,cm.patientId,cm.referenceId,cm.collection_center,cm.collection_source,cm.createdat,cm.updatedat,
         cp.paymentId,cp.total_amt,cp.amt_recieved,cp.discount,cp.paymentmode,cp.paymentdetails,
         cp.pending_amt,cp.paymentdate ,
-        pm.first_name,pm.last_name,pm.gender,pm.contact_number,pm.emailId,crm.ref_name
+        pm.first_name,pm.last_name,pm.gender,pm.contact_number,pm.emailId,crm.ref_name,pm.age
         FROM case_master cm 
         INNER JOIN case_payments cp ON cm.caseId = cp.caseId
         INNER JOIN patient_master pm ON cm.patientId = pm.patientId
