@@ -1,66 +1,93 @@
 <script>
-    var testList;
-    function getTestList() {
-        testList = new Map(JSON.parse(localStorage.myMap));
-        setTest();
+var testList;
+var tempMap =[];
+
+function getTestList() {
+    testList = new Map(JSON.parse(localStorage.myMap));
+    setTest();
+}
+getTestList();
+
+function setTest() {
+    var id = <?php echo $id; ?>;
+    id = id.toString();
+    var test = testList.get(id);
+
+
+    $('#testId').val(id);
+    $('#categoryId').val(test.categoryId);
+    $('#test_name').val(test.test_name);
+    $('#short_name').val(test.short_name);
+    $('#gender').val(test.gender);
+    $('#fees').val(test.fees);
+
+    //        outsource lab
+    //        outsource lab
+    if (test.outsource) {
+        $('#outsourceCheck').prop('checked', true);
+        getOutsourceLab();
+        $("#outsourcelabAmount").removeAttr("disabled");
+        $("#outsourcelabId").removeAttr("disabled");
+        $('#outsourcelabId').val(test.outsourcetest.outsource_lab_id);
+        $('#outsourcelabAmount').val(test.outsourcetest.outsource_amt);
     }
-    getTestList();
+    $('#method').val(test.method);
+    $('#instrument').val(test.instrument);
 
-    function setTest() {
-        var id =<?php echo $id; ?>;
-        id = id.toString();
-        var test = testList.get(id);
+    var paramTable = '';
+    var subType = test.subtype_test;
 
+    for (var i = 0; i < 1; i++) {
+        var tableData = '';
+        var testStr = '';
+        var testArr = '[';
+        var jsid = subType[i].jsid;
+             tableData += `<tr id="r` + subType[i].jsid + `">`;
+             tableData += ` < td > ` + subType[i].label + ` </td>`;
+        if (subType[i].isgroup == '1') {
 
-        $('#testId').val(id);
-        $('#categoryId').val(test.categoryId);
-        $('#test_name').val(test.test_name);
-        $('#short_name').val(test.short_name);
-        $('#gender').val(test.gender);
-        $('#fees').val(test.fees);
+            for (var j = 0; j < subType.length; j++) {
 
-//        outsource lab
-        //        outsource lab
-        if (test.outsource) {
-            $('#outsourceCheck').prop('checked', true);
-            getOutsourceLab();
-            $("#outsourcelabAmount").removeAttr("disabled");
-            $("#outsourcelabId").removeAttr("disabled");
-            $('#outsourcelabId').val(test.outsourcetest.outsource_lab_id);
-            $('#outsourcelabAmount').val(test.outsourcetest.outsource_amt);
-        }
-        $('#method').val(test.method);
-        $('#instrument').val(test.instrument);
-
-        var paramTable = '';
-
-        var subType = test.subtype_test;
-        for (var i = 0; i < subType.length; i++) {
-            paramTable += `<tr id="r` + subType[i].test_name.replace(/ /g, "_") + `">
-                        <td>` + subType[i].test_name + `</td>
-                        <td>` + subType[i].unitId + `
-                                <input type="hidden" id="hd` + subType[i].test_name.replace(/ /g, "_") + `" value="` + subType[i].unitId + `"/>
-                        </td>
-                        <td>
-                        <button class="btn btn-success btn-xs" onclick="addRange('` + subType[i].test_name.replace(/ /g, "_") + `')" type="button"><i class="fa fa-plus"></i> Add Range</button>
-                        <button class="btn btn-danger btn-xs" onclick="deleteSubType('` + subType[i].test_name.replace(/ /g, "_") + `')" type="button"><i class="fa fa-trash-o"></i> Delete</button> 
-                        </td>
-                        </tr>`;
-
-
-            var key = subType[i].test_name.replace(/ /g, "_");
-            var range = subType[i].subtypes_test_ranges;
-            if (range.length > 0) {
-                if (stypeRange.has(key)) {
-                    stypeRange.delete(key);
-                    stypeRange.set(key, range);
+                if (subType[i].label == subType[j].label) {
+                    testStr += subType[j].testName;
+                    testArr += subType[j].panelId;
+                }
+                if (j != subType.length - 1) {
+                    testStr += ',';
+                    testArr += ',';
                 } else {
-                    stypeRange.set(key, range);
+                    testArr += ']';
                 }
             }
+
+        } else {
+            testStr += subType[i].testName;
+            testArr += subType[i].panelId + ']';
         }
-        $('#subtypeList').html(paramTable);
+        tableData += ` < td > ` + testStr + ` </td>`;
+        tableData += `<td>
+                        <input type="hidden" id="harr` + jsid + `" value="` + testArr + `">  
+                            <input type="hidden" id="hgroup` + jsid + `" value="` + subType[i].isgroup + `"> 
+                            <input type="hidden" id="hgName` + jsid + `" value="` + subType[i].label + `">
+                        <button class="btn btn-danger btn-xs" onclick="deleteSubType('` + subType[i].jsid + `')" type="button"><i class="fa fa-trash-o"></i> Delete</button> 
+                        </td>
+                        </tr>`;
+        console.log(tableData);
+        tempMap[i]=tableData;
+        setSubTypeList(tempMap);
     }
+   
+}
 
 
+function setSubTypeList(list) {
+    var tableData ='';
+    const uniqueArr = [...new Set(list)];
+    console.log(uniqueArr);
+    for(var i=0;i<uniqueArr.length;i++) {
+        tableData +=uniqueArr[i];
+    }
+    
+    //$('#subtypeList').html(tableData);
+}
 </script>

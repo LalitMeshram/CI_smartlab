@@ -14,9 +14,15 @@ $route['letter_head']        = 'admin/AdminController/letterHead';
 $route['add_test_deprecated']           = 'admin/AdminController/addTest';
 //modified add test
 $route['add_test']           = 'admin/AdminController/modifyAddTest';
+//deprecated use update test
+$route['update_test_deprecated/(:num)']           = 'admin/AdminController/updateTest/$1';
+//modify update test
+$route['update_test/(:num)']           = 'admin/AdminController/modifyUpdateTest/$1';
+//deprecated use test_database
+$route['test_database_deprecated']      = 'admin/AdminController/testDatabase';
+//modified test_database
+$route['test_database']      = 'admin/AdminController/modifyTestDatabase';
 
-$route['update_test/(:num)']           = 'admin/AdminController/updateTest/$1';
-$route['test_database']      = 'admin/AdminController/testDatabase';
 $route['patient']      = 'admin/AdminController/patient';
 $route['create_case']      = 'admin/AdminController/createCase';
 $route['update_case/(:num)']      = 'admin/AdminController/updateCase/$1';

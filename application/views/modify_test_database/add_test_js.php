@@ -43,6 +43,7 @@ function getSubtypesTest() {
                
             }
             data[i++] = {
+                jsid:id,
                 panelId: testarr[j],
                 isgroup: isGroup,
                 label: gName,

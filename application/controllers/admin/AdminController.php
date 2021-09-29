@@ -101,7 +101,7 @@ class AdminController extends CI_Controller {
         $this->load->view('modify_test_database/outsource_lab_js');
     }
 
-
+    //deprecated use modifyUpdateTest()mtd
     public function updateTest($id) {
         $data['id']=$id;
         $data['title']='Update Test';
@@ -118,7 +118,28 @@ class AdminController extends CI_Controller {
         $this->load->view('add_test/outsource_lab_js');
         $this->load->view('add_test/set_update_test_js',$data);
     }
-    
+
+    public function modifyUpdateTest($id) {
+        $data['id']=$id;
+        $data['title']='Update Test';
+        $this->load->view('header',$data);
+        $this->load->view('menu_bar');
+        $this->load->view('modify_test_database/update_test');
+        $this->load->view('footer');
+        $this->load->view('modify_test_database/get_testpanellist_js');
+        $this->load->view('modify_test_database/is_group_js');
+        $this->load->view('modify_test_database/add_test_modals');
+        $this->load->view('modify_test_database/update_test_js',$data);
+        $this->load->view('modify_test_database/parameter_details_js');
+        $this->load->view('modify_test_database/add_range_js');
+        $this->load->view('modify_test_database/category_js');
+        $this->load->view('modify_test_database/unit_js');
+        $this->load->view('modify_test_database/outsource_lab_js');
+        $this->load->view('modify_test_database/set_update_test_js',$data);
+    }
+
+
+    //deprecated mtd use modifyTestDatabase() mtd
     public function testDatabase() {
         $data['title']='Test Database';
         $this->load->view('header',$data);
@@ -126,6 +147,15 @@ class AdminController extends CI_Controller {
         $this->load->view('add_test/test_database');
         $this->load->view('footer');
         $this->load->view('add_test/test_database_js');
+    }
+
+    public function modifyTestDatabase() {
+        $data['title']='Test Database';
+        $this->load->view('header',$data);
+        $this->load->view('menu_bar');
+        $this->load->view('modify_test_database/test_database');
+        $this->load->view('footer');
+        $this->load->view('modify_test_database/test_database_js');
     }
 
     
