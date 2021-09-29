@@ -20,9 +20,10 @@ class TestModel_new extends CI_Model
     
     public function get_subtypes_test($testId)
     {
-        $sql = "SELECT ct.groupId,ct.testId,ct.panelId,ct.isgroup,ct.label FROM center_test_group_panel ct
+        $sql = "SELECT ct.groupId,ct.testId,ct.panelId,ct.isgroup,ct.label,ct.jsid,ct.flag_sequence,cp.testName
+        FROM center_test_group_panel ct
         INNER JOIN center_test_panel cp ON cp.panelId = ct.panelId
-        WHERE ct.testId =$testId";
+        WHERE ct.testId  =$testId";
          $query = $this->db->query($sql);
          return $query->result_array();
     }
@@ -95,7 +96,8 @@ class TestModel_new extends CI_Model
                 'isgroup' => $contact->isgroup,
                 'testId' => $testId,
                 'label' => $contact->label,
-                'flag_sequence'=>$contact->flag_sequence
+                'flag_sequence'=>$contact->flag_sequence,
+                'jsid'=>$contact->jsid
             );
             $this->db->insert('center_test_group_panel', $partners);
         }
