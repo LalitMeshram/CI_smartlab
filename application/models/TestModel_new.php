@@ -22,7 +22,7 @@ class TestModel_new extends CI_Model
     {
         $sql = "SELECT ct.groupId,ct.testId,ct.panelId,ct.isgroup,ct.label FROM center_test_group_panel ct
         INNER JOIN center_test_panel cp ON cp.panelId = ct.panelId
-        WHERE ct.testId ==$testId";
+        WHERE ct.testId =$testId";
          $query = $this->db->query($sql);
          return $query->result_array();
     }
