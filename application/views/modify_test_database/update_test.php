@@ -3,13 +3,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Editable Tables
+            Add New Test
         </h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
             <li class="breadcrumb-item"><a href="#">Setup</a></li>
-            <li class="breadcrumb-item active">Test Database</li>
-            <li class="breadcrumb-item active">Update Database</li>
+            <li class="breadcrumb-item active">Add Test</li>
         </ol>
     </section>
 
@@ -17,13 +16,7 @@
     <section class="content">
         <form id="addTestForm" method="post">
             <div class="row">
-                <div class="box">
-                    <div class="box-body">
-                        <center>
-                            <h3>Update Test</h3>
-                        </center>
-                    </div>
-                </div>
+
 
                 <div class="col-12">
                     <div class="box">
@@ -35,7 +28,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <center>
-                                                <h5 class="box-title title">Test Details</h5>
+                                                <h5 class="box-title title">New Test Details</h5>
                                             </center>
                                             <marquee direction="left">
                                                 <blink>
@@ -51,7 +44,6 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="row">
-                                                <input type="hidden" name="testId" id="testId">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label>Select Category</label>
@@ -74,6 +66,7 @@
                                                         <div class="controls">
                                                             <input type="text" class="form-control" name="test_name"
                                                                 id="test_name" placeholder="Enter Test Name">
+                                                                <input type="hidden" id="testId" name="testId">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -224,13 +217,14 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label>Group Name</label>
-                                                        <div class="controls">
-                                                            <input type="text" class="form-control" name="groupName" id="groupName" placeholder="Enter Group Name" readOnly>
-                                                        </div>
+                                                <div class="form-group">
+                                                    <label>Group Name</label>
+                                                    <div class="controls">
+                                                        <input type="text" class="form-control" name="groupName"
+                                                            id="groupName" placeholder="Enter Group Name" readOnly>
                                                     </div>
                                                 </div>
+                                            </div>
                                             <div class="col-md-1">
                                                 <center><button class="btn btn-success subtype_add_button"
                                                         id="addSubtypebtn" type="button">Add</button></center>
@@ -250,16 +244,28 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody id="subtypeList">
-                                                        <tr id="rCBCBasophils">
-                                                             < td > gen2 </td> 
-                                                             < td > CBC,Basophils,,, </td>
+                                                            <!-- <tr>
+                                                        <td>A</td>    
+                                                        <td>B</td>    
+                                                        <td>c</td>    
+                                                        </tr> -->
+
+
+                                                        <!-- <tr id="rCBCBasophils"> 
+                                                            <td> gen2 </td>
+                                                             <td> CBC,Basophils </td>
                                                              <td>
-                        <input type="hidden" id="harrCBCBasophils" value="[1,3,,,]">  
-                            <input type="hidden" id="hgroupCBCBasophils" value="1"> 
-                            <input type="hidden" id="hgNameCBCBasophils" value="gen2">
+                        <input type="hidden" id="harrCBCBasophils" value="[1,3]"/>  
+                            <input type="hidden" id="hgroupCBCBasophils" value="1"/> 
+                            <input type="hidden" id="hgNameCBCBasophils" value="gen2"/>
                         <button class="btn btn-danger btn-xs" onclick="deleteSubType('CBCBasophils')" type="button"><i class="fa fa-trash-o"></i> Delete</button> 
                         </td>
-                        </tr>
+                        </tr> -->
+
+
+
+
+
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -267,7 +273,37 @@
                                             <div class="col-md-2">
                                             </div>
                                         </div>
+                                        <!-- ck editor -->
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                            </div>
+                                            <div class="col-md-8">
 
+                                                <div class="box">
+                                                    <div class="box-header">
+                                                        <h4 class="box-title">Other Details<br>
+                                                            <!-- <small>Advanced and full of features</small> -->
+                                                        </h4>
+                                                        <!-- <ul class="box-controls pull-right">
+                                                            <li><a class="box-btn-close" href="#"></a></li>
+                                                            <li><a class="box-btn-slide" href="#"></a></li>
+                                                            <li><a class="box-btn-fullscreen" href="#"></a></li>
+                                                        </ul> -->
+                                                    </div>
+                                                    <!-- /.box-header -->
+                                                    <div class="box-body">
+
+                                                        <textarea id="editor1" name="desc_text" rows="10" cols="58">
+
+                    </textarea>
+
+                                                    </div>
+                                                </div>
+                                                <!-- /.box -->
+
+                                            </div>
+                                        </div>
+                                        <!-- ck Editor -->
                                     </div>
                                     <!-- /.box-body 
 	          </div>

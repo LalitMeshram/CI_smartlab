@@ -37,34 +37,34 @@ function setTest() {
     var paramTable = '';
     var subType = test.subtype_test;
 
-    for (var i = 0; i < 1; i++) {
+    for (var i = 0; i < subType.length; i++) {
         var tableData = '';
         var testStr = '';
-        var testArr = '[';
+        var testArr = '';
         var jsid = subType[i].jsid;
              tableData += `<tr id="r` + subType[i].jsid + `">`;
-             tableData += ` < td > ` + subType[i].label + ` </td>`;
+             tableData += `<td>` + subType[i].label + ` </td>`;
         if (subType[i].isgroup == '1') {
 
             for (var j = 0; j < subType.length; j++) {
 
                 if (subType[i].label == subType[j].label) {
-                    testStr += subType[j].testName;
-                    testArr += subType[j].panelId;
+                    testStr += subType[j].testName+' ';
+                    testArr += subType[j].panelId+' ';
                 }
-                if (j != subType.length - 1) {
-                    testStr += ',';
-                    testArr += ',';
-                } else {
-                    testArr += ']';
-                }
+                
             }
 
         } else {
             testStr += subType[i].testName;
-            testArr += subType[i].panelId + ']';
+            testArr += subType[i].panelId;
         }
-        tableData += ` < td > ` + testStr + ` </td>`;
+
+        testStr=testStr.trim().replace(/ /g, ",");
+        testArr=testArr.trim().replace(/ /g, ",");
+        
+
+        tableData += `<td>` + testStr + ` </td>`;
         tableData += `<td>
                         <input type="hidden" id="harr` + jsid + `" value="` + testArr + `">  
                             <input type="hidden" id="hgroup` + jsid + `" value="` + subType[i].isgroup + `"> 
@@ -73,6 +73,7 @@ function setTest() {
                         </td>
                         </tr>`;
         console.log(tableData);
+        //$('#subtypeList').html(tableData);
         tempMap[i]=tableData;
         setSubTypeList(tempMap);
     }
@@ -88,6 +89,6 @@ function setSubTypeList(list) {
         tableData +=uniqueArr[i];
     }
     
-    //$('#subtypeList').html(tableData);
+    $('#subtypeList').html(tableData.toString());
 }
 </script>
