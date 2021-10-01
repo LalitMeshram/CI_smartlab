@@ -277,10 +277,11 @@ class AdminController extends CI_Controller {
         $data['caseId']=$id;
         $data['title']='Enter finding';
         $this->load->view('header',$data);
+        $this->load->view('enter_finding/style_css');
         $this->load->view('menu_bar');
-        $this->load->view('enter_finding/enter_finding',$data);
+        $this->load->view('enter_finding/enter_finding2',$data);
         $this->load->view('footer');
-        $this->load->view('enter_finding/enter_finding_js',$data);
+       $this->load->view('enter_finding/enter_finding_js2',$data);
         $this->load->view('enter_finding/save_finding_js');
     }
 
@@ -295,7 +296,7 @@ class AdminController extends CI_Controller {
   }
 
   public function addTestPanel() {
-    $data['title']='Add Test';
+    $data['title']='Add Test Parameter';
     $this->load->view('header',$data);
     $this->load->view('menu_bar');
     $this->load->view('test_panel/add_test');

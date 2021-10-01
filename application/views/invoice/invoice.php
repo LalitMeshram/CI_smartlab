@@ -8,7 +8,8 @@
          </h1>
          <ol class="breadcrumb">
              <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-             <li class="breadcrumb-item"><a href="#">Examples</a></li>
+             <li class="breadcrumb-item"><a href="#">All Cases</a></li>
+             <li class="breadcrumb-item"><a href="#">View Bill</a></li>
              <li class="breadcrumb-item active">Invoice</li>
          </ol>
      </section>
@@ -32,7 +33,7 @@
              <div class="col-sm-12 invoice-col">
                  <div class="invoice-details row mx-0 my-15">
                      <div class="col-md-4 col-lg-4">
-                         <h6>Invoice No:<span id="invoiceNo"></span></h6>
+                         <h6>Case No:<span id="invoiceNo"></span></h6>
                          <h6>Invoice Date: <span id="invoiceDate"></span></h6>
                          <!--<h6>PAN No.:<span id="panNo"></span> </h6>-->
                      </div>

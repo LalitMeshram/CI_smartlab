@@ -294,8 +294,8 @@
                                                     <div class="box-body">
 
                                                         <textarea id="editor1" name="desc_text" rows="10" cols="58">
-
-                    </textarea>
+                                                            
+                                                         </textarea>
 
                                                     </div>
                                                 </div>
