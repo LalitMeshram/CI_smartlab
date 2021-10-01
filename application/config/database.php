@@ -72,8 +72,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 //localdb
- $active_group = 'local';
-//$active_group = 'uat';
+$active_group = 'local';
+// $active_group = 'uat';
 $query_builder = TRUE;
 
 $db['local'] = array(
