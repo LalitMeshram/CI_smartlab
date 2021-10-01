@@ -157,6 +157,43 @@ ERROR - 2021-09-29 16:15:08 --> 404 Page Not Found: Resource/assets
 ERROR - 2021-09-29 16:17:37 --> 404 Page Not Found: Resource/assets
 ERROR - 2021-09-29 16:17:37 --> 404 Page Not Found: Resource/assets
 ERROR - 2021-09-29 16:17:38 --> 404 Page Not Found: Resource/assets
+<<<<<<< HEAD
+ERROR - 2021-09-29 16:25:08 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-09-29 16:26:18 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-09-29 16:26:18 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-09-29 16:26:26 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-09-29 16:26:26 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-09-29 16:27:41 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-09-29 16:27:41 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-09-29 16:27:50 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-09-29 16:27:50 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-09-29 16:28:03 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-09-29 16:28:03 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-09-29 16:28:15 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-09-29 16:28:15 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-09-29 16:29:06 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-09-29 16:29:06 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-09-29 16:29:09 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-09-29 16:29:09 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-09-29 16:29:09 --> 404 Page Not Found: Create_casejpg/index
+ERROR - 2021-09-29 16:29:45 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-09-29 16:29:45 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-09-29 16:30:04 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-09-29 16:30:04 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-09-29 16:30:04 --> 404 Page Not Found: Invoice/generate_invoice_bg.jpg
+ERROR - 2021-09-29 16:31:37 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-09-29 16:31:38 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-09-29 16:31:38 --> 404 Page Not Found: Invoice/generate_invoice_bg.jpg
+ERROR - 2021-09-29 16:31:38 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-09-29 16:31:39 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-09-29 16:34:45 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-09-29 16:34:46 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-09-29 16:34:46 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-09-29 16:34:56 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-09-29 16:34:56 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-09-29 16:34:56 --> 404 Page Not Found: Update_case/create_case.jpg
+ERROR - 2021-09-29 16:34:56 --> 404 Page Not Found: Resource/assets
+=======
 ERROR - 2021-09-29 16:23:15 --> 404 Page Not Found: Resource/assets
 ERROR - 2021-09-29 16:23:16 --> 404 Page Not Found: Resource/assets
 ERROR - 2021-09-29 16:24:11 --> 404 Page Not Found: Resource/assets
@@ -346,3 +383,4 @@ ERROR - 2021-09-29 17:55:54 --> 404 Page Not Found: Resource/assets
 ERROR - 2021-09-29 17:55:54 --> 404 Page Not Found: Resource/assets
 ERROR - 2021-09-29 17:55:57 --> 404 Page Not Found: Resource/assets
 ERROR - 2021-09-29 17:55:57 --> 404 Page Not Found: Resource/assets
+>>>>>>> 3a781c06cfb8c6a8e44bb83639d7ff50c79ad210
