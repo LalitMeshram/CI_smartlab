@@ -58,6 +58,14 @@ function getFindingDetail() {
                                         dataArr[j].test_name == dataArr[l].test_name &&
                                         dataArr[l].isgroup == 1) {
                                             tempParm += `<tr>
+
+                                            <input type="hidden" id="cat_` + dataArr[l].test_name.replace(/ /g, "_")+dataArr[l].label.replace(/ /g, "_")+dataArr[l].categoryId+dataArr[l].panelId +
+                                            `" value="` + dataArr[l].category + `">
+                                            <input type="hidden" id="test_` + dataArr[l].test_name.replace(/ /g, "_")+dataArr[l].label.replace(/ /g, "_")+dataArr[l].categoryId+dataArr[l].panelId +
+                                            `" value="` + dataArr[l].test_name + `">
+                                            <input type="hidden" id="unit_` + dataArr[l].test_name.replace(/ /g, "_")+dataArr[l].label.replace(/ /g, "_")+dataArr[l].categoryId+dataArr[l].panelId +
+                                           `" value="` + dataArr[l].unit + `">
+
 						                                <td class="parameter">`+dataArr[l].testName+`</td>
 						                                <td>
                             
@@ -79,6 +87,13 @@ function getFindingDetail() {
                             } //if
                             else if(categoryArr[i].test_name == dataArr[j].test_name && dataArr[j].isgroup == 0){
                                 parmwithoutGroup +=`<tr>
+
+                                <input type="hidden" id="cat_` + dataArr[j].test_name.replace(/ /g, "_")+dataArr[j].label.replace(/ /g, "_")+dataArr[j].categoryId+dataArr[j].panelId +
+                                `" value="` + dataArr[j].category + `">
+                                <input type="hidden" id="test_` + dataArr[j].test_name.replace(/ /g, "_")+dataArr[j].label.replace(/ /g, "_")+dataArr[j].categoryId+dataArr[j].panelId +
+                                `" value="` + dataArr[j].test_name + `">
+                                <input type="hidden" id="unit_` + dataArr[j].test_name.replace(/ /g, "_")+dataArr[j].label.replace(/ /g, "_")+dataArr[j].categoryId+dataArr[j].panelId +
+                                `" value="` + dataArr[j].unit + `">
 						                  <td>`+dataArr[j].testName+`</td>
                                           <td>
                             

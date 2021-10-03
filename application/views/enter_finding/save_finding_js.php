@@ -3,6 +3,7 @@ $session_data=$this->session->userdata('lsesson');
 ?>
 <script>
 function getReportData() {
+    
     var data = [];
     for (var i = 0; i < testArr.length; i++) {
         var category = $('#cat_' + testArr[i].test_name.replace(/ /g, "_")).val();
@@ -26,6 +27,7 @@ function getReportData() {
 
 
 $('#saveFinding').click(function() {
+    
     var reportData = getReportData();
     //console.log(reportData);
     var formdata = new FormData();
