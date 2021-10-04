@@ -1,7 +1,28 @@
 {
     "category":"Hemotology",
     "testName":"CBC WITH ESR",
-    "parameter": {
+    "generic": [
+        {
+        
+        }
+
+    ],
+    "specific":[
+        {
+
+        }
+
+    ],
+    "general":[
+        {
+
+        },
+        {
+            
+        }
+    ]
+
+
         
     }
 }
