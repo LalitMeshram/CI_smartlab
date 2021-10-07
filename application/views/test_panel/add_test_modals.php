@@ -47,6 +47,7 @@
 												<label>Gender</label>
 												<div class="controls">
 													<select class="form-control" id="rangGender">
+                                                                                                            <option value="All">All</option>
                                                                                                             <option value="Male">Male</option>
                                                                                                             <option value="Female">Female</option>
                                                                                                             <option value="Other">Other</option>
