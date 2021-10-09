@@ -58,9 +58,16 @@ class ReportModel extends CI_Model
     {
         foreach ($test_data as $contact) {
             $tests             = array(
+                'parameterId'=>$contact->parameterId,
+                'parameter'=>$contact->parameter,
+                'testId'=>$contact->testId,
+                'testName'=>$contact->testName,
+                'finding_value'=> $contact->finding_value,
+                'categoryid'=> $contact->categoryid,
                 'category' => $contact->category,
                 'unit' => $contact->unit,
                 'findings' => $contact->findings,
+                'reference_value'=> $contact->reference_value,
                 'reportId' => $reportId
             );
             $subtypeId            = $this->db->insert('case_report_data', $tests);
