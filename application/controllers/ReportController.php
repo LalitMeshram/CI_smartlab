@@ -40,6 +40,34 @@ class ReportController extends REST_Controller
         $this->response($response, REST_Controller::HTTP_OK);
     }
 
+    public function get_submiited_report_get($caseId){
+        $result = $this->report->submited_report($caseId);
+        $records = array();
+        $reportdata = array();
+        if(!empty($result)){
+            $reportdata = $this->report->submited_report_data($result[0]['reportId']);
+            if(!empty($reportdata)){
+                $temp = array('reports'=>$reportdata);
+            }
+            else{
+                $temp = array('reports'=>array());
+            }
+
+            $records = array_merge($result[0], $temp);
+            $response = array(
+                "ResponseCode"=>200,
+                "Data"=>$records
+            );
+        }else{
+            $response = array(
+                "ResponseCode"=>204,
+                "Data"=>$records,
+            );
+        }
+       
+       
+        $this->response($response, REST_Controller::HTTP_OK);
+    }
     public function add_report_post(){
         $response      = array();
         $case     = array(
@@ -56,7 +84,13 @@ class ReportController extends REST_Controller
             'data'=>$case,
             'report_data'=>$report_data
         );
-        $result = $this->report->add_report($data);
+        $reportId = $this->post('reportId');
+        if(!empty($reportId) && $reportId !=0){
+            $result        = $this->report->update_report_data($data,$reportId);
+            $msg = 'Report Data updated successfully';
+        }else{
+            $result = $this->report->add_report($data);
+        }
         if($result){
             $response = array(
                 "ResponseCode"=>200,

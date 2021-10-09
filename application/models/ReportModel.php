@@ -37,6 +37,18 @@ class ReportModel extends CI_Model
         return $query->result();
     }
 
+    public function submited_report($caseId){
+        $sql = "SELECT * FROM `case_report_master` WHERE caseId = $caseId";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function submited_report_data($reportId){
+        $sql = "SELECT * FROM `case_report_data` WHERE reportId = $reportId";
+        $query = $this->db->query($sql);
+        return $query->result();
+    }
+
     public function add_report($data){
         $case_data  = $data['data'];
         $report_data = $data['report_data'];
@@ -44,6 +56,25 @@ class ReportModel extends CI_Model
         $this->db->trans_begin();
         $this->db->insert('case_report_master', $case_data);
         $reportId = $this->db->insert_id();
+        $this->add_report_data($report_data,$reportId);
+        if ($this->db->trans_status() === FALSE) {
+            $this->db->trans_rollback();
+            return false;
+        } else {
+            $this->db->trans_commit();
+            return true;
+        }
+    }
+
+    public function update_report_data($data,$reportId){
+        $case_data  = $data['data'];
+        $report_data = $data['report_data'];
+
+        $this->db->trans_begin();
+        $this->db->where('reportId', $reportId);
+        $this->db->update('case_report_master', $case_data);
+        $this->db->where('reportId', $reportId);
+        $this->db->delete('case_report_data');
         $this->add_report_data($report_data,$reportId);
         if ($this->db->trans_status() === FALSE) {
             $this->db->trans_rollback();
