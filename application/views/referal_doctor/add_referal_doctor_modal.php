@@ -18,6 +18,7 @@
                                     <div class="input-group mb-3">
                                         <div class="input-group-append">
                                             <select class="form-control" id="ref_title" name="ref_title">
+                                                <option>Dr.</option>
                                                 <option>Mr.</option>
                                                 <option>Miss.</option>
                                                 <option>Mrs.</option>

@@ -38,5 +38,21 @@ function checkReceivedAmt() {
 }
 
 
+function checkDiscountAmt() {
+    var tbillAmt = parseFloat($('#tbillAmt').html());
+
+    var discAmt = parseFloat($('#discount').val());
+    
+    if (!isNaN(tbillAmt)) {
+        
+            if (tbillAmt<discAmt) {
+                alert('Discount Amount Not greater than Bill Amount');
+                $('#discount').val('0');
+            } 
+        
+    }
+}
+
+
 
 </script>

@@ -149,7 +149,7 @@
 									</tr>
 									<tr>
 									  <th>Discount</th>
-                                                                          <td><input type="number" class="form-control" name="discount" id="discount" min="0" value="0" readonly="" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)||event.charCode==46"></td>
+                                                                          <td><input type="number" class="form-control" name="discount" id="discount" min="0" value="0" readonly="" oninput="checkDiscountAmt();" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)||event.charCode==46"></td>
 									</tr>
 									<tr>
 									  <th>Amount Received</th>

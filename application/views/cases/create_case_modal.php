@@ -13,10 +13,11 @@
 									<div class="col-md-3">
 										<label>Title</label>
 										<select class="form-control" id="ref_title" name="ref_title">
+										<option>Dr.</option>
 										<option>Mr.</option>
-                                                <option>Miss.</option>
-                                                <option>Mrs.</option>
-                                                <option>Smt.</option>
+                                        <option>Miss.</option>
+                                        <option>Mrs.</option>
+                                        <option>Smt.</option>
 										</select>
 									</div>
 									<div class="col-md-6">

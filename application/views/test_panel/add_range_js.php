@@ -107,9 +107,11 @@
             stypeRange.delete(param_subtype_id);
             stypeRange.set(param_subtype_id, getrangeData());
             swal("Good job!", "Range Successfully Updated!", "success");
+            $('#add_range').modal('toggle');
         } else {
             stypeRange.set(param_subtype_id, getrangeData());
             swal("Good job!", "Range Successfully Added!", "success");
+            $('#add_range').modal('toggle');
         }
     });
 
