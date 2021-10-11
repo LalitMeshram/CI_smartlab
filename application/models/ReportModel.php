@@ -9,7 +9,7 @@ class ReportModel extends CI_Model
         // INNER JOIN lab_center_categories lc ON lc.categoryid = cm.categoryId 
         // INNER JOIN center_test_subtypes cs ON cs.testId = ct.testId 
         // INNER JOIN center_unit_master cu ON cu.unitId = cs.unitId WHERE ct.caseId = $caseId";
-        $sql = "SELECT cm.categoryId,lc.category,cm.test_name,cp.testName,
+        $sql = "SELECT cm.testId,cm.categoryId,lc.category,cm.test_name,cp.testName,
         cu.unit,10 lower,40 upper,cs.isgroup,cs.label,cs.label,cs.flag_sequence,cp.panelId
          FROM case_tests ct 
         INNER JOIN center_test_master cm ON cm.testId = ct.testId 
@@ -99,7 +99,8 @@ class ReportModel extends CI_Model
                 'unit' => $contact->unit,
                 'label' => $contact->label,
                 'reference_value'=> $contact->reference_value,
-                'reportId' => $reportId
+                'reportId' => $reportId,
+                'isgroup'=> $contact->isgroup
             );
             $subtypeId            = $this->db->insert('case_report_data', $tests);
         }
