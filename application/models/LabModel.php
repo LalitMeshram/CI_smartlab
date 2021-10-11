@@ -54,4 +54,15 @@ class LabModel extends CI_Model
         $this->db->update('center_letter_head_details', $data);
         return TRUE;
     }
+
+    public function  profile_data($centerId){
+       $sql = "SELECT cd.centerId,cd.labName,cd.lab_city,cd.lab_postalcode,cpd.startdate,cpd.enddate,cp.plan_name,cr.fullname,cr.emailId,cr.contact_number
+       FROM customer_registeration cr 
+       LEFT JOIN center_details cd ON cd.centerId = cr.centerId
+       LEFT JOIN center_payment_details cpd ON cpd.centerId = cr.centerId
+       LEFT JOIN center_packages cp ON cp.packageId = cpd.packageId
+       WHERE cr.centerId = $centerId AND cpd.paymentId = (SELECT MAX(paymentId) FROM center_payment_details WHERE centerId = $centerId)";
+       $query = $this->db->query($sql);
+    return $query->result_array();
+    }
 }

@@ -153,4 +153,22 @@ class LabController extends REST_Controller {
         }
     }
 
+    public function profile_data_get($centerId=0){
+        $response = array();
+        $data     = $this->lab->profile_data($centerId);
+        if(!empty($data)){
+            $response = array(
+                'Message' => 'All Data loaded successfully',
+                'data' => $data,
+                'status' => 200
+            );
+        }else{
+            $response = array(
+                'Message' => 'Data not found',
+                'data' => $data,
+                'status' => 204
+            );  
+        }
+        $this->response($response, REST_Controller::HTTP_OK);
+    }
 }
