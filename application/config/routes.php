@@ -119,12 +119,16 @@ $route['get_report_finding/(:num)'] = 'ReportController/get_submiited_report/$1'
 $route['admin_login'] = 'AdminController/admin_login';
 $route['admin_logout'] = 'AdminController/logout';
 //Admin Test Master Controller
-$route['get_lab_tests']     = 'LabTestController/test_list';
-$route['add_lab_test'] = 'LabTestController/test_add';
 $route['get_lab_unit'] = 'UnitController/unit_list';
 $route['add_lab_unit'] = 'UnitController/add_lab_units';
 $route['get_lab_category'] = 'CategoryController/category_list';
 $route['add_lab_category'] = 'CategoryController/add_lab_catgeory';
+
+//DATE:11/10 below 4 for add panel test in admin
+$route['get_panel_test_admin'] = 'AdminTestPanel/panel_list';
+$route['add_panel_test_admin'] = "AdminTestPanel/panel_test_add";
+$route['get_lab_tests']     = 'LabTestController_new/test_list';
+$route['add_lab_test'] = 'LabTestController_new/test_add';
 
 //RecieptController
 $route['bill_reciept/(:num)'] = 'RecieptController/pdfdetails/$1';

@@ -57,3 +57,23 @@ ERROR - 2021-10-11 17:46:44 --> Query error: Unknown column 'parameterId' in 'fi
 ERROR - 2021-10-11 17:46:44 --> Query error: Unknown column 'parameterId' in 'field list' - Invalid query: INSERT INTO `case_report_data` (`parameterId`, `parameter`, `testId`, `testName`, `finding_value`, `categoryid`, `category`, `unit`, `label`, `reference_value`, `reportId`, `isgroup`) VALUES ('3', 'Basophils', NULL, NULL, '7', '1', 'Microbiology', 'Tablet', 'modified', '10-40', 7, '1')
 ERROR - 2021-10-11 17:46:44 --> Query error: Unknown column 'parameterId' in 'field list' - Invalid query: INSERT INTO `case_report_data` (`parameterId`, `parameter`, `testId`, `testName`, `finding_value`, `categoryid`, `category`, `unit`, `label`, `reference_value`, `reportId`, `isgroup`) VALUES ('4', 'Cytrophils', NULL, NULL, '8', '1', 'Microbiology', 'Tablet', 'modified', '10-40', 7, '1')
 ERROR - 2021-10-11 17:46:44 --> Query error: Unknown column 'parameterId' in 'field list' - Invalid query: INSERT INTO `case_report_data` (`parameterId`, `parameter`, `testId`, `testName`, `finding_value`, `categoryid`, `category`, `unit`, `label`, `reference_value`, `reportId`, `isgroup`) VALUES ('5', 'crocin', NULL, NULL, '9', '1', 'Microbiology', 'pg/Ml', 'modified', '10-40', 7, '1')
+ERROR - 2021-10-11 18:39:14 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-11 18:39:29 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-11 18:39:29 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-11 18:46:01 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-11 18:46:06 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-11 18:46:06 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-11 18:46:06 --> 404 Page Not Found: Invoice/generate_invoice_bg.jpg
+ERROR - 2021-10-11 18:46:12 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-11 18:46:17 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-11 18:46:17 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-11 18:46:17 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-11 19:09:01 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-11 19:13:59 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-11 19:13:59 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-11 19:14:11 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-11 19:14:11 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-11 19:22:06 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-11 19:46:33 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-11 19:46:36 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-11 19:46:36 --> 404 Page Not Found: Resource/assets

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 28, 2021 at 07:27 PM
+-- Generation Time: Oct 11, 2021 at 07:25 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -66,15 +66,11 @@ CREATE TABLE `case_master` (
 --
 
 INSERT INTO `case_master` (`caseId`, `centerId`, `patientId`, `referenceId`, `collection_center`, `collection_source`, `createdat`, `updatedat`) VALUES
-(1, 1, 1, 1, 'Home', 'KEM', '2021-08-01 08:47:54', '2021-08-01 08:47:54'),
-(2, 1, 4, 1, 'Lab', 'Test', '2021-08-01 08:51:31', '2021-08-01 08:51:31'),
-(3, 1, 3, 1, 'Lab', 'KEM', '2021-08-01 10:30:57', '2021-08-01 10:30:57'),
-(4, 6, 8, 2, 'Lab', 'KEM', '2021-08-02 20:44:06', '2021-08-02 20:44:06'),
-(5, 7, 9, 3, 'Hospital', 'KEM', '2021-08-02 21:45:43', '2021-08-02 21:45:43'),
-(6, 1, 1, 1, 'Hospital', 'KEM', '2021-08-13 15:34:43', '2021-08-13 15:34:43'),
-(7, 1, 1, 1, 'Home', 'KEM', '2021-09-05 10:47:56', '2021-09-05 10:47:56'),
-(8, 1, 10, 1, 'Hospital', 'KEM', '2021-09-12 11:34:34', '2021-09-12 11:34:34'),
-(9, 1, 10, 1, 'Home', 'PUNE', '2021-09-12 11:44:23', '2021-09-12 11:44:23');
+(1, 1, 1, 1, 'Home', 'KEM', '2021-10-04 16:04:20', '2021-10-04 16:04:20'),
+(2, 1, 1, 1, 'Home', 'PUNE', '2021-10-08 17:02:01', '2021-10-08 17:02:01'),
+(3, 1, 1, 1, 'Home', 'KEM', '2021-10-11 10:39:11', '2021-10-11 10:39:11'),
+(4, 1, 1, 1, 'Home', 'PUNE', '2021-10-11 10:41:05', '2021-10-11 10:41:05'),
+(5, 1, 1, 1, 'Lab', 'PUNE', '2021-10-11 10:45:15', '2021-10-11 10:45:15');
 
 -- --------------------------------------------------------
 
@@ -101,15 +97,11 @@ CREATE TABLE `case_payments` (
 --
 
 INSERT INTO `case_payments` (`paymentId`, `caseId`, `centerId`, `patientId`, `total_amt`, `amt_recieved`, `discount`, `paymentmode`, `paymentdetails`, `pending_amt`, `paymentdate`) VALUES
-(1, 1, 1, 1, 700.00, 100.00, 0.00, 'Cash', '', 100.00, '2021-08-01 00:00:00'),
-(2, 2, 1, 4, 500.00, 500.00, 0.00, 'Cash', '', 0.00, '2021-08-01 00:00:00'),
-(3, 3, 1, 3, 200.00, 100.00, 0.00, 'Cash', '', 100.00, '2021-08-01 00:00:00'),
-(4, 4, 6, 8, 100.00, 50.00, 0.00, 'UPI', 'PayTm', 50.00, '2021-08-02 00:00:00'),
-(5, 5, 7, 9, 700.00, 600.00, 0.00, 'Cash', '', 100.00, '2021-08-02 00:00:00'),
-(6, 6, 1, 1, 300.00, 200.00, 0.00, 'Cash', '', 100.00, '2021-08-13 00:00:00'),
-(7, 7, 1, 1, 200.00, 100.00, 0.00, 'Cash', 'Test', 100.00, '2021-09-05 00:00:00'),
-(8, 8, 1, 10, 700.00, 500.00, 10.25, 'Cash', '', 200.00, '2021-09-12 00:00:00'),
-(9, 9, 1, 10, 200.00, 200.00, 0.00, 'Cash', '', 0.00, '2021-09-12 00:00:00');
+(1, 1, 1, 1, 100.00, 100.00, 0.00, 'Cash', '', 0.00, '2021-10-04 00:00:00'),
+(2, 2, 1, 1, 1200.00, 1000.00, 0.00, 'Cash', '', 200.00, '2021-10-08 00:00:00'),
+(3, 3, 1, 1, 200.00, 210.00, 0.00, 'Cash', '', -10.00, '2021-10-11 00:00:00'),
+(4, 4, 1, 1, 500.00, 200.00, 100.00, 'Cash', '', 0.00, '2021-10-11 00:00:00'),
+(5, 5, 1, 1, 500.00, 200.00, 100.00, 'Cash', '', 200.00, '2021-10-11 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -133,20 +125,15 @@ CREATE TABLE `case_payment_transactions` (
 --
 
 INSERT INTO `case_payment_transactions` (`transactionId`, `paymentId`, `amount`, `paymentdate`, `paymentmode`, `createdby`, `createdat`, `updatedat`) VALUES
-(1, 1, 500.00, '2021-08-01', 'Cash', 1, '2021-08-01 08:47:55', '2021-08-01 08:47:55'),
-(2, 1, 100.00, '2021-08-01', 'Cash', 1, '2021-08-01 08:49:14', '2021-08-01 08:49:14'),
-(3, 2, 300.00, '2021-08-01', 'Cash', 1, '2021-08-01 08:51:31', '2021-08-01 08:51:31'),
-(4, 2, 100.00, '2021-08-01', 'Cash', 1, '2021-08-01 08:52:02', '2021-08-01 08:52:02'),
-(5, 2, 100.00, '2021-08-01', 'Cash', 1, '2021-08-01 08:52:59', '2021-08-01 08:52:59'),
-(6, 3, 100.00, '2021-08-01', 'Cash', 1, '2021-08-01 10:30:58', '2021-08-01 10:30:58'),
-(7, 4, 50.00, '2021-08-02', 'UPI', 1, '2021-08-02 20:44:06', '2021-08-02 20:44:06'),
-(8, 5, 500.00, '2021-08-02', 'UPI', 1, '2021-08-02 21:45:43', '2021-08-02 21:45:43'),
-(9, 5, 100.00, '2021-08-02', 'Cash', 1, '2021-08-02 21:46:56', '2021-08-02 21:46:56'),
-(10, 6, 200.00, '2021-08-13', 'Cash', 1, '2021-08-13 15:34:43', '2021-08-13 15:34:43'),
-(11, 6, 0.00, '2021-08-13', 'Cash', 1, '2021-08-13 15:57:20', '2021-08-13 15:57:20'),
-(12, 7, 100.00, '2021-09-05', 'Cash', 1, '2021-09-05 10:47:56', '2021-09-05 10:47:56'),
-(13, 8, 500.00, '2021-09-12', 'Cash', 1, '2021-09-12 11:34:34', '2021-09-12 11:34:34'),
-(14, 9, 200.00, '2021-09-12', 'Cash', 1, '2021-09-12 11:44:23', '2021-09-12 11:44:23');
+(1, 1, 50.00, '2021-10-04', 'Cash', 1, '2021-10-04 16:04:20', '2021-10-04 16:04:20'),
+(2, 1, 50.00, '2021-10-04', 'Cash', 1, '2021-10-04 16:11:26', '2021-10-04 16:11:26'),
+(3, 2, 500.00, '2021-10-08', 'Cash', 1, '2021-10-08 17:02:01', '2021-10-08 17:02:01'),
+(4, 2, 500.00, '2021-10-08', 'Cash', 1, '2021-10-08 17:04:44', '2021-10-08 17:04:44'),
+(5, 3, 50.00, '2021-10-11', 'Cash', 1, '2021-10-11 10:39:11', '2021-10-11 10:39:11'),
+(6, 3, 100.00, '2021-10-11', 'Cash', 1, '2021-10-11 10:39:46', '2021-10-11 10:39:46'),
+(7, 3, 60.00, '2021-10-11', 'Cash', 1, '2021-10-11 10:40:11', '2021-10-11 10:40:11'),
+(8, 4, 200.00, '2021-10-11', 'Cash', 1, '2021-10-11 10:41:05', '2021-10-11 10:41:05'),
+(9, 5, 200.00, '2021-10-11', 'Cash', 1, '2021-10-11 10:45:15', '2021-10-11 10:45:15');
 
 -- --------------------------------------------------------
 
@@ -157,17 +144,18 @@ INSERT INTO `case_payment_transactions` (`transactionId`, `paymentId`, `amount`,
 CREATE TABLE `case_report_data` (
   `case_report_id` int(10) UNSIGNED NOT NULL,
   `reportId` int(10) UNSIGNED NOT NULL,
+  `parameterId` int(11) NOT NULL,
+  `parameter` varchar(100) NOT NULL,
+  `testId` int(11) NOT NULL,
+  `testName` varchar(100) NOT NULL,
+  `finding_value` varchar(100) NOT NULL,
+  `categoryid` int(11) NOT NULL,
   `category` varchar(100) NOT NULL,
   `unit` varchar(100) NOT NULL,
-  `findings` varchar(255) NOT NULL
+  `reference_value` varchar(100) DEFAULT NULL,
+  `label` varchar(255) NOT NULL,
+  `isgroup` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `case_report_data`
---
-
-INSERT INTO `case_report_data` (`case_report_id`, `reportId`, `category`, `unit`, `findings`) VALUES
-(1, 1, 'Microbilogy', 'gl', '10');
 
 -- --------------------------------------------------------
 
@@ -191,8 +179,7 @@ CREATE TABLE `case_report_master` (
 --
 
 INSERT INTO `case_report_master` (`reportId`, `caseId`, `patientId`, `casedate`, `centerId`, `finding_details`, `createdat`, `updatedat`) VALUES
-(1, 1, 1, '2021-01-11 00:00:00', 1, NULL, '2021-08-21 17:57:10', '2021-08-21 17:57:10'),
-(2, 7, 2, '2015-03-25 00:00:00', 1, NULL, '2021-09-11 19:43:13', '2021-09-11 19:43:13');
+(1, 2, 2, '2021-10-11 00:00:00', 1, NULL, '2021-10-11 16:53:05', '2021-10-11 16:53:05');
 
 -- --------------------------------------------------------
 
@@ -212,19 +199,13 @@ CREATE TABLE `case_tests` (
 --
 
 INSERT INTO `case_tests` (`case_test_id`, `caseId`, `testId`, `centerId`) VALUES
-(3, 1, 1, 1),
-(4, 1, 2, 1),
-(7, 2, 1, 1),
-(8, 8, 2, 1),
-(9, 8, 3, 6),
-(12, 8, 4, 7),
-(13, 5, 5, 7),
-(15, 6, 6, 1),
-(16, 6, 7, 1),
-(17, 7, 6, 1),
-(18, 8, 6, 1),
-(19, 8, 8, 1),
-(20, 8, 9, 1);
+(2, 1, 1, 1),
+(5, 2, 2, 1),
+(6, 2, 3, 1),
+(7, 2, 4, 1),
+(10, 3, 3, 1),
+(11, 4, 4, 1),
+(12, 5, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -249,9 +230,7 @@ CREATE TABLE `center_details` (
 --
 
 INSERT INTO `center_details` (`centerId`, `labName`, `lab_contact`, `lab_email`, `lab_address`, `lab_city`, `lab_postalcode`, `createdat`, `updatedat`) VALUES
-(1, 'BHASKAR RAMJI PAWAR', '9874589658', 'vikaspawar3110@gmail.com', 'Pune Maharshtra', 'RAHURI', '413705', '2021-07-04 10:51:22', '2021-08-01 10:47:09'),
-(6, 'Spine 360', '9881652726', 'spine@gmail.com', 'Pune Maharashtra', 'Pune', '411002', '2021-08-02 20:36:46', '2021-08-02 20:36:46'),
-(7, 'Test 1 Lab', '9960425214', 'test01@gmail.com', 'Pune Maharashtra', 'Pune', '411002', '2021-08-02 21:33:30', '2021-08-02 21:33:30');
+(1, 'Testing Laboratory', '9657615475', 'johnabrahm@gmail.com', 'Test', 'Navi Mumbai', '413705', '2021-10-11 11:40:38', '2021-10-11 11:40:38');
 
 -- --------------------------------------------------------
 
@@ -272,15 +251,6 @@ CREATE TABLE `center_letter_head_details` (
   `createdat` datetime NOT NULL DEFAULT current_timestamp(),
   `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `center_letter_head_details`
---
-
-INSERT INTO `center_letter_head_details` (`centerId`, `header_logo`, `lab_incharge_sign`, `doctor_sign`, `lab_incharge_name`, `lab_incharge_degree`, `lab_doctor_name`, `lab_doctor_degree`, `footer_logo`, `createdat`, `updatedat`) VALUES
-(1, 'documents/resized-image-Promo (1).jpeg2021_09_21_043258000000.jpeg', 'documents/2.png2021_07_06_050952000000.png', 'documents/3.png2021_07_06_050952000000.png', 'Mrunal Jain', 'G.N.M', 'Akshay Kumar', 'MBBS', 'documents/resized-image-Promo.jpeg2021_09_21_043258000000.jpeg', '2021-07-06 17:09:52', '2021-09-21 16:32:58'),
-(6, 'documents/index.png2021_08_02_083846000000.png', '', '', 'John', 'MCA', 'Rock', 'MBBS', '', '2021-08-02 20:38:46', '2021-08-02 20:38:46'),
-(7, 'documents/index.jpg2021_08_02_093436000000.jpg', '', '', 'Test01', 'MCA', 'Rock', 'MBBS', 'documents/index1.jpg2021_08_02_093436000000.jpg', '2021-08-02 21:34:36', '2021-08-02 21:34:36');
 
 -- --------------------------------------------------------
 
@@ -303,9 +273,7 @@ CREATE TABLE `center_outsource_test` (
 --
 
 INSERT INTO `center_outsource_test` (`outsourceId`, `outsource_lab_id`, `outsource_amt`, `centerId`, `testId`, `createdat`, `updatedat`) VALUES
-(1, 1, 200.00, 1, 1, '2021-07-28 13:08:33', '2021-07-28 13:08:33'),
-(2, 1, 500.00, 1, 2, '2021-07-29 09:51:51', '2021-07-29 11:23:05'),
-(3, 4, 200.00, 7, 4, '2021-08-02 21:37:35', '2021-08-02 21:37:53');
+(1, 1, 200.00, 1, 5, '2021-10-11 11:22:05', '2021-10-11 11:22:05');
 
 -- --------------------------------------------------------
 
@@ -328,12 +296,8 @@ CREATE TABLE `center_packages` (
 --
 
 INSERT INTO `center_packages` (`packageId`, `plan_name`, `amount`, `duration`, `isactive`, `createdat`, `updatedat`) VALUES
-(1, 'TRIAL PERIOD', 10.00, 5, 1, '2021-06-27 09:37:17', '2021-06-27 09:37:17'),
-(2, 'Advanced Package', 250.00, 30, 1, '2021-07-04 13:06:20', '2021-07-04 13:06:20'),
-(3, 'VIP Customers', 500.00, 60, 1, '2021-07-04 13:06:20', '2021-07-04 13:06:20'),
-(4, 'Preminum Package', 999.00, 30, 1, '2021-08-02 20:48:10', '2021-08-02 20:49:44'),
-(5, 'Delight', 500.00, 25, 0, '2021-08-25 13:19:36', '2021-08-25 18:48:10'),
-(6, 'Delight', 500.00, 25, 0, '2021-08-25 13:19:50', '2021-08-25 13:19:50');
+(1, 'VIP Plan', 100.00, 10, 1, '2021-10-11 11:36:31', '2021-10-11 11:36:31'),
+(2, 'Premimum', 200.00, 20, 1, '2021-10-11 12:16:55', '2021-10-11 12:16:55');
 
 -- --------------------------------------------------------
 
@@ -352,20 +316,10 @@ CREATE TABLE `center_package_details` (
 --
 
 INSERT INTO `center_package_details` (`detailId`, `packageId`, `details`) VALUES
-(1, 1, '5 Days Free'),
+(1, 1, '10 Days'),
 (2, 1, 'SMS Free'),
-(3, 2, '10 Days Extra Trial'),
-(4, 2, '20 Days Full access'),
-(5, 3, 'Get access of 10 days'),
-(6, 3, '50 Days Free'),
-(8, 4, 'Get 15 Days full access'),
-(9, 4, 'Get free data consultatnt on reports '),
-(10, 4, 'Expert Consultant'),
-(11, 2, 'Whatsapp free'),
-(14, 6, 'Test 1'),
-(15, 6, 'Test 2'),
-(16, 5, 'Test 1'),
-(17, 5, 'Test 2');
+(3, 2, 'SMS Free'),
+(4, 2, 'Whatsapp free');
 
 -- --------------------------------------------------------
 
@@ -390,11 +344,8 @@ CREATE TABLE `center_payment_details` (
 --
 
 INSERT INTO `center_payment_details` (`paymentId`, `centerId`, `packageId`, `startdate`, `enddate`, `paymentmode`, `payment_ref_number`, `createdat`, `updatedat`) VALUES
-(1, 1, 3, '2021-07-20', '2021-09-18', 'UPI', 'order_Hb2tWU9YXqLEMv', '2021-07-20 09:31:10', '2021-07-20 09:31:10'),
-(2, 6, 1, '2021-08-02', '2021-08-07', 'UPI', 'order_HgN9xz4SO6sp9f', '2021-08-02 20:35:58', '2021-08-02 20:35:58'),
-(3, 7, 2, '2021-08-02', '2021-09-01', 'UPI', 'order_HgO7hKDrhKTPSV', '2021-08-02 21:32:25', '2021-08-02 21:32:25'),
-(4, 1, 1, '2021-09-21', '2021-09-26', 'UPI', 'order_I05OoWVgMwWIK1', '2021-09-21 16:13:22', '2021-09-21 16:13:22'),
-(5, 1, 1, '2021-09-27', '2021-10-02', 'UPI', 'order_I2QNzemTHeEXaA', '2021-09-27 14:03:27', '2021-09-27 14:03:27');
+(1, 1, 1, '2021-10-11', '2021-10-21', 'UPI', 'order_I7vO4H8ohRK851', '2021-10-11 11:37:39', '2021-10-11 11:37:39'),
+(2, 1, 2, '2021-10-11', '2021-10-31', 'UPI', 'order_I7w4T6OYzZRTZI', '2021-10-11 12:17:51', '2021-10-11 12:17:51');
 
 -- --------------------------------------------------------
 
@@ -420,9 +371,7 @@ CREATE TABLE `center_reference_master` (
 --
 
 INSERT INTO `center_reference_master` (`ref_id`, `ref_title`, `ref_name`, `ref_degree`, `ref_contact`, `ref_email`, `ref_address`, `centerId`, `createdat`, `updatedat`) VALUES
-(1, 'Miss.', 'Kunal Pandya', 'MBBS', '9881356896', 'kunal.pandya@mbbs.com', 'Kunal Builders Matoshree banglow', 1, '2021-07-14 08:27:40', '2021-07-14 08:28:15'),
-(2, 'Mr.', 'John Doe', 'MBBS', '9687854785', 'john@gmail.com', 'San Dieago', 6, '2021-08-02 20:42:06', '2021-08-02 20:42:06'),
-(3, 'Mr.', 'John Doe', 'MBBS', '09024634008', 'test@gmail.com', 'Nasik', 7, '2021-08-02 21:42:50', '2021-08-02 21:42:50');
+(1, 'Mr.', 'John Doe', 'MBBS', '09657613754', 'vikaspawar3110@gmail.com', 'RAHURI\r\nGOKUL COLONY RAHURI', 1, '2021-10-04 16:03:42', '2021-10-04 16:03:42');
 
 -- --------------------------------------------------------
 
@@ -436,19 +385,25 @@ CREATE TABLE `center_test_group_panel` (
   `panelId` int(10) UNSIGNED NOT NULL,
   `isgroup` tinyint(1) NOT NULL,
   `label` varchar(155) DEFAULT NULL,
-  `flag_sequence` int(10) UNSIGNED NOT NULL DEFAULT 0
+  `flag_sequence` int(10) UNSIGNED NOT NULL DEFAULT 0,
+  `jsid` varchar(50) NOT NULL COMMENT 'for front end purpose for edit test'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `center_test_group_panel`
 --
 
-INSERT INTO `center_test_group_panel` (`groupId`, `testId`, `panelId`, `isgroup`, `label`, `flag_sequence`) VALUES
-(1, 1, 2, 1, 'Generic', 1),
-(2, 1, 3, 1, 'Generic', 1),
-(3, 1, 1, 0, '-', 0),
-(4, 1, 2, 1, 'Test', 3),
-(5, 1, 4, 1, 'Test', 3);
+INSERT INTO `center_test_group_panel` (`groupId`, `testId`, `panelId`, `isgroup`, `label`, `flag_sequence`, `jsid`) VALUES
+(1, 1, 1, 0, '-', 0, 'Basophils'),
+(2, 2, 1, 1, 'Test one Test', 1, 'BasophilsNurophils'),
+(3, 2, 2, 1, 'Test one Test', 1, 'BasophilsNurophils'),
+(4, 2, 3, 0, '-', 0, 'Entomology'),
+(5, 3, 3, 0, '-', 0, 'Entomology'),
+(6, 3, 1, 0, '-', 0, 'Basophils'),
+(7, 4, 1, 0, '-', 0, 'Basophils'),
+(8, 4, 2, 0, '-', 0, 'Nurophils'),
+(9, 4, 3, 0, '-', 0, 'Entomology'),
+(10, 5, 1, 0, '-', 0, 'Basophils');
 
 -- --------------------------------------------------------
 
@@ -476,7 +431,11 @@ CREATE TABLE `center_test_master` (
 --
 
 INSERT INTO `center_test_master` (`testId`, `categoryId`, `test_name`, `short_name`, `method`, `instrument`, `gender`, `fees`, `centerId`, `desc_text`, `createdat`, `updatedat`) VALUES
-(1, 1, 'Platelet Count ', 'CBC', 'ME', 'INST', 'Male', 250.00, 1, '\r\n                    ', '2021-09-28 22:55:12', '2021-09-28 22:55:12');
+(1, 1, 'CBC WITH ESR', 'CBC', 'JEM', 'INST', 'Male', 100.00, 1, '\r\n                    ', '2021-10-04 16:01:59', '2021-10-04 16:01:59'),
+(2, 2, 'Test One', 'TestOne', 'KET', 'KH', 'Male', 500.00, 1, '\r\n                    ', '2021-10-08 17:00:09', '2021-10-08 17:00:09'),
+(3, 1, 'Test Two', 'TestTwo', 'KET', 'KH', 'Male', 200.00, 1, '\r\n                    ', '2021-10-08 17:01:25', '2021-10-08 17:01:25'),
+(4, 2, 'Test Three', 'TestThree', 'KET', 'KH', 'Male', 500.00, 1, '\r\n                    ', '2021-10-08 17:04:15', '2021-10-08 17:04:15'),
+(5, 1, 'CBC WITH ESR', 'TECH M', 'KET', 'KH', 'Male', 500.00, 1, '\r\n                    ', '2021-10-11 11:22:05', '2021-10-11 11:22:05');
 
 -- --------------------------------------------------------
 
@@ -498,10 +457,10 @@ CREATE TABLE `center_test_panel` (
 --
 
 INSERT INTO `center_test_panel` (`panelId`, `centerId`, `testName`, `unitId`, `createdat`, `updatedat`) VALUES
-(1, 1, 'CBC', 1, '2021-09-21 22:22:46', '2021-09-28 22:52:10'),
-(2, 1, 'Neutrophils', 2, '2021-09-21 22:22:46', '2021-09-28 22:52:18'),
-(3, 1, 'Basophils', 3, '2021-09-21 22:49:30', '2021-09-28 22:52:28'),
-(4, 1, 'Cytrophils', 3, '2021-09-21 22:50:22', '2021-09-28 22:53:08');
+(1, 1, 'Basophils', 2, '2021-10-04 16:01:17', '2021-10-04 16:01:17'),
+(2, 1, 'Nurophils', 2, '2021-10-08 16:57:46', '2021-10-08 16:57:46'),
+(3, 1, 'Entomology', 1, '2021-10-08 16:58:33', '2021-10-08 16:58:33'),
+(4, 1, 'Nurophils', 1, '2021-10-08 17:57:55', '2021-10-08 17:57:55');
 
 -- --------------------------------------------------------
 
@@ -540,12 +499,8 @@ CREATE TABLE `center_test_subtypes_ranges` (
 --
 
 INSERT INTO `center_test_subtypes_ranges` (`rangeId`, `subtypeId`, `gender`, `lower_age`, `lower_age_period`, `upper_age`, `upper_age_period`, `lower_limit`, `upper_limit`, `words`) VALUES
-(1, 1, 'Male', 12, '12', 12, '12', '12', '12', '12'),
-(2, 1, 'Male', 19, '98', 98, '98', '98', '98', '98'),
-(5, 4, 'Male', 10, 'Days', 20, 'Year', '140', '190', 'test'),
-(6, 4, 'Female', 10, 'Days', 20, 'Year', '1', '2', 'test'),
-(7, 3, 'Male', 10, 'Days', 20, 'Year', '140', '190', 'test'),
-(8, 3, 'Female', 10, 'Days', 20, 'Year', '1', '2', 'test');
+(1, 2, 'Male', 10, 'Year', 20, 'Year', '10', '25', ''),
+(2, 3, 'Male', 12, 'Year', 20, 'Year', '12', '12', '');
 
 -- --------------------------------------------------------
 
@@ -565,16 +520,8 @@ CREATE TABLE `center_unit_master` (
 --
 
 INSERT INTO `center_unit_master` (`unitId`, `unit`, `centerId`, `createdat`) VALUES
-(1, 'KETCHUP', 1, '2021-07-19 08:16:26'),
-(2, 'KGF', 1, '2021-07-24 10:39:52'),
-(3, 'Tablet', 6, '2021-08-02 20:40:11'),
-(4, 'Tablet', 7, '2021-08-02 21:36:16'),
-(5, 'TAB', 7, '2021-08-02 21:41:21'),
-(6, 'g/dl', 1, '2021-08-13 14:37:27'),
-(7, 'cumm', 1, '2021-08-13 14:38:59'),
-(8, '%', 1, '2021-08-13 14:40:06'),
-(9, 'lakhs/cumm', 1, '2021-08-13 14:41:39'),
-(10, 'pg/Ml', 1, '2021-08-13 15:56:24');
+(1, 'GM', 1, '2021-10-04 16:00:10'),
+(2, 'KG', 1, '2021-10-04 16:00:18');
 
 -- --------------------------------------------------------
 
@@ -585,7 +532,7 @@ INSERT INTO `center_unit_master` (`unitId`, `unit`, `centerId`, `createdat`) VAL
 CREATE TABLE `customer_registeration` (
   `centerId` int(11) NOT NULL,
   `fullname` varchar(150) NOT NULL,
-  `emailId` varchar(150) NOT NULL,
+  `emailId` varchar(255) NOT NULL,
   `contact_number` varchar(15) NOT NULL,
   `upassword` varchar(25) NOT NULL,
   `isactive` int(11) DEFAULT 1,
@@ -600,13 +547,7 @@ CREATE TABLE `customer_registeration` (
 --
 
 INSERT INTO `customer_registeration` (`centerId`, `fullname`, `emailId`, `contact_number`, `upassword`, `isactive`, `ismailverified`, `ismobileverified`, `createdat`, `updatedat`) VALUES
-(1, 'John Smith', 'john@gmail.com', '9881658987', '12345', 1, 0, 0, '2021-06-26 16:46:41', '2021-06-28 17:27:40'),
-(2, 'Tony Stark', 'tonystark@avengers.com', '8208504868', '12345', 1, 0, 0, '2021-06-27 08:13:19', '2021-06-28 17:27:45'),
-(4, 'Sansa Stark', 'sansa@got.com', '9657856985', '12345', 1, 0, 0, '2021-07-02 08:39:40', '2021-07-02 08:39:40'),
-(5, 'Robb Stark', 'robb@got.com', '9657856985', '12345', 1, 0, 0, '2021-07-02 08:40:47', '2021-07-02 08:40:47'),
-(6, 'John Smith', 'johndoe@gmail.com', '9881652726', '12345', 1, 0, 0, '2021-08-02 20:35:06', '2021-08-02 20:35:06'),
-(7, 'Sansa Stark', 'sansa@gmail.com', '9960425214', '12345', 1, 0, 0, '2021-08-02 21:31:30', '2021-08-02 21:31:30'),
-(8, 'BHASKAR RAMJI PAWAR', 'vikaspawar3110@gmail.com', '9657613754', '12345', 1, 0, 0, '2021-09-21 18:19:37', '2021-09-21 18:19:37');
+(1, 'John Doe', 'john@gmail.com', '9657613754', '12345', 1, 0, 0, '2021-10-04 15:58:44', '2021-10-04 15:58:44');
 
 -- --------------------------------------------------------
 
@@ -626,14 +567,9 @@ CREATE TABLE `lab_category` (
 --
 
 INSERT INTO `lab_category` (`categoryid`, `category`, `createdat`, `updatedat`) VALUES
-(1, 'MicrobiologyCheck', '2021-07-12 15:10:58', '2021-09-11 22:07:20'),
-(2, 'Hametology', '2021-07-12 15:11:26', '2021-07-12 15:11:26'),
-(3, 'Dermitology', '2021-07-24 10:38:41', '2021-07-24 10:38:41'),
-(4, 'Biotech', '2021-08-02 20:39:12', '2021-08-02 20:39:12'),
-(5, 'Dermitology', '2021-08-02 21:35:13', '2021-08-02 21:35:13'),
-(6, 'Biotech', '2021-08-02 21:38:34', '2021-08-02 21:38:34'),
-(7, 'BIOCHEMISTRY', '2021-08-13 15:55:54', '2021-08-13 15:55:54'),
-(8, 'BIOCHEMISTRY', '2021-09-11 22:07:03', '2021-09-11 22:07:03');
+(1, 'Physics', '2021-10-11 19:26:35', '2021-10-11 19:26:35'),
+(2, 'Chemistry', '2021-10-11 19:26:35', '2021-10-11 19:26:35'),
+(3, 'Biochemistry', '2021-10-11 19:35:20', '2021-10-11 19:35:20');
 
 -- --------------------------------------------------------
 
@@ -654,14 +590,10 @@ CREATE TABLE `lab_center_categories` (
 --
 
 INSERT INTO `lab_center_categories` (`categoryid`, `category`, `centerId`, `createdat`, `updatedat`) VALUES
-(1, 'Microbiology', 1, '2021-07-12 15:10:58', '2021-07-12 15:12:50'),
-(2, 'Hametology', 1, '2021-07-12 15:11:26', '2021-07-12 15:11:26'),
-(3, 'Dermitology', 1, '2021-07-24 10:38:41', '2021-07-24 10:38:41'),
-(4, 'Biotech', 6, '2021-08-02 20:39:12', '2021-08-02 20:39:12'),
-(5, 'Dermitology', 7, '2021-08-02 21:35:13', '2021-08-02 21:35:13'),
-(6, 'Biotech', 7, '2021-08-02 21:38:34', '2021-08-02 21:38:34'),
-(7, 'BIOCHEMISTRY', 1, '2021-08-13 15:55:54', '2021-08-13 15:55:54'),
-(8, 'VIKAS', 1, '2021-09-12 11:56:56', '2021-09-12 11:56:56');
+(1, 'Physics', 1, '2021-10-11 19:34:07', '2021-10-11 19:34:07'),
+(2, 'Chemistry', 1, '2021-10-11 19:34:07', '2021-10-11 19:34:07'),
+(4, 'Heamotology', 1, '2021-10-11 19:34:53', '2021-10-11 19:34:53'),
+(5, 'Biochemistry', 1, '2021-10-11 19:35:29', '2021-10-11 19:35:29');
 
 -- --------------------------------------------------------
 
@@ -678,23 +610,10 @@ CREATE TABLE `lab_tests` (
   `instrument` varchar(255) NOT NULL,
   `gender` varchar(15) NOT NULL,
   `fees` double(10,2) NOT NULL,
+  `desc_text` text NOT NULL,
   `createdat` datetime NOT NULL DEFAULT current_timestamp(),
   `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `lab_tests`
---
-
-INSERT INTO `lab_tests` (`testId`, `categoryId`, `test_name`, `short_name`, `method`, `instrument`, `gender`, `fees`, `createdat`, `updatedat`) VALUES
-(1, 1, 'TEST123', 'T1M1', 'KET', 'KH', 'Male', 500.00, '2021-07-28 13:08:33', '2021-07-28 13:09:39'),
-(2, 2, 'Biscuit', 'B1C1', 'JEM', 'KURLA', 'Male', 200.00, '2021-07-29 09:51:51', '2021-08-01 08:47:05'),
-(3, 4, 'Tablet 1', 'Tab1', 'KET', 'KH', 'Male', 100.00, '2021-08-02 20:40:50', '2021-08-02 20:40:50'),
-(4, 5, 'TEST 01', 'T01', 'ME', 'INST', 'Female', 500.00, '2021-08-02 21:37:35', '2021-08-02 21:37:35'),
-(5, 6, 'Test02', 'T02', 'K1', 'KH', 'Male', 200.00, '2021-08-02 21:40:39', '2021-08-02 21:40:39'),
-(6, 2, 'CBC WITH ESR', 'CBC', 'TEST', 'TEST', 'Male', 200.00, '2021-08-13 14:42:25', '2021-08-13 14:42:25'),
-(7, 1, 'Calcitonin', 'Calcitonin', 'TEST', 'KH', 'Male', 100.00, '2021-08-13 15:56:59', '2021-08-13 15:56:59'),
-(9, 2, 'ESR', 'CBC', 'TEST', 'TEST', 'Male', 500.00, '2021-08-25 19:38:50', '2021-08-25 19:39:15');
 
 -- --------------------------------------------------------
 
@@ -708,25 +627,6 @@ CREATE TABLE `lab_tests_subtypes` (
   `unitId` int(10) UNSIGNED NOT NULL,
   `testId` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `lab_tests_subtypes`
---
-
-INSERT INTO `lab_tests_subtypes` (`subtypeId`, `test_name`, `unitId`, `testId`) VALUES
-(2, 'TECH M', 1, 1),
-(6, 'TECH M', 1, 2),
-(7, 'Tab1', 3, 3),
-(9, 'T01', 4, 4),
-(10, 'T02', 4, 5),
-(11, 'Hemoglobin', 6, 6),
-(12, 'Total Leukocyte Count', 7, 6),
-(13, 'Neutrophils', 8, 6),
-(14, 'Lymphocyte', 8, 6),
-(15, 'Platelet Count', 9, 6),
-(16, 'Calcitonin', 10, 7),
-(20, 'Test1', 2, 9),
-(21, 'Test_2', 2, 9);
 
 -- --------------------------------------------------------
 
@@ -747,29 +647,62 @@ CREATE TABLE `lab_tests_subtypes_ranges` (
   `words` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `lab_tests_subtypes_ranges`
+-- Table structure for table `lab_test_group_panel`
 --
 
-INSERT INTO `lab_tests_subtypes_ranges` (`rangeId`, `subtypeId`, `gender`, `lower_age`, `lower_age_period`, `upper_age`, `upper_age_period`, `lower_limit`, `upper_limit`, `words`) VALUES
-(2, 2, 'Male', 12, 'Days', 13, 'Days', '12', '12', 'Test'),
-(3, 2, 'Male', 12, 'Days', 22, 'Days', '12', '12', 'Test1'),
-(8, 6, 'Male', 14, 'Days', 41, 'Days', '52', '98', 'Te'),
-(9, 6, 'Male', 13, 'Days', 12, 'Days', '58', '25', 'Test'),
-(10, 7, 'Male', 1, 'Days', 1, 'Month', '10', '25', 'Test by John'),
-(12, 9, 'Female', 1, 'Days', 2, 'Month', '12', '12', 'Test by Vikas'),
-(13, 10, 'Male', 10, 'Month', 12, 'Month', '10', '10', 'Test by John'),
-(14, 10, 'Male', 10, 'Month', 10, 'Year', '100', '102', 'Test by Smith'),
-(15, 11, 'Male', 10, 'Year', 30, 'Year', '13', '17', 'Test'),
-(16, 11, 'Male', 1, 'Year', 10, 'Year', '10', '15', 'Test'),
-(17, 12, 'Male', 10, 'Year', 30, 'Year', '4000', '11000', 'Test'),
-(18, 13, 'Male', 10, 'Year', 40, 'Year', '10', '40', 'Test'),
-(19, 14, 'Male', 10, 'Year', 40, 'Year', '20', '40', 'Test'),
-(20, 15, 'Male', 10, 'Year', 30, 'Year', '1.5', '4.5', 'Test'),
-(21, 16, 'Male', 10, 'Year', 30, 'Year', '0', '18', 'Test'),
-(25, 20, 'Male', 10, 'Days', 20, 'Year', '140', '190', 'test'),
-(26, 20, 'Female', 10, 'Days', 20, 'Year', '1', '2', 'test'),
-(27, 21, 'Male', 10, 'Days', 20, 'Year', '140', '190', 'test');
+CREATE TABLE `lab_test_group_panel` (
+  `groupId` int(10) UNSIGNED NOT NULL,
+  `testId` int(10) UNSIGNED NOT NULL,
+  `panelId` int(10) UNSIGNED NOT NULL,
+  `isgroup` tinyint(1) NOT NULL,
+  `label` varchar(155) DEFAULT NULL,
+  `flag_sequence` int(10) UNSIGNED NOT NULL DEFAULT 0,
+  `jsid` varchar(50) NOT NULL COMMENT 'for front end purpose for edit test'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `lab_test_group_panel`
+--
+
+INSERT INTO `lab_test_group_panel` (`groupId`, `testId`, `panelId`, `isgroup`, `label`, `flag_sequence`, `jsid`) VALUES
+(1, 1, 1, 0, '-', 0, 'Basophils'),
+(2, 2, 1, 1, 'Test one Test', 1, 'BasophilsNurophils'),
+(3, 2, 2, 1, 'Test one Test', 1, 'BasophilsNurophils'),
+(4, 2, 3, 0, '-', 0, 'Entomology'),
+(5, 3, 3, 0, '-', 0, 'Entomology'),
+(6, 3, 1, 0, '-', 0, 'Basophils'),
+(7, 4, 1, 0, '-', 0, 'Basophils'),
+(8, 4, 2, 0, '-', 0, 'Nurophils'),
+(9, 4, 3, 0, '-', 0, 'Entomology'),
+(10, 5, 1, 0, '-', 0, 'Basophils');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lab_test_panel`
+--
+
+CREATE TABLE `lab_test_panel` (
+  `panelId` int(10) UNSIGNED NOT NULL,
+  `testName` varchar(155) NOT NULL,
+  `unitId` int(10) UNSIGNED NOT NULL,
+  `createdat` datetime NOT NULL DEFAULT current_timestamp(),
+  `updatedat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `lab_test_panel`
+--
+
+INSERT INTO `lab_test_panel` (`panelId`, `testName`, `unitId`, `createdat`, `updatedat`) VALUES
+(1, 'Basophils', 2, '2021-10-04 16:01:17', '2021-10-04 16:01:17'),
+(2, 'Nurophils', 2, '2021-10-08 16:57:46', '2021-10-08 16:57:46'),
+(3, 'Entomology', 1, '2021-10-08 16:58:33', '2021-10-08 16:58:33'),
+(4, 'Nurophils', 1, '2021-10-08 17:57:55', '2021-10-08 17:57:55'),
+(5, 'TEST', 1, '2021-10-11 20:37:34', '2021-10-11 20:37:34');
 
 -- --------------------------------------------------------
 
@@ -782,22 +715,6 @@ CREATE TABLE `lab_unit_master` (
   `unit` varchar(100) NOT NULL,
   `createdat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `lab_unit_master`
---
-
-INSERT INTO `lab_unit_master` (`unitId`, `unit`, `createdat`) VALUES
-(1, 'KETCHUP', '2021-07-19 08:16:26'),
-(2, 'KGF', '2021-07-24 10:39:52'),
-(3, 'Tablet', '2021-08-02 20:40:11'),
-(4, 'Tablet', '2021-08-02 21:36:16'),
-(5, 'TAB', '2021-08-02 21:41:21'),
-(6, 'g/dl', '2021-08-13 14:37:27'),
-(7, 'cumm', '2021-08-13 14:38:59'),
-(8, '%', '2021-08-13 14:40:06'),
-(9, 'lakhs/cumm', '2021-08-13 14:41:39'),
-(10, 'pg/Ml', '2021-08-13 15:56:24');
 
 -- --------------------------------------------------------
 
@@ -817,10 +734,7 @@ CREATE TABLE `outsource_lab` (
 --
 
 INSERT INTO `outsource_lab` (`outsource_lab_id`, `lab_name`, `centerId`, `createdat`) VALUES
-(1, 'Emergency 24*7', 1, '2021-07-13 08:45:14'),
-(2, 'Emergency', 1, '2021-07-13 08:45:27'),
-(3, 'Outsource Lab 1', 6, '2021-08-02 20:41:25'),
-(4, 'Outsource Lab 1', 7, '2021-08-02 21:35:58');
+(1, 'Outsource Lab 1', 1, '2021-10-11 11:21:47');
 
 -- --------------------------------------------------------
 
@@ -852,16 +766,7 @@ CREATE TABLE `patient_master` (
 --
 
 INSERT INTO `patient_master` (`patientId`, `centerId`, `patient_title`, `first_name`, `last_name`, `gender`, `aadhar_number`, `dob`, `age`, `contact_number`, `alternate_number`, `emailId`, `patient_address`, `patient_profile`, `createdat`, `updatedat`) VALUES
-(1, 1, 'Mr.', 'Aarya', 'Stark', 'Female', '589636254147', '1998-09-04', 23, '9887456514', '', 'aarya@stark.com', '12.BB Marg Lahore', './documents/2021_07_06_0417090000003.png', '2021-07-06 16:12:56', '2021-07-06 16:17:09'),
-(2, 1, 'Mr', 'Nick', 'Jonas', 'Male', '636458395855', '2000-12-12', 10, '09763602243', '', 'hulkt@avengers.com', 'San Diego,California', '0', '2021-07-20 15:15:34', '2021-07-20 15:15:34'),
-(3, 1, 'Mr', 'Nick', 'Jonas', 'Male', '636458395855', '2000-12-12', 10, '09763602243', '', 'hulkt@avengers.com', 'San Diego,California', '0', '2021-07-20 15:15:44', '2021-07-20 15:15:44'),
-(4, 1, 'Mrs', 'Mandira', 'Mathur', 'Female', '9685741425', '1998-01-10', 25, '09763602243', '', 'hulkt@avengers.com', 'San Diego,California', '0', '2021-07-20 15:19:19', '2021-07-20 15:19:19'),
-(5, 1, 'Mrs', 'Mandira', 'Mathur', 'Female', '9685741425', '1998-01-10', 25, '09763602243', '', 'hulkt@avengers.com', 'San Diego,California', '0', '2021-07-20 15:19:27', '2021-07-20 15:19:27'),
-(6, 1, 'Mrs', 'Mandira', 'Mathur', 'Female', '9685741425', '1998-01-10', 25, '09763602243', '', 'hulkt@avengers.com', 'San Diego,California', '0', '2021-07-20 15:20:12', '2021-07-20 15:20:12'),
-(7, 1, 'Mrs', 'Mandira', 'Mathur', 'Female', '9685741425', '1998-01-10', 25, '09763602243', '', 'hulkt@avengers.com', 'San Diego,California', 'documents/2021_07_20_03203500000011.jpg', '2021-07-20 15:20:35', '2021-07-20 15:20:35'),
-(8, 6, 'Mrs', 'Sansa', 'Stark', 'Female', '9685741425', '1998-10-10', 25, '09024634008', '', 'ada@ada.com', 'Nasik', 'documents/2021_08_02_08432100000011.jpg', '2021-08-02 20:43:21', '2021-08-02 20:43:21'),
-(9, 7, 'Mrs', 'Sansa', 'Stark', 'Female', '9685741425', '1999-10-10', 25, '9657613754', '9885785885', 'sansa@gmail.com', 'RAHURI\r\nGOKUL COLONY RAHURI', 'documents/2021_08_02_09443000000011.jpg', '2021-08-02 21:44:30', '2021-08-02 21:44:30'),
-(10, 1, 'Mr', 'Amol', 'Pawar', 'Male', '343063675839', '1998-12-10', 24, '9657613754', '9885785885', 'vbpawar3110@gmail.com', 'RAHURI\r\nGOKUL COLONY RAHURI', NULL, '2021-09-12 11:33:46', '2021-09-12 11:33:46');
+(1, 1, 'Mr', 'Ema', 'Watson', 'Female', '343063675839', '2003-02-04', 18, '9657613754', '', 'amol.pawar@tkinfotech.com', 'RAHURI\r\nGOKUL COLONY RAHURI', NULL, '2021-10-04 16:03:19', '2021-10-04 16:03:19');
 
 --
 -- Indexes for dumped tables
@@ -1029,6 +934,18 @@ ALTER TABLE `lab_tests_subtypes_ranges`
   ADD KEY `subtypeId` (`subtypeId`);
 
 --
+-- Indexes for table `lab_test_group_panel`
+--
+ALTER TABLE `lab_test_group_panel`
+  ADD PRIMARY KEY (`groupId`);
+
+--
+-- Indexes for table `lab_test_panel`
+--
+ALTER TABLE `lab_test_panel`
+  ADD PRIMARY KEY (`panelId`);
+
+--
 -- Indexes for table `lab_unit_master`
 --
 ALTER TABLE `lab_unit_master`
@@ -1060,91 +977,91 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `case_master`
 --
 ALTER TABLE `case_master`
-  MODIFY `caseId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `caseId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `case_payments`
 --
 ALTER TABLE `case_payments`
-  MODIFY `paymentId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `paymentId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `case_payment_transactions`
 --
 ALTER TABLE `case_payment_transactions`
-  MODIFY `transactionId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `transactionId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `case_report_data`
 --
 ALTER TABLE `case_report_data`
-  MODIFY `case_report_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `case_report_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `case_report_master`
 --
 ALTER TABLE `case_report_master`
-  MODIFY `reportId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `reportId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `case_tests`
 --
 ALTER TABLE `case_tests`
-  MODIFY `case_test_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `case_test_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `center_details`
 --
 ALTER TABLE `center_details`
-  MODIFY `centerId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `centerId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `center_letter_head_details`
 --
 ALTER TABLE `center_letter_head_details`
-  MODIFY `centerId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `centerId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `center_outsource_test`
 --
 ALTER TABLE `center_outsource_test`
-  MODIFY `outsourceId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `outsourceId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `center_packages`
 --
 ALTER TABLE `center_packages`
-  MODIFY `packageId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `packageId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `center_package_details`
 --
 ALTER TABLE `center_package_details`
-  MODIFY `detailId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `detailId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `center_payment_details`
 --
 ALTER TABLE `center_payment_details`
-  MODIFY `paymentId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `paymentId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `center_reference_master`
 --
 ALTER TABLE `center_reference_master`
-  MODIFY `ref_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ref_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `center_test_group_panel`
 --
 ALTER TABLE `center_test_group_panel`
-  MODIFY `groupId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `groupId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `center_test_master`
 --
 ALTER TABLE `center_test_master`
-  MODIFY `testId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `testId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `center_test_panel`
@@ -1162,61 +1079,73 @@ ALTER TABLE `center_test_subtypes`
 -- AUTO_INCREMENT for table `center_test_subtypes_ranges`
 --
 ALTER TABLE `center_test_subtypes_ranges`
-  MODIFY `rangeId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `rangeId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `center_unit_master`
 --
 ALTER TABLE `center_unit_master`
-  MODIFY `unitId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `unitId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `customer_registeration`
 --
 ALTER TABLE `customer_registeration`
-  MODIFY `centerId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `centerId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `lab_category`
 --
 ALTER TABLE `lab_category`
-  MODIFY `categoryid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `categoryid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `lab_center_categories`
 --
 ALTER TABLE `lab_center_categories`
-  MODIFY `categoryid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `categoryid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `lab_tests`
 --
 ALTER TABLE `lab_tests`
-  MODIFY `testId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `testId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `lab_tests_subtypes`
 --
 ALTER TABLE `lab_tests_subtypes`
-  MODIFY `subtypeId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `subtypeId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `lab_tests_subtypes_ranges`
 --
 ALTER TABLE `lab_tests_subtypes_ranges`
-  MODIFY `rangeId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `rangeId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `lab_test_group_panel`
+--
+ALTER TABLE `lab_test_group_panel`
+  MODIFY `groupId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `lab_test_panel`
+--
+ALTER TABLE `lab_test_panel`
+  MODIFY `panelId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `outsource_lab`
 --
 ALTER TABLE `outsource_lab`
-  MODIFY `outsource_lab_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `outsource_lab_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `patient_master`
 --
 ALTER TABLE `patient_master`
-  MODIFY `patientId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `patientId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
@@ -1239,12 +1168,6 @@ ALTER TABLE `center_payment_details`
 --
 ALTER TABLE `center_test_subtypes_ranges`
   ADD CONSTRAINT `center_test_subtypes_ranges_ibfk_1` FOREIGN KEY (`subtypeId`) REFERENCES `center_test_panel` (`panelId`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
---
--- Constraints for table `lab_tests_subtypes_ranges`
---
-ALTER TABLE `lab_tests_subtypes_ranges`
-  ADD CONSTRAINT `lab_tests_subtypes_ranges_ibfk_1` FOREIGN KEY (`subtypeId`) REFERENCES `lab_tests_subtypes` (`subtypeId`) ON DELETE CASCADE ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
