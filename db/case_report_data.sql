@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 09, 2021 at 09:07 AM
+-- Generation Time: Oct 11, 2021 at 01:38 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -40,7 +40,8 @@ CREATE TABLE `case_report_data` (
   `category` varchar(100) NOT NULL,
   `unit` varchar(100) NOT NULL,
   `reference_value` varchar(100) DEFAULT NULL,
-  `findings` varchar(255) NOT NULL
+  `label` varchar(255) NOT NULL,
+  `isgroup` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
