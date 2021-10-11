@@ -57,7 +57,7 @@ $('#saveFinding').click(function() {
     var reportData = getReportData();
     console.log(reportData);
     var formdata = new FormData();
-    formdata.append('report_data', reportData);
+    formdata.append('report_data', JSON.stringify(reportData));
     formdata.append('centerId', <?php echo $session_data['centerId'];?>)
     formdata.append('patientId', 2);
     formdata.append('caseId',<?php echo $caseId; ?>);

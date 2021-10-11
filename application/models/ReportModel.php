@@ -52,7 +52,6 @@ class ReportModel extends CI_Model
     public function add_report($data){
         $case_data  = $data['data'];
         $report_data = $data['report_data'];
-
         $this->db->trans_begin();
         $this->db->insert('case_report_master', $case_data);
         $reportId = $this->db->insert_id();
@@ -89,7 +88,7 @@ class ReportModel extends CI_Model
     {
         foreach ($test_data as $contact) {
             $tests             = array(
-                'parameterId'=>$contact->parameterId,
+                'parameterId'=>$contact->parameterid,
                 'parameter'=>$contact->parameter,
                 'testId'=>$contact->testId,
                 'testName'=>$contact->testName,
