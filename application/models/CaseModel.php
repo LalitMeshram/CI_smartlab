@@ -28,7 +28,7 @@ class CaseModel extends CI_Model
             "discount"=>$case_data['discount'],
             "paymentmode"=>$case_data['paymentmode'],
             "paymentdetails"=>$case_data['paymentdetails'],
-            "pending_amt"=>$case_data['total_amt'] - $case_data['amt_recieved'],
+            "pending_amt"=>$case_data['total_amt'] - ($case_data['discount']+$case_data['amt_recieved']),
             "paymentdate"=>date('Y-m-d')
         );
         $this->db->insert('case_payments', $case_payments);
@@ -175,6 +175,16 @@ class CaseModel extends CI_Model
             $this->db->trans_commit();
             $result['status'] = true;
             return $result;
+        }
+    }
+    public function get_pending_amount($caseId)
+    {
+       $sql = "UPDATE case_payments cp SET cp.pending_amt = 0 WHERE cp.pending_amt > 0 AND cp.caseId = $caseId";
+        $this->db->query($sql);
+        if($this->db->affected_rows() > 0){
+return true;
+        }else{
+return false;
         }
     }
     

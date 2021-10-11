@@ -171,5 +171,22 @@ if(isset($_POST['last_recieved_amt'])){
         $this->response($records, REST_Controller::HTTP_OK);
        
     }
+    public function update_pending_get($caseId=0)
+    {
+        $response = array();
+        $result = $this->case->get_pending_amount($caseId);
+        if($result){
+            $response = array(
+                'Message' => 'Pending amount received successfully',
+                'Responsecode' => 200
+            );   
+        }else{
+            $response = array(
+                'Message' => 'No amount pending from this case',
+                'Responsecode' => 204
+            );  
+        }
+        $this->response($response, REST_Controller::HTTP_OK);
+    }
     
 }

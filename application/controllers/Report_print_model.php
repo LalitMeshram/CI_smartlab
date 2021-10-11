@@ -1,6 +1,6 @@
 <?php
 
-class Reciept_model extends CI_Model {
+class Report_print_model extends CI_Model {
 
  
     public function getCustomerdetails($caseId){
@@ -190,51 +190,6 @@ class Reciept_model extends CI_Model {
 <div class="control-sidebar-bg"></div>
 </div>';
 return $output;
-    }
-    public function get_findings($caseId)
-    {
-      $output = '';
-     
-      $sql = "SELECT cp.category FROM case_report_data cp WHERE cp.reportId =1 GROUP BY cp.category";
-      $query = $this->db->query($sql);
-
-      $sql_2 = "SELECT * FROM case_report_data cp WHERE cp.reportId =1";
-      $query_1 = $this->db->query($sql_2);
-  
-     foreach($query->result() as $row){
-        $output .= '<div class="col-12 table-responsive">
-        <center><h4 style="background-color: #fff;margin-top: 2%;"><b>'.$row->category.'</b></h4></center>
-        <table class="table with-border" style="background-color: #ffffffd4;">
-            <thead>
-                <tr>
-
-                    <th style="width: 20%">Test</th>
-                    <th style="width: 20%">Value</th>
-                    <th style="width: 10%">Unit</th>
-                    <th style="width: 10%">Reference</th>
-                </tr>
-            </thead>
-            <tbody>';
-            
-            foreach($query_1->result() as $row2){
-              if ($row->category ==$row2->category) {
-                  $output .= '<tr>
-                   <td>'. $row2->testName .'</td>
-                  <td>
-                      <div class="form-inline">
-                      <label class="text-bold" for="">'. $row2->parameter .'</label>&nbsp;
-                     '. $row2->finding_value .'
-                      </div>
-                  </td>
-                  <td>'.$row2->unit .'</td>
-                  <td>'.$row2->reference_value.'</td>
-              </tr>';
-              }
-          }
-          $output .= '</tbody> </table><hr/></div>';
-
-      }
-      return $output;
     }
 
 }
