@@ -79,6 +79,8 @@ function getFindingDetail() {
                                            `" value="` + dataArr[l].lower + `">
                                             <input type="hidden" id="upper_` + dataArr[l].test_name.replace(/ /g, "_")+dataArr[l].label.replace(/ /g, "_")+dataArr[l].categoryId+dataArr[l].panelId +
                                            `" value="` + dataArr[l].upper + `">
+                                            <input type="hidden" id="isgroup_` + dataArr[l].test_name.replace(/ /g, "_")+dataArr[l].label.replace(/ /g, "_")+dataArr[l].categoryId+dataArr[l].panelId +
+                                           `" value="` + dataArr[l].isgroup + `">
 
 						                                <td class="parameter">`+dataArr[l].testName+`</td>
 						                                <td>
