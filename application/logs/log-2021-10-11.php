@@ -59,3 +59,17 @@ ERROR - 2021-10-11 10:45:48 --> 404 Page Not Found: Resource/assets
 ERROR - 2021-10-11 10:45:49 --> 404 Page Not Found: Resource/assets
 ERROR - 2021-10-11 10:47:55 --> 404 Page Not Found: Resource/assets
 ERROR - 2021-10-11 10:47:55 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-11 11:11:50 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-11 11:11:51 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-11 11:11:59 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-11 11:11:59 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-11 11:21:23 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-11 11:21:29 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-11 11:21:29 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-11 11:21:36 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-11 11:21:36 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-11 11:22:06 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-11 11:22:06 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-11 11:22:15 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-11 11:22:15 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-11 11:22:15 --> 404 Page Not Found: Create_casejpg/index
