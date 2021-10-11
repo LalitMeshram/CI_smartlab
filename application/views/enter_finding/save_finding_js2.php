@@ -24,7 +24,7 @@ function getReportData() {
                         var label = $('#label_' + dataArr[i].test_name.replace(/ /g, "_")+dataArr[i].label.replace(/ /g, "_")+dataArr[i].categoryId+dataArr[i].panelId).val();
                         var lower = $('#lower_' + dataArr[i].test_name.replace(/ /g, "_")+dataArr[i].label.replace(/ /g, "_")+dataArr[i].categoryId+dataArr[i].panelId).val();
                         var upper = $('#upper_' + dataArr[i].test_name.replace(/ /g, "_")+dataArr[i].label.replace(/ /g, "_")+dataArr[i].categoryId+dataArr[i].panelId).val();
-                        var isgroup= $('#isgroup__' + dataArr[i].test_name.replace(/ /g, "_")+dataArr[i].label.replace(/ /g, "_")+dataArr[i].categoryId+dataArr[i].panelId).val();
+                        var isgroup= $('#isgroup_' + dataArr[i].test_name.replace(/ /g, "_")+dataArr[i].label.replace(/ /g, "_")+dataArr[i].categoryId+dataArr[i].panelId).val();
                         var reference_value=lower+'-'+upper;
 
                         data[i] = {
