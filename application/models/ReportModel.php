@@ -97,7 +97,7 @@ class ReportModel extends CI_Model
                 'categoryid'=> $contact->categoryid,
                 'category' => $contact->category,
                 'unit' => $contact->unit,
-                'findings' => $contact->findings,
+                'label' => $contact->label,
                 'reference_value'=> $contact->reference_value,
                 'reportId' => $reportId
             );
