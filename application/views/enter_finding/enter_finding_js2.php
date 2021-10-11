@@ -65,6 +65,20 @@ function getFindingDetail() {
                                             `" value="` + dataArr[l].test_name + `">
                                             <input type="hidden" id="unit_` + dataArr[l].test_name.replace(/ /g, "_")+dataArr[l].label.replace(/ /g, "_")+dataArr[l].categoryId+dataArr[l].panelId +
                                            `" value="` + dataArr[l].unit + `">
+                                            <input type="hidden" id="catid_` + dataArr[l].test_name.replace(/ /g, "_")+dataArr[l].label.replace(/ /g, "_")+dataArr[l].categoryId+dataArr[l].panelId +
+                                           `" value="` + dataArr[l].categoryId + `">
+                                            <input type="hidden" id="testid_` + dataArr[l].test_name.replace(/ /g, "_")+dataArr[l].label.replace(/ /g, "_")+dataArr[l].categoryId+dataArr[l].panelId +
+                                           `" value="` + dataArr[l].testId + `">
+                                            <input type="hidden" id="parameterid_` + dataArr[l].test_name.replace(/ /g, "_")+dataArr[l].label.replace(/ /g, "_")+dataArr[l].categoryId+dataArr[l].panelId +
+                                           `" value="` + dataArr[l].panelId + `">
+                                            <input type="hidden" id="parameter_` + dataArr[l].test_name.replace(/ /g, "_")+dataArr[l].label.replace(/ /g, "_")+dataArr[l].categoryId+dataArr[l].panelId +
+                                           `" value="` + dataArr[l].testName + `">
+                                            <input type="hidden" id="label_` + dataArr[l].test_name.replace(/ /g, "_")+dataArr[l].label.replace(/ /g, "_")+dataArr[l].categoryId+dataArr[l].panelId +
+                                           `" value="` + dataArr[l].label + `">
+                                            <input type="hidden" id="lower_` + dataArr[l].test_name.replace(/ /g, "_")+dataArr[l].label.replace(/ /g, "_")+dataArr[l].categoryId+dataArr[l].panelId +
+                                           `" value="` + dataArr[l].lower + `">
+                                            <input type="hidden" id="upper_` + dataArr[l].test_name.replace(/ /g, "_")+dataArr[l].label.replace(/ /g, "_")+dataArr[l].categoryId+dataArr[l].panelId +
+                                           `" value="` + dataArr[l].upper + `">
 
 						                                <td class="parameter">`+dataArr[l].testName+`</td>
 						                                <td>
