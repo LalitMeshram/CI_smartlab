@@ -7,21 +7,6 @@
 
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
-.table>tbody>tr>td, .table>tbody>tr>th{
-    border-top: 1px solid #fff;
-    padding: inherit;
-    vertical-align: middle;
-}
-.parameter{
-    padding-left: 30%!important;
-}
-.test_section{
-    border-bottom: 1px solid;
-    margin-bottom: 2%;
-}
-.report_title{
-    border-bottom: 1px solid;
-}
 html {
     font-family: sans-serif;
     -webkit-text-size-adjust: 100%;

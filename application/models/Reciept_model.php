@@ -239,96 +239,31 @@ return $output;
     public function get_findings_check($caseId){
       $output = '';
      
-      $sql = "SELECT crd.category,crd.testName FROM case_report_data crd 
-      WHERE crd.reportId = 1 GROUP BY crd.category,crd.testName";
+      $sql = "SELECT  lc.category,cm.test_name,cm.short_name FROM case_tests ct 
+      INNER JOIN center_test_master cm ON cm.testId = ct.testId 
+      INNER JOIN lab_center_categories lc ON lc.categoryid = cm.categoryId 
+      WHERE ct.caseId = $caseId
+      GROUP BY lc.category,cm.test_name";
       $query = $this->db->query($sql);
 
       $sql_2 = "SELECT * FROM case_report_data cp WHERE cp.reportId =1";
       $query_1 = $this->db->query($sql_2);
-$str = '';
-      foreach ($query->result() as $row){
-      $output .= '<div class="test_section">
-      <div class="report_title">
-        <center><h4 style="background-color: #fff;margin-top: 2%; font-weight: 800;">'.$row->category.'</h4></center>
-        <center><h5 style="background-color: #fff; font-weight: 700;">' .$row->testName.'</h5></center>
-      </div>
-      <div class="table-responsive">
-        <table class="table">
-          <tr>
-          <th>TEST</th>
-          <th>VALUE</th>
-          <th>UNIT</th>
-          <th>REFERENCE</th>
-        </tr>';
 
-         $groupArr = [];
-                        $parameters = '';
-                        $parmwithoutGroup = '';
-                        $groupName;
+      // output .= '<div class="test_section">
+      // <div class="report_title">
+      //   <center><h4 style="background-color: #fff;margin-top: 2%; font-weight: 800;">'..'</h4></center>
+      //   <center><h5 style="background-color: #fff; font-weight: 700;">' ..'(' + categoryArr[i]
+      //                     .')'. '</h5></center>
+      // </div>
+      // <div class="table-responsive">
+      //   <table class="table">
+      //     <tr>
+      //     <th>TEST</th>
+      //     <th>VALUE</th>
+      //     <th>UNIT</th>
+      //     <th>REFERENCE</th>
+      //   </tr>';
+  
+    }
 
-                        foreach ($query_1->result() as $row_1){
-                            
-                          if ($row->testName == $row_1->testName 
-                                && !(in_array($row_1->label, $groupArr)) &&
-                             $row_1->isgroup == 1) {
-                               
-                              $tempParm='';
-                              $groupArr[] = $row_1->label;
-                              $groupName='<tr>
-                              <td>'.$row_1->label.'</td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                                </tr>';
-                                foreach ($query_1->result() as $row_2) {
-                                  if ($row_1->label == $row_2->label &&
-                                  $row_1->testName ==  $row_2->testName &&
-                                     $row_2->isgroup == 1) {
-                                          $tempParm .= '<tr>
-                                            <td class="parameter">'.$row_2->parameter.'</td>
-                                          <td>
-                              <div class="form-inline">
-                              '.$row_2->finding_value.'
-                             </div>
-                               </div>
-                          </td>
-                                          <td>'.$row_2->unit.'</td>
-                                          <td>'.$row_2->reference_value.'</td>
-                                            </tr>';
-                                  }//if
-                                 
-                              } //for l
-                              $parameters .=$groupName.$tempParm;
-                            }
-                              else if($row->testName == $row_1->testName && $row_1->isgroup == 0){
-                                $parmwithoutGroup .='<tr>
-						                  <td>'.$row_1->parameter.'</td>
-                                          <td>
-                            
-                            <div class="form-inline">
-                            '.$row_1->finding_value.'
-                            </div>
-                        </td>
-						                   <td>'.$row_1->unit.'</td>
-						                   <td>'.$row_1->reference_value.'</td>
-					                       </tr>';
-                            }//else
-                            
-                            
-                        } //for j
-                        
-                        $output .=$parameters.$parmwithoutGroup;
-                        $output .='</table></div> </div></div>';
-                    }//for i
-                    return $output;
-                  }
-     
-                  public function check(){
-                    $a=array("red","green","blue");
- if(array_search("red",$a)!=''){
-  return 0;
-}else{
-  return 1;
 }
-                  }
-              }

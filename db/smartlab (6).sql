@@ -532,8 +532,8 @@ INSERT INTO `center_unit_master` (`unitId`, `unit`, `centerId`, `createdat`) VAL
 CREATE TABLE `customer_registeration` (
   `centerId` int(11) NOT NULL,
   `fullname` varchar(150) NOT NULL,
-  `emailId` varchar(255) NOT NULL,
-  `contact_number` varchar(15) NOT NULL,
+  `emailId` varchar(150) NOT NULL,
+  `contact_number` varchar(10) NOT NULL,
   `upassword` varchar(25) NOT NULL,
   `isactive` int(11) DEFAULT 1,
   `ismailverified` int(11) DEFAULT 0,
