@@ -31,6 +31,7 @@ function getReportData() {
                         category: category,
                         categoryid: categoryid,
                         test_name: testName,
+                        testId: testId,
                         unit: unit,
                         parameterid: parameterid,
                         parameter: parameter,

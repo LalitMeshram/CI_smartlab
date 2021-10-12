@@ -91,7 +91,7 @@ class ReportModel extends CI_Model
                 'parameterId'=>$contact->parameterid,
                 'parameter'=>$contact->parameter,
                 'testId'=>$contact->testId,
-                'testName'=>$contact->testName,
+                'testName'=>$contact->test_name,
                 'finding_value'=> $contact->finding_value,
                 'categoryid'=> $contact->categoryid,
                 'category' => $contact->category,

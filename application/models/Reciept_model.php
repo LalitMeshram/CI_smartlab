@@ -236,5 +236,34 @@ return $output;
       }
       return $output;
     }
+    public function get_findings_check($caseId){
+      $output = '';
+     
+      $sql = "SELECT  lc.category,cm.test_name,cm.short_name FROM case_tests ct 
+      INNER JOIN center_test_master cm ON cm.testId = ct.testId 
+      INNER JOIN lab_center_categories lc ON lc.categoryid = cm.categoryId 
+      WHERE ct.caseId = $caseId
+      GROUP BY lc.category,cm.test_name";
+      $query = $this->db->query($sql);
+
+      $sql_2 = "SELECT * FROM case_report_data cp WHERE cp.reportId =1";
+      $query_1 = $this->db->query($sql_2);
+
+      // output .= '<div class="test_section">
+      // <div class="report_title">
+      //   <center><h4 style="background-color: #fff;margin-top: 2%; font-weight: 800;">'..'</h4></center>
+      //   <center><h5 style="background-color: #fff; font-weight: 700;">' ..'(' + categoryArr[i]
+      //                     .')'. '</h5></center>
+      // </div>
+      // <div class="table-responsive">
+      //   <table class="table">
+      //     <tr>
+      //     <th>TEST</th>
+      //     <th>VALUE</th>
+      //     <th>UNIT</th>
+      //     <th>REFERENCE</th>
+      //   </tr>';
+  
+    }
 
 }
