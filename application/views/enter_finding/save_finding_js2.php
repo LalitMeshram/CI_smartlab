@@ -56,6 +56,7 @@ function getReportData() {
 $('#saveFinding').click(function() {
     
     var reportData = getReportData();
+    var reportId=$('#reportId').val();
     console.log(reportData);
     var formdata = new FormData();
     formdata.append('report_data', JSON.stringify(reportData));
@@ -63,6 +64,7 @@ $('#saveFinding').click(function() {
     formdata.append('patientId', 2);
     formdata.append('caseId',<?php echo $caseId; ?>);
     formdata.append('casedate', '2015-03-25');
+    formdata.append('reportId', reportId);
 
     $.ajax({
 
@@ -84,8 +86,7 @@ $('#saveFinding').click(function() {
             console.log(response);
             if (response.ResponseCode == 200) {
                 swal("Good job!", response.Message, "success");
-                //window.location.reload();
-                //window.history.back();
+                window.location.replace("<?php echo base_url('all_cases');?>");
 
             } else {
 

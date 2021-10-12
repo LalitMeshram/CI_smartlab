@@ -21,6 +21,7 @@
                 <div class="page-header">
                     <center>
                         <h2 class="d-inline">INVOICE Details</h2>
+                        <input type="hidden" name="reportId" id="reportId">
                     </center>
                 </div>
             </div>
