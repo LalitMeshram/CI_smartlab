@@ -19,4 +19,13 @@ class AdminModel extends CI_Model {
         }  
         return $result;
     }
+    public function callsp_data($centerId){
+        $sql = "CALL copydata(".$centerId.");";
+       $query = $this->db->query($sql); 
+       if($query){
+           return true;
+       }else{
+           return false;
+       }
+    }
 }

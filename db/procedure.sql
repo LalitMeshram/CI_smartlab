@@ -1,25 +1,26 @@
+BEGIN
 INSERT INTO lab_center_categories (category,centerId)
-SELECT category,1
+SELECT category,centerId
 FROM lab_category A
 WHERE NOT EXISTS (
           SELECT category
           FROM lab_center_categories B
           WHERE A.category = B.category
-     )
+     );
 
 
 INSERT INTO center_unit_master (unit,centerId)
-SELECT unit,1
+SELECT unit,centerId
 FROM lab_unit_master A
 WHERE NOT EXISTS (
           SELECT unit
           FROM center_unit_master B
           WHERE A.unit = B.unit
-     )
+     );
 
 
 INSERT INTO center_test_panel (centerId,testName,unitId)
-SELECT 1,testName,unitId
+SELECT centerId,testName,unitId
 FROM lab_test_panel A
 WHERE NOT EXISTS (
           SELECT testName,unitId
@@ -36,7 +37,7 @@ WHERE NOT EXISTS (
      );
 
 INSERT INTO center_test_master (categoryId,test_name,short_name,method,instrument,gender,fees,centerId,desc_text)
-SELECT categoryId,test_name,short_name,method,instrument,gender,fees,1,desc_text
+SELECT categoryId,test_name,short_name,method,instrument,gender,fees,centerId,desc_text
 FROM lab_tests A
 WHERE NOT EXISTS (
           SELECT categoryId,test_name,short_name,method,instrument,gender,fees,desc_text
@@ -52,3 +53,5 @@ WHERE NOT EXISTS (
           WHERE A.panelId = B.panelId AND A.isgroup = B.isgroup AND A.label = B.label
      );
 
+COMMIT;
+END
