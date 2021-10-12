@@ -10,7 +10,7 @@ $session_data = $this->session->userdata('lsesson');
     function getUnits() {
         $.ajax({
 
-            url: '<?php echo base_url();?>get_lab_unit',
+            url: '<?php echo base_url();?>get_center_unit/' +<?php echo $session_data['centerId']; ?>,
 
             type: 'GET',
 
@@ -65,7 +65,7 @@ $session_data = $this->session->userdata('lsesson');
         if (returnVal) {
             $.ajax({
 
-                url: 'add_lab_unit',
+                url: 'add_center_unit',
 
                 type: 'POST',
 

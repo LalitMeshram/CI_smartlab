@@ -10,7 +10,7 @@ $session_data = $this->session->userdata('lsesson');
     function getCategory() {
         $.ajax({
 
-            url: '<?php echo base_url();?>get_lab_category',
+            url: '<?php echo base_url();?>get_center_category/' +<?php echo $session_data['centerId']; ?>,
 
             type: 'GET',
 
@@ -63,7 +63,7 @@ $session_data = $this->session->userdata('lsesson');
         if (returnVal) {
             $.ajax({
 
-                url: 'add_lab_category',
+                url: 'add_center_category',
 
                 type: 'POST',
 

@@ -64,7 +64,6 @@
 											<center>
 													<div class="controls">
                                                                                                             <input type="text" placeholder="Enter Unit" class="form-control" name="unit" id="unit">
-																											<input type="hidden" name="unitId" id="unitId">
 													</div>
 											</center>
 										</div>

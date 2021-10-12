@@ -187,3 +187,34 @@ ERROR - 2021-10-12 17:33:15 --> 404 Page Not Found: Resource/assets
 ERROR - 2021-10-12 17:33:15 --> 404 Page Not Found: Resource/assets
 ERROR - 2021-10-12 17:33:36 --> 404 Page Not Found: Resource/assets
 ERROR - 2021-10-12 17:33:36 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-12 17:38:10 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-12 17:38:17 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-12 17:38:17 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-12 17:38:18 --> 404 Page Not Found: LabTestController_new/test_list
+ERROR - 2021-10-12 17:38:59 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-12 17:38:59 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-12 17:39:22 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-12 17:39:29 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-12 17:39:30 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-12 17:57:33 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-12 17:57:33 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-12 17:57:59 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-12 17:57:59 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-12 17:58:17 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-12 17:58:18 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-12 17:59:52 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-12 17:59:52 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-12 18:00:51 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-12 18:00:51 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-12 18:01:05 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-12 18:01:05 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-12 18:03:16 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-12 18:03:17 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-12 18:04:27 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-12 18:04:27 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-12 18:14:47 --> 404 Page Not Found: LabTestController_new/test_list
+ERROR - 2021-10-12 18:15:02 --> 404 Page Not Found: LabTestController_new/test_list
+ERROR - 2021-10-12 18:16:04 --> 404 Page Not Found: LabTestController_new/test_list
+ERROR - 2021-10-12 18:17:34 --> 404 Page Not Found: LabTestController_new/test_list
+ERROR - 2021-10-12 18:19:27 --> Severity: error --> Exception: Too few arguments to function AdminTestPanelModel::get_panel_test(), 0 passed in C:\xampp\htdocs\CI_smartlab\application\controllers\AdminTestPanel.php on line 24 and exactly 1 expected C:\xampp\htdocs\CI_smartlab\application\models\AdminTestPanelModel.php 6
+ERROR - 2021-10-12 18:19:45 --> Severity: error --> Exception: Too few arguments to function AdminTestPanelModel::get_panel_test(), 0 passed in C:\xampp\htdocs\CI_smartlab\application\controllers\AdminTestPanel.php on line 24 and exactly 1 expected C:\xampp\htdocs\CI_smartlab\application\models\AdminTestPanelModel.php 6

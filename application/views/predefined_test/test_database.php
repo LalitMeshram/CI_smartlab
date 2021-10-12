@@ -7,7 +7,7 @@
       </h1>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Master</a></li>
+        <li class="breadcrumb-item"><a href="#">Setup</a></li>
         <li class="breadcrumb-item active">Test Database</li>
       </ol>
     </section>
@@ -21,7 +21,7 @@
 		<div class="col-12">
 		  	<div class="box">
 		<div class="box-body">
-			<a href="add_predefined_test" class="btn btn-success" style="float: right;">Add Test</a>
+			<a href="add_test" class="btn btn-success" style="float: right;">Add Test</a>
 			  <div class="table-responsive">
 				<table id="testTable" class="table table-bordered table-separated">
 					<thead>
@@ -45,16 +45,7 @@
 						</tr>-->
 					
 					</tbody>
-					<tfoot>
-						<tr>
-							<th>Test Name</th>
-							<th>Short Name</th>
-							<th>Category</th>
-							<th>Gender</th>
-							<th>Fee</th>
-							<th>Action</th>
-						</tr>
-					</tfoot>
+					
 				  </table>
 			  </div>
           </div>

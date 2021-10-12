@@ -7,8 +7,8 @@
         </h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Tables</a></li>
-            <li class="breadcrumb-item active">Editable Tables</li>
+            <li class="breadcrumb-item"><a href="#">Setup</a></li>
+            <li class="breadcrumb-item active">Add Test</li>
         </ol>
     </section>
 
@@ -42,13 +42,13 @@
                                     <br>
 
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-4">
                                             <div class="row">
-                                                <div class="col-md-4">
+                                                <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label>Select Category</label>
                                                         <div class="input-group mb-3">
-                                                            <select class="form-control" id="categoryId"
+                                                            <select class="form-control select2" id="categoryId"
                                                                 name="categoryId">
 
                                                             </select>
@@ -60,7 +60,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4">
+                                                <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label>Test Name</label>
                                                         <div class="controls">
@@ -69,7 +69,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4">
+                                                <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label>Short Name</label>
                                                         <div class="controls">
@@ -78,11 +78,12 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4">
+                                                <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label>Test For</label>
                                                         <div class="controls">
-                                                            <select class="form-control" id="gender" name="gender">
+                                                            <select class="form-control select2" id="gender"
+                                                                name="gender">
                                                                 <option>Male</option>
                                                                 <option>Female</option>
                                                                 <option>All</option>
@@ -90,7 +91,11 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="row">
+                                                <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label>General Fees</label>
                                                         <div class="controls">
@@ -99,7 +104,54 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <div class="controls">
+                                                            <div class="form-check" style="margin-top:16%;">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="1" id="outsourceCheck" name="outsourceCheck">
+                                                                <label class="form-check-label" for="outsourceCheck">
+                                                                    Outsource
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label>Select Lab Name</label>
+                                                        <div class="input-group mb-3">
+                                                            <select class="form-control select2" id="outsourcelabId"
+                                                                name="outsourcelabId" disabled="">
+
+                                                            </select>
+                                                            <div class="input-group-append">
+                                                                <button class="btn btn-primary btn-sm"
+                                                                    data-toggle="modal" data-target="#add_lab"
+                                                                    type="button">Add New</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label>Outsource Amount</label>
+                                                        <div class="controls">
+                                                            <input type="text" class="form-control"
+                                                                name="outsourcelabAmount" id="outsourcelabAmount"
+                                                                placeholder="Enter Outsource Amount" disabled="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="row">
+                                                <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label>Method</label>
                                                         <div class="controls">
@@ -108,8 +160,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
-                                                <div class="col-md-4">
+                                                <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label>Instrument</label>
                                                         <div class="controls">
@@ -120,9 +171,6 @@
                                                 </div>
                                             </div>
                                         </div>
-
-
-
                                     </div>
                                 </div>
 
@@ -145,29 +193,36 @@
                                         <div class="row">
                                             <div class="col-md-2">
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label>Parameter</label>
+                                                    <label>Select Test</label>
                                                     <div class="controls">
-                                                        <input type="text" class="form-control" name="parameter"
-                                                            id="parameter" placeholder="Enter Subtype Name">
+                                                        <!-- multiple -->
+                                                        <select class="form-control select2" multiple="multiple"
+                                                            data-placeholder="Select Test" style="width: 100%;"
+                                                            id="testSelectBox">
+
+                                                        </select>
+                                                        <!-- mltiple -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group" style="margin-top:25px;">
+                                                    <div class="checkbox checkbox-success">
+                                                        <input id="isGroup" type="checkbox" onclick="isGroupCheck()">
+                                                        <label for="isGroup"> isGroup </label>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>Select Unit</label>
-                                                    <div class="input-group mb-3">
-                                                        <select class="form-control" id="unitId" name="unitId">
-
-                                                        </select>
-                                                        <div class="input-group-append">
-                                                            <button class="btn btn-primary btn-sm" data-toggle="modal"
-                                                                data-target="#add_unit" type="button">Add New</button>
+                                                    <div class="form-group">
+                                                        <label>Group Name</label>
+                                                        <div class="controls">
+                                                            <input type="text" class="form-control" name="groupName" id="groupName" placeholder="Enter Group Name" readOnly>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
                                             <div class="col-md-1">
                                                 <center><button class="btn btn-success subtype_add_button"
                                                         id="addSubtypebtn" type="button">Add</button></center>
@@ -181,8 +236,8 @@
                                                     <table class="table table-bordered mb-0" id="subtypeTable">
                                                         <thead>
                                                             <tr>
-                                                                <th scope="col">Subtype</th>
-                                                                <th scope="col">Unit</th>
+                                                                <th scope="col">Group Name</th>
+                                                                <th scope="col">Tests</th>
                                                                 <th scope="col">Action</th>
                                                             </tr>
                                                         </thead>
@@ -195,62 +250,49 @@
                                             <div class="col-md-2">
                                             </div>
                                         </div>
+                                        <!-- ck editor -->
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                            </div>
+                                            <div class="col-md-8">
 
+                                                <div class="box">
+                                                    <div class="box-header">
+                                                        <h4 class="box-title">Other Details<br>
+                                                            <!-- <small>Advanced and full of features</small> -->
+                                                        </h4>
+                                                        <!-- <ul class="box-controls pull-right">
+                                                            <li><a class="box-btn-close" href="#"></a></li>
+                                                            <li><a class="box-btn-slide" href="#"></a></li>
+                                                            <li><a class="box-btn-fullscreen" href="#"></a></li>
+                                                        </ul> -->
+                                                    </div>
+                                                    <!-- /.box-header -->
+                                                    <div class="box-body">
+                                                        <form>
+                                                            <textarea id="editor1" name="desc_text" rows="10" cols="58">
+
+                    </textarea>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <!-- /.box -->
+
+                                            </div>
+                                        </div>
+                                        <!-- ck Editor -->
                                     </div>
                                     <!-- /.box-body 
 	          </div>
 	          <!-- /.box -->
                                 </div>
-
-                                <!--hide element-->
-                                <div class="col-md-6" style="display:none;">
-                                    <div class="form-group">
-                                        <div class="controls">
-                                            <div class="form-check" style="margin-top:16%;">
-                                                <input class="form-check-input" type="checkbox" value="1"
-                                                    id="outsourceCheck" name="outsourceCheck">
-                                                <label class="form-check-label" for="outsourceCheck">
-                                                    Outsource
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12" style="display:none;">
-                                    <div class="form-group">
-                                        <label>Select Lab Name</label>
-                                        <div class="input-group mb-3">
-                                            <select class="form-control" id="outsourcelabId" name="outsourcelabId"
-                                                disabled="">
-
-                                            </select>
-                                            <div class="input-group-append">
-                                                <button class="btn btn-primary btn-sm" data-toggle="modal"
-                                                    data-target="#add_lab" type="button">Add New</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12" style="display:none;">
-                                    <div class="form-group">
-                                        <label>Outsource Amount</label>
-                                        <div class="controls">
-                                            <input type="text" class="form-control" name="outsourcelabAmount"
-                                                id="outsourcelabAmount" placeholder="Enter Outsource Amount"
-                                                disabled="">
-                                        </div>
-                                    </div>
-                                </div>
+                                <center><button class="btn btn-success" type="submit">Save</button></center>
                             </div>
-                            <!--hide element-->
 
-                            <center><button class="btn btn-success" type="submit">Save</button></center>
                         </div>
-
                     </div>
-                </div>
 
-            </div>
+                </div>
         </form>
 
 
