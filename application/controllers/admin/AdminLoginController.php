@@ -61,8 +61,8 @@ class AdminLoginController extends CI_Controller {
         $this->load->view('predefined_test/parameter_details_js');
         $this->load->view('predefined_test/add_range_js');
         $this->load->view('predefined_test/category_js');
-        $this->load->view('predefined_test/unit_js');
-        $this->load->view('predefined_test/outsource_lab_js');
+        //$this->load->view('predefined_test/unit_js');
+        //$this->load->view('predefined_test/outsource_lab_js');
     }
     
     public function updatePredefinedTest($id) {
@@ -78,8 +78,8 @@ class AdminLoginController extends CI_Controller {
         $this->load->view('predefined_test/parameter_details_js');
         $this->load->view('predefined_test/add_range_js');
         $this->load->view('predefined_test/category_js');
-        $this->load->view('predefined_test/unit_js');
-        $this->load->view('predefined_test/outsource_lab_js');
+        //$this->load->view('predefined_test/unit_js');
+        //$this->load->view('predefined_test/outsource_lab_js');
         $this->load->view('predefined_test/set_update_test_js',$data);
     }
     
