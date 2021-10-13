@@ -148,5 +148,8 @@ $route['add_test_data_new'] = "TestController_new/test_add";
 $route['get_business_report/(:num)'] = 'BusinessReportController/business_report/$1';
 $route['get_profile_data/(:num)'] = 'LabController/profile_data/$1';
 
+//copy data from admin to customer controller
+$route['copy_data/(:num)'] = 'AdminController/callsp/$1';
+
 $route['404_override']         = '';
 $route['translate_uri_dashes'] = FALSE;

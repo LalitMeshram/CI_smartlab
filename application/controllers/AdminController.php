@@ -42,4 +42,14 @@ class AdminController extends REST_Controller
         $this->cache->clean();
         redirect(base_url('/adminLogin'));
     }
+    public function callsp_post($centerId=0){
+        if($this->login->callsp_data($centerId)){
+            $response['Message']      = "Data copy successful";
+            $response['Responsecode'] = 200;
+        }else{
+            $response['Message']      = "Data not copy";
+            $response['Responsecode'] = 204;
+        }
+        $this->response($response, REST_Controller::HTTP_OK);
+    }
 }
