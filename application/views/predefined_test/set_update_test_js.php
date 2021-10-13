@@ -20,6 +20,7 @@ function setTest() {
     $('#short_name').val(test.short_name);
     $('#gender').val(test.gender);
     $('#fees').val(test.fees);
+    $('#editor1').val(test.desc_text);
 
     //        outsource lab
     //        outsource lab
