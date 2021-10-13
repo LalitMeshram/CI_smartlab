@@ -4,6 +4,7 @@ var tempMap =[];
 
 function getTestList() {
     testList = new Map(JSON.parse(localStorage.myMap));
+    console.log(testList);
     setTest();
 }
 getTestList();
@@ -20,6 +21,8 @@ function setTest() {
     $('#short_name').val(test.short_name);
     $('#gender').val(test.gender);
     $('#fees').val(test.fees);
+    console.log(test.desc_text);
+    $('#editor1').val(test.desc_text);
 
     //        outsource lab
     //        outsource lab
@@ -72,7 +75,7 @@ function setTest() {
                         <button class="btn btn-danger btn-xs" onclick="deleteSubType('` + subType[i].jsid + `')" type="button"><i class="fa fa-trash-o"></i> Delete</button> 
                         </td>
                         </tr>`;
-        console.log(tableData);
+        //console.log(tableData);
         //$('#subtypeList').html(tableData);
         tempMap[i]=tableData;
         setSubTypeList(tempMap);
@@ -84,7 +87,7 @@ function setTest() {
 function setSubTypeList(list) {
     var tableData ='';
     const uniqueArr = [...new Set(list)];
-    console.log(uniqueArr);
+   // console.log(uniqueArr);
     for(var i=0;i<uniqueArr.length;i++) {
         tableData +=uniqueArr[i];
     }

@@ -59,12 +59,14 @@ function getSubtypesTest() {
 $('#addTestForm').on('submit', function(e) {
     e.preventDefault();
     var returnVal = $("#addTestForm ").valid();
+    var desc = CKEDITOR.instances['editor1'].getData();
     var subtypes_test = getSubtypesTest();
     //console.log('@@@@@@@@Test############');
     //console.log(subtypes_test);
     var subtypesTestString = JSON.stringify(subtypes_test);
     var formdata = new FormData(this);
     formdata.append('subtypes_test', subtypesTestString);
+    formdata.append('desc_text', desc);
     formdata.append('centerId', <?php echo $session_data['centerId']; ?>)
     if (returnVal) {
         $.ajax({
@@ -86,7 +88,7 @@ $('#addTestForm').on('submit', function(e) {
             success: function(response) {
                 if (response.status == 200) {
                     swal("Good job!", response.Message, "success");
-                    window.location.replace("<?php echo base_url('test_database');?>");
+                   // window.location.replace("<?php echo base_url('test_database');?>");
 
                 } else {
 

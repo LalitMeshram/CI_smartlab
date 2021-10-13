@@ -4,6 +4,7 @@ var tempMap =[];
 
 function getTestList() {
     testList = new Map(JSON.parse(localStorage.myMap));
+    console.log(testList);
     setTest();
 }
 getTestList();
