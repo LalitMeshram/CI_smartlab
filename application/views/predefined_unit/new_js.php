@@ -8,7 +8,6 @@ $session_data=$this->session->userdata('lsesson');
         e.preventDefault();
          var returnVal = $("#unitForm").valid();
         var formdata = new FormData(this);
-        formdata.append('centerId',<?php echo $session_data['centerId'];?>)
         if (returnVal) {
             $.ajax({
 

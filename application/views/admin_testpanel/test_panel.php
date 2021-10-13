@@ -3,12 +3,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Test Database
+        Test Parameter
       </h1>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="breadcrumb-item"><a href="#">Setup</a></li>
-        <li class="breadcrumb-item active">Test Database</li>
+        <li class="breadcrumb-item active">Test Parameter</li>
       </ol>
     </section>
 
@@ -21,28 +21,18 @@
 		<div class="col-12">
 		  	<div class="box">
 		<div class="box-body">
-			<a href="add_predefined_test" class="btn btn-success" style="float: right;">Add Test</a>
+			<a href="admin_add_test_panel" class="btn btn-success" style="float: right;">Add Test</a>
 			  <div class="table-responsive">
 				<table id="testTable" class="table table-bordered table-separated">
 					<thead>
 						<tr>
 							<th>Test Name</th>
-							<th>Short Name</th>
-							<th>Category</th>
-							<th>Gender</th>
-							<th>Fee</th>
+							<th>Unit</th>
 							<th>Action</th>
 						</tr>
 					</thead>
                                         <tbody id="testList">
-<!--						<tr>
-							<td>Tiger Nixon</td>
-							<td>System Architect</td>
-							<td>Edinburgh</td>
-							<td>Male</td>
-							<td>2011/04/25</td>
-							<td><a href=""><button class="btn btn-success btn-xs"><i class="fa fa-edit"></i></button></a> <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></button></td>
-						</tr>-->
+
 					
 					</tbody>
 					

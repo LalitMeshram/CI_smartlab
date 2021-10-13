@@ -55,6 +55,8 @@ class AdminLoginController extends CI_Controller {
         $this->load->view('predefined_test/add_test');
         $this->load->view('footer');
         $this->load->view('predefined_test/add_test_modals');
+        $this->load->view('predefined_test/get_testpanellist_js');
+        $this->load->view('predefined_test/is_group_js');
         $this->load->view('predefined_test/add_test_js');
         $this->load->view('predefined_test/parameter_details_js');
         $this->load->view('predefined_test/add_range_js');
@@ -112,6 +114,50 @@ class AdminLoginController extends CI_Controller {
         $this->load->view('footer');
         $this->load->view('admin_package/package_js');
     }
+  
+
+    public function testPanel()
+    {
+      $data['title']='Test Panel';
+      $this->load->view('admin_header/header',$data);
+      $this->load->view('admin_menubar/menu_bar');
+      $this->load->view('admin_testpanel/test_panel',$data);
+      $this->load->view('footer');
+      $this->load->view('admin_testpanel/test_panel_js');
+    }
+  
+    public function addTestPanel() {
+      $data['title']='Add Test Parameter';
+      $this->load->view('admin_header/header',$data);
+      $this->load->view('admin_menubar/menu_bar');
+      $this->load->view('admin_testpanel/add_test');
+      $this->load->view('footer');
+      $this->load->view('admin_testpanel/add_test_modals');
+      $this->load->view('admin_testpanel/add_test_js');
+      $this->load->view('admin_testpanel/parameter_details_js');
+      $this->load->view('admin_testpanel/add_range_js');
+      
+      $this->load->view('admin_testpanel/unit_js');
+      
+  }
+  
+  
+  public function updateTestPanel($id) {
+      $data['id']=$id;
+      $data['title']='Update Test';
+      $this->load->view('admin_header/header',$data);
+      $this->load->view('admin_menubar/menu_bar');
+      $this->load->view('admin_testpanel/update_test');
+      $this->load->view('footer');
+      $this->load->view('admin_testpanel/add_test_modals');
+      $this->load->view('admin_testpanel/update_test_js',$data);
+      $this->load->view('admin_testpanel/parameter_details_js');
+      $this->load->view('admin_testpanel/add_range_js');
+      
+      $this->load->view('admin_testpanel/unit_js');
+      
+      $this->load->view('admin_testpanel/set_update_test_js',$data);
+  }
   
 
 

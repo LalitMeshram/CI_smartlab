@@ -48,6 +48,9 @@ $route['predefined_unit']      = 'admin/AdminLogincontroller/predefinedUnit';
 $route['create_package']='admin/AdminLogincontroller/createPackage';
 $route['create_package/(:num)']='admin/AdminLogincontroller/createPackage/$1';
 $route['getPackage']='admin/AdminLogincontroller/package';
+$route['admin_test_panel']      = 'admin/AdminLoginController/testPanel';
+$route['admin_add_test_panel']           = 'admin/AdminLoginController/addTestPanel';
+$route['admin_update_test_panel/(:num)']           = 'admin/AdminLoginController/updateTestPanel/$1';
 
 
 $route['payment'] = 'Register/index';

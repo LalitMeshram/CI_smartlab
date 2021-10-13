@@ -9,7 +9,7 @@ $session_data = $this->session->userdata('lsesson');
     function getTestList() {
         $.ajax({
 
-            url: '<?PHP echo base_url();?>get_lab_tests',
+            url: '<?PHP echo base_url("get_panel_test/");?>' +<?php echo $session_data['centerId']; ?>,
 
             type: 'GET',
 
@@ -22,7 +22,7 @@ $session_data = $this->session->userdata('lsesson');
 
                     if (response.data.lenght != 0) {
                         for (var i = 0; i < response.data.length; i++) {
-                            testList.set(response.data[i].testId, response.data[i]);
+                            testList.set(response.data[i].panelId, response.data[i]);
 
                         }
                         showTestList(testList);
@@ -46,14 +46,11 @@ $session_data = $this->session->userdata('lsesson');
             let test = list.get(k);
             tblData += `
                     <tr>
-							<td>`+test.test_name+`</td>
-							<td>`+test.short_name+`</td>
-							<td>`+test.category+`</td>
-							<td>`+test.gender+`</td>
-							<td>`+test.fees+`</td>
-							<td>
-                                                        <a href="#" onclick="getTest(` + test.testId + `)" title="update Test" class="btn btn-success btn-xs" ><i class="fa fa-edit"></i></a>
-                                                        <a href="#" onclick="getTest(` + test.testId + `)" title="delete Test" class="btn btn-danger btn-xs" ><i class="fa fa-trash-o"></i></a>
+							<td>`+test.testName+`</td>
+							<td>`+test.unit+`</td>
+														<td>
+                                                        <a href="#" onclick="getTest(` + test.panelId + `)" title="update Test" class="btn btn-success btn-xs" ><i class="fa fa-edit"></i></a>
+                                                        
                                                          </td>
 						</tr>
                     `;
@@ -66,7 +63,7 @@ $session_data = $this->session->userdata('lsesson');
 
     function getTest(id) {
     localStorage.myMap = JSON.stringify(Array.from(testList.entries()));
-    window.location.replace("update_test/"+id);
+    window.location.replace("update_test_panel/"+id);
     }
 
 

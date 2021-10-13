@@ -4,18 +4,19 @@ $session_data = $this->session->userdata('lsesson');
 
 <script>
 
-    var categoryList = new Map();
-//get All Categories
 
-    function getCategory() {
+    var unitList = new Map();
+//    get all unit list
+    function getUnits() {
         $.ajax({
 
-            url: '<?php echo base_url();?>get_lab_category',
+            url: '<?php echo base_url();?>get_lab_unit',
 
             type: 'GET',
+            
+            async:false,
 
             dataType: 'json',
-            async:false,
 
             success: function (response) {
 
@@ -24,10 +25,10 @@ $session_data = $this->session->userdata('lsesson');
 
                     if (response.data.lenght != 0) {
                         for (var i = 0; i < response.data.length; i++) {
-                            categoryList.set(response.data[i].categoryid, response.data[i]);
+                            unitList.set(response.data[i].unitId, response.data[i]);
 
                         }
-                        showCatList(categoryList);
+                        showUnitList(unitList);
 
                     }
 
@@ -37,33 +38,36 @@ $session_data = $this->session->userdata('lsesson');
 
         });
     }
-    getCategory();
+    getUnits();
 
 
-    function showCatList(list) {
+    function showUnitList(list) {
         var option = '';
         for (let k of list.keys()) {
-            let category = list.get(k);
+            let unit1 = list.get(k);
             option += `
-            <option value="` + category.categoryid + `">` + category.category + `</option>
+            <option value="` + unit1.unitId + `">` + unit1.unit + `</option>
                     `;
         }
 
-        $('#categoryId').html(option);
+        $('#unitId').html(option);
+
     }
 
-//add new category
 
-    $('#categoryForm').on('submit', function (e) {
+
+//add unit
+
+    $('#unitForm').on('submit', function (e) {
         e.preventDefault();
-        var returnVal = $("#categoryForm").valid();
-        var cat= $('#category').val();
+        var returnVal = $("#unitForm").valid();
+        var unit = $('#unit').val();
         var formdata = new FormData(this);
-        
+        formdata.append('centerId',<?php echo $session_data['centerId']; ?>)
         if (returnVal) {
             $.ajax({
 
-                url: 'add_lab_category',
+                url: 'add_center_unit',
 
                 type: 'POST',
 
@@ -79,14 +83,12 @@ $session_data = $this->session->userdata('lsesson');
 
                 success: function (response) {
                     if (response.status == 200) {
-                        $('#add_category').modal('toggle');
-                        $('#categoryForm').trigger("reset");
+                        $("#unitForm").trigger("reset");
+                        $('#add_unit').modal('toggle');
                         swal("Good job!", response.msg, "success");
-//                        window.location.reload();
-                        
-                        categoryList.set(response.Data, {categoryid: response.Data, category: cat})
-                        showCatList(categoryList);
-                        
+
+                        unitList.set(response.Data, {unitId: response.Data, unit: unit})
+                        showUnitList(unitList);
                     } else {
 
                         swal("Error!", response.msg, "error");
@@ -99,6 +101,6 @@ $session_data = $this->session->userdata('lsesson');
         }
     });
 
-
+   
 
 </script>

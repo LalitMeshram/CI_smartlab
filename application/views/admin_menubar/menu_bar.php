@@ -18,6 +18,7 @@
                         <li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>predefined_unit">Unit</a></li>
                         
                         <li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>test_predefined_database">Test Database</a></li>	
+                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>admin_test_panel">Test Parameter</a></li>	
                     </ul>
                 </li>
 
