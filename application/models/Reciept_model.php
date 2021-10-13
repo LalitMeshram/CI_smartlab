@@ -33,7 +33,7 @@ class Reciept_model extends CI_Model
                  <div class="col-md-2">
                  </div>
                  <div class="col-sm-8 invoice-col invoice printableArea">
-                     <center><img src="' . $header_logo . '" style="width: 815px;margin-top:-5%;"></center>
+                     <center><img src="' . $header_logo . '" style="width: 815px;margin-top:-12%;"></center>
                      <br><div class="invoice-details row mx-0 my-15" style="width: 92%;margin-left: 4%;">
          <div class="table-responsive" style="background-color: #f8f4f4;">
                <table class="table" style="border: none !important; font-weight: 700!important;">';
@@ -170,14 +170,14 @@ class Reciept_model extends CI_Model
     
     public function getFooterDetails($caseId)
     {
-        // $sql_logo = "SELECT COALESCE(cd.footer_logo,'resource/img/footer.png') as footer_logo FROM center_letter_head_details cd 
-        // LEFT JOIN case_master cm ON cm.centerId = cd.centerId WHERE cm.caseId = $caseId";
-        // $query_1 = $this->db->query($sql_logo);
-        // $row = $query_1->result();
-        // $footer_logo = 'resource/img/footer.png'; 
-        // if($row[0]!=null){
-        //  $footer_logo = $row[0];
-        // }
+        $sql_logo = "SELECT COALESCE(cd.footer_logo,'resource/img/footer.png') as footer_logo FROM center_letter_head_details cd 
+        LEFT JOIN case_master cm ON cm.centerId = cd.centerId WHERE cm.caseId = $caseId";
+        $query_1 = $this->db->query($sql_logo);
+        $row = $query_1->result();
+        $footer_logo = 'resource/img/footer.png'; 
+        if($row[0]!=null){
+         $footer_logo = $row[0];
+        }
         $output = '</div>
         <br>
         <center><img src="resource/img/footer.png" width="800px"></center>
@@ -246,26 +246,28 @@ class Reciept_model extends CI_Model
         $sql   = "SELECT  lc.category,cm.test_name,cm.short_name FROM case_tests ct 
       INNER JOIN center_test_master cm ON cm.testId = ct.testId 
       INNER JOIN lab_center_categories lc ON lc.categoryid = cm.categoryId 
-      WHERE ct.caseId = 6
+      WHERE ct.caseId = $caseId
       GROUP BY lc.category,cm.test_name";
         $query = $this->db->query($sql);
         
-        $sql_2   = "SELECT * FROM case_report_data cp WHERE cp.reportId =1";
+        $sql_2   = "SELECT crd.case_report_id,crd.reportId,crd.parameterId,crd.parameter,crd.testId,crd.testName,
+        crd.finding_value,crd.categoryid,crd.category,crd.unit,crd.reference_value,crd.label,crd.isgroup 
+        FROM case_report_data crd INNER JOIN case_report_master crm WHERE crm.caseId = $caseId";
         $query_1 = $this->db->query($sql_2);
         
         
         foreach ($query->result() as $row) {
             
-            $output .= '<div class="test_section"><div class="report_title">
+            $output .= '<div style="border-bottom: 1px solid;margin-bottom: 2%;"><div style="border-bottom: 1px solid;">
 <center><h4 style="background-color: #fff;margin-top: 2%; font-weight: 800;">' . $row->category . '</h4></center>
-<center><h5 style="background-color: #fff; font-weight: 700;">' . $row->test_name . '</h5></center></div>
-<div class="table-responsive">
-<table class="table">
+<center><h5 style="background-color: #fff; font-weight: 700;margin-top: -1%;">' . $row->test_name . '</h5></center></div>
+<div>
+<table class="table-responsive" style="border:none !important;">
 <tr>
-<th>TEST</th>
-<th>VALUE</th>
-<th>UNIT</th>
-<th>REFERENCE</th>
+<th>Test</th>
+<th>Value</th>
+<th>Unit</th>
+<th>Reference</th>
 </tr>';
             $groupArr         = array();
             $parameters       = '';
@@ -284,7 +286,7 @@ class Reciept_model extends CI_Model
                     foreach ($query_1->result() as $row_2) {
                         if ($row_1->label == $row_2->label && $row_1->testName == $row_2->testName && $row_2->isgroup == 1) {
                             $tempParm .= '<tr>
-                  <td class="parameter">' . $row_2->parameter . '</td>
+                  <td style="margin-left: 30%!important;">' . $row_2->parameter . '</td>
                   <td>
       <div class="form-inline">
       '.$row_1->finding_value.'
