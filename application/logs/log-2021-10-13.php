@@ -364,3 +364,8 @@ ERROR - 2021-10-13 20:51:29 --> 404 Page Not Found: Resource/assets
 ERROR - 2021-10-13 20:51:29 --> 404 Page Not Found: Resource/assets
 ERROR - 2021-10-13 20:53:11 --> 404 Page Not Found: Resource/assets
 ERROR - 2021-10-13 20:53:12 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-13 20:55:35 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-13 20:55:35 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-13 21:00:39 --> 404 Page Not Found: Resource/assets
+ERROR - 2021-10-13 21:00:39 --> 404 Page Not Found: Create_casejpg/index
+ERROR - 2021-10-13 21:09:46 --> 404 Page Not Found: Resource/assets
