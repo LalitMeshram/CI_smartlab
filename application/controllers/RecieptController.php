@@ -47,7 +47,7 @@ class RecieptController extends CI_Controller {
 
 	public function Test($caseId)
 	{
-		echo $this->reciept->get_findings($caseId);
+		echo $this->reciept->get_findings_check($caseId);
 	}
 
 }
