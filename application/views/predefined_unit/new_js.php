@@ -27,12 +27,13 @@ $session_data=$this->session->userdata('lsesson');
 
                 success: function (response) {
                     if (response.status == 200) {
-                        swal("Good job!", response.msg, "success");
                         window.location.reload();
+                        swal("Good job!", response.Message, "success");
+                        
                         
                     } else {
 
-                        swal("Error!", response.msg, "error");
+                        swal("Error!", response.Message, "error");
 
                     }
 

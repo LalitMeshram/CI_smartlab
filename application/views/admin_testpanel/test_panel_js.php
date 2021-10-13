@@ -9,7 +9,7 @@ $session_data = $this->session->userdata('lsesson');
     function getTestList() {
         $.ajax({
 
-            url: '<?PHP echo base_url("get_panel_test/");?>' +<?php echo $session_data['centerId']; ?>,
+            url: '<?PHP echo base_url("get_panel_test_admin");?>',
 
             type: 'GET',
 
@@ -63,7 +63,7 @@ $session_data = $this->session->userdata('lsesson');
 
     function getTest(id) {
     localStorage.myMap = JSON.stringify(Array.from(testList.entries()));
-    window.location.replace("update_test_panel/"+id);
+    window.location.replace("admin_update_test_panel/"+id);
     }
 
 
