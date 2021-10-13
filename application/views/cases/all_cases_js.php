@@ -53,9 +53,15 @@ $session_data = $this->session->userdata('lsesson');
                       <td>`+cases.tests+`</td>
                       <td>
                       <button type="button" class="btn btn-success btn-xs case_action_buttons" onclick="modifyCase('`+cases.caseId+`');"><i class="fa fa-edit"></i> Modify Case</button>
-                      <button type="button" class="btn btn-danger btn-xs case_action_buttons" onclick="getInvoice('`+cases.caseId+`')"><i class="fa fa-trash-o"></i> View Bill</button>
-                      <button type="button" class="btn btn-primary btn-xs case_action_buttons"><i class="fa fa-trash-o"></i> View Report</button>
-                      </td>
+                      <button type="button" class="btn btn-danger btn-xs case_action_buttons" onclick="getInvoice('`+cases.caseId+`')"><i class="fa fa-trash-o"></i> View Bill</button>`;
+                      
+                      if(cases.report_flag>0){
+                      tblData += `<button type="button" class="btn btn-primary btn-xs case_action_buttons"><i class="fa fa-trash-o"></i> View Report</button>
+                      <a href="<?php echo base_url();?>RecieptController/report_print/`+cases.caseId+`" class="btn btn-danger btn-xs case_action_buttons"><i class="fa fa-envolope-o"></i> Print Report</a>
+                      `;    
+                      }
+                      
+                      tblData += `</td>
                       </tr>
                     `;
         }
