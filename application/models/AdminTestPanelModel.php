@@ -3,9 +3,9 @@
 class AdminTestPanelModel extends CI_Model
 {
     //first
-    public function get_panel_test($centerId)
+    public function get_panel_test()
     {
-        $sql = "SELECT cp.panelId,cp.centerId,cp.testName,cp.unitId,cu.unit 
+        $sql = "SELECT cp.panelId,cp.testName,cp.unitId,cu.unit 
         FROM lab_test_panel cp 
         INNER JOIN lab_unit_master cu ON cp.unitId = cu.unitId";
          $query = $this->db->query($sql);
