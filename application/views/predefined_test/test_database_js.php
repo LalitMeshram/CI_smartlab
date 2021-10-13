@@ -53,7 +53,7 @@ $session_data = $this->session->userdata('lsesson');
 							<td>`+test.fees+`</td>
 							<td>
                                                         <a href="#" onclick="getTest(` + test.testId + `)" title="update Test" class="btn btn-success btn-xs" ><i class="fa fa-edit"></i></a>
-                                                        <a href="#" onclick="getTest(` + test.testId + `)" title="delete Test" class="btn btn-danger btn-xs" ><i class="fa fa-trash-o"></i></a>
+                                                        <!--a href="#" onclick="getTest(` + test.testId + `)" title="delete Test" class="btn btn-danger btn-xs" ><i class="fa fa-trash-o"></i></a-->
                                                          </td>
 						</tr>
                     `;
@@ -66,7 +66,7 @@ $session_data = $this->session->userdata('lsesson');
 
     function getTest(id) {
     localStorage.myMap = JSON.stringify(Array.from(testList.entries()));
-    window.location.replace("update_test/"+id);
+    window.location.replace("update_predefined_test/"+id);
     }
 
 

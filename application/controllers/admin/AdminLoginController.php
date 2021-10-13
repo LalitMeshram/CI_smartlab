@@ -73,6 +73,7 @@ class AdminLoginController extends CI_Controller {
         $this->load->view('predefined_test/update_test');
         $this->load->view('footer');
         $this->load->view('predefined_test/add_test_modals');
+        $this->load->view('predefined_test/get_testpanellist_js');
         $this->load->view('predefined_test/update_test_js',$data);
         $this->load->view('predefined_test/parameter_details_js');
         $this->load->view('predefined_test/add_range_js');

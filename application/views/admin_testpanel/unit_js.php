@@ -63,11 +63,10 @@ $session_data = $this->session->userdata('lsesson');
         var returnVal = $("#unitForm").valid();
         var unit = $('#unit').val();
         var formdata = new FormData(this);
-        formdata.append('centerId',<?php echo $session_data['centerId']; ?>)
         if (returnVal) {
             $.ajax({
 
-                url: 'add_center_unit',
+                url: '<?php echo base_url(); ?>add_lab_unit',
 
                 type: 'POST',
 
@@ -85,13 +84,13 @@ $session_data = $this->session->userdata('lsesson');
                     if (response.status == 200) {
                         $("#unitForm").trigger("reset");
                         $('#add_unit').modal('toggle');
-                        swal("Good job!", response.msg, "success");
+                        swal("Good job!", response.Message, "success");
 
                         unitList.set(response.Data, {unitId: response.Data, unit: unit})
                         showUnitList(unitList);
                     } else {
 
-                        swal("Error!", response.msg, "error");
+                        swal("Error!", response.Message, "error");
 
                     }
 

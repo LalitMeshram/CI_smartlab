@@ -65,11 +65,11 @@ $('#addTestForm').on('submit', function(e) {
     var subtypesTestString = JSON.stringify(subtypes_test);
     var formdata = new FormData(this);
     formdata.append('subtypes_test', subtypesTestString);
-    formdata.append('centerId', <?php echo $session_data['centerId']; ?>)
+    
     if (returnVal) {
         $.ajax({
 
-            url: '<?php echo base_url();?>add_test_data_new',
+            url: '<?php echo base_url();?>add_lab_test',
 
             type: 'POST',
 
@@ -86,7 +86,7 @@ $('#addTestForm').on('submit', function(e) {
             success: function(response) {
                 if (response.status == 200) {
                     swal("Good job!", response.Message, "success");
-                    window.location.replace("<?php echo base_url('test_database');?>");
+                    window.location.replace("<?php echo base_url('test_predefined_database');?>");
 
                 } else {
 

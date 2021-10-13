@@ -38,11 +38,11 @@ $session_data = $this->session->userdata('lsesson');
         console.log(subtypesTestString);
         var formdata = new FormData(this);
         formdata.append('subtypes_test', subtypesTestString);
-        formdata.append('centerId',<?php echo $session_data['centerId']; ?>)
+        
         if (returnVal) {
             $.ajax({
 
-                url: '<?php echo base_url();?>add_panel_test',
+                url: '<?php echo base_url();?>add_panel_test_admin',
 
                 type: 'POST',
 
@@ -59,7 +59,7 @@ $session_data = $this->session->userdata('lsesson');
                 success: function (response) {
                     if (response.status == 200) {
                         swal("Good job!", response.Message, "success");
-                        window.location.replace("<?php echo base_url('test_panel'); ?>");
+                        window.location.replace("<?php echo base_url('admin_test_panel'); ?>");
 
                     } else {
 
