@@ -10,7 +10,7 @@ $session_data = $this->session->userdata('lsesson');
     function getTestPanelList() {
         $.ajax({
 
-            url: '<?php echo base_url();?>get_panel_test/' +<?php echo $session_data['centerId']; ?>,
+            url: '<?php echo base_url();?>get_panel_test_admin',
 
             type: 'GET',
 
