@@ -25,11 +25,9 @@ class TestController_new extends REST_Controller
         $data     = $this->test->get_center_tests($centerId);
         if (!empty($data)) {
             $temp = array();
-            $temp1 = array();
+           
             for ($i = 0; $i < count($data); $i++) {
-                $subtypes_test = array(
-                    'subtypes_test' => array()
-                );
+                $temp1 = array("subtype_test"=>array());
                 $p_details     = $this->test->get_subtypes_test($data[$i]['testId']);
                 if (!empty($p_details)) {
                     $temp1= array("subtype_test"=>$p_details );  
