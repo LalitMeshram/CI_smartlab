@@ -59,7 +59,7 @@ $session_data = $this->session->userdata('lsesson');
                     if (response.status == 200) {
                         swal("Good job!", response.Message, "success");
 //                        window.location.reload();
-
+                        window.location.replace("<?php echo base_url('test_panel');?>");
                     } else {
 
                         swal("Error!", response.Message, "error");
