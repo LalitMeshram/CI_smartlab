@@ -155,6 +155,7 @@
 									  <th>Discount</th>
                                                                           <td>
 																		  Rs.<span id="discountSpan">0</span>
+																		 
                                                                           </td>
 									</tr>
 									<tr>
