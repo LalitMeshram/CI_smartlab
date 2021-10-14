@@ -64,7 +64,9 @@ class CaseModel extends CI_Model
         }
     }
     public function get_all_cases($centerId){
-        $sql = "SELECT cm.caseId,cm.centerId,cm.patientId,cm.createdat,CONCAT(pm.first_name,' ',pm.last_name) username,pm.contact_number,cp.total_amt,cp.amt_recieved,cp.pending_amt,
+        $sql = "SELECT cm.caseId,cm.centerId,cm.patientId,cm.createdat,
+        CONCAT(pm.first_name,' ',pm.last_name) username,pm.contact_number,cp.total_amt,
+        cp.amt_recieved,cp.pending_amt,cp.discount,
         GROUP_CONCAT(ctm.short_name) tests,COALESCE(crm.reportId,0) AS report_flag
         FROM case_master cm
         INNER JOIN patient_master pm ON pm.patientId = cm.patientId
