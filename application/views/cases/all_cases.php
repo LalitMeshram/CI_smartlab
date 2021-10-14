@@ -30,6 +30,7 @@
 									<th>Date</th>
 									<th>Total Fee</th>
 									<th style="width: 8%">Fee Paid</th>
+									<th style="width: 8%">Discount</th>
 									<th style="width: 8%">Pending</th>
 									<th>Test</th>
 									<th>Action</th>

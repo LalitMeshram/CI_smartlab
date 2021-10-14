@@ -49,15 +49,16 @@ $session_data = $this->session->userdata('lsesson');
                       <td>`+cases.createdat+`</td>
                       <td>`+cases.total_amt+`</td>
                       <td>`+cases.amt_recieved+`</td>
+                      <td>`+cases.discount+`</td>
                       <td>`+cases.pending_amt+`</td>
                       <td>`+cases.tests+`</td>
                       <td>
                       <button type="button" class="btn btn-success btn-xs case_action_buttons" onclick="modifyCase('`+cases.caseId+`');"><i class="fa fa-edit"></i> Modify Case</button>
-                      <button type="button" class="btn btn-danger btn-xs case_action_buttons" onclick="getInvoice('`+cases.caseId+`')"><i class="fa fa-trash-o"></i> View Bill</button>`;
+                      <button type="button" class="btn btn-danger btn-xs case_action_buttons" onclick="getInvoice('`+cases.caseId+`')"><i class="fa fa-fw fa-inr"></i> View Bill</button>`;
                       
                       if(cases.report_flag>0){
-                      tblData += `<button type="button" class="btn btn-primary btn-xs case_action_buttons"><i class="fa fa-trash-o"></i> View Report</button>
-                      <a href="<?php echo base_url();?>RecieptController/report_print/`+cases.caseId+`" class="btn btn-danger btn-xs case_action_buttons"><i class="fa fa-envolope-o"></i> Print Report</a>
+                      tblData += `<a href="<?php echo base_url();?>enter_finding/`+cases.caseId+`" class="btn btn-primary btn-xs case_action_buttons"><i class="fa fa-fw fa-file-text"></i> View Report</a>
+                      <a href="<?php echo base_url();?>RecieptController/report_print/`+cases.caseId+`" class="btn btn-warning btn-xs case_action_buttons"><i class="fa fa-print"></i> Print Report</a>
                       `;    
                       }
                       

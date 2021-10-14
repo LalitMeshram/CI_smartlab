@@ -121,7 +121,7 @@
                      </div>
                      <div class="col-md-6">
                          <div class="form-group">
-                             <a href="<?php echo base_url('update_case/'.$caseId);?>" class="btn btn-danger"
+                             <a href="#" onclick="getPendingAmount(<?php echo $caseId;?>);" class="btn btn-danger"
                                  style="margin-right: 5px;">
                                  <i class="fa fa-money"></i> Get Pending
                              </a>

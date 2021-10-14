@@ -59,7 +59,7 @@
             tableDate1 += `
                         <tr>
 	              <td>`+transaction[i].paymentdate+`</td>
-	              <td><button class="btn btn-danger btn-xs">Refund</button></td>
+	              <td><button class="btn btn-success btn-xs">Paid</button></td>
 	              <td>`+transaction[i].amount+`</td>
 	              <td>admin</td>
 	              <td>`+transaction[i].paymentmode+`</td>
@@ -81,7 +81,31 @@ $('#enterFinding').click(function() {
 window.location.href = '<?php echo base_url('enter_finding/'.$caseId);?>';
 });
 
+function getPendingAmount(caseId){
+    $.ajax({
 
+url: '<?php echo base_url(); ?>get_pending_amount/' +caseId,
+
+type: 'GET',
+
+dataType: 'json',
+async: false,
+
+success: function (response) {
+
+
+    if (response.Responsecode == 200) {
+
+        swal("Good job!", response.Message, "success");
+        location.reload(); 
+    }else{
+        swal("Good job!", response.Message, "warning");
+    }
+
+}
+
+});
+}
 
 
 </script>
