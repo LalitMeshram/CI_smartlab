@@ -144,7 +144,7 @@ class CaseModel extends CI_Model
             "discount"=>$case_data['discount'],
             "paymentmode"=>$case_data['paymentmode'],
             "paymentdetails"=>$case_data['paymentdetails'],
-            "pending_amt"=>$case_data['total_amt'] -($last_amt_rec+$case_data['amt_recieved']),
+            "pending_amt"=>$case_data['total_amt'] -($case_data['discount']+$last_amt_rec+$case_data['amt_recieved']),
             "paymentdate"=>date('Y-m-d')
         );
         $sql = "SELECT paymentId FROM `case_payments` WHERE caseId = $caseId";
