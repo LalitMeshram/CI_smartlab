@@ -8,7 +8,7 @@ $session_data=$this->session->userdata('lsesson');
         e.preventDefault();
          var returnVal = $("#categoryForm").valid();
         var formdata = new FormData(this);
-        formdata.append('centerId',<?php echo $session_data['centerId'];?>)
+        
         if (returnVal) {
             $.ajax({
 
@@ -28,12 +28,12 @@ $session_data=$this->session->userdata('lsesson');
 
                 success: function (response) {
                     if (response.status == 200) {
-                        swal("Good job!", response.msg, "success");
+                        swal("Good job!", response.Message, "success");
                         window.location.reload();
                         
                     } else {
 
-                        swal("Error!", response.msg, "error");
+                        swal("Error!", response.Message, "error");
 
                     }
 
