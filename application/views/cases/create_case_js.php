@@ -50,7 +50,7 @@ $session_data = $this->session->userdata('lsesson');
                 success: function (response) {
                     if (response.status == 200) {
                         swal("Good job!", response.Message, "success");
-//                        window.location.reload();
+                        window.location.replace("<?php echo base_url('all_cases');?>");
 
                     } else {
 

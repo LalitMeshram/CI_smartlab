@@ -1,13 +1,13 @@
 <script>
 var pkgList = new Map();
-
+var pkgId=<?php echo $pkgId; ?>;
 
 function setDetails(){
     
-    var pkgId=<?php echo $pkgId; ?>;
+   
     
     let pkg = pkgList.get(pkgId.toString());
-    
+    console.log(pkg);
     $('#packageId').val(pkg.packageId);
     $('#plan_name').val(pkg.plan_name);
     $('#amount').val(pkg.amount);
@@ -53,7 +53,10 @@ function setpkgDetails() {
 
                     }
                     
-                    setDetails();
+                    if(pkgId>0){
+                        setDetails();
+                    }
+                    
 
                 }
 

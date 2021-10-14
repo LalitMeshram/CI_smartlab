@@ -32,7 +32,9 @@
     $('#total_amt').val(cases.total_amt);
     $('#paidAmt').html(cases.amt_recieved);
     $('#last_recieved_amt').val(cases.amt_recieved);
-    $('#aftDiscAmt').html(cases.total_amt - cases.amt_recieved);
+    $('#discountSpan').html(cases.discount);
+    //$('#aftDiscAmt').html(cases.total_amt - cases.amt_recieved-cases.discount);
+    $('#aftDiscAmt').html(cases.pending_amt);
     var test = cases.test;
     var tableDate = '';
     for (var i = 0; i < test.length; i++) {

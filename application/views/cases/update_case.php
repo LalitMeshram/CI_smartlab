@@ -151,11 +151,12 @@
                                                                               <input type="hidden" class="form-control" name="discount" id="discount" min="0" value="0" readonly="">
                                                                           </td>
 									</tr>
-<!--									<tr>
+								<tr>
 									  <th>Discount</th>
                                                                           <td>
+																		  Rs.<span id="discountSpan">0</span>
                                                                           </td>
-									</tr>-->
+									</tr>
 									<tr>
 									  <th>Amount Received</th>
                                                                           <td><input type="number" class="form-control" name="receivedAmt" id="receivedAmt" value="0"></td>
