@@ -12,7 +12,7 @@ $session_data=$this->session->userdata('lsesson');
         if (returnVal) {
             $.ajax({
 
-                url: 'add_lab_category',
+                url: '<?php echo base_url("add_lab_category");?>',
 
                 type: 'POST',
 

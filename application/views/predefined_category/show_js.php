@@ -9,7 +9,7 @@ $session_data = $this->session->userdata('lsesson');
     function getPatients() {
         $.ajax({
 
-            url: 'get_lab_category',
+            url: '<?php echo base_url("get_lab_category"); ?>',
 
             type: 'GET',
 

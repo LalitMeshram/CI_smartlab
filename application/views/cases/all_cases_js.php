@@ -58,7 +58,7 @@ $session_data = $this->session->userdata('lsesson');
                       
                       if(cases.report_flag>0){
                       tblData += `<a href="<?php echo base_url();?>enter_finding/`+cases.caseId+`" class="btn btn-primary btn-xs case_action_buttons"><i class="fa fa-fw fa-file-text"></i> View Report</a>
-                      <a href="<?php echo base_url();?>RecieptController/report_print/`+cases.caseId+`" class="btn btn-warning btn-xs case_action_buttons"><i class="fa fa-print"></i> Print Report</a>
+                      <a href="<?php echo base_url();?>RecieptController/report_print/`+cases.caseId+`" class="btn btn-warning btn-xs case_action_buttons" target="_blank"><i class="fa fa-print"></i> Print Report</a>
                       `;    
                       }
                       

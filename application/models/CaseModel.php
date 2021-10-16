@@ -41,7 +41,7 @@ class CaseModel extends CI_Model
             "createdby"=>1
         );
         $this->db->insert('case_payment_transactions', $payment_tran);
-        $result['paymentId'] = $this->db->insert_id();
+     $result['paymentId'] = $this->db->insert_id();
         $this->add_case_tests($testdata,$result['caseId'], $case_data['centerId']);
         if ($this->db->trans_status() === FALSE) {
             $this->db->trans_rollback();
@@ -181,12 +181,28 @@ class CaseModel extends CI_Model
     }
     public function get_pending_amount($caseId)
     {
-       $sql = "UPDATE case_payments cp SET cp.pending_amt = 0 WHERE cp.pending_amt > 0 AND cp.caseId = $caseId";
+        $sql = "SELECT paymentId,pending_amt FROM `case_payments` WHERE caseId = $caseId";
+        $query = $this->db->query($sql);
+        $paymentId = $query->row('paymentId');
+       
+        $pending_amt = $query->row('pending_amt');
+      
+       $sql = "UPDATE case_payments cp SET cp.pending_amt = 0,cp.amt_recieved = cp.amt_recieved + $pending_amt
+        WHERE cp.pending_amt > 0 AND cp.paymentId = $paymentId";
         $this->db->query($sql);
         if($this->db->affected_rows() > 0){
-return true;
+            
+        $payment_tran = array(
+            "paymentId"=>$paymentId,
+            "amount"=>$pending_amt,
+            "paymentdate"=>date('Y-m-d'),
+            "paymentmode"=>'Cash',
+            "createdby"=>1
+        );
+        $this->db->insert('case_payment_transactions', $payment_tran);
+            return true;
         }else{
-return false;
+            return false;
         }
     }
     

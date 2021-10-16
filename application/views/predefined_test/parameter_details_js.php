@@ -23,6 +23,7 @@ $('#addSubtypebtn').click(function() {
     //create id for row
     var regex = /[.,\s]/g;
     var id = testStr.replace(regex, '');
+    id = id.replace(/[{()}]/g, '_');
 
     var tableData = '';
 

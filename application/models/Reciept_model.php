@@ -15,18 +15,37 @@ class Reciept_model extends CI_Model
         $query = $this->db->query($sql);
         //$data = $query->result_array();
         
-        $sql_logo    = "SELECT COALESCE(cd.header_logo,'resource/img/letter_head.png') as header_logo,COALESCE(cd.footer_logo,'resource/img/footer.png') as footer_logo FROM center_letter_head_details cd 
-         LEFT JOIN case_master cm ON cm.centerId = cd.centerId WHERE cm.caseId = $caseId";
-        $query_1     = $this->db->query($sql_logo);
-        $row_1       = $query_1->result();
-        $header_logo = 'resource/img/letter_head.png';
-        if ($row_1['header_logo'] != null) {
-            $header_logo = $row_1['header_logo'];
+        // $sql_logo    = "SELECT COALESCE(cd.header_logo,'resource/img/letter_head.png') as header_logo,COALESCE(cd.footer_logo,'resource/img/footer.png') as footer_logo FROM center_letter_head_details cd 
+        //  LEFT JOIN case_master cm ON cm.centerId = cd.centerId WHERE cm.caseId = $caseId";
+        // $query_1     = $this->db->query($sql_logo);
+        // $row_1       = $query_1->result();
+        // $header_logo = 'resource/img/letter_head.png';
+        // if ($row_1['header_logo'] != null) {
+        //     $header_logo = $row_1['header_logo'];
+        // }
+
+        $sql = "SELECT COALESCE(cd.header_logo,'resource/img/letter_head.png') as footer_logo
+        FROM center_letter_head_details cd 
+       LEFT JOIN case_master cm ON cm.centerId = cd.centerId WHERE cm.caseId = $caseId";
+        $query = $this->db->query($sql);
+         $header_logo = 'resource/img/letter_head.png'; 
+        foreach ($query->result() as $row) {
+         $header_logo =$row->footer_logo;
         }
         
         $output = '<link rel="stylesheet" href="dompdf/style.css">
+        <style>
+        footer {
+          position: fixed; 
+          bottom: 0cm; 
+          left: 0cm; 
+          right: 0cm;
+          height: 2cm;
+      }
+        </style>
          <body class="hold-transition skin-blue layout-top-nav">
          <div class="wrapper">
+         
            <div class="">
              <section class="">
                <div class="row invoice-info">
@@ -134,7 +153,7 @@ class Reciept_model extends CI_Model
             if ($row->discount > 0) {
                 $discount = ' <tr>
                     <th>Discount</th>
-                    <th>' . number_format($row->discount, 2) . '%</th>
+                    <th>' . number_format($row->discount, 2) . '</th>
                   </tr>';
             }
             $output .= '<div class="row">
@@ -170,26 +189,28 @@ class Reciept_model extends CI_Model
     
     public function getFooterDetails($caseId)
     {
-        $sql_logo = "SELECT COALESCE(cd.footer_logo,'resource/img/footer.png') as footer_logo FROM center_letter_head_details cd 
+        $sql = "SELECT COALESCE(cd.footer_logo,'resource/img/footer.png') as footer_logo
+         FROM center_letter_head_details cd 
         LEFT JOIN case_master cm ON cm.centerId = cd.centerId WHERE cm.caseId = $caseId";
-        $query_1 = $this->db->query($sql_logo);
-        $row = $query_1->result();
-        $footer_logo = 'resource/img/footer.png'; 
-        if($row[0]!=null){
-         $footer_logo = $row[0];
-        }
-        $output = '</div>
+         $query = $this->db->query($sql);
+          $footer_logo = 'resource/img/footer.png'; 
+         foreach ($query->result() as $row) {
+          $footer_logo =$row->footer_logo;
+         }
+        $output = '</div><footer>
         <br>
-        <center><img src="resource/img/footer.png" width="800px"></center>
+        <center><img src="'.$footer_logo.'" width="800px"></center>
         <br>
     </div>
     <div class="col-md-2">
+   
     </div>
     <div class="col-md-3">
     </div>
   </div>
 </section>
 </div>
+</footer>
 <div class="control-sidebar-bg"></div>
 </div>';
         return $output;
@@ -252,7 +273,8 @@ class Reciept_model extends CI_Model
         
         $sql_2   = "SELECT crd.case_report_id,crd.reportId,crd.parameterId,crd.parameter,crd.testId,crd.testName,
         crd.finding_value,crd.categoryid,crd.category,crd.unit,crd.reference_value,crd.label,crd.isgroup 
-        FROM case_report_data crd INNER JOIN case_report_master crm WHERE crm.caseId = $caseId";
+        FROM case_report_data crd INNER JOIN case_report_master crm ON crm.reportId = crd.reportId
+        WHERE crm.caseId = $caseId";
         $query_1 = $this->db->query($sql_2);
         
         
@@ -286,7 +308,7 @@ class Reciept_model extends CI_Model
                     foreach ($query_1->result() as $row_2) {
                         if ($row_1->label == $row_2->label && $row_1->testName == $row_2->testName && $row_2->isgroup == 1) {
                             $tempParm .= '<tr>
-                  <td style="margin-left: 30%!important;">' . $row_2->parameter . '</td>
+                  <td style="margin-left: 15%!important;">' . $row_2->parameter . '</td>
                   <td>
       <div class="form-inline">
       '.$row_1->finding_value.'

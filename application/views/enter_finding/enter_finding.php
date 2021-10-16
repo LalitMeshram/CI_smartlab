@@ -9,7 +9,7 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
             <li class="breadcrumb-item"><a href="#">Case</a></li>
-            <li class="breadcrumb-item active">Invoice Details</li>
+            <li class="breadcrumb-item active">Enter Findings</li>
         </ol>
     </section>
 
@@ -20,7 +20,7 @@
             <div class="col-12">
                 <div class="page-header">
                     <center>
-                        <h2 class="d-inline">INVOICE Details</h2>
+                        <h2 class="d-inline">Enter Findings</h2>
                     </center>
                 </div>
             </div>

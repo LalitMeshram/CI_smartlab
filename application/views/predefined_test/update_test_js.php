@@ -32,6 +32,7 @@ function getSubtypesTest() {
         var tds = $(tr).find('td');
         testStr = tds[1].textContent;
         id = testStr.replace(regex, '');
+        id = id.replace(/[{()}]/g, '_');
         gName = $('#hgName' + id).val();
         isGroup = $('#hgroup' + id).val();
         testarr = JSON.parse("[" + $('#harr' + id).val() + "]");

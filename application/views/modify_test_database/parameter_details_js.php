@@ -19,10 +19,11 @@ $('#addSubtypebtn').click(function() {
         isGroup = 1;
         groupName = $('#groupName').val();
     }
-
     //create id for row
     var regex = /[.,\s]/g;
     var id = testStr.replace(regex, '');
+    id = id.replace(/[{()}]/g, '_');
+console.log(id);
 
     var tableData = '';
 
