@@ -24,13 +24,13 @@ class Reciept_model extends CI_Model
         //     $header_logo = $row_1['header_logo'];
         // }
 
-        $sql = "SELECT COALESCE(cd.header_logo,'resource/img/letter_head.png') as footer_logo
+        $sql_5 = "SELECT COALESCE(cd.header_logo,'resource/img/letter_head.png') as footer_logo
         FROM center_letter_head_details cd 
        LEFT JOIN case_master cm ON cm.centerId = cd.centerId WHERE cm.caseId = $caseId";
-        $query = $this->db->query($sql);
+        $query_5 = $this->db->query($sql_5);
          $header_logo = 'resource/img/letter_head.png'; 
-        foreach ($query->result() as $row) {
-         $header_logo =$row->footer_logo;
+        foreach ($query_5->result() as $row_5) {
+         $header_logo =$row_5->footer_logo;
         }
         
         $output = '<link rel="stylesheet" href="dompdf/style.css">

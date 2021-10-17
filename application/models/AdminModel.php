@@ -28,4 +28,14 @@ class AdminModel extends CI_Model {
            return false;
        }
     }
+
+    public function callsp_unit($centerId){
+        $sql = "CALL copyunit(".$centerId.");";
+       $query = $this->db->query($sql); 
+       if($query){
+           return true;
+       }else{
+           return false;
+       }
+    }
 }
