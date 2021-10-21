@@ -106,7 +106,9 @@ class CaseModel extends CI_Model
     }
 
     public function get_case_transaction($paymentId){
-        $sql = "SELECT * FROM `case_payment_transactions` WHERE paymentId = $paymentId";
+        $sql = "SELECT * FROM case_payment_transactions cpt 
+        INNER JOIN case_payments cp ON cp.paymentId = cpt.paymentId 
+        WHERE cpt.paymentId = $paymentId";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
