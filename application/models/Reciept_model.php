@@ -13,16 +13,7 @@ class Reciept_model extends CI_Model
         LEFT JOIN center_reference_master crm ON crm.ref_id = cm.referenceId
         WHERE cm.caseId =$caseId";
         $query = $this->db->query($sql);
-        //$data = $query->result_array();
-        
-        // $sql_logo    = "SELECT COALESCE(cd.header_logo,'resource/img/letter_head.png') as header_logo,COALESCE(cd.footer_logo,'resource/img/footer.png') as footer_logo FROM center_letter_head_details cd 
-        //  LEFT JOIN case_master cm ON cm.centerId = cd.centerId WHERE cm.caseId = $caseId";
-        // $query_1     = $this->db->query($sql_logo);
-        // $row_1       = $query_1->result();
-        // $header_logo = 'resource/img/letter_head.png';
-        // if ($row_1['header_logo'] != null) {
-        //     $header_logo = $row_1['header_logo'];
-        // }
+      
 
         $sql_5 = "SELECT COALESCE(cd.header_logo,'resource/img/letter_head.png') as footer_logo
         FROM center_letter_head_details cd 
@@ -61,7 +52,7 @@ class Reciept_model extends CI_Model
             $output .= '
              <tr>
                       <td>
-                          <h6>Invoice No: ' . $row->caseId . '</h6>
+                          <h6>Case No: ' . $row->caseId . '</h6>
                             <h6>Invoice Date:' . $row->createddate . ' </h6>
                             <h6>PAN No.: </h6>
                         </td>
@@ -338,5 +329,79 @@ class Reciept_model extends CI_Model
         }
         return $output;
     }
+
+    public function getReportDetails($caseId)
+    {
+        
+        $sql   = "SELECT cm.caseId,cm.patientId,cm.collection_center,DATE_FORMAT(cm.createdat,'%d-%m-%Y') AS createddate,cm.updatedat,pm.first_name,pm.last_name,pm.gender,pm.contact_number,pm.emailId,crm.ref_name
+        FROM case_master cm 
+        INNER JOIN patient_master pm ON cm.patientId = pm.patientId
+        LEFT JOIN center_reference_master crm ON crm.ref_id = cm.referenceId
+        WHERE cm.caseId =$caseId";
+        $query = $this->db->query($sql);
+      
+
+        $sql_5 = "SELECT COALESCE(cd.header_logo,'resource/img/letter_head.png') as footer_logo
+        FROM center_letter_head_details cd 
+       LEFT JOIN case_master cm ON cm.centerId = cd.centerId WHERE cm.caseId = $caseId";
+        $query_5 = $this->db->query($sql_5);
+         $header_logo = 'resource/img/letter_head.png'; 
+        foreach ($query_5->result() as $row_5) {
+         $header_logo =$row_5->footer_logo;
+        }
+        
+        $output = '<link rel="stylesheet" href="dompdf/style.css">
+        <style>
+        footer {
+          position: fixed; 
+          bottom: 0cm; 
+          left: 0cm; 
+          right: 0cm;
+          height: 2cm;
+      }
+        </style>
+         <body class="hold-transition skin-blue layout-top-nav">
+         <div class="wrapper">
+         
+           <div class="">
+             <section class="">
+               <div class="row invoice-info">
+                 <div class="col-md-2">
+                 </div>
+                 <div class="col-sm-8 invoice-col invoice printableArea">
+                     <center><img src="' . $header_logo . '" style="width: 815px;margin-top:-12%;"></center>
+                     <br><div class="invoice-details row mx-0 my-15" style="width: 92%;margin-left: 4%;">
+         <div class="table-responsive" style="background-color: #f8f4f4;">
+               <table class="table" style="border: none !important; font-weight: 700!important;">';
+        
+        foreach ($query->result() as $row) {
+            $output .= '
+             <tr>
+                      <td>
+                          <h6>Invoice No: ' . $row->caseId . '</h6>
+                            <h6>Invoice Date:' . $row->createddate . ' </h6>
+                            <h6>PAN No.: </h6>
+                        </td>
+                      <td>
+                          <h6>Patient Id: ' . $row->patientId . ' </h6>
+                            <h6>Patient Name: ' . $row->first_name . ' ' . $row->last_name . ' </h6>
+                            <h6>Patient Gender: ' . $row->gender . ' </h6>
+                      </td>
+                      <td>
+                          <h6>Reffered By: ' . $row->ref_name . ' </h6>
+                            <h6>Mob No: ' . $row->contact_number . ' </h6>
+                            <h6>Email: ' . $row->emailId . ' </h6>
+                      </td>
+                  </tr>
+             ';
+        }
+        
+        $output .= '</table>
+          </div>
+      </div>';
+        return $output;
+    }
+    
+  
     
 }

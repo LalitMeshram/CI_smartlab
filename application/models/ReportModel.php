@@ -99,7 +99,8 @@ class ReportModel extends CI_Model
                 'label' => $contact->label,
                 'reference_value'=> $contact->reference_value,
                 'reportId' => $reportId,
-                'isgroup'=> $contact->isgroup
+                'isgroup'=> $contact->isgroup,
+                'level'=> $contact->level
             );
             $subtypeId            = $this->db->insert('case_report_data', $tests);
         }

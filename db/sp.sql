@@ -1,3 +1,6 @@
+SELECT first_name,last_name,TIMESTAMPDIFF( YEAR, dob, now() ) as _year , TIMESTAMPDIFF( MONTH, dob, now() ) % 12 as _month , FLOOR( TIMESTAMPDIFF( DAY, dob, now() ) % 30.4375 ) as _day FROM patient_master
+
+
 BEGIN
 INSERT INTO center_reference_master(ref_title,ref_name,centerId) VALUES('','SELF',centerId);
 
