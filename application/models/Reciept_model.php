@@ -301,8 +301,9 @@ class Reciept_model extends CI_Model
                             $tempParm .= '<tr>
                   <td style="margin-left: 15%!important;">' . $row_2->parameter . '</td>
                   <td>
-                  <span> '.$row_2->level.'</span>
+                  
       <div class="form-inline">
+      <span><b> '.$row_2->level.'</b></span>
       '.$row_2->finding_value.'
      </div>
   </td>
@@ -318,8 +319,9 @@ class Reciept_model extends CI_Model
                     $parmwithoutGroup .= '<tr>
     <td>' . $row_1->parameter . '</td>
     <td>
-    <span> '.$row_1->level.'</span>
+    
     <div class="form-inline">
+    <span><b> '.$row_1->level.'</b></span>
     '.$row_1->finding_value.'
     </div></td>
      <td>' . $row_1->unit . '</td>

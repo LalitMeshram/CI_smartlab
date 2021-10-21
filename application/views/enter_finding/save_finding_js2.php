@@ -30,7 +30,7 @@ function getReportData() {
                         if(parseInt(finding)<parseInt(lower)){
                             level='L';
                         }else if(parseInt(finding)>parseInt(upper)){
-                            level='U';
+                            level='H';
                         }else if(parseInt(finding)>=parseInt(lower) && parseInt(finding)<=parseInt(upper)){
                             level='N';
                         }
