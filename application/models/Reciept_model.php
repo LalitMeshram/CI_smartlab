@@ -263,7 +263,7 @@ class Reciept_model extends CI_Model
         $query = $this->db->query($sql);
         
         $sql_2   = "SELECT crd.case_report_id,crd.reportId,crd.parameterId,crd.parameter,crd.testId,crd.testName,
-        crd.finding_value,crd.categoryid,crd.category,crd.unit,crd.reference_value,crd.label,crd.isgroup 
+        crd.finding_value,crd.level,crd.categoryid,crd.category,crd.unit,crd.reference_value,crd.label,crd.isgroup 
         FROM case_report_data crd INNER JOIN case_report_master crm ON crm.reportId = crd.reportId
         WHERE crm.caseId = $caseId";
         $query_1 = $this->db->query($sql_2);
@@ -301,6 +301,7 @@ class Reciept_model extends CI_Model
                             $tempParm .= '<tr>
                   <td style="margin-left: 15%!important;">' . $row_2->parameter . '</td>
                   <td>
+                  <span> '.$row_2->level.'</span>
       <div class="form-inline">
       '.$row_2->finding_value.'
      </div>
@@ -316,7 +317,9 @@ class Reciept_model extends CI_Model
                 else if ($row->test_name == $row_1->testName && $row_1->isgroup == 0) {
                     $parmwithoutGroup .= '<tr>
     <td>' . $row_1->parameter . '</td>
-    <td><div class="form-inline">
+    <td>
+    <span> '.$row_1->level.'</span>
+    <div class="form-inline">
     '.$row_1->finding_value.'
     </div></td>
      <td>' . $row_1->unit . '</td>
@@ -333,11 +336,14 @@ class Reciept_model extends CI_Model
     public function getReportDetails($caseId)
     {
         
-        $sql   = "SELECT cm.caseId,cm.patientId,cm.collection_center,DATE_FORMAT(cm.createdat,'%d-%m-%Y') AS createddate,cm.updatedat,pm.first_name,pm.last_name,pm.gender,pm.contact_number,pm.emailId,crm.ref_name
-        FROM case_master cm 
-        INNER JOIN patient_master pm ON cm.patientId = pm.patientId
-        LEFT JOIN center_reference_master crm ON crm.ref_id = cm.referenceId
-        WHERE cm.caseId =$caseId";
+        $sql   = "SELECT crp.reportId,cm.patientId,cm.collection_center,DATE_FORMAT(crp.createdat,'%d-%m-%Y') AS createddate,
+        DATE_FORMAT(cm.createdat,'%d-%m-%Y') AS casedate,
+        cm.updatedat,pm.first_name,pm.last_name,pm.gender,pm.contact_number,pm.emailId,crm.ref_name
+                FROM case_master cm 
+                INNER JOIN patient_master pm ON cm.patientId = pm.patientId
+                LEFT JOIN center_reference_master crm ON crm.ref_id = cm.referenceId
+                LEFT JOIN case_report_master crp ON crp.caseId = cm.caseId
+                WHERE cm.caseId =$caseId";
         $query = $this->db->query($sql);
       
 
