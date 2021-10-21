@@ -302,7 +302,7 @@ class Reciept_model extends CI_Model
                   <td style="margin-left: 15%!important;">' . $row_2->parameter . '</td>
                   <td>
       <div class="form-inline">
-      '.$row_1->finding_value.'
+      '.$row_2->finding_value.'
      </div>
   </td>
                   <td>' . $row_2->unit . '</td>
@@ -378,7 +378,7 @@ class Reciept_model extends CI_Model
             $output .= '
              <tr>
                       <td>
-                          <h6>Invoice No: ' . $row->caseId . '</h6>
+                          <h6>Report No: ' . $row->caseId . '</h6>
                             <h6>Invoice Date:' . $row->createddate . ' </h6>
                             <h6>PAN No.: </h6>
                         </td>
