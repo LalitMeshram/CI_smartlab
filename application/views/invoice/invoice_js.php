@@ -58,10 +58,12 @@
         for (var i = 0; i < transaction.length; i++) {
             tableDate1 += `
                         <tr>
-	              <td>`+transaction[i].paymentdate+`</td>
-	              <td><button class="btn btn-success btn-xs">Paid</button></td>
-	              <td>`+transaction[i].amount+`</td>
-	              <td>admin</td>
+	              <td>`+transaction[i].paymentdate+`</td>`;
+
+                  tableDate1  +=`<td><button class="btn btn-success btn-xs">Paid</button></td>
+	              <td>`+transaction[i].amount+`</td>`;
+
+	              tableDate1  +=`<td>admin</td>
 	              <td>`+transaction[i].paymentmode+`</td>
 	            </tr>
 	            
