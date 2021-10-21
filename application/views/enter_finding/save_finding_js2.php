@@ -26,6 +26,14 @@ function getReportData() {
                         var upper = $('#upper_' + dataArr[i].test_name.replace(/ /g, "_")+dataArr[i].label.replace(/ /g, "_")+dataArr[i].categoryId+dataArr[i].panelId).val();
                         var isgroup= $('#isgroup_' + dataArr[i].test_name.replace(/ /g, "_")+dataArr[i].label.replace(/ /g, "_")+dataArr[i].categoryId+dataArr[i].panelId).val();
                         var reference_value=lower+'-'+upper;
+                        var level='';
+                        if(parseInt(finding)<parseInt(lower)){
+                            level='L';
+                        }else if(parseInt(finding)>parseInt(upper)){
+                            level='U';
+                        }else if(parseInt(finding)>=parseInt(lower) && parseInt(finding)<=parseInt(upper)){
+                            level='N';
+                        }
 
                         data[i] = {
                         category: category,
@@ -38,7 +46,8 @@ function getReportData() {
                         label: label,
                         reference_value: reference_value,
                         isgroup: isgroup,
-                        finding_value: finding
+                        finding_value: finding,
+                        level: level
                         };
 
                        

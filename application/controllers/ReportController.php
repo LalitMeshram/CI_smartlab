@@ -79,7 +79,7 @@ class ReportController extends REST_Controller
         );
         $report_data = $this->post('report_data');
         $report_data = json_decode($report_data);
-//{"paremeterId":1,"parameter":"Entomology","testName":"Test One","testId":1,value:"10","unit":KG,Reference:10-40,groupname:"-",categoryId:1,categoryName:Biochemistry}
+//{"paremeterId":1,"parameter":"Entomology","testName":"Test One","testId":1,value:"10","unit":KG,Reference:10-40,groupname:"-",categoryId:1,categoryName:Biochemistry,level:"H"}
         $data =array(
             'data'=>$case,
             'report_data'=>$report_data
