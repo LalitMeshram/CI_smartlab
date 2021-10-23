@@ -40,7 +40,7 @@
                             
                             <div class="col-md-4">
                                 <label>Contact Number</label>
-                                <input type="text" name="ref_contact" id="ref_contact" class="form-control" placeholder="Enter Contact No.">
+                                <input type="number" name="ref_contact" id="ref_contact" class="form-control" placeholder="Enter Contact No." minlength="10" maxlength="10">
                             </div>
                             
                             <div class="col-md-4">
