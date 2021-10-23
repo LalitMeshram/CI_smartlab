@@ -43,7 +43,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <div class="controls">
-                                            <input type="file" name="file" class="form-control">
+                                            <input type="file" name="brandLogo" id="brandLogo" class="form-control">
                                         </div>
                                     </div>
                                 </div>
@@ -52,14 +52,14 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <div class="controls">
-                                            <input type="email" name="lab_email" class="form-control" placeholder="Email Id">
+                                            <input type="email" name="lab_email" id="lab_email" class="form-control" placeholder="Alternate Email Id">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <div class="controls">
-                                            <input type="number" name="lab_contact" id="lab_contact" class="form-control" placeholder="Contact No.">
+                                            <input type="number" name="lab_contact" id="lab_contact" class="form-control" placeholder="Alternate Contact No.">
                                         </div>
                                     </div>
                                 </div>
