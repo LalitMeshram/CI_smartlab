@@ -21,7 +21,7 @@
 		<div class="col-12">
 		  	<div class="box">
 		<div class="box-body">
-			<a href="add_test_panel" class="btn btn-success" style="float: right;">Add Test</a>
+			<a href="add_test_panel" class="btn btn-success" style="float: right;">Add Parameter</a>
 			  <div class="table-responsive">
 				<table id="testTable" class="table table-bordered table-separated">
 					<thead>

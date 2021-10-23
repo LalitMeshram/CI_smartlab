@@ -3,7 +3,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Add New Test
+            Add Test Parameter
         </h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -30,7 +30,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <center>
-                                                <h5 class="box-title title">Test Details</h5>
+                                                <h5 class="box-title title">Test Parameter Details</h5>
                                             </center>
                                         </div>
 
