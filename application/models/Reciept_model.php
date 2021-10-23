@@ -384,19 +384,16 @@ class Reciept_model extends CI_Model
             $output .= '
              <tr>
                       <td>
-                          <h6>Report No: ' . $row->caseId . '</h6>
-                            <h6>Invoice Date:' . $row->createddate . ' </h6>
-                            <h6>PAN No.: </h6>
+                          <h6>Patient Id: ' . $row->patientId . '</h6>
+                            <h6>Patient Name:' . $row->first_name . ' ' . $row->last_name . ' </h6>
+                            <h6>Patient Age/Gender:' . $row->gender . ' </h6>
+                            <h6>Reffered By: ' . $row->ref_name . '</h6>
                         </td>
                       <td>
-                          <h6>Patient Id: ' . $row->patientId . ' </h6>
-                            <h6>Patient Name: ' . $row->first_name . ' ' . $row->last_name . ' </h6>
-                            <h6>Patient Gender: ' . $row->gender . ' </h6>
-                      </td>
-                      <td>
-                          <h6>Reffered By: ' . $row->ref_name . ' </h6>
-                            <h6>Mob No: ' . $row->contact_number . ' </h6>
+                          <h6>Registered On: ' . $row->createddate . ' </h6>
+                            <h6>Received On: ' . $row->casedate.' </h6>
                             <h6>Email: ' . $row->emailId . ' </h6>
+                            <h6>Mob No: ' . $row->contact_number . ' </h6>
                       </td>
                   </tr>
              ';

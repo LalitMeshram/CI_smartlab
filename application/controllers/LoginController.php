@@ -10,6 +10,7 @@ class LoginController extends REST_Controller
         $this->load->model("LoginModel", "login");
         $this->load->model("PaymentModel", "payment");
         $this->load->model("AdminModel", "adminmodel");
+        $this->load->model("CopyModel", "copy");
     }
     public function login_auth_post()
     {
@@ -33,6 +34,8 @@ class LoginController extends REST_Controller
                     $user_data["payment"] = false;
                 }
                 $this->adminmodel->callsp_data($user_data['centerId']);
+                $this->copy->copy_test_panel($user_data['centerId']);
+                $this->copy->copy_tests($user_data['centerId']);
                 $this->session->set_userdata('lsesson',$user_data);
                 $response['Message']      = "Logged in successfully";
                 $response['Data']         = $user_data;

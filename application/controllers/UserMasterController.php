@@ -9,6 +9,7 @@ class UserMasterController extends REST_Controller {
         parent::__construct();
         $this->load->model('UserMasterModel', 'user');
         $this->load->model("AdminModel", "login");
+        $this->load->model("CopyModel", "copy");
     }
 
     public function customers_list_get($id = 0) {
@@ -45,7 +46,9 @@ class UserMasterController extends REST_Controller {
         if (!empty($id)) {
             $data = array();
             $this->login->callsp_unit($id);
-            $this->login->callsp_data($id);
+            // $this->login->callsp_data($id);
+            $this->copy->copy_test_panel($id);
+            $this->copy->copy_tests($id);
             $data = $this->user->get_customers($id);
             $response['msg'] = 'Customer Registration is successfully Done!';
             $response['data'] = $data;

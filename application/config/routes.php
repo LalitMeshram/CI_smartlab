@@ -150,6 +150,9 @@ $route['get_profile_data/(:num)'] = 'LabController/profile_data/$1';
 
 //copy data from admin to customer controller
 $route['copy_data/(:num)'] = 'AdminController/callsp/$1';
+$route['copy_panel/(:num)'] = 'CopyController/copy_parameters/$1';
+$route['copy_tests/(:num)'] = 'CopyController/copy_tests/$1';
+
 
 $route['404_override']         = '';
 $route['translate_uri_dashes'] = FALSE;

@@ -28,7 +28,7 @@ class LabController extends REST_Controller {
         $response = array();
 
         $data['labName'] = $this->post('labName');
-       // $data['brandName'] = $this->post('brandName');
+        $data['brandName'] = $this->post('brandName');
         $data['lab_contact'] = $this->post('lab_contact');
         $data['lab_email'] = $this->post('lab_email');
         $data['lab_address'] = $this->post('lab_address');
@@ -38,10 +38,16 @@ class LabController extends REST_Controller {
         $centerData = $this->lab->get_lab_data($data['centerId']);
         if (empty($centerData)) {
             //Add New Entry
+            if (!empty($_FILES['brandLogo']['name'])) {
+                $header_path = $this->upload_brand($_FILES['brandLogo']['name'], $_FILES['brandLogo']['tmp_name']);
+            }
             $this->lab->lab_reg($data);
             $response['msg'] = 'Lab Details inserted successfully!';
         } else {
             //update existing entry
+            if (!empty($_FILES['brandLogo']['name'])) {
+                $header_path = $this->upload_brand($_FILES['brandLogo']['name'], $_FILES['brandLogo']['tmp_name']);
+            }
             $this->lab->update_customer_center($data);
             $response['msg'] = 'Lab Details updated successfully!';
         }
@@ -146,6 +152,18 @@ class LabController extends REST_Controller {
         $time = date('Y_m_d_hisu');
         $sourcePath = $file; // Storing source path of the file in a variable
         $targetPath = "documents/" . $time . "." . $ext; // Target path where file is to be stored
+        if (move_uploaded_file($sourcePath, $targetPath)) {
+            return $targetPath;
+        } else {
+            return false;
+        }
+    }
+
+    public function upload_brand($filename, $file) {
+        $ext = pathinfo($filename, PATHINFO_EXTENSION);
+        $time = date('Y_m_d_hisu');
+        $sourcePath = $file; // Storing source path of the file in a variable
+        $targetPath = "logos/" . $time . "." . $ext; // Target path where file is to be stored
         if (move_uploaded_file($sourcePath, $targetPath)) {
             return $targetPath;
         } else {

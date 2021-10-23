@@ -64,10 +64,10 @@ class AdminTestPanel extends REST_Controller
         $panelId = $this->post('panelId');
         if(!empty($panelId) && $panelId !=0){
             $result        = $this->panel->update_panel_data($data,$panelId);
-            $msg = 'Panel Data updated successfully';
+            $msg = 'Parameter Data updated successfully';
         }else{
             $result        = $this->panel->add_panel_data($data); 
-            $msg = 'Panel Data added successfully';
+            $msg = 'Parameter Data added successfully';
         }
         if ($result['status']) {
             $response = array(
