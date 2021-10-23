@@ -36,13 +36,7 @@
                                                             
                                                             
 							</tbody>
-							<tfoot>
-								<tr>
-									<th>Unit Id</th>
-									<th>Unit</th>
-									<th>Action</th>
-								</tr>
-							</tfoot>
+							
 						  </table>
 					  </div>
 		          </div>
