@@ -13,7 +13,7 @@ class LabModel extends CI_Model
     {
         $data;
         if ($centerId != 0) {
-            $data = $query = $this->db->get_where('center_details', array(
+            $data =  $this->db->get_where('center_details', array(
                 'centerId' => $centerId
             ))->row_array();
         } else {

@@ -11,6 +11,7 @@ class LoginController extends REST_Controller
         $this->load->model("PaymentModel", "payment");
         $this->load->model("AdminModel", "adminmodel");
         $this->load->model("CopyModel", "copy");
+        $this->load->model("LabModel", "lab");
     }
     public function login_auth_post()
     {
@@ -33,6 +34,22 @@ class LoginController extends REST_Controller
                 } else {
                     $user_data["payment"] = false;
                 }
+                $targetPath = "logos/" . $centerId . ".jpg"; // Target path where file is to be stored
+        if(file_exists( $targetPath)) {
+           $user_data["logo"] = $targetPath;
+           $user_data["logoflag"] = true;
+        }else{
+            $centerData = $this->lab->get_lab_data($data['centerId']);
+            if(!empty($centerData)){
+                if(!empty($centerData['brandName'])){
+                    $user_data["logo"] = $centerData['brandName'];
+                }else{
+                    $user_data["logo"] = 'NULL'; 
+                }
+               
+            }
+            $user_data["logoflag"] = false;
+        }
                 $this->adminmodel->callsp_data($user_data['centerId']);
                 $this->copy->copy_test_panel($user_data['centerId']);
                 $this->copy->copy_tests($user_data['centerId']);
