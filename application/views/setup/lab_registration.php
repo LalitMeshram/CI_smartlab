@@ -52,14 +52,14 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <div class="controls">
-                                            <input type="email" name="lab_email" id="lab_email" class="form-control" placeholder="Alternate Email Id">
+                                            <input type="email" name="lab_email" id="lab_email" class="form-control"  placeholder="Alternate Email Id">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <div class="controls">
-                                            <input type="number" name="lab_contact" id="lab_contact" class="form-control" placeholder="Alternate Contact No.">
+                                            <input type="number" name="lab_contact" id="lab_contact" class="form-control" placeholder="Alternate Contact No." minlength="10" maxlength="10">
                                         </div>
                                     </div>
                                 </div>

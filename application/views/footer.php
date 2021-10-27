@@ -1,6 +1,6 @@
 <footer class="main-footer">
     <div class="pull-right d-none d-sm-inline-block">
-<!--        <ul class="nav nav-primary nav-dotted nav-dot-separated justify-content-center justify-content-md-end">
+        <!--        <ul class="nav nav-primary nav-dotted nav-dot-separated justify-content-center justify-content-md-end">
             <li class="nav-item">
                 <a class="nav-link" href="javascript:void(0)">FAQ</a>
             </li>
@@ -16,7 +16,8 @@
     <!-- Create the tabs -->
     <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
         <li class="nav-item"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-        <li class="nav-item"><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-cog fa-spin"></i></a></li>
+        <li class="nav-item"><a href="#control-sidebar-settings-tab" data-toggle="tab"><i
+                    class="fa fa-cog fa-spin"></i></a></li>
     </ul>
     <!-- Tab panes -->
     <div class="tab-content">
@@ -112,7 +113,7 @@
                 <li>
                     <a href="javascript:void(0)">
                         <h4 class="control-sidebar-subheading">
-                            Development 
+                            Development
                             <span class="label label-primary pull-right">72%</span>
                         </h4>
 
@@ -135,7 +136,7 @@
                 <h3 class="control-sidebar-heading">General Settings</h3>
 
                 <div class="form-group">
-                    <input type="checkbox" id="report_panel" class="chk-col-grey" >
+                    <input type="checkbox" id="report_panel" class="chk-col-grey">
                     <label for="report_panel" class="control-sidebar-subheading ">Report panel usage</label>
 
                     <p>
@@ -145,7 +146,7 @@
                 <!-- /.form-group -->
 
                 <div class="form-group">
-                    <input type="checkbox" id="allow_mail" class="chk-col-grey" >
+                    <input type="checkbox" id="allow_mail" class="chk-col-grey">
                     <label for="allow_mail" class="control-sidebar-subheading ">Mail redirect</label>
 
                     <p>
@@ -155,7 +156,7 @@
                 <!-- /.form-group -->
 
                 <div class="form-group">
-                    <input type="checkbox" id="expose_author" class="chk-col-grey" >
+                    <input type="checkbox" id="expose_author" class="chk-col-grey">
                     <label for="expose_author" class="control-sidebar-subheading ">Expose author name</label>
 
                     <p>
@@ -167,19 +168,19 @@
                 <h3 class="control-sidebar-heading">Chat Settings</h3>
 
                 <div class="form-group">
-                    <input type="checkbox" id="show_me_online" class="chk-col-grey" >
+                    <input type="checkbox" id="show_me_online" class="chk-col-grey">
                     <label for="show_me_online" class="control-sidebar-subheading ">Show me as online</label>
                 </div>
                 <!-- /.form-group -->
 
                 <div class="form-group">
-                    <input type="checkbox" id="off_notifications" class="chk-col-grey" >
+                    <input type="checkbox" id="off_notifications" class="chk-col-grey">
                     <label for="off_notifications" class="control-sidebar-subheading ">Turn off notifications</label>
                 </div>
                 <!-- /.form-group -->
 
                 <div class="form-group">
-                    <label class="control-sidebar-subheading">              
+                    <label class="control-sidebar-subheading">
                         <a href="javascript:void(0)" class="text-red margin-r-5"><i class="fa fa-trash-o"></i></a>
                         Delete chat history
                     </label>
@@ -206,10 +207,13 @@
 <script src="<?php echo base_url() . 'resource/assets/vendor_components/popper/dist/popper.min.js'; ?>"></script>
 
 <!-- Bootstrap 4.1-->
-<script src="<?php echo base_url() . 'resource/assets/vendor_components/bootstrap/dist/js/bootstrap.min.js'; ?>"></script>
+<script src="<?php echo base_url() . 'resource/assets/vendor_components/bootstrap/dist/js/bootstrap.min.js'; ?>">
+</script>
 
 <!-- SlimScroll -->
-<script src="<?php echo base_url() . 'resource/assets/vendor_components/jquery-slimscroll/jquery.slimscroll.min.js'; ?>"></script>
+<script
+    src="<?php echo base_url() . 'resource/assets/vendor_components/jquery-slimscroll/jquery.slimscroll.min.js'; ?>">
+</script>
 
 <!-- FastClick -->
 <script src="<?php echo base_url() . 'resource/assets/vendor_components/fastclick/lib/fastclick.js'; ?>"></script>
@@ -229,57 +233,62 @@
 
 <!-- Sweet-Alert  -->
 <script src="<?php echo base_url() . 'resource'; ?>/assets/vendor_components/sweetalert/sweetalert.min.js"></script>
-<script src="<?php echo base_url() . 'resource'; ?>/assets/vendor_components/sweetalert/jquery.sweet-alert.custom.js"></script>
+<script src="<?php echo base_url() . 'resource'; ?>/assets/vendor_components/sweetalert/jquery.sweet-alert.custom.js">
+</script>
 
 <!-- CK Editor -->
-	<script src="<?php echo base_url() . 'resource'; ?>/assets/vendor_components/ckeditor/ckeditor.js"></script>
-    <!-- Bootstrap WYSIHTML5 -->
-	<script src="<?php echo base_url() . 'resource'; ?>/assets/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.js"></script>
-    	
-	<!-- SoftMaterial admin for editor -->
-	<script src="<?php echo base_url() . 'resource'; ?>/js/pages/editor.js"></script>
+<script src="<?php echo base_url() . 'resource'; ?>/assets/vendor_components/ckeditor/ckeditor.js"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script
+    src="<?php echo base_url() . 'resource'; ?>/assets/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.js">
+</script>
 
-    <!-- Select2 -->
-	<script src="<?php echo base_url() .'resource/assets/vendor_components/select2/dist/js/select2.full.js';?>"></script>
-    <!-- SoftMaterial admin for advanced form element -->
-	<script src="<?php echo base_url() .'resource/js/pages/advanced-form-element.js';?>"></script>
+<!-- SoftMaterial admin for editor -->
+<script src="<?php echo base_url() . 'resource'; ?>/js/pages/editor.js"></script>
+
+<!-- Select2 -->
+<script src="<?php echo base_url() .'resource/assets/vendor_components/select2/dist/js/select2.full.js';?>"></script>
+<!-- SoftMaterial admin for advanced form element -->
+<script src="<?php echo base_url() .'resource/js/pages/advanced-form-element.js';?>"></script>
 
 <script>
+var loadFile = function(event, out) {
+    //    console.log("da")
+    var output = document.getElementById(out);
 
-    var loadFile = function (event, out) {
-//    console.log("da")
-        var output = document.getElementById(out);
+    output.src = URL.createObjectURL(event.target.files[0]);
+};
 
-        output.src = URL.createObjectURL(event.target.files[0]);
-    };
+var $loading = $('#loader').hide();
+$(document)
+    .ajaxStart(function() {
+        console.log('loader ok');
+        $loading.show();
 
-    var $loading = $('#loader').hide();
-    $(document)
-            .ajaxStart(function () {
-                console.log('loader ok');
-                $loading.show();
-
-            })
-            .ajaxStop(function () {
-                $loading.hide();
-            });
-
-          
+    })
+    .ajaxStop(function() {
+        $loading.hide();
+    });
 </script>
+
+
+
+
+
+
 <style>
-    
-    #loader {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.75) url('<?php echo base_url('resource/img/loader.gif');?>') no-repeat center center;
-        z-index: 10000;
-    }
-    
-    </style>
+#loader {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.75) url('<?php echo base_url('resource/img/loader.gif');?>') no-repeat center center;
+    z-index: 10000;
+}
+</style>
 </body>
+
 </html>
