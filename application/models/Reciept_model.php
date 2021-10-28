@@ -298,12 +298,17 @@ class Reciept_model extends CI_Model
         </tr>';
                     foreach ($query_1->result() as $row_2) {
                         if ($row_1->label == $row_2->label && $row_1->testName == $row_2->testName && $row_2->isgroup == 1) {
-                            $tempParm .= '<tr>
+                          if($row_2->level !="N"){
+                            $level = $row_2->level;
+                          }else{
+                            $level = '';
+                          }  
+                          $tempParm .= '<tr>
                   <td style="margin-left: 15%!important;">' . $row_2->parameter . '</td>
                   <td>
                   
       <div class="form-inline">
-      <span><b> '.$row_2->level.'</b></span>
+      <span><b> '.$level.'</b></span>
       '.$row_2->finding_value.'
      </div>
   </td>
@@ -316,12 +321,18 @@ class Reciept_model extends CI_Model
                     $parameters .= $groupName . $tempParm;
                 } //if
                 else if ($row->test_name == $row_1->testName && $row_1->isgroup == 0) {
+                  if($row_1->level !="N"){
+                    $level = $row_1->level;
+                  }else{
+                    $level = '';
+                  }
                     $parmwithoutGroup .= '<tr>
     <td>' . $row_1->parameter . '</td>
     <td>
     
     <div class="form-inline">
-    <span><b> '.$row_1->level.'</b></span>
+    <span><b> '. $level.'</b></span>
+
     '.$row_1->finding_value.'
     </div></td>
      <td>' . $row_1->unit . '</td>
