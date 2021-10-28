@@ -1,9 +1,12 @@
 <script>
 $('#addSubtypebtn').click(function() {
+    
     var testArr = $('#testSelectBox').val();
     var testStr = '';
     var groupName = '-';
     var isGroup = 0;
+
+    //alert(testArr.length);    
     //get test list
     for (var i = 0; i < testArr.length; i++) {
         let test = testPanelList.get(testArr[i].toString());
@@ -28,7 +31,8 @@ $('#addSubtypebtn').click(function() {
     var tableData = '';
 
     if (testArr != 0) {
-        if (!($('#r' + id).length)) {
+        if(testArr.length==1 && isGroup==0){
+            if (!($('#r' + id).length)) {
             tableData += $('#subtypeTable tbody').html();
             tableData += `<tr id="r` + id + `">
                         <td>` + groupName + `</td>
@@ -45,9 +49,37 @@ $('#addSubtypebtn').click(function() {
             $('#subtypeList').html(tableData);
 
         }
+        }else if(testArr.length>1 && isGroup==1){
+            if (!($('#r' + id).length)) {
+            tableData += $('#subtypeTable tbody').html();
+            tableData += `<tr id="r` + id + `">
+                        <td>` + groupName + `</td>
+                        <td>` + testStr + `                      
+                        </td>
+                        <td>
+                        <input type="hidden" id="harr` + id + `" value="` + testArr + `">  
+                            <input type="hidden" id="hgroup` + id + `" value="` + isGroup + `"> 
+                            <input type="hidden" id="hgName` + id + `" value="` + groupName + `">
+                        <button class="btn btn-danger btn-xs" onclick="deleteSubType('` + id + `')" type="button"><i class="fa fa-trash-o"></i> Delete</button> 
+                        </td>
+                        </tr>`;
+
+            $('#subtypeList').html(tableData);
+
+        }
+        }else{
+            alert('For Multiple Test please select isGroup and provide group Name');
+        }
+
+        
     }
 
-
+    //remove data 
+    $("#testSelectBox").val("");
+    $("#testSelectBox").trigger("change");
+    $('#isGroup').prop('checked', false);
+    $('#groupName').val("");
+    $('#groupName').attr('readonly', true);
 
 });
 

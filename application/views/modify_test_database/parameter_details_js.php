@@ -28,7 +28,8 @@ console.log(id);
     var tableData = '';
 
     if (testArr != 0) {
-        if (!($('#r' + id).length)) {
+        if(testArr.length==1 && isGroup==0){
+            if (!($('#r' + id).length)) {
             tableData += $('#subtypeTable tbody').html();
             tableData += `<tr id="r` + id + `">
                         <td>` + groupName + `</td>
@@ -45,9 +46,36 @@ console.log(id);
             $('#subtypeList').html(tableData);
 
         }
+        }else if(testArr.length>1 && isGroup==1){
+            if (!($('#r' + id).length)) {
+            tableData += $('#subtypeTable tbody').html();
+            tableData += `<tr id="r` + id + `">
+                        <td>` + groupName + `</td>
+                        <td>` + testStr + `                      
+                        </td>
+                        <td>
+                        <input type="hidden" id="harr` + id + `" value="` + testArr + `">  
+                            <input type="hidden" id="hgroup` + id + `" value="` + isGroup + `"> 
+                            <input type="hidden" id="hgName` + id + `" value="` + groupName + `">
+                        <button class="btn btn-danger btn-xs" onclick="deleteSubType('` + id + `')" type="button"><i class="fa fa-trash-o"></i> Delete</button> 
+                        </td>
+                        </tr>`;
+
+            $('#subtypeList').html(tableData);
+
+        }
+        }else{
+            alert('For Multiple Test please select isGroup and provide group Name');
+        }
+
+        
     }
-
-
+    //remove data 
+    $("#testSelectBox").val("");
+    $("#testSelectBox").trigger("change");
+    $('#isGroup').prop('checked', false);
+    $('#groupName').val("");
+    $('#groupName').attr('readonly', true);
 
 });
 

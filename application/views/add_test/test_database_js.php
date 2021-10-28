@@ -53,7 +53,7 @@ $session_data = $this->session->userdata('lsesson');
 							<td>`+test.fees+`</td>
 							<td>
                                                         <a href="#" onclick="getTest(` + test.testId + `)" title="update Test" class="btn btn-success btn-xs" ><i class="fa fa-edit"></i></a>
-                                                        <a href="#" onclick="getTest(` + test.testId + `)" title="delete Test" class="btn btn-danger btn-xs" ><i class="fa fa-trash-o"></i></a>
+                                                        
                                                          </td>
 						</tr>
                     `;

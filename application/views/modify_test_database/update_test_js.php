@@ -90,7 +90,7 @@ $('#addTestForm').on('submit', function(e) {
             success: function(response) {
                 if (response.status == 200) {
                     swal("Good job!", response.Message, "success");
-                    //                        window.location.reload();
+                    window.location.replace("<?php echo base_url('test_database');?>");
 
                 } else {
 

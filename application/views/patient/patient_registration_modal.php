@@ -43,7 +43,7 @@
                             </div>
                             <div class="col-md-3">
                                 <label>First Name</label>
-                                <input type="text" name="first_name" class="form-control" placeholder="Enter First Name" id="first_name" required>
+                                <input type="text" name="first_name" class="form-control" placeholder="Enter First Name" id="first_name" required >
                             </div>
                             <div class="col-md-3">
                                 <label>Last Name</label>
@@ -53,7 +53,7 @@
                                 <div class="form-group">
                                     <label>Gender</label><br>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="gender" id="male" value="1">
+                                        <input class="form-check-input" type="radio" name="gender" id="male" value="1" checked>
                                         <label class="form-check-label" for="male">Male</label>
                                     </div>
                                     <div class="form-check form-check-inline">
