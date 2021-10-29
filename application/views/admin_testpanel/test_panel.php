@@ -3,12 +3,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Test Parameter
+        Parameter
       </h1>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="breadcrumb-item"><a href="#">Setup</a></li>
-        <li class="breadcrumb-item active">Test Parameter</li>
+        <li class="breadcrumb-item active">Parameter</li>
       </ol>
     </section>
 
@@ -26,7 +26,7 @@
 				<table id="testTable" class="table table-bordered table-separated">
 					<thead>
 						<tr>
-							<th>Test Name</th>
+							<th>Parameter Name</th>
 							<th>Unit</th>
 							<th>Action</th>
 						</tr>

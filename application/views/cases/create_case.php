@@ -153,7 +153,7 @@
 									</tr>
 									<tr>
 									  <th>Amount Received</th>
-                                                                          <td><input type="number" class="form-control" name="receivedAmt" id="receivedAmt" value="0" required="true" oninput="checkReceivedAmt();" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)||event.charCode==46" ></td>
+                                                                          <td><input type="number" class="form-control" name="receivedAmt" id="receivedAmt" required="true" oninput="checkReceivedAmt();" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)||event.charCode==46" ></td>
 									</tr>
 									<tr>
 									  <th>Payment Mode</th>

@@ -3,12 +3,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Add Test Parameter
+            Add Parameter
         </h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
             <li class="breadcrumb-item"><a href="#">Setup</a></li>
-            <li class="breadcrumb-item active">Add Test Parameter</li>
+            <li class="breadcrumb-item active">Add Parameter</li>
         </ol>
     </section>
 
@@ -30,7 +30,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <center>
-                                                <h5 class="box-title title">Test Parameter Details</h5>
+                                                <h5 class="box-title title">Parameter Details</h5>
                                             </center>
                                         </div>
 
@@ -44,10 +44,10 @@
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label>Test Name</label>
+                                                    <label>Parameter Name</label>
                                                     <div class="controls">
                                                         <input type="text" class="form-control" name="testName"
-                                                            id="testName" placeholder="Enter Test Name">
+                                                            id="testName" placeholder="Enter Parameter Name">
                                                     </div>
                                                 </div>
                                             </div>

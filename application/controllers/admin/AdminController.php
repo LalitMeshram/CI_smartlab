@@ -178,7 +178,7 @@ class AdminController extends CI_Controller {
         $this->load->view('header',$data);
         $this->load->view('menu_bar');
         $this->load->view('cases/create_case');
-        $this->load->view('cases/create_case_modal');
+        $this->load->view('cases/create_case_modal');   
         $this->load->view('footer');
         $this->load->view('cases/get_patient_js');
         $this->load->view('cases/get_refferal_doctor_js');

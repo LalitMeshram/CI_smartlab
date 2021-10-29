@@ -38,15 +38,7 @@
 
 
                                 </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>Package Id</th>
-                                        <th>Package</th>
-                                        <th>Duration</th>
-                                        <th>Features</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </tfoot>
+                                
                             </table>
                         </div>
                     </div>
