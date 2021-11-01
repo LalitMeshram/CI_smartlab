@@ -10,7 +10,7 @@ class ReportModel extends CI_Model
         // INNER JOIN center_test_subtypes cs ON cs.testId = ct.testId 
         // INNER JOIN center_unit_master cu ON cu.unitId = cs.unitId WHERE ct.caseId = $caseId";
         $sql = "SELECT cm.testId,cm.categoryId,lc.category,cm.test_name,cp.testName,
-        cu.unit,cs.isgroup,cs.label,cs.label,cs.flag_sequence,cp.panelId,pm.patientId
+        cu.unit,cs.isgroup,cs.label,cs.label,cs.flag_sequence,cp.panelId,pm.patientId,cm.desc_text
          FROM case_tests ct 
         INNER JOIN center_test_master cm ON cm.testId = ct.testId 
         INNER JOIN lab_center_categories lc ON lc.categoryid = cm.categoryId 
