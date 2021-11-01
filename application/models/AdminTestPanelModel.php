@@ -67,6 +67,22 @@ class AdminTestPanelModel extends CI_Model
     public function add_subtypes_test_ranges($partner_data, $panelId)
     {
         foreach ($partner_data as $contact) {
+            $lower_duration             = 0;
+            $upper_duration = 0;
+            if($contact->lower_age_period == 'Month'){
+                $lower_duration = $contact->lower_age * 30;
+            }elseif($contact->lower_age_period =='Year'){
+                $lower_duration = $contact->lower_age * 365;
+            }else{
+                $lower_duration = $contact->lower_age;
+            }
+            if($contact->upper_age_period == 'Month'){
+                $upper_duration = $contact->upper_age * 30;
+            }elseif($contact->upper_age_period =='Year'){
+                $upper_duration = $contact->upper_age * 365;
+            }else{
+                $upper_duration = $contact->upper_age;
+            }
             $partners = array(
                 'gender' => $contact->gender,
                 'lower_age' => $contact->lower_age,
@@ -76,7 +92,9 @@ class AdminTestPanelModel extends CI_Model
                 'lower_limit' => $contact->lower_limit,
                 'upper_limit' => $contact->upper_limit,
                 'subtypeId' => $panelId,
-                'words'=>$contact->words
+                'words'=>$contact->words,
+                'lower_duration' => $lower_duration,
+                'upper_duration' => $upper_duration
             );
             $this->db->insert('lab_tests_subtypes_ranges', $partners);
         }

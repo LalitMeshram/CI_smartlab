@@ -18,23 +18,33 @@ class ReportController extends REST_Controller
         $result = array();
         $result = $this->report->get_finding_data($caseId);
         $temp = array();
+        $result_1 = array();
         $mainResult = $this->report->get_category_findings($caseId);
         if ($result != NULL && count($result) > 0) {
-            // foreach ($result as $key => $server) {
-            //     $Category = $server->category;
-            //     $temp = $server;
-
-            //     if (array_key_exists($Category, $mainResult)) {
-            //         $mainResult["$Category"] = $Category;
-            //     } else {
-            //         $mainResult["$Category"] = $Category;
-            //     }
-            // }
+        
+           for($var = 0; $var < count($result); $var++) {
+               $lower = 0;
+               $upper = 0;
+            $limit = $this->report->get_ranges($result[$var]['patientId'],$result[$var]['panelId']);
+            if(!empty($limit) && count($limit)>0) {
+                if(count($limit)>1){
+                    $lower = $limit[0]['lower_limit'];
+                    $upper = $limit[0]['upper_limit'];
+                }else{
+                    $lower = $limit[0]['lower_limit'];
+                    $upper = $limit[0]['upper_limit'];
+                }
+            }
+            
+            $array = array('lower'=>$lower,'upper'=>$upper);
+            
+           $result_1[] =  array_merge($result[$var],$array);
+           }
         }
-     $fdata =   array_merge($result,$mainResult);
+     $fdata =   array_merge($result_1,$mainResult);
         $response = array(
             "ResponseCode"=>200,
-            "Data"=>$result,
+            "Data"=>$result_1,
             "category"=>$mainResult
         );
         $this->response($response, REST_Controller::HTTP_OK);

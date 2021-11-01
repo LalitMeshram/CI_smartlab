@@ -147,6 +147,10 @@ class Reciept_model extends CI_Model
                     <th>' . number_format($row->discount, 2) . '</th>
                   </tr>';
             }
+            $pending_amt = 0.00;
+            if($row->pending_amt>0){
+              $pending_amt = number_format($row->pending_amt,2);
+            }
             $output .= '<div class="row">
         <div class="col-md-8">
         </div>
@@ -166,7 +170,7 @@ class Reciept_model extends CI_Model
                 </tr>' . $discount . '
                 <tr>
                   <th>Pending Amount</th>
-                  <th>' . number_format($row->pending_amt, 2) . '</th>
+                  <th>' .  $pending_amt . '</th>
                 </tr>
               
                 </tbody>
@@ -301,7 +305,7 @@ class Reciept_model extends CI_Model
                           if($row_2->level !="N"){
                             $level = $row_2->level;
                           }else{
-                            $level = '';
+                            $level = '&nbsp;&nbsp;';
                           }  
                           $tempParm .= '<tr>
                   <td style="margin-left: 15%!important;">' . $row_2->parameter . '</td>

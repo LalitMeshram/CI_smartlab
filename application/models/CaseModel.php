@@ -19,6 +19,7 @@ class CaseModel extends CI_Model
         $this->db->trans_begin();
         $this->db->insert('case_master', $case_details);
         $result['caseId'] = $this->db->insert_id();
+        
         $case_payments = array(
             "caseId"=>$result['caseId'],
             "centerId"=>$case_data['centerId'],
@@ -33,6 +34,7 @@ class CaseModel extends CI_Model
         );
         $this->db->insert('case_payments', $case_payments);
         $result['paymentId'] = $this->db->insert_id();
+
         $payment_tran = array(
             "paymentId"=>$result['paymentId'],
             "amount"=>$case_data['amt_recieved'],
@@ -40,8 +42,11 @@ class CaseModel extends CI_Model
             "paymentmode"=>$case_data['paymentmode'],
             "createdby"=>1
         );
-        $this->db->insert('case_payment_transactions', $payment_tran);
-     $result['paymentId'] = $this->db->insert_id();
+        if($case_data['amt_recieved']>0){
+            $this->db->insert('case_payment_transactions', $payment_tran);
+            $result['paymentId'] = $this->db->insert_id();
+        }
+       
         $this->add_case_tests($testdata,$result['caseId'], $case_data['centerId']);
         if ($this->db->trans_status() === FALSE) {
             $this->db->trans_rollback();
@@ -165,8 +170,11 @@ class CaseModel extends CI_Model
             "paymentmode"=>$case_data['paymentmode'],
             "createdby"=>1
         );
-        $this->db->insert('case_payment_transactions', $payment_tran);
-        $result['transactionId'] = $this->db->insert_id();
+        if($case_data['amt_recieved']>0){
+            $this->db->insert('case_payment_transactions', $payment_tran);
+            $result['transactionId'] = $this->db->insert_id();
+        }
+        
 
         $this->db->where('caseId', $caseId);
         $this->db->delete('case_tests');

@@ -45,9 +45,12 @@ class RecieptController extends CI_Controller {
 		}
 	}
 
-	public function Test($caseId)
+	public function Test()
 	{
-		echo  $this->reciept->getFooterDetails($caseId);
+
+	//echo date_diff(date_create('1970-02-01'), date_create('today'))->y;
+	$interval = date_diff(date_create(), date_create('2008-01-01 10:30:00'));
+echo $interval->format("You are  %Y Year, %M Months, %d Days, %H Hours, %i Minutes, %s Seconds Old");
 	}
 
 }
