@@ -10,21 +10,26 @@ class ReportModel extends CI_Model
         // INNER JOIN center_test_subtypes cs ON cs.testId = ct.testId 
         // INNER JOIN center_unit_master cu ON cu.unitId = cs.unitId WHERE ct.caseId = $caseId";
         $sql = "SELECT cm.testId,cm.categoryId,lc.category,cm.test_name,cp.testName,
-        cu.unit,10 lower,40 upper,cs.isgroup,cs.label,cs.label,cs.flag_sequence,cp.panelId
+        cu.unit,cs.isgroup,cs.label,cs.label,cs.flag_sequence,cp.panelId,pm.patientId
          FROM case_tests ct 
         INNER JOIN center_test_master cm ON cm.testId = ct.testId 
         INNER JOIN lab_center_categories lc ON lc.categoryid = cm.categoryId 
         INNER JOIN center_test_group_panel cs ON cs.testId = ct.testId
         INNER JOIN center_test_panel cp ON cs.panelId = cp.panelId
-        INNER JOIN center_unit_master cu ON cu.unitId = cp.unitId WHERE ct.caseId = $caseId";
+        INNER JOIN center_unit_master cu ON cu.unitId = cp.unitId 
+        INNER JOIN case_master cmd ON cmd.caseId = ct.caseId
+        INNER JOIN patient_master pm ON pm.patientId = cmd.patientId
+        WHERE ct.caseId  = $caseId";
         $query = $this->db->query($sql);
-        return $query->result();
+        return $query->result_array();
     }
-    public function get_ranges($gender,$age,$panelId){
-       $sql = "SELECT sr.rangeId,sr.lower_limit,sr.upper_limit,sr.words FROM center_test_subtypes_ranges sr INNER JOIN center_test_group_panel cp ON cp.panelId = sr.subtypeId
-       WHERE cp.panelId = $panelId AND gender = $gender AND $age BETWEEN sr.lower_age AND sr.upper_age";
+    public function get_ranges($patientId,$panelId){
+       $sql = "SELECT ct.lower_limit,ct.upper_limit FROM center_test_subtypes_ranges ct INNER JOIN center_test_panel ctp ON ctp.panelId = ct.subtypeId
+       WHERE ctp.panelId = $panelId AND 
+       (SELECT DATEDIFF(CURRENT_DATE,pm.dob) AS days FROM patient_master pm WHERE pm.patientId = $patientId) BETWEEN ct.lower_duration AND ct.upper_duration
+       ";
         $query = $this->db->query($sql);
-        return $query->result();
+        return $query->result_array();
     }
 
     public function get_category_findings($caseId){
