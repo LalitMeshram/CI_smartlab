@@ -50,9 +50,9 @@ $session_data = $this->session->userdata('lsesson');
                 success: function (response) {
                     if (response.status == 200) {
                         swal("Good job!", response.Message, "success");
-                        //window.location.replace("<?php echo base_url('all_cases');?>");
+                        window.location.replace("<?php echo base_url('invoice');?>/"+response.Data.caseId);
                         
-                        setTimeout(function(){ location.reload(); }, 3000);
+                        //setTimeout(function(){ location.reload(); }, 3000);
 
                     } else {
 
