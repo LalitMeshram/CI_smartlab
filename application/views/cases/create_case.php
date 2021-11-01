@@ -143,13 +143,14 @@
                                                                           <td>Rs.<span id="paidAmt">0</span>
                                                                           </td>
 									</tr>-->
-									<tr>
-									  <th>After Discount Amount</th>
-                                                                          <td>Rs.<span id="aftDiscAmt">0</span></td>
-									</tr>
+									
 									<tr>
 									  <th>Discount</th>
                                                                           <td><input type="number" class="form-control" name="discount" id="discount" min="0" value="0" readonly="" oninput="checkDiscountAmt();" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)||event.charCode==46"></td>
+									</tr>
+									<tr>
+									  <th>After Discount Amount</th>
+                                                                          <td>Rs.<span id="aftDiscAmt">0</span></td>
 									</tr>
 									<tr>
 									  <th>Amount Received</th>
