@@ -82,7 +82,7 @@
                                 <div class="form-group">
                                     <label>Age</label>	
                                     <div class="input-group mb-3">
-                                        <input type="text" class="form-control" id="age" name="age">
+                                        <input type="text" class="form-control" id="age" name="age" required>
                                         <div class="input-group-append">
                                             <select class="form-control" id="agestr">
                                                 <option>Days</option>

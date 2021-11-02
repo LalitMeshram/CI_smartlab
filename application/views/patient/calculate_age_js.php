@@ -39,4 +39,91 @@ function calculateAge() {
         $('#agestr').val('Days');
     }
 }
+
+
+
+
+$("#agestr").change(function () {
+        var tperiod = this.value;
+        var dob=  $('#dob').val();
+        var today = new Date();
+  var nDays=parseInt($('#age').val());
+
+
+  
+      //alert('empty date');
+      if(tperiod=='Days'){
+        today.setDate(today.getDate()-nDays);
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth()+1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+
+        today = yyyy + '-' + mm + '-' + dd;
+        $('#dob').val(today);
+        
+      }else if(tperiod=='Month'){
+        today.setDate(today.getDate()-(nDays*31));
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth()+1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+
+        today = yyyy + '-' + mm + '-' + dd;
+        $('#dob').val(today);
+      }else if(tperiod=='Year'){
+
+        today.setDate(today.getDate()-(nDays*365));
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth()+1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+
+        today = yyyy + '-' + mm + '-' + dd;
+        $('#dob').val(today);
+      }
+
+    });
+
+
+
+    $('#age').on('input', function() {
+  var dob=  $('#dob').val();
+  
+  var tperiod=$('#agestr').val();
+  
+  var today = new Date();
+  var nDays=parseInt($('#age').val());
+
+
+  
+      //alert('empty date');
+      if(tperiod=='Days'){
+        today.setDate(today.getDate()-nDays);
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth()+1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+
+        today = yyyy + '-' + mm + '-' + dd;
+        $('#dob').val(today);
+        
+      }else if(tperiod=='Month'){
+        today.setDate(today.getDate()-(nDays*31));
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth()+1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+
+        today = yyyy + '-' + mm + '-' + dd;
+        $('#dob').val(today);
+      }else if(tperiod=='Year'){
+
+        today.setDate(today.getDate()-(nDays*365));
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth()+1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+
+        today = yyyy + '-' + mm + '-' + dd;
+        $('#dob').val(today);
+      }
+
+  
+  
+})
 </script>
