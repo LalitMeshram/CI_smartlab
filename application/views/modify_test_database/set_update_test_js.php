@@ -52,18 +52,23 @@ function setTest() {
             for (var j = 0; j < subType.length; j++) {
 
                 if (subType[i].label == subType[j].label) {
-                    testStr += subType[j].testName+' ';
+                    
+                    testStr += subType[j].testName+',';
                     testArr += subType[j].panelId+' ';
                 }
                 
             }
-
+            
         } else {
-            testStr += subType[i].testName;
+            testStr += subType[i].testName+',';
             testArr += subType[i].panelId;
         }
+         //if(subType[i].isgroup == '1'){
+           //testStr=testStr.trim().replace(/_/g, ",");
+           
+        // }
 
-        testStr=testStr.trim().replace(/ /g, ",");
+        testStr=testStr.substring(0, testStr.length-1);
         testArr=testArr.trim().replace(/ /g, ",");
         
 

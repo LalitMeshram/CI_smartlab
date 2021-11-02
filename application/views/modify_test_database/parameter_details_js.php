@@ -4,6 +4,15 @@ $('#addSubtypebtn').click(function() {
     var testStr = '';
     var groupName = '-';
     var isGroup = 0;
+    console.log('///////////////////////////////');
+     console.log(testArr);
+    //get isGroup checked or not
+
+    if ($("#isGroup").prop('checked') == true) {
+        isGroup = 1;
+        groupName = $('#groupName').val();
+    }
+
     //get test list
     for (var i = 0; i < testArr.length; i++) {
         let test = testPanelList.get(testArr[i].toString());
@@ -13,12 +22,7 @@ $('#addSubtypebtn').click(function() {
         }
 
     }
-    //get isGroup checked or not
-
-    if ($("#isGroup").prop('checked') == true) {
-        isGroup = 1;
-        groupName = $('#groupName').val();
-    }
+    
     //create id for row
     var regex = /[.,\s]/g;
     var id = testStr.replace(regex, '');
