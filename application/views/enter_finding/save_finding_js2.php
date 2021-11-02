@@ -95,8 +95,8 @@ $('#saveFinding').click(function() {
             console.log(response);
             if (response.ResponseCode == 200) {
                 swal("Good job!", response.Message, "success");
-                window.location.replace("<?php echo base_url('all_cases');?>");
-
+               // window.location.hrf("<?php echo base_url('RecieptController/report_print');?>/<?php echo $caseId; ?>");
+                window.open("<?php echo base_url('RecieptController/report_print');?>/<?php echo $caseId; ?>","_blank");
             } else {
 
                 swal("Error!", response.Message, "error");
