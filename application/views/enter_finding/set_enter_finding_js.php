@@ -48,8 +48,8 @@ $session_data = $this->session->userdata('lsesson');
             let find = list.get(k);
             $('#finding_' + find.testName.replace(/ /g, "_")+find.label.replace(/ /g, "_")+find.categoryid+find.parameterId).val(find.finding_value);
             $('#reportId').val(find.reportId);
-            console.log('#finding_' + find.testName.replace(/ /g, "_")+find.label.replace(/ /g, "_")+find.categoryid+find.parameterId);
-            $('#ck'+find.category+find.testName).val(find.test_desc);
+            console.log('#finding_' + find.testName.replace(/ /g, "_")+find.label.replace(/ /g, "_")+find.categoryid.replace(/ /g, "_")+find.parameterId);
+            $('#ck'+find.category.replace(/ /g, "_")+find.testName.replace(/ /g, "_")).val(find.test_desc);
         }
 
     }

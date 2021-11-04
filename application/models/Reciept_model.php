@@ -259,11 +259,13 @@ class Reciept_model extends CI_Model
     {
         $output = '';
         
-        $sql   = "SELECT  lc.category,cm.test_name,cm.short_name FROM case_tests ct 
-      INNER JOIN center_test_master cm ON cm.testId = ct.testId 
-      INNER JOIN lab_center_categories lc ON lc.categoryid = cm.categoryId 
-      WHERE ct.caseId = $caseId
-      GROUP BY lc.category,cm.test_name";
+        $sql   = "SELECT lc.category,cm.test_name,cm.short_name,crd.test_desc 
+        FROM case_tests ct INNER JOIN center_test_master cm ON cm.testId = ct.testId 
+        INNER JOIN lab_center_categories lc ON lc.categoryid = cm.categoryId
+         INNER JOIN case_report_master crm ON crm.caseId = ct.caseId 
+         INNER JOIN case_report_data crd ON crd.reportId = crm.reportId 
+         WHERE ct.caseId = $caseId
+         GROUP BY lc.category,cm.test_name";
         $query = $this->db->query($sql);
         
         $sql_2   = "SELECT crd.case_report_id,crd.reportId,crd.parameterId,crd.parameter,crd.testId,crd.testName,
@@ -345,6 +347,20 @@ class Reciept_model extends CI_Model
                 } //else
             } //for j
             $output .= $parameters . $parmwithoutGroup;
+          //  if(empty($row->desc_text)){
+              $output .='
+              <tr><td colspan="4"><center> <div class="row"><div class="box">
+                                          <div class="box-header">
+                                              <h6 class="box-title">Other Details<br>
+                                              </h6>
+                                          </div>
+                                          <div class="box-body">
+                                           '.$row->test_desc.'
+                                          </div>
+                                      </div>
+                             </div> </center>
+          </td></tr>';
+          // }
             $output .= '</table></div></div></div>';
         }
         return $output;
