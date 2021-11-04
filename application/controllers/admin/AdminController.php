@@ -285,7 +285,7 @@ class AdminController extends CI_Controller {
         $this->load->view('menu_bar');
         $this->load->view('enter_finding/enter_finding2',$data);
         $this->load->view('footer');
-        $this->load->view('enter_finding/enter_finding_js2',$data);
+        $this->load->view('enter_finding/enter_finding_js3',$data);
         $this->load->view('enter_finding/save_finding_js2');
         $this->load->view('enter_finding/set_enter_finding_js',$data);
     }

@@ -12,7 +12,7 @@ function getReportData() {
                     var dataArr = testArr.Data;
                     
                     for (var i = 0; i < dataArr.length; i++) {
-
+                        var desc_text="";
                         var category = $('#cat_' + dataArr[i].test_name.replace(/ /g, "_")+dataArr[i].label.replace(/ /g, "_")+dataArr[i].categoryId+dataArr[i].panelId).val();
                         var testId = $('#testid_' + dataArr[i].test_name.replace(/ /g, "_")+dataArr[i].label.replace(/ /g, "_")+dataArr[i].categoryId+dataArr[i].panelId).val();
                         var testName = $('#test_' + dataArr[i].test_name.replace(/ /g, "_")+dataArr[i].label.replace(/ /g, "_")+dataArr[i].categoryId+dataArr[i].panelId).val();
@@ -25,6 +25,11 @@ function getReportData() {
                         var lower = $('#lower_' + dataArr[i].test_name.replace(/ /g, "_")+dataArr[i].label.replace(/ /g, "_")+dataArr[i].categoryId+dataArr[i].panelId).val();
                         var upper = $('#upper_' + dataArr[i].test_name.replace(/ /g, "_")+dataArr[i].label.replace(/ /g, "_")+dataArr[i].categoryId+dataArr[i].panelId).val();
                         var isgroup= $('#isgroup_' + dataArr[i].test_name.replace(/ /g, "_")+dataArr[i].label.replace(/ /g, "_")+dataArr[i].categoryId+dataArr[i].panelId).val();
+                        if(dataArr[i].desc_text!=""){
+                            desc_text= $("#ck" + dataArr[i].category.replace(/ /g, "_")+dataArr[i].test_name.replace(/ /g, "_")).text();
+                        }
+                        
+                        
                         var reference_value=lower+'-'+upper;
                         var level='';
                         if(parseInt(finding)<parseInt(lower)){
@@ -47,7 +52,8 @@ function getReportData() {
                         reference_value: reference_value,
                         isgroup: isgroup,
                         finding_value: finding,
-                        level: level
+                        level: level,
+                        test_desc:desc_text
                         };
 
                        
