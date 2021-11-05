@@ -33,7 +33,7 @@ $session_data = $this->session->userdata('lsesson');
         e.preventDefault();
         var returnVal = $("#addTestForm ").valid();
         var test=$('#testName').val();
-        var subtypes_test = stypeRange.get(test.replace(/ /g, "_"));
+        var subtypes_test = stypeRange.get(test.replace(/ /g, "_").replace(/[{()}]/g, '_'));
         var subtypesTestString = JSON.stringify(subtypes_test);
         var formdata = new FormData(this);
         formdata.append('subtypes_test', subtypesTestString);
