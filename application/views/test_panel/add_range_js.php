@@ -113,6 +113,7 @@
             swal("Good job!", "Range Successfully Added!", "success");
             $('#add_range').modal('toggle');
         }
+        //console.log(stypeRange);
     });
 
 
