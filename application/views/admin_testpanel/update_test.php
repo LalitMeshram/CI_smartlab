@@ -44,10 +44,10 @@
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label>Test Name</label>
+                                                    <label>Parameter Name</label>
                                                     <div class="controls">
                                                         <input type="text" class="form-control" name="testName"
-                                                            id="testName" placeholder="Enter Test Name">
+                                                            id="testName" placeholder="Enter Parameter Name">
 															<input type="hidden" name="panelId" id="panelId">
                                                     </div>
                                                 </div>
@@ -79,7 +79,7 @@
                                                     <table class="table table-bordered mb-0" id="subtypeTable">
                                                         <thead>
                                                             <tr>
-                                                                <th scope="col">Test Name</th>
+                                                                <th scope="col">Parameter Name</th>
                                                                 <th scope="col">Unit</th>
                                                                 <th scope="col">Action</th>
                                                             </tr>

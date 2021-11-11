@@ -74,6 +74,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 //localdb
 $active_group = 'local';
 // $active_group = 'uat';
+// $active_group = 'dev';
 $query_builder = TRUE;
 
 $db['local'] = array(
@@ -81,8 +82,8 @@ $db['local'] = array(
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => '',
-   'database' => 'smartlab',
-//	'database' => 'lab',
+//    'database' => 'smartlab',
+	'database' => 'lab',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
@@ -119,3 +120,26 @@ $db['uat'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
+
+$db['dev'] = array(
+	'dsn'	=> '',
+	'hostname' => 'localhost',
+	'username' => 'smartlab_uat',
+	'password' => 'smartlab@2019',
+	'database' => 'smartlab_uat',
+	'dbdriver' => 'mysqli',
+	'dbprefix' => '',
+	'pconnect' => FALSE,
+	'db_debug' => (ENVIRONMENT !== 'production'),
+	'cache_on' => FALSE,
+	'cachedir' => '',
+	'char_set' => 'utf8',
+	'dbcollat' => 'utf8_general_ci',
+	'swap_pre' => '',
+	'encrypt' => FALSE,
+	'compress' => FALSE,
+	'stricton' => FALSE,
+	'failover' => array(),
+	'save_queries' => TRUE
+);
+

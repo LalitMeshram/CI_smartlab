@@ -52,7 +52,7 @@ class Reciept_model extends CI_Model
             $output .= '
              <tr>
                       <td>
-                          <h6>Case No: ' . $row->caseId . '</h6>
+                          <h6>Invoice No: ' . $row->caseId . '</h6>
                             <h6>Invoice Date:' . $row->createddate . ' </h6>
                             <h6>PAN No.: </h6>
                         </td>
@@ -347,20 +347,21 @@ class Reciept_model extends CI_Model
                 } //else
             } //for j
             $output .= $parameters . $parmwithoutGroup;
-          //  if(empty($row->desc_text)){
-              $output .='
-              <tr><td colspan="4"><center> <div class="row"><div class="box">
-                                          <div class="box-header">
-                                              <h6 class="box-title">Other Details<br>
-                                              </h6>
-                                          </div>
-                                          <div class="box-body">
-                                           '.$row->test_desc.'
-                                          </div>
-                                      </div>
-                             </div> </center>
-          </td></tr>';
-          // }
+           if(!empty($row->test_desc)){
+              $output .= '<tr><td colspan="4"><center> <div class="row"><div class="box">
+              <div class="box-header">
+                  <h6 class="box-title">Other Details<br>
+                  </h6>
+              </div>
+              <div class="box-body">
+               '.$row->test_desc.'
+              </div>
+          </div>
+ </div> </center>
+</td></tr>';
+          }else{
+            $output .='<tr><td></td></tr>';
+          }
             $output .= '</table></div></div></div>';
         }
         return $output;

@@ -17,7 +17,7 @@ class RecieptController extends CI_Controller {
 		if($this->uri->segment(3))
 		{
 			$customer_id = $this->uri->segment(3);
-			$html_content = '<h3 align="center">Convert HTML to PDF in CodeIgniter using Dompdf</h3>';
+			$html_content = '<h3 align="center">Smart Lab</h3>';
 			$html_content .=  $this->reciept->getCustomerdetails($customer_id);
            $html_content .=  $this->reciept->getTestDetails($customer_id);
         //    $html_content .=  $this->reciept->getPaymentDetails($customer_id);

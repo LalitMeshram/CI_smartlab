@@ -41,7 +41,7 @@ function getFindingDetail() {
                         var parmwithoutGroup = '';
                         var groupName;
                         for (var j = 0; j < dataArr.length; j++) {
-                            
+                          
                             if (categoryArr[i].test_name == dataArr[j].test_name &&
                                 (groupArr.indexOf(dataArr[j].label) == -1) &&
                                 dataArr[j].isgroup == 1) {
@@ -99,10 +99,12 @@ function getFindingDetail() {
                                     }//if
                                    
                                 } //for l
+                                
                                 parameters +=groupName+tempParm;
-                            } //if
-                            else if(categoryArr[i].test_name == dataArr[j].test_name && dataArr[j].isgroup == 0){
-                                parmwithoutGroup +=`<tr>
+                            } //if(categoryArr[i].test_name == dataArr[j].test_name && dataArr[j].isgroup == 0)
+                            else if(categoryArr[i].test_name == dataArr[j].test_name && dataArr[j].isgroup == 0) {
+                                // parameters +='<tr><td>first</td><td>second></td><td>third</td></tr>';
+                                parameters +=`<tr>
 
                                 <input type="hidden" id="cat_` + dataArr[j].test_name.replace(/ /g, "_")+dataArr[j].label.replace(/ /g, "_")+dataArr[j].categoryId+dataArr[j].panelId +
                                 `" value="` + dataArr[j].category + `">
@@ -145,7 +147,8 @@ function getFindingDetail() {
                             
                         } //for j
                         
-                        testList +=parameters+parmwithoutGroup;
+                        testList +=parameters;
+                        // testList +=parameters+parmwithoutGroup;
                         if(categoryArr[i].desc_text!=""){
                         testList +=`
                         <tr><td colspan="4">
