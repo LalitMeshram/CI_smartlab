@@ -332,7 +332,7 @@ class Reciept_model extends CI_Model
                   }else{
                     $level = '';
                   }
-                    $parmwithoutGroup .= '<tr>
+                  $parameters .= '<tr>
     <td>' . $row_1->parameter . '</td>
     <td>
     
