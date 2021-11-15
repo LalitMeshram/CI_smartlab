@@ -148,8 +148,14 @@ class Reciept_model extends CI_Model
                   </tr>';
             }
             $pending_amt = 0.00;
+            $amt_recieved = 0.00;
             if($row->pending_amt>0){
               $pending_amt = number_format($row->pending_amt,2);
+            }
+            if($row->amt_recieved > $row->total_amt){
+              $amt_recieved = $row->total_amt; 
+            }else{
+              $amt_recieved = $row->amt_recieved; 
             }
             $output .= '<div class="row">
         <div class="col-md-8">
@@ -166,7 +172,7 @@ class Reciept_model extends CI_Model
                 <tbody>
                 <tr>
                   <th>Paid Amount</th>
-                  <th>' . number_format($row->amt_recieved, 2) . '</th>
+                  <th>' . number_format($amt_recieved, 2) . '</th>
                 </tr>' . $discount . '
                 <tr>
                   <th>Pending Amount</th>
