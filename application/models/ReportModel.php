@@ -92,6 +92,10 @@ class ReportModel extends CI_Model
     public function add_report_data($test_data, $reportId)
     {
         foreach ($test_data as $contact) {
+            $ref = $contact->reference_value;
+            if(!empty($contact->words)){
+                $ref = $contact->reference_value.'('.$contact->reference_value.')';
+            }
             $tests             = array(
                 'parameterId'=>$contact->parameterid,
                 'parameter'=>$contact->parameter,
@@ -102,7 +106,7 @@ class ReportModel extends CI_Model
                 'category' => $contact->category,
                 'unit' => $contact->unit,
                 'label' => $contact->label,
-                'reference_value'=> $contact->reference_value,
+                'reference_value'=> $ref,
                 'reportId' => $reportId,
                 'isgroup'=> $contact->isgroup,
                 'level'=> $contact->level,
