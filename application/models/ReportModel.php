@@ -24,7 +24,7 @@ class ReportModel extends CI_Model
         return $query->result_array();
     }
     public function get_ranges($patientId,$panelId){
-       $sql = "SELECT ct.lower_limit,ct.upper_limit FROM center_test_subtypes_ranges ct INNER JOIN center_test_panel ctp ON ctp.panelId = ct.subtypeId
+       $sql = "SELECT ct.lower_limit,ct.upper_limit,ct.words FROM center_test_subtypes_ranges ct INNER JOIN center_test_panel ctp ON ctp.panelId = ct.subtypeId
        WHERE ctp.panelId = $panelId AND 
        (SELECT DATEDIFF(CURRENT_DATE,pm.dob) AS days FROM patient_master pm WHERE pm.patientId = $patientId) BETWEEN ct.lower_duration AND ct.upper_duration
        ";

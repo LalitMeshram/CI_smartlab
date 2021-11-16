@@ -25,18 +25,21 @@ class ReportController extends REST_Controller
            for($var = 0; $var < count($result); $var++) {
                $lower = 0;
                $upper = 0;
+               $words = '';
             $limit = $this->report->get_ranges($result[$var]['patientId'],$result[$var]['panelId']);
             if(!empty($limit) && count($limit)>0) {
                 if(count($limit)>1){
                     $lower = $limit[0]['lower_limit'];
                     $upper = $limit[0]['upper_limit'];
+                    $words = $limit[0]['words'];
                 }else{
                     $lower = $limit[0]['lower_limit'];
                     $upper = $limit[0]['upper_limit'];
+                    $words = $limit[0]['words'];
                 }
             }
             
-            $array = array('lower'=>$lower,'upper'=>$upper);
+            $array = array('lower'=>$lower,'upper'=>$upper,'words'=>$words);
             
            $result_1[] =  array_merge($result[$var],$array);
            }
