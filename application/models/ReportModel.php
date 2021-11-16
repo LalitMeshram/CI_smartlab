@@ -24,7 +24,7 @@ class ReportModel extends CI_Model
         return $query->result_array();
     }
     public function get_ranges($patientId,$panelId){
-       $sql = "SELECT ct.lower_limit,ct.upper_limit FROM center_test_subtypes_ranges ct INNER JOIN center_test_panel ctp ON ctp.panelId = ct.subtypeId
+       $sql = "SELECT ct.lower_limit,ct.upper_limit,ct.words FROM center_test_subtypes_ranges ct INNER JOIN center_test_panel ctp ON ctp.panelId = ct.subtypeId
        WHERE ctp.panelId = $panelId AND 
        (SELECT DATEDIFF(CURRENT_DATE,pm.dob) AS days FROM patient_master pm WHERE pm.patientId = $patientId) BETWEEN ct.lower_duration AND ct.upper_duration
        ";
@@ -92,6 +92,10 @@ class ReportModel extends CI_Model
     public function add_report_data($test_data, $reportId)
     {
         foreach ($test_data as $contact) {
+            $ref = $contact->reference_value;
+            if(!empty($contact->words)){
+                $ref = $contact->reference_value.'('.$contact->reference_value.')';
+            }
             $tests             = array(
                 'parameterId'=>$contact->parameterid,
                 'parameter'=>$contact->parameter,
@@ -102,7 +106,7 @@ class ReportModel extends CI_Model
                 'category' => $contact->category,
                 'unit' => $contact->unit,
                 'label' => $contact->label,
-                'reference_value'=> $contact->reference_value,
+                'reference_value'=> $ref,
                 'reportId' => $reportId,
                 'isgroup'=> $contact->isgroup,
                 'level'=> $contact->level,
