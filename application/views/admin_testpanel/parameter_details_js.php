@@ -40,6 +40,7 @@
         $('#r' + id).remove();
         if (stypeRange.has(id)) {
             stypeRange.delete(id);
+            
         }
     }
     function addRange(key) {

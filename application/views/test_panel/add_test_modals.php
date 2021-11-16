@@ -59,7 +59,7 @@
 											<div class="form-group">
 												<label>Min Age</label>	
 												<div class="input-group mb-3">
-                                                                                                    <input type="number" class="form-control" id="minAge">
+                                                                                                    <input type="number" class="form-control" id="minAge" value="0" min="0">
 													<div class="input-group-append">
 														<select class="form-control" id="minAgePeriod">
 															<option>Days</option>
@@ -74,7 +74,7 @@
 											<div class="form-group">
 												<label>Max Age</label>
 												<div class="input-group mb-3">
-                                                                                                    <input type="number" class="form-control" id="maxAge">
+                                                                                                    <input type="number" class="form-control" id="maxAge" value="0" min="0">
 													<div class="input-group-append">
 														<select class="form-control" id="maxAgePeriod">
 															<option>Days</option>
@@ -89,7 +89,7 @@
 											<div class="form-group">
 												<label>Lower</label>
 												<div class="controls">
-                                                                                                    <input type="text" class="form-control" id="lower">
+                                                                                                    <input type="text" class="form-control" id="lower" onkeypress='return event.charCode >= 48 && event.charCode <= 57' value="0">
 												</div>
 											</div>
 										</div>
@@ -97,7 +97,7 @@
 											<div class="form-group">
 												<label>Upper</label>
 												<div class="controls">
-                                                                                                    <input type="text" class="form-control" id="upper">
+                                                                                                    <input type="text" class="form-control" id="upper" onkeypress='return event.charCode >= 48 && event.charCode <= 57' value="0">
 												</div>
 											</div>
 										</div>

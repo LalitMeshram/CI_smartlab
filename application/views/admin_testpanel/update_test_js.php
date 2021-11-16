@@ -31,7 +31,9 @@ $session_data = $this->session->userdata('lsesson');
 
     $('#addTestForm').on('submit', function (e) {
         e.preventDefault();
-        var returnVal = $("#addTestForm ").valid();
+        
+        var rows= $('#subtypeTable tbody tr').length;
+        var returnVal=(rows>0)?true:false;
         var test=$('#testName').val();
         var subtypes_test = stypeRange.get(test.replace(/ /g, "_").replace(/[{()}]/g, '_'));
         var subtypesTestString = JSON.stringify(subtypes_test);
@@ -69,6 +71,8 @@ $session_data = $this->session->userdata('lsesson');
                 }
 
             });
+        }else{
+            swal("Error!", "Please Insert Atleast 1 parameter", "error");
         }
     });
 

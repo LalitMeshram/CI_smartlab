@@ -47,7 +47,7 @@ $session_data=$this->session->userdata('lsesson');
         for (let k of list.keys()) {
             let test = list.get(k);
             option += `
-                    <option value="`+test.testId+`">`+test.test_name+'('+test.short_name+`)</option>
+                    <option value="`+test.testId+`">`+test.test_name+((test.short_name!='')?'(':'')+test.short_name+((test.short_name!='')?')':'')+`</option>
                     `;
         }
 

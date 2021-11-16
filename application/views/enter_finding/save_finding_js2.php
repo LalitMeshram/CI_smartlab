@@ -103,7 +103,7 @@ $('#saveFinding').click(function() {
             console.log(response);
             if (response.ResponseCode == 200) {
                 swal("Good job!", response.Message, "success");
-               // window.location.hrf("<?php echo base_url('RecieptController/report_print');?>/<?php echo $caseId; ?>");
+                window.location.replace("<?php echo base_url('invoice');?>/<?php echo $caseId; ?>");
                 window.open("<?php echo base_url('RecieptController/report_print');?>/<?php echo $caseId; ?>","_blank");
             } else {
 

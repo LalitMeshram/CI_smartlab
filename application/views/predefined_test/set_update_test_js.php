@@ -21,6 +21,7 @@ function setTest() {
     $('#short_name').val(test.short_name);
     $('#gender').val(test.gender);
     $('#fees').val(test.fees);
+    console.log(test.desc_text);
     $('#editor1').val(test.desc_text);
 
     //        outsource lab
@@ -51,18 +52,23 @@ function setTest() {
             for (var j = 0; j < subType.length; j++) {
 
                 if (subType[i].label == subType[j].label) {
-                    testStr += subType[j].testName+' ';
+                    
+                    testStr += subType[j].testName+',';
                     testArr += subType[j].panelId+' ';
                 }
                 
             }
-
+            
         } else {
-            testStr += subType[i].testName;
+            testStr += subType[i].testName+',';
             testArr += subType[i].panelId;
         }
+         //if(subType[i].isgroup == '1'){
+           //testStr=testStr.trim().replace(/_/g, ",");
+           
+        // }
 
-        testStr=testStr.trim().replace(/ /g, ",");
+        testStr=testStr.substring(0, testStr.length-1);
         testArr=testArr.trim().replace(/ /g, ",");
         
 
@@ -74,7 +80,7 @@ function setTest() {
                         <button class="btn btn-danger btn-xs" onclick="deleteSubType('` + subType[i].jsid + `')" type="button"><i class="fa fa-trash-o"></i> Delete</button> 
                         </td>
                         </tr>`;
-        console.log(tableData);
+        //console.log(tableData);
         //$('#subtypeList').html(tableData);
         tempMap[i]=tableData;
         setSubTypeList(tempMap);
@@ -86,7 +92,7 @@ function setTest() {
 function setSubTypeList(list) {
     var tableData ='';
     const uniqueArr = [...new Set(list)];
-    console.log(uniqueArr);
+   // console.log(uniqueArr);
     for(var i=0;i<uniqueArr.length;i++) {
         tableData +=uniqueArr[i];
     }

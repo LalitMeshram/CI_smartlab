@@ -24,8 +24,8 @@ function getFindingDetail() {
                         testList += `<div class="test_section">
 				<div class="report_title">
 					<center><h4 style="background-color: #fff;margin-top: 2%; font-weight: 800;">` + categoryArr[i].category + `</h4></center>
-					<center><h5 style="background-color: #fff; font-weight: 700;">` + categoryArr[i].test_name + `(` + categoryArr[i]
-                            .short_name + `)` + `</h5></center>
+					<center><h5 style="background-color: #fff; font-weight: 700;">` + categoryArr[i].test_name + ((categoryArr[i].short_name!='')?'(':'') + categoryArr[i]
+                            .short_name + ((categoryArr[i].short_name!='')?')':'') + `</h5></center>
 				</div>
 				<div class="table-responsive">
 					<table class="table">

@@ -31,10 +31,10 @@
 
                 $('#rangeList').html(tableData);
 
-                $('#minAge').val('');
-                $('#maxAge').val('');
-                $('#lower').val('');
-                $('#upper').val('');
+                $('#minAge').val(0);
+                $('#maxAge').val(0);
+                $('#lower').val(0);
+                $('#upper').val(0);
                 $('#words').val('');
 
 
