@@ -25,6 +25,7 @@ function getReportData() {
                         var lower = $('#lower_' + dataArr[i].test_name.replace(/ /g, "_")+dataArr[i].label.replace(/ /g, "_")+dataArr[i].categoryId+dataArr[i].panelId).val();
                         var upper = $('#upper_' + dataArr[i].test_name.replace(/ /g, "_")+dataArr[i].label.replace(/ /g, "_")+dataArr[i].categoryId+dataArr[i].panelId).val();
                         var isgroup= $('#isgroup_' + dataArr[i].test_name.replace(/ /g, "_")+dataArr[i].label.replace(/ /g, "_")+dataArr[i].categoryId+dataArr[i].panelId).val();
+                        var words= $('#words_' + dataArr[i].test_name.replace(/ /g, "_")+dataArr[i].label.replace(/ /g, "_")+dataArr[i].categoryId+dataArr[i].panelId).val();
                         var eid= 'ck' + dataArr[i].category.replace(/ /g, "_")+dataArr[i].test_name.replace(/ /g, "_");
                       //  console.log(eid);
                         if(dataArr[i].desc_text!=""){
@@ -55,7 +56,8 @@ function getReportData() {
                         isgroup: isgroup,
                         finding_value: finding,
                         level: level,
-                        test_desc:desc_text
+                        test_desc:desc_text,
+                        words: words
                         };
 
                        

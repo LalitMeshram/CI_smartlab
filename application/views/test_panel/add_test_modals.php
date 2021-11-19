@@ -89,7 +89,7 @@
 											<div class="form-group">
 												<label>Lower</label>
 												<div class="controls">
-                                                                                                    <input type="text" class="form-control" id="lower" onkeypress='return event.charCode >= 48 && event.charCode <= 57' value="0">
+                                                                                                    <input type="text" class="form-control" id="lower" onkeypress='return (event.charCode >= 48 && event.charCode <= 57)|| (event.charCode==46)' value="0">
 												</div>
 											</div>
 										</div>
@@ -97,7 +97,7 @@
 											<div class="form-group">
 												<label>Upper</label>
 												<div class="controls">
-                                                                                                    <input type="text" class="form-control" id="upper" onkeypress='return event.charCode >= 48 && event.charCode <= 57' value="0">
+                                                                                                    <input type="text" class="form-control" id="upper" onkeypress='return (event.charCode >= 48 && event.charCode <= 57)|| (event.charCode==46)' value="0">
 												</div>
 											</div>
 										</div>
@@ -125,8 +125,8 @@
 											  <th scope="col">Gender</th>
 											  <th scope="col" >Min.Age</th>
 											  <th scope="col" >Max.Age</th>
-											  <th scope="col" >Upper</th>
 											  <th scope="col" >Lower</th>
+											  <th scope="col" >Upper</th>
 											  <th scope="col">Words</th>
 											  <th scope="col">Action</th>
 											</tr>

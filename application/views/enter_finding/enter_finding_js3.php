@@ -81,6 +81,8 @@ function getFindingDetail() {
                                            `" value="` + dataArr[l].upper + `">
                                             <input type="hidden" id="isgroup_` + dataArr[l].test_name.replace(/ /g, "_")+dataArr[l].label.replace(/ /g, "_")+dataArr[l].categoryId+dataArr[l].panelId +
                                            `" value="` + dataArr[l].isgroup + `">
+                                            <input type="hidden" id="words_` + dataArr[l].test_name.replace(/ /g, "_")+dataArr[l].label.replace(/ /g, "_")+dataArr[l].categoryId+dataArr[l].panelId +
+                                           `" value="` + dataArr[l].words + `">
 
 						                                <td class="parameter">`+dataArr[l].testName+`</td>
 						                                <td>
@@ -94,7 +96,7 @@ function getFindingDetail() {
                                 </div>
                             </td>
 						                                <td>` + dataArr[l].unit + `</td>
-						                                <td>` + dataArr[l].lower + `-` + dataArr[l].upper + `</td>
+						                                <td colspan="2">` + dataArr[l].lower + `-` + dataArr[l].upper + `&nbsp;&nbsp;`+dataArr[l].words + `</td>
 					                                    </tr>`;
                                     }//if
                                    
@@ -128,6 +130,8 @@ function getFindingDetail() {
                                            `" value="` + dataArr[j].upper + `">
                                             <input type="hidden" id="isgroup_` + dataArr[j].test_name.replace(/ /g, "_")+dataArr[j].label.replace(/ /g, "_")+dataArr[j].categoryId+dataArr[j].panelId +
                                            `" value="` + dataArr[j].isgroup + `">
+                                            <input type="hidden" id="words_` + dataArr[j].test_name.replace(/ /g, "_")+dataArr[j].label.replace(/ /g, "_")+dataArr[j].categoryId+dataArr[j].panelId +
+                                           `" value="` + dataArr[j].words + `">
 						                  <td>`+dataArr[j].testName+`</td>
                                           <td>
                             
@@ -140,7 +144,7 @@ function getFindingDetail() {
                             </div>
                         </td>
 						                   <td>` + dataArr[j].unit + `</td>
-						                   <td>` + dataArr[j].lower + `-` + dataArr[j].upper + `</td>
+						                   <td>` + dataArr[j].lower + `-` + dataArr[j].upper + `&nbsp;&nbsp;`+dataArr[j].words+`</td>
 					                       </tr>`;
                             }//else
                             
