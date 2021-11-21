@@ -62,7 +62,8 @@
                                         <div class="controls">
                                             <input type="text" name="lab_incharge_name" id="lab_incharge_name" class="form-control" placeholder="Lab Incharge Name" required data-validation-required-message="This field is required">
                                             <br>
-                                            <input type="text" name="lab_incharge_degree" id="lab_incharge_degree" class="form-control" placeholder="Lab Incharge Degree" required data-validation-required-message="This field is required">
+                                        <textarea name="lab_incharge_degree" id="lab_incharge_degree" class="form-control" placeholder="Lab Incharge Degree" required data-validation-required-message="This field is required"></textarea>
+                                            <!-- <input type="text" name="lab_incharge_degree" id="lab_incharge_degree" class="form-control" placeholder="Lab Incharge Degree" required data-validation-required-message="This field is required"> -->
                                         </div>
                                     </div>
                                 </div>
@@ -71,7 +72,8 @@
                                         <div class="controls">
                                             <input type="text" name="lab_doctor_name" id="lab_doctor_name" class="form-control" placeholder="Doctor Name">
                                             <br>
-                                            <input type="text" name="lab_doctor_degree" id="lab_doctor_degree" class="form-control" placeholder="Doctor Degree">
+                                            <textarea  name="lab_doctor_degree" id="lab_doctor_degree" class="form-control" placeholder="Doctor Degree"></textarea>
+                                            <!-- <input type="text" name="lab_doctor_degree" id="lab_doctor_degree" class="form-control" placeholder="Doctor Degree"> -->
                                         </div>
                                     </div>
                                 </div>
