@@ -23,6 +23,7 @@ function setTest() {
     $('#fees').val(test.fees);
     console.log(test.desc_text);
     $('#editor1').val(test.desc_text);
+    $('#extraDetail').val(test.desc_extra);
 
     //        outsource lab
     //        outsource lab

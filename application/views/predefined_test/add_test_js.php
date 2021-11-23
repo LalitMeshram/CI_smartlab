@@ -61,6 +61,7 @@ $('#addTestForm').on('submit', function(e) {
     e.preventDefault();
     var returnVal = $("#addTestForm ").valid();
     var desc = CKEDITOR.instances['editor1'].getData();
+    var extraDetail = CKEDITOR.instances['extraDetail'].getData();
     var subtypes_test = getSubtypesTest();
     //console.log('@@@@@@@@Test############');
     //console.log(subtypes_test);
@@ -68,6 +69,7 @@ $('#addTestForm').on('submit', function(e) {
     var formdata = new FormData(this);
     formdata.append('subtypes_test', subtypesTestString);
     formdata.append('desc_text', desc);
+    formdata.append('desc_extra', extraDetail);
     
     if (returnVal) {
         $.ajax({
@@ -92,7 +94,8 @@ $('#addTestForm').on('submit', function(e) {
                    // window.location.replace("<?php echo base_url('test_predefined_database');?>");
                    $('#addTestForm').trigger("reset");
                    $('#subtypeList').html('');
-
+                    
+                    setTimeout(function () {location.reload();},1000);
                 } else {
 
                     swal("Error!", response.Message, "error");
