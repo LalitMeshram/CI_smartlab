@@ -193,6 +193,14 @@ function getFindingDetail() {
                                         testList +=`<input type="hidden" id="ck`+categoryArr[i].category.replace(/ /g,'_')+categoryArr[i].test_name.replace(/ /g,'_')+`" name="ck`+categoryArr[i].category.replace(/ /g,'_')+categoryArr[i].test_name.replace(/ /g,'_')+`" value="" />`;
                                     }
 
+                                    if(categoryArr[i].desc_extra!=""){
+                                      testList +=`<div class="row">
+                                          <div class="col-12">
+                                              `+categoryArr[i].desc_extra+`
+                                          </div>
+                                      </div>`;
+                                    }//if end
+
                         testList +=`</table>
 			                	    </div>
 			                        </div>
