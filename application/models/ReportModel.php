@@ -34,7 +34,7 @@ class ReportModel extends CI_Model
     }
 
     public function get_category_findings($caseId){
-        $sql = "SELECT  lc.category,cm.test_name,cm.short_name,cm.desc_text FROM case_tests ct 
+        $sql = "SELECT  lc.category,cm.test_name,cm.short_name,cm.desc_text,cm.desc_extra FROM case_tests ct 
         INNER JOIN center_test_master cm ON cm.testId = ct.testId 
         INNER JOIN lab_center_categories lc ON lc.categoryid = cm.categoryId 
         WHERE ct.caseId = $caseId

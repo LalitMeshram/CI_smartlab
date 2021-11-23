@@ -74,10 +74,10 @@ class CopyModel extends CI_Model {
 
     public function copy_tests($centerId) {
         $this->db->trans_begin();
-        $sql = "SELECT testId,categoryId,test_name,short_name,method,instrument,gender,fees,desc_text
+        $sql = "SELECT testId,categoryId,test_name,short_name,method,instrument,gender,fees,desc_text,desc_extra
         FROM lab_tests A
         WHERE NOT EXISTS (
-                  SELECT categoryId,test_name,short_name,method,instrument,gender,fees,desc_text
+                  SELECT categoryId,test_name,short_name,method,instrument,gender,fees,desc_text,desc_extra
                   FROM center_test_master B
                   WHERE A.categoryId = B.categoryId AND A.test_name = B.test_name 
                   AND A.gender=B.gender AND A.fees=B.fees
