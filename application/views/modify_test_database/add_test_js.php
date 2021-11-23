@@ -61,6 +61,7 @@ $('#addTestForm').on('submit', function(e) {
     e.preventDefault();
     var returnVal = $("#addTestForm ").valid();
     var desc = CKEDITOR.instances['editor1'].getData();
+    var extraDetail = CKEDITOR.instances['extraDetails'].getData();
     var subtypes_test = getSubtypesTest();
     //console.log('@@@@@@@@Test############');
     //console.log(subtypes_test);
@@ -68,6 +69,7 @@ $('#addTestForm').on('submit', function(e) {
     var formdata = new FormData(this);
     formdata.append('subtypes_test', subtypesTestString);
     formdata.append('desc_text', desc);
+    formdata.append('desc_extra', extraDetail);
     formdata.append('centerId', <?php echo $session_data['centerId']; ?>)
     if (returnVal) {
         $.ajax({
