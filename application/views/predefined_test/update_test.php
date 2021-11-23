@@ -257,6 +257,37 @@
                                             </div>
                                         </div>
                                         <!-- ck Editor -->
+                                        <!-- ck editor -->
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                            </div>
+                                            <div class="col-md-8">
+
+                                                <div class="box">
+                                                    <div class="box-header">
+                                                        <h4 class="box-title">Extra Details<br>
+                                                            <!-- <small>Advanced and full of features</small> -->
+                                                        </h4>
+                                                        <!-- <ul class="box-controls pull-right">
+                                                            <li><a class="box-btn-close" href="#"></a></li>
+                                                            <li><a class="box-btn-slide" href="#"></a></li>
+                                                            <li><a class="box-btn-fullscreen" href="#"></a></li>
+                                                        </ul> -->
+                                                    </div>
+                                                    <!-- /.box-header -->
+                                                    <div class="box-body">
+
+                                                        <textarea class="ckeditor" id="extraDetail" name="extraDetail" rows="10" cols="58">
+                                                            
+                                                         </textarea>
+
+                                                    </div>
+                                                </div>
+                                                <!-- /.box -->
+
+                                            </div>
+                                        </div>
+                                        <!-- ck Editor -->
                                     </div>
                                     <!-- /.box-body 
 	          </div>
