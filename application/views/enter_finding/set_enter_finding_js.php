@@ -27,7 +27,7 @@ $session_data = $this->session->userdata('lsesson');
                             findingList.set(response.Data.reports[i].case_report_id, response.Data.reports[i]);
 
                         }
-                        
+                        $('#more_details').val(response.Data.finding_details);
                         showList(findingList);
                   
                     }

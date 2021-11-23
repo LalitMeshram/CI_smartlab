@@ -76,13 +76,15 @@ $('#saveFinding').click(function() {
     
     var reportData = getReportData();
     var reportId=$('#reportId').val();
+    var more_details=$('#more_details').val();
     console.log(reportData);
     var formdata = new FormData();
     formdata.append('report_data', JSON.stringify(reportData));
     formdata.append('centerId', <?php echo $session_data['centerId'];?>)
     formdata.append('patientId', 2);
     formdata.append('caseId',<?php echo $caseId; ?>);
-    formdata.append('casedate', '2015-03-25');
+    formdata.append('casedate', <?php echo date('Y-m-d');?>);
+    formdata.append('findingDetails', more_details);
     formdata.append('reportId', reportId);
 
     $.ajax({

@@ -164,15 +164,8 @@ function getFindingDetail() {
                                                 <div class="box">
                                                     <div class="box-header">
                                                         <h4 class="box-title">Other Details<br>
-                                                            <!-- <small>Advanced and full of features</small> -->
                                                         </h4>
-                                                        <!-- <ul class="box-controls pull-right">
-                                                            <li><a class="box-btn-close" href="#"></a></li>
-                                                            <li><a class="box-btn-slide" href="#"></a></li>
-                                                            <li><a class="box-btn-fullscreen" href="#"></a></li>
-                                                        </ul> -->
                                                     </div>
-                                                    <!-- /.box-header -->
                                                     <div class="box-body">
                                                         <form>
                                                             <textarea class="ckeditor" id="ck`+categoryArr[i].category.replace(/ /g,'_')+categoryArr[i].test_name.replace(/ /g,'_')+`" name="ck`+categoryArr[i].category.replace(/ /g,'_')+categoryArr[i].test_name.replace(/ /g,'_')+`" rows="10" cols="58">
@@ -193,19 +186,24 @@ function getFindingDetail() {
                                         testList +=`<input type="hidden" id="ck`+categoryArr[i].category.replace(/ /g,'_')+categoryArr[i].test_name.replace(/ /g,'_')+`" name="ck`+categoryArr[i].category.replace(/ /g,'_')+categoryArr[i].test_name.replace(/ /g,'_')+`" value="" />`;
                                     }
 
-                                    if(categoryArr[i].desc_extra!=""){
-                                      testList +=`<div class="row">
-                                          <div class="col-12">
+                                    if(categoryArr[i].desc_extra!=null){
+                                      testList +=`<tr>
+                                      <td colspan="4" align="center">
+                                      <h4>Extra Details:</h4>
+                                      </td>
+                                      </tr><tr><td colspan="4" align="center">
                                               `+categoryArr[i].desc_extra+`
-                                          </div>
-                                      </div>`;
+                                         </td></tr>`;
                                     }//if end
-
+                                   
                         testList +=`</table>
 			                	    </div>
 			                        </div>
                                     </div>`;
                     }//for i
+                    testList +=`<div class="row"><div class="col-md-2">More Details:</div>
+                    <div class="col-md-10">
+                    <textarea name="more_details" id="more_details" cols="100" rows="3"></textarea></div>`;
                         $('#testList').html(testList);
                     }
 

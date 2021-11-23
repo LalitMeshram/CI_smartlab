@@ -287,6 +287,9 @@ class Reciept_model extends CI_Model
     {
         $output = '';
         
+        $sql_4  = "SELECT finding_details FROM case_report_master WHERE caseId =$caseId";
+        $query_4 = $this->db->query($sql_4);
+
         $sql   = "SELECT lc.category,cm.test_name,cm.short_name,crd.test_desc,cm.desc_extra
         FROM case_tests ct INNER JOIN center_test_master cm ON cm.testId = ct.testId 
         INNER JOIN lab_center_categories lc ON lc.categoryid = cm.categoryId
@@ -407,6 +410,14 @@ class Reciept_model extends CI_Model
         }
             $output .= '</table></div></div></div>';
         }
+
+        foreach($query_4->result() as $row_4){
+          $output .='<div class="row"><strong>More Details:</strong>
+          '.$row_4->finding_details.'
+        </div>';
+        }
+       
+       
         return $output;
     }
 
