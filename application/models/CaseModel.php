@@ -127,7 +127,6 @@ class CaseModel extends CI_Model
     public function update_case($data,$caseId,$last_amt_rec)
     {
         $result   = array();
-      
        $testdata = $data['test_data'];
         $case_data = $data['case_data'];
         $case_details = array(
@@ -137,7 +136,6 @@ class CaseModel extends CI_Model
             "collection_center"=>$case_data['collection_center'],
             "collection_source"=>$case_data['collection_source']
         );
-
         $this->db->trans_begin();
 
         $this->db->where('caseId', $caseId);

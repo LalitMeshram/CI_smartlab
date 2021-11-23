@@ -12,7 +12,7 @@ class LabTestModel_new extends CI_Model
     public function get_center_tests()
     {
         $sql = "SELECT ct.testId,ct.categoryId,ct.test_name,ct.short_name,
-        ct.method,ct.instrument,ct.gender,ct.fees,ct.fees,lc.category,ct.desc_text
+        ct.method,ct.instrument,ct.gender,ct.fees,ct.fees,lc.category,ct.desc_text,ct.desc_extra
         FROM lab_tests ct
          INNER JOIN lab_category lc ON lc.categoryid = ct.categoryId";
          $query = $this->db->query($sql);

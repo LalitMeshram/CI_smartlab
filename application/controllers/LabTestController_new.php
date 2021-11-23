@@ -56,7 +56,8 @@ class LabTestController_new extends REST_Controller
             "instrument" => $this->post('instrument'),
             "gender" => $this->post('gender'),
             "fees" => $this->post('fees'),
-            "desc_text" => $this->post('desc_text')
+            "desc_text" => $this->post('desc_text'),
+            "desc_extra" =>$this->post('desc_extra')
         );
         $subtypes_test = $this->input->post('subtypes_test');
         //[{"panelId":2,"isgroup":1,"label":"Generic","flag_sequence":1},{"panelId":3,"isgroup":1,"label":"Generic","flag_sequence":1},{"panelId":4,"isgroup":0,"label":"","flag_sequence":0}]
