@@ -94,7 +94,7 @@ class ReportModel extends CI_Model
         foreach ($test_data as $contact) {
             $ref = $contact->reference_value;
             if(!empty($contact->words)){
-                $ref = $contact->reference_value.'('.$contact->reference_value.')';
+                $ref = $contact->reference_value.'('.$contact->words.')';
             }
             $tests             = array(
                 'parameterId'=>$contact->parameterid,

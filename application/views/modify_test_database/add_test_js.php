@@ -97,7 +97,7 @@ $('#addTestForm').on('submit', function(e) {
                    $('#editor1').val('');
                    $('#editor1').html('');
                    $('#editor1').text('');
-                   
+                   location.reload(); 
                 } else {
 
                     swal("Error!", response.Message, "error");

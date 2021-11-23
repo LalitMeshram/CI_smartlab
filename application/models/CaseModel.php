@@ -170,10 +170,11 @@ class CaseModel extends CI_Model
             "paymentmode"=>$case_data['paymentmode'],
             "createdby"=>1
         );
-        if($case_data['amt_recieved']>0){
+        // print_r($payment_tran);exit;
+       if($case_data['amt_recieved']>0){
             $this->db->insert('case_payment_transactions', $payment_tran);
             $result['transactionId'] = $this->db->insert_id();
-        }
+       }
         
 
         $this->db->where('caseId', $caseId);

@@ -190,15 +190,37 @@ class Reciept_model extends CI_Model
     
     public function getFooterDetails($caseId)
     {
-        $sql = "SELECT COALESCE(cd.footer_logo,'resource/img/footer.png') as footer_logo
-         FROM center_letter_head_details cd 
-        LEFT JOIN case_master cm ON cm.centerId = cd.centerId WHERE cm.caseId = $caseId";
+        $sql = "SELECT COALESCE(cd.footer_logo,'resource/img/footer.png') as footer_logo,
+        cd.lab_incharge_sign,cd.doctor_sign,cd.lab_incharge_name,cd.lab_incharge_degree,cd.lab_doctor_name,cd.lab_doctor_degree
+        FROM center_letter_head_details cd 
+       LEFT JOIN case_master cm ON cm.centerId = cd.centerId WHERE cm.caseId=$caseId";
          $query = $this->db->query($sql);
           $footer_logo = 'resource/img/footer.png'; 
+          $lab_incharge_name = '';
+          $lab_incharge_degree='';
          foreach ($query->result() as $row) {
           $footer_logo =$row->footer_logo;
+          $lab_incharge_name = $row->lab_incharge_name;
+          $lab_incharge_degree = $row->lab_incharge_degree;
+          $lab_doctor_name = $row->lab_doctor_name;
+          $lab_doctor_degree = $row->lab_doctor_degree;
          }
-        $output = '</div><footer>
+        $output = '</div>
+        <footer>
+        <div class="table-responsive">
+        <table class="table">
+        <tr style="border-top:hidden;!important;">
+        <th>
+        <h5><b>'. $lab_incharge_name.'</b></h5>
+        <h5 style="margin-top: -1%;"><b>'.$lab_incharge_degree.'</b></h5>
+        </th>
+        <th style="padding-left: 40%;">
+        <h5><b> '.$lab_doctor_name.'</b></h5>
+        <h5 style="margin-top: -1%;"><b>'. $lab_doctor_degree.'</b></h5>
+        </th>
+        </tr>
+        </table>
+        </div>
         <br>
         <center><img src="'.$footer_logo.'" width="800px"></center>
         <br>
@@ -356,10 +378,10 @@ class Reciept_model extends CI_Model
            if(!empty($row->test_desc)){
               $output .= '<tr><td colspan="4"><center> <div class="row"><div class="box">
               <div class="box-header">
-                  <h6 class="box-title">Other Details<br>
+                  <h6 class="box-title" align="left">Other Details<br>
                   </h6>
               </div>
-              <div class="box-body">
+              <div class="box-body" align="center">
                '.$row->test_desc.'
               </div>
           </div>
