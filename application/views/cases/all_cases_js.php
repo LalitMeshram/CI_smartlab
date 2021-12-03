@@ -39,8 +39,13 @@ $session_data = $this->session->userdata('lsesson');
         $('#casesTable').dataTable().fnDestroy();
         $('#casesList').empty();
         var tblData = '';
+        var pamt=0.00;
         for (let k of list.keys()) {
             let cases = list.get(k);
+            pamt = 0.00;
+            if(cases.pending_amt >0){
+                pamt = cases.pending_amt; 
+            }
             tblData += `
                     <tr>
                       <td>`+cases.patientId+`</td>
@@ -50,7 +55,7 @@ $session_data = $this->session->userdata('lsesson');
                       <td>`+cases.total_amt+`</td>
                       <td>`+cases.amt_recieved+`</td>
                       <td>`+cases.discount+`</td>
-                      <td>`+cases.pending_amt+`</td>
+                      <td>`+pamt+`</td>
                       <td>`+cases.tests+`</td>
                       <td>
                       <button type="button" class="btn btn-success btn-xs case_action_buttons" onclick="modifyCase('`+cases.caseId+`');"><i class="fa fa-edit"></i> Modify Case</button>

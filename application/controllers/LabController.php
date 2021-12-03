@@ -72,9 +72,9 @@ class LabController extends REST_Controller {
     public function letter_head_details_register_post() {
         $response = array();
         $data['lab_incharge_name'] = $this->post('lab_incharge_name');
-        $data['lab_incharge_degree'] = $this->post('lab_incharge_degree');
+        $data['lab_incharge_degree'] = nl2br($this->post('lab_incharge_degree'));
         $data['lab_doctor_name'] = $this->post('lab_doctor_name');
-        $data['lab_doctor_degree'] = $this->post('lab_doctor_degree');
+        $data['lab_doctor_degree'] = nl2br($this->post('lab_doctor_degree'));
         $data['centerId'] = $this->post('centerId');
         $header_path = '';
         $footer_path = '';

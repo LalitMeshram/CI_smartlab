@@ -158,9 +158,28 @@ class CaseModel extends CI_Model
         $query = $this->db->query($sql);
         $paymentId = $query->row();
         $paymentId = $paymentId->paymentId;
+
+        $result['paymentId'] = $paymentId;
+          //logic for refund amount
+       $checked_amt = $case_data['total_amt']-$last_amt_rec;
+       if($checked_amt < 0){
+        $case_payments['amt_recieved'] = $case_data['total_amt'];
+        $payment_tran = array(
+            "paymentId"=>$result['paymentId'],
+            "amount"=>$checked_amt,
+            "paymentdate"=>date('Y-m-d'),
+            "paymentmode"=>$case_data['paymentmode'],
+            "createdby"=>1
+        );
+        $this->db->insert('case_payment_transactions', $payment_tran);
+        $result['transactionId'] = $this->db->insert_id();
+       }
+        //end refund logic
+
+      
         $this->db->where('paymentId', $paymentId);
         $this->db->update('case_payments', $case_payments); 
-        $result['paymentId'] = $paymentId;
+      
         $payment_tran = array(
             "paymentId"=>$result['paymentId'],
             "amount"=>$case_data['amt_recieved'],
@@ -173,8 +192,7 @@ class CaseModel extends CI_Model
             $this->db->insert('case_payment_transactions', $payment_tran);
             $result['transactionId'] = $this->db->insert_id();
        }
-        
-
+     
         $this->db->where('caseId', $caseId);
         $this->db->delete('case_tests');
 

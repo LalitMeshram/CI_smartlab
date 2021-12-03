@@ -59,9 +59,9 @@
             tableDate1 += `
                         <tr>
 	              <td>`+transaction[i].paymentdate+`</td>`;
-                 if(parseInt(transaction[i].amount)==0){
+                 if(parseInt(transaction[i].amount)<0){
                     tableDate1  +=`<td><button class="btn btn-danger btn-xs">Refund</button></td>
-	              <td>`+Math.abs(transaction[i].pending_amt)+`</td>`;   
+	              <td>`+Math.abs(transaction[i].amount)+`</td>`;   
                  }else{
                   tableDate1  +=`<td><button class="btn btn-success btn-xs">Paid</button></td>
 	              <td>`+transaction[i].amount+`</td>`;
