@@ -378,6 +378,21 @@ class Reciept_model extends CI_Model
                 } //else
             } //for j
             $output .= $parameters . $parmwithoutGroup;
+            if(!empty($row->desc_extra)){
+              $output .= '<tr><td colspan="4"><center> <div class="row"><div class="box">
+              <div class="box-header">
+               
+                  </h6>
+              </div>
+              <div class="box-body"><br>
+               '.$row->desc_extra.'
+              </div>
+          </div>
+  </div> </center>
+  </td></tr>';
+          }else{
+            $output .='<tr><td></td></tr>';
+          }
            if(!empty($row->test_desc)){
               $output .= '<tr><td colspan="4"><center> <div class="row"><div class="box">
               <div class="box-header">
@@ -393,21 +408,7 @@ class Reciept_model extends CI_Model
           }else{
             $output .='<tr><td></td></tr>';
           }
-          if(!empty($row->desc_extra)){
-            $output .= '<tr><td colspan="4"><center> <div class="row"><div class="box">
-            <div class="box-header">
-                <h6 class="box-title" align="left">Extra Details<br>
-                </h6>
-            </div>
-            <div class="box-body" align="center">
-             '.$row->desc_extra.'
-            </div>
-        </div>
-</div> </center>
-</td></tr>';
-        }else{
-          $output .='<tr><td></td></tr>';
-        }
+         
             $output .= '</table></div></div></div>';
         }
 

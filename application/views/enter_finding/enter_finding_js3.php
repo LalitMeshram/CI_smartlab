@@ -96,7 +96,7 @@ function getFindingDetail() {
                                 </div>
                             </td>
 						                                <td>` + dataArr[l].unit + `</td>
-						                                <td colspan="2">` + dataArr[l].lower + `-` + dataArr[l].upper + `&nbsp;&nbsp;`+dataArr[l].words + `</td>
+						                                <td colspan="2">` + dataArr[l].lower + `-` + dataArr[l].upper + `<br>`+dataArr[l].words + `</td>
 					                                    </tr>`;
                                     }//if
                                    
@@ -144,7 +144,7 @@ function getFindingDetail() {
                             </div>
                         </td>
 						                   <td>` + dataArr[j].unit + `</td>
-						                   <td>` + dataArr[j].lower + `-` + dataArr[j].upper + `&nbsp;&nbsp;`+dataArr[j].words+`</td>
+						                   <td>` + dataArr[j].lower + `-` + dataArr[j].upper + `<br>`+dataArr[j].words+`</td>
 					                       </tr>`;
                             }//else
                             
@@ -153,6 +153,14 @@ function getFindingDetail() {
                         
                         testList +=parameters;
                         // testList +=parameters+parmwithoutGroup;
+                        if(categoryArr[i].desc_extra!=null){
+                                      testList +=`<tr>
+                                      <td colspan="4" align="center">
+                                      </td>
+                                      </tr><tr><td colspan="4"><br>
+                                              `+categoryArr[i].desc_extra+`
+                                         </td></tr>`;
+                                    }//if end
                         if(categoryArr[i].desc_text!=""){
                         testList +=`
                         <tr><td colspan="4">
@@ -186,15 +194,7 @@ function getFindingDetail() {
                                         testList +=`<input type="hidden" id="ck`+categoryArr[i].category.replace(/ /g,'_')+categoryArr[i].test_name.replace(/ /g,'_')+`" name="ck`+categoryArr[i].category.replace(/ /g,'_')+categoryArr[i].test_name.replace(/ /g,'_')+`" value="" />`;
                                     }
 
-                                    if(categoryArr[i].desc_extra!=null){
-                                      testList +=`<tr>
-                                      <td colspan="4" align="center">
-                                      <h4>Extra Details:</h4>
-                                      </td>
-                                      </tr><tr><td colspan="4" align="center">
-                                              `+categoryArr[i].desc_extra+`
-                                         </td></tr>`;
-                                    }//if end
+                                   
                                    
                         testList +=`</table>
 			                	    </div>

@@ -90,14 +90,14 @@ $('#addTestForm').on('submit', function(e) {
 
             success: function(response) {
                 if (response.status == 200) {
-                    swal("Good job!", response.Message, "success");
-                   // window.location.replace("<?php echo base_url('test_database');?>");
                    $('#addTestForm').trigger("reset");
                    $('#subtypeList').html('');
                    $('#editor1').val('');
                    $('#editor1').html('');
                    $('#editor1').text('');
-                   location.reload(); 
+                   $('#fees').focus();
+                    swal("Good job!", response.Message, "success");
+                  // location.reload(); 
                 } else {
 
                     swal("Error!", response.Message, "error");

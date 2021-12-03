@@ -86,7 +86,7 @@
                                                                 name="gender">
                                                                 <option>Male</option>
                                                                 <option>Female</option>
-                                                                <option>All</option>
+                                                                <option selected>All</option>
                                                             </select>
                                                         </div>
                                                     </div>
